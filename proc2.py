@@ -3,6 +3,7 @@ import numpy as np
 import mdtraj as md
 from multiprocessing import Pool
 import CifFile
+import os
 
 
 def cif_module(args):
@@ -180,11 +181,31 @@ def process_pdb(file):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('file', nargs="+")
+    parser = argparse.ArgumentParser(description='Process PDB files.')
+    parser.add_argument('--folder', help='Directory containing PDB files')
     args = parser.parse_args()
-    # name = args.file.strip(".pdb")
-    # for p in args.file:
-    #     process_pdb(p)
-    pool = Pool(processes=8)
-    pool.map(process_pdb, args.file)
+
+    # 获取按文件名排序的PDB文件列表（包含大小写敏感处理）
+    if args.folder:
+        # 获取文件列表并排序（按字母数字顺序）
+        all_files = sorted(os.listdir(args.folder), 
+                          key=lambda x: x.lower())  # 不区分大小写排序
+        pdb_files = [
+            os.path.join(args.folder, f) 
+            for f in all_files 
+            if f.lower().endswith('.pdb')  # 兼容大小写
+        ]
+        print(f"找到 {len(pdb_files)} 个PDB文件")
+    else:
+        parser.error("请使用 --folder 指定包含PDB文件的目录")
+
+    # 使用imap保持顺序的并行处理
+    with Pool(processes=8) as pool:
+        # 按顺序获取结果
+        results = pool.imap(process_pdb, pdb_files)
+        
+        # 按顺序打印结果
+        for result in results:
+            print(result)
+            print("-" * 60)  # 添加分隔线
+
