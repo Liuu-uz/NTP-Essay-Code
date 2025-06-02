@@ -66,9 +66,10 @@ def process_pdb(file):
     Processes a single PDB file, can be used for trivial paralellization
     :param file: path to the PDB file
     :type file: string
-    :return: void
-    :rtype:
+    :return: output string for this file
+    :rtype: str
     """
+    output = [f"\n======= processing file：{os.path.basename(file)} ======="]  # ⬅️ 添加标题行
     try:
         s = md.load(file)
         # select ions we like
@@ -107,12 +108,11 @@ def process_pdb(file):
                             if np.sort(l)[2] <= 0.35:
                                 exclude = False
                         if exclude:
-                            print(f"{file} residue: {r.__str__()} does not seem to have a PPP chain, despite having {p}"
-                                  f" phosphates")
+                            output.append(f"{file} residue: {r.__str__()} does not seem to have a PPP chain, despite having {p} phosphates")
                     else:
                         for l in pdist:
                             if np.sort(l)[1] > 0.35:
-                                print("{1:s} residue: {0:s} 2-3 phosphates, disconnected".format(r.__str__(), file))
+                                output.append("{1:s} residue: {0:s} 2-3 phosphates, disconnected".format(r.__str__(), file))
                                 exclude = True
                     # end of connectivity check
                 if not exclude:
@@ -121,19 +121,19 @@ def process_pdb(file):
                     for i in ionres:
                         pairs.append([r.index, i])
                     # basic info of the phosphate res
-                    coordination = "{2:s} p: {3:d}: Residue index: {0:d}, residue: {1:s}, ions:".format(r.index,
-                                                                                                        r.__str__(),
-                                                                                                        file.split(".")[0],
-                                                                                                        p)
+                    coordination = "{2:s} p: {3:d}: Residue index: {0:d}, residue: {1:s}, ions:".format(
+                        r.index, r.__str__(), file.split(".")[0], p)
                     if len(pairs) != 0:
                         # calculates ion-phosphate res distances and adds to the print if they are close
                         contacts = md.compute_contacts(s, contacts=pairs, ignore_nonprotein=False)
                         dist = contacts[0][0]
                         for i in range(len(dist)):
                             if dist[i] < 0.5:
-                                coordination += " {0:s} ({1:d}, {2:d})".format(s.top._residues[pairs[i][1]].__str__(),
-                                                                               pairs[i][1],
-                                                                               s.top._residues[pairs[i][1]]._atoms[0].serial)
+                                coordination += " {0:s} ({1:d}, {2:d})".format(
+                                    s.top._residues[pairs[i][1]].__str__(),
+                                    pairs[i][1],
+                                    s.top._residues[pairs[i][1]]._atoms[0].serial
+                                )
                     # getting pythonic index for neighbouring atoms
                     nb = md.compute_neighbors(s, 0.5, pres, haystack_indices=prot)
                     cid = []
@@ -145,7 +145,7 @@ def process_pdb(file):
                         resid.append(s.top._atoms[i].residue.index)
                     # printing non-redundant residue names in the neigbourhood
                     for r in list(set(resid)):
-                        print(s.top._residues[r])
+                        output.append(str(s.top._residues[r]))
                     # identifying the most frequent chain
                     chainid = max(set(cid), key=cid.count)
                     # getting the id of the first residue in said chain
@@ -165,19 +165,48 @@ def process_pdb(file):
                     mincontact += 1
                     maxcontact += 1
                     # output everything
-                    print("{0:s} sequence (chain {2:d} {5:.2f}): {1:s} range: {3:d} {4:d}".format(coordination,
-                                                                                          s.top.to_fasta(chainid),
-                                                                                          chainid,
-                                                                                          mincontact, maxcontact,
-                                                                                          cid.count(chainid) / len(cid)))
+                    output.append("{0:s} sequence (chain {2:d} {5:.2f}): {1:s} range: {3:d} {4:d}".format(
+                        coordination,
+                        s.top.to_fasta(chainid),
+                        chainid,
+                        mincontact,
+                        maxcontact,
+                        cid.count(chainid) / len(cid)
+                    ))
                     found = True
+
+                    # ========== 新增：输出对应序列区间映射 ==========
+                    chain = s.top.chain(chainid)
+                    one_letter_map = {
+                        'ALA': 'A', 'ARG': 'R', 'ASN': 'N', 'ASP': 'D',
+                        'CYS': 'C', 'GLU': 'E', 'GLN': 'Q', 'GLY': 'G',
+                        'HIS': 'H', 'ILE': 'I', 'LEU': 'L', 'LYS': 'K',
+                        'MET': 'M', 'PHE': 'F', 'PRO': 'P', 'SER': 'S',
+                        'THR': 'T', 'TRP': 'W', 'TYR': 'Y', 'VAL': 'V'
+                    }
+
+                    output.append(f"\nNeighbor residues near phospho group (chain {chainid}):")
+                    output.append("SeqPos  OneLetter  ResName  PDB_ResSeq")
+
+                    shown = set()
+                    for r_idx in resid:
+                        if r_idx in shown:
+                            continue
+                        shown.add(r_idx)
+                        res = s.top._residues[r_idx]
+                        # 在该链中查找此残基的序列位置
+                        for seq_idx, res_chain in enumerate(chain.residues):
+                            if res_chain.index == r_idx:
+                                one_letter = one_letter_map.get(res.name, "X")
+                                output.append(f"{seq_idx + 1:<8} {one_letter:<10} {res.name:<8} {res.resSeq}")
+                                break
         if not found:
-            print(f"{file} has no residue we care about")
+            output.append(f"{file} has no residue we care about")
     except ValueError as ve:
-        print(file, "parsing problem", ve)
+        output.append(f"{file} parsing problem {ve}")
     except IndexError as ie:
-        print(file, "parsing problem", ie)
-    return
+        output.append(f"{file} parsing problem {ie}")
+    return "\n".join(output)
 
 
 if __name__ == '__main__':
@@ -199,13 +228,13 @@ if __name__ == '__main__':
     else:
         parser.error("请使用 --folder 指定包含PDB文件的目录")
 
-    # 使用imap保持顺序的并行处理
+# 使用imap保持顺序的并行处理
     with Pool(processes=8) as pool:
-        # 按顺序获取结果
         results = pool.imap(process_pdb, pdb_files)
-        
-        # 按顺序打印结果
-        for result in results:
-            print(result)
-            print("-" * 60)  # 添加分隔线
+
+        # 把输出写入文档中
+        with open("output.txt", "w", encoding="utf-8") as f_out:
+            for result in results:
+                f_out.write(str(result) + "\n")
+                f_out.write("-" * 60 + "\n")
 

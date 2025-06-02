@@ -1,0 +1,3 @@
+download all prediction from website 
+processing all pdb
+list pdb which has no residue we care about: 1FIT.pdb, 1TO6.pdb, 1VL1.pdb, 1YZY.pdb, 2I1O.pdb, 7V0F.pdb
