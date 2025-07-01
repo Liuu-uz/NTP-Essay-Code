@@ -1,149 +1,270 @@
 import argparse
-import subprocess
-import re
-import os
-import mdtraj as md
 import numpy as np
-import pandas as pd
+import mdtraj as md
+from multiprocessing import Pool
+import CifFile
+import os
 
-def run_process_pdb(pdb_file):
-    """调用 proc.py 运行 process_pdb 并获取输出"""
+
+def cif_module(args):
+    """
+    Deprecated
+    :param args:
+    :type args:
+    :return:
+    :rtype:
+    """
+    name = args.file.strip(".cif")
+    cif = CifFile.ReadCif(args.file)
+    pres = []
+    l = len(cif[name]["_atom_site.type_symbol"])
+    for i in range(l): 
+        if cif[name]["_atom_site.type_symbol"][i] == "P":
+            pres.append(cif[name]["_atom_site.label_comp_id"][i])
+    print(name, pres)
+    return
+
+
+def check_Pres(args):
+    """
+    Deprecated cif processing, latest features are implemented for PDB files only
+    :param args:
+    :type args:
+    :return:
+    :rtype:
+    """
+    name = args.file.strip(".cif")
+    res = []
+    pnum = []
+    READ = False
+    with open(args.file, "r") as fin:
+        for line in fin:
+            if "#" in line:
+                READ = False
+            if READ:
+                l = line.split()
+                #print(l)
+                try:
+                    actres = "{0:s}_{1:s}_{2:s}".format(l[6], l[5], l[16]) # chain, resname, resid
+                    if len(res) == 0 or res[-1] != actres:
+                        res.append(actres)
+                        pnum.append(0)
+                    if l[2] == "P":
+                        pnum[res.index(actres)] += 1
+                except IndexError:
+                    print("check", name)
+            if "_atom_site.pdbx_PDB_model_num" in line:
+                READ = True
+    for i in range(len(pnum)):
+        if pnum[i] != 0:
+            print(name, res[i], pnum[i])
+    return
+
+
+def process_pdb(file):
+    """
+    Processes a single PDB file, can be used for trivial paralellization
+    :param file: path to the PDB file
+    :type file: string
+    :return: output string for this file
+    :rtype: str
+    """
+    output = [f"\n======= processing file：{os.path.basename(file)} ======="]  # ⬅️ 添加标题行
     try:
-        result = subprocess.run(
-            ["python", "proc.py", pdb_file], 
-            capture_output=True, text=True
-        )
-        return result.stdout.splitlines()
-    except Exception as e:
-        print(f"❌ 运行 proc.py 失败: {e}")
-        return []
+        s = md.load(file)
+        # select ions we like
+        ions = s.top.select("resname MG or resname CA or resname MN")
+        # save the pythonic residue index that is used in s.top._residues
+        ionres = [s.top._atoms[x].residue.index for x in ions]
+        prot = s.top.select("protein")
+        found = False
+        
+        # 记录每个链的结合位点信息
+        chain_binding_info = {}
+        
+        # checking every residue
+        for r in s.top.residues:
+            exclude = False
+            p = 0
+            for a in r.atoms:
+                # if any of the atoms is a phosphorus, count them
+                if a.element.symbol == "P":
+                    p += 1
+            if p > 0:
+                # so this residue has some P
+                pres = s.top.select("resid {0:d}".format(r.index))
+                # we skip the residue names of nucleic acids (DNA/RNA)
+                if s.top._atoms[pres[0]].residue.name in ["PO4", "DA", "DT", "DG", "DC", "A", "U", "G", "C"]:
+                    continue
+                elif p > 1:
+                    # check where there is more than 1 P, select them first
+                    p_atoms = s.top.select("resid {0:d} and element P".format(r.index))
+                    # all this section does is checking how far P atoms are from each other to filter for
+                    # phosphate anhidride chains, we don't care if they are not connected to each other
+                    ppairs = []
+                    for p1 in p_atoms:
+                        for p2 in p_atoms:
+                            ppairs.append([p1, p2])
+                    pdist = md.compute_distances(s, ppairs).reshape(p, p)
+                    if p > 3:
+                        exclude = True
+                        for l in pdist:
+                            if np.sort(l)[2] <= 0.35:
+                                exclude = False
+                        if exclude:
+                            output.append(f"{file} residue: {r.__str__()} does not seem to have a PPP chain, despite having {p} phosphates")
+                    else:
+                        for l in pdist:
+                            if np.sort(l)[1] > 0.35:
+                                output.append("{1:s} residue: {0:s} 2-3 phosphates, disconnected".format(r.__str__(), file))
+                                exclude = True
+                    # end of connectivity check
+                if not exclude:
+                    # we enumerate all the ions in the structure to later check if they are close to the phosphate res
+                    pairs = []
+                    for i in ionres:
+                        pairs.append([r.index, i])
+                    # basic info of the phosphate res
+                    coordination = "{2:s} p: {3:d}: Residue index: {0:d}, residue: {1:s}, ions:".format(
+                        r.index, r.__str__(), file.split(".")[0], p)
+                    if len(pairs) != 0:
+                        # calculates ion-phosphate res distances and adds to the print if they are close
+                        contacts = md.compute_contacts(s, contacts=pairs, ignore_nonprotein=False)
+                        dist = contacts[0][0]
+                        for i in range(len(dist)):
+                            if dist[i] < 0.5:
+                                coordination += " {0:s} ({1:d}, {2:d})".format(
+                                    s.top._residues[pairs[i][1]].__str__(),
+                                    pairs[i][1],
+                                    s.top._residues[pairs[i][1]]._atoms[0].serial
+                                )
+                    # getting pythonic index for neighbouring atoms
+                    nb = md.compute_neighbors(s, 0.5, pres, haystack_indices=prot)
+                    cid = []
+                    resid = []
+                    # collecting pythonic index of chains and reisdues based on the atoms, with redundancy
+                    for i in nb[0]:
+                        cid.append(s.top._atoms[i].residue.chain.index)
+                        # print(s.top._atoms[i].residue)
+                        resid.append(s.top._atoms[i].residue.index)
+                    # printing non-redundant residue names in the neigbourhood
+                    for r in list(set(resid)):
+                        output.append(str(s.top._residues[r]))
+                    # identifying the most frequent chain
+                    chainid = max(set(cid), key=cid.count)
+                    # getting the id of the first residue in said chain
+                    chainstartid = s.top._chains[chainid]._residues[0].index
+                    # this section gets the range of residue ids that are in contact of the phosphate res
+                    # this was used to identify a superfamily, if the chain has multiple ones assigned to different
+                    # parts
+                    mincontact = 999
+                    maxcontact = 0
+                    for i in range(len(cid)):
+                        if cid[i] == chainid:
+                            if resid[i] - chainstartid < mincontact:
+                                mincontact = resid[i] - chainstartid
+                            if resid[i] - chainstartid > maxcontact:
+                                maxcontact = resid[i] - chainstartid
+                    # chain_letter = s.top._chains[chainid].chain_id # does not work in mdtraj 1.9.7
+                    mincontact += 1
+                    maxcontact += 1
+                    # output everything
+                    output.append("{0:s} sequence (chain {2:d} {5:.2f}): {1:s} range: {3:d} {4:d}".format(
+                        coordination,
+                        s.top.to_fasta(chainid),
+                        chainid,
+                        mincontact,
+                        maxcontact,
+                        cid.count(chainid) / len(cid)
+                    ))
+                    found = True
 
-def map_residues_to_sequence(proc_output):
-    """解析 `proc.py` 输出，提取蛋白质氨基酸的 Residue Index 映射到 `sequence` 里的编号"""
-    sequence_residues = []
-    sequence_start, sequence_end = None, None
-    sequence_string = ""
+                    # 记录该链的结合位点信息
+                    if chainid not in chain_binding_info:
+                        chain_binding_info[chainid] = set()
+                    
+                    # 将结合残基的序列位置添加到集合中
+                    chain = s.top.chain(chainid)
+                    chain_residues = list(chain.residues)  # 转换为列表
+                    for r_idx in resid:
+                        if r_idx in [res.index for res in chain_residues]:
+                            for seq_idx, res_chain in enumerate(chain_residues):
+                                if res_chain.index == r_idx:
+                                    chain_binding_info[chainid].add(seq_idx)
+                                    break
 
-    for line in proc_output:
-        # ✅ 解析 `range: X Y`，确定蛋白质氨基酸的 Residue Index 范围
-        match = re.search(r"range:\s*(\d+)\s+(\d+)", line)
-        if match:
-            sequence_start, sequence_end = int(match.group(1)), int(match.group(2))
+        # 为每个有结合位点的链输出完整序列信息
+        if chain_binding_info:
+            output.append("\n========== Complete Sequence Information ==========")
+            
+            one_letter_map = {
+                'ALA': 'A', 'ARG': 'R', 'ASN': 'N', 'ASP': 'D',
+                'CYS': 'C', 'GLU': 'E', 'GLN': 'Q', 'GLY': 'G',
+                'HIS': 'H', 'ILE': 'I', 'LEU': 'L', 'LYS': 'K',
+                'MET': 'M', 'PHE': 'F', 'PRO': 'P', 'SER': 'S',
+                'THR': 'T', 'TRP': 'W', 'TYR': 'Y', 'VAL': 'V'
+            }
+            
+            for chainid in sorted(chain_binding_info.keys()):
+                chain = s.top.chain(chainid)
+                chain_residues = list(chain.residues)  # 转换为列表
+                binding_positions = chain_binding_info[chainid]
+                
+                output.append(f"\nChain {chainid} - Complete Sequence:")
+                output.append("SeqPos  OneLetter  ResName  PDB_ResSeq  Binding")
+                output.append("-" * 50)
+                
+                for seq_idx, res in enumerate(chain_residues):
+                    one_letter = one_letter_map.get(res.name, "X")
+                    binding_status = "Y" if seq_idx in binding_positions else "N"
+                    output.append(f"{seq_idx + 1:<8} {one_letter:<10} {res.name:<8} {res.resSeq:<10} {binding_status}")
+                
+                # 额外输出结合位点摘要
+                binding_list = sorted(list(binding_positions))
+                if binding_list:
+                    binding_summary = [str(pos + 1) for pos in binding_list]
+                    output.append(f"\nBinding positions for chain {chainid}: {', '.join(binding_summary)}")
+                    
+                    # 输出结合位点的序列模式（Y/N序列）
+                    binding_pattern = ""
+                    for seq_idx in range(len(chain_residues)):
+                        binding_pattern += "Y" if seq_idx in binding_positions else "N"
+                    output.append(f"Binding pattern: {binding_pattern}")
+                
+        if not found:
+            output.append(f"{file} has no residue we care about")
+    except ValueError as ve:
+        output.append(f"{file} parsing problem {ve}")
+    except IndexError as ie:
+        output.append(f"{file} parsing problem {ie}")
+    return "\n".join(output)
 
-        # ✅ 解析 `sequence (chain X ...)`，提取氨基酸序列
-        match = re.search(r"sequence \(chain \w+ \d+\.\d+\):\s*([\w]+)", line)
-        if match:
-            sequence_string = match.group(1)
 
-    # ✅ 重新编号氨基酸 Residue Index，从 `sequence_start` 开始
-    if sequence_string and sequence_start is not None:
-        sequence_residues = [(i + sequence_start, aa) for i, aa in enumerate(sequence_string)]
-    
-    return sequence_residues
-
-def parse_proc_output(proc_output, target_chain):
-    """解析 `proc.py` 输出，提取氨基酸、金属离子、小分子 (ATP, GTP, UDP, ADP)"""
-    binding_residues = []
-    metal_ions = []
-    nucleotide_molecules = []  # ATP, GTP, UDP, ADP, AMP 等小分子
-
-    AMINO_ACIDS = {"ALA", "ARG", "ASN", "ASP", "CYS", "GLU", "GLN", "GLY", "HIS", 
-                   "ILE", "LEU", "LYS", "MET", "PHE", "PRO", "SER", "THR", "TRP", 
-                   "TYR", "VAL"}
-
-    NUCLEOTIDES = {"ATP", "GTP", "ADP", "AMP", "UDP", "NAD", "GDP", "FAD"}
-
-    chain_id_mapping = {"0": "A", "1": "B", "2": "C", "3": "D"}
-
-    for line in proc_output:
-        # ✅ 解析金属离子
-        if "ions:" in line:
-            matches = re.findall(r"(\w+\d+)\s*\((\d+), \d+\)", line)
-            for match in matches:
-                ion_name, ion_index = match
-                metal_ions.append((ion_name, int(ion_index)))
-
-        # ✅ 解析小分子 (ATP, GTP, UDP, ADP)
-        if "residue:" in line:
-            match = re.search(r"Residue index:\s*(\d+),\s*residue:\s*([\w\d]+)", line)
-            if match:
-                residue_index = int(match.group(1))
-                residue_name = match.group(2).strip()
-                for nucleotide in NUCLEOTIDES:
-                    if residue_name.startswith(nucleotide):
-                        nucleotide_molecules.append((residue_name, residue_index))
-                        break  # 避免重复存入
-
-        # ✅ 解析蛋白质氨基酸
-        if "Residue index:" in line:
-            match = re.search(r"Residue index:\s*(\d+),\s*residue:\s*([\w\d]+).*sequence \(chain (\w+)", line)
-            if match:
-                residue_index = int(match.group(1))
-                residue_name = match.group(2).strip()
-                chain_id = match.group(3).strip()
-                chain_id = chain_id_mapping.get(chain_id, chain_id)
-
-                if residue_name in AMINO_ACIDS and chain_id == target_chain:
-                    binding_residues.append((residue_index, residue_name, chain_id))
-
-    return binding_residues, metal_ions, nucleotide_molecules
-
-def renumber_binding_sites(binding_residues, sequence_residues):
-    """将 binding_residues (PDB 里的 Residue Index) 映射到 sequence_residues 里的编号"""
-    renumbered_binding_sites = []
-
-    residue_index_map = {pdb_index: i + 1 for i, (pdb_index, _) in enumerate(sequence_residues)}
-
-    for pdb_index, residue_name, chain_id in binding_residues:
-        if pdb_index in residue_index_map:
-            new_index = residue_index_map[pdb_index]
-            renumbered_binding_sites.append((new_index, residue_name, chain_id, pdb_index))
-
-    return renumbered_binding_sites
-
-def compute_distances(structure, residue_atoms, ligand_atoms):
-    """计算氨基酸磷原子 vs. 金属离子/ATP 分子的距离"""
-    pairs = [[r, l] for r in residue_atoms for l in ligand_atoms]
-    distances = md.compute_distances(structure, pairs)
-    return distances
-
-def predict_atp_binding(pdb_file, target_chain):
-    """调用 process_pdb 解析 PDB 文件并预测 ATP 结合位点"""
-    proc_output = run_process_pdb(pdb_file)
-    sequence_residues = map_residues_to_sequence(proc_output)
-    binding_residues, metal_ions, nucleotide_molecules = parse_proc_output(proc_output, target_chain)
-
-    if not binding_residues:
-        print(f"⚠️ 未找到任何氨基酸（链 {target_chain}），可能解析错误！")
-        return
-    if not metal_ions and not nucleotide_molecules:
-        print(f"⚠️ 未找到金属离子或 ATP 相关分子，可能解析错误！")
-
-    structure = md.load(pdb_file)
-    renumbered_binding_sites = renumber_binding_sites(binding_residues, sequence_residues)
-
-    binding_sites = []
-    for new_index, residue_name, chain_id, original_index in renumbered_binding_sites:
-        residue_atoms = [atom.index for atom in structure.top.residue(original_index).atoms if atom.element.symbol == "P"]
-        ligand_atoms = [atom.index for _, idx in metal_ions + nucleotide_molecules for atom in structure.top.residue(idx).atoms]
-
-        distances = compute_distances(structure, residue_atoms, ligand_atoms) if ligand_atoms else np.array([])
-        is_binding = "Yes" if distances.size > 0 and np.any(distances <= 4.0) else "No"
-
-        binding_sites.append({"Residue Index": new_index, "Residue Name": residue_name, "Chain": chain_id, "Is Binding": is_binding})
-
-    output_dir = "results"
-    os.makedirs(output_dir, exist_ok=True)
-    output_file = os.path.join(output_dir, f"{os.path.basename(pdb_file).split('.')[0]}_{target_chain}_atp_sites.csv")
-    pd.DataFrame(binding_sites).to_csv(output_file, index=False)
-    print(f"✅ 发现 {len(binding_sites)} 个 ATP 结合位点（链 {target_chain}），已保存至: {output_file}")
-
-def main():
-    parser = argparse.ArgumentParser(description="预测 ATP 结合位点")
-    parser.add_argument("pdb_file", help="PDB 文件路径")
-    parser.add_argument("chain_id", help="目标链 ID（如 A, B, C, D）")
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Process PDB files.')
+    parser.add_argument('--folder', help='Directory containing PDB files')
     args = parser.parse_args()
-    predict_atp_binding(args.pdb_file, args.chain_id)
 
-if __name__ == "__main__":
-    main()
+    # 获取按文件名排序的PDB文件列表（包含大小写敏感处理）
+    if args.folder:
+        # 获取文件列表并排序（按字母数字顺序）
+        all_files = sorted(os.listdir(args.folder), 
+                          key=lambda x: x.lower())  # 不区分大小写排序
+        pdb_files = [
+            os.path.join(args.folder, f) 
+            for f in all_files 
+            if f.lower().endswith('.pdb')  # 兼容大小写
+        ]
+        print(f"找到 {len(pdb_files)} 个PDB文件")
+    else:
+        parser.error("请使用 --folder 指定包含PDB文件的目录")
+
+    # 使用imap保持顺序的并行处理
+    with Pool(processes=8) as pool:
+        results = pool.imap(process_pdb, pdb_files)
+
+        # 把输出写入文档中
+        with open("output.txt", "w", encoding="utf-8") as f_out:
+            for result in results:
+                f_out.write(str(result) + "\n")
+                f_out.write("-" * 60 + "\n")

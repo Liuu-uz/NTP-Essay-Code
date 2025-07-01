@@ -23,4 +23,4 @@ def fetch_pdb(pdb_id, save_dir="pdb_files"):
 
     return file_path
 
-fetch_pdb("7V0F")
+fetch_pdb("3I2B")

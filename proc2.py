@@ -78,6 +78,10 @@ def process_pdb(file):
         ionres = [s.top._atoms[x].residue.index for x in ions]
         prot = s.top.select("protein")
         found = False
+        
+        # 记录每个链的结合位点信息
+        chain_binding_info = {}
+        
         # checking every residue
         for r in s.top.residues:
             exclude = False
@@ -175,31 +179,58 @@ def process_pdb(file):
                     ))
                     found = True
 
-                    # ========== 新增：输出对应序列区间映射 ==========
+                    # 记录该链的结合位点信息
+                    if chainid not in chain_binding_info:
+                        chain_binding_info[chainid] = set()
+                    
+                    # 将结合残基的序列位置添加到集合中
                     chain = s.top.chain(chainid)
-                    one_letter_map = {
-                        'ALA': 'A', 'ARG': 'R', 'ASN': 'N', 'ASP': 'D',
-                        'CYS': 'C', 'GLU': 'E', 'GLN': 'Q', 'GLY': 'G',
-                        'HIS': 'H', 'ILE': 'I', 'LEU': 'L', 'LYS': 'K',
-                        'MET': 'M', 'PHE': 'F', 'PRO': 'P', 'SER': 'S',
-                        'THR': 'T', 'TRP': 'W', 'TYR': 'Y', 'VAL': 'V'
-                    }
-
-                    output.append(f"\nNeighbor residues near phospho group (chain {chainid}):")
-                    output.append("SeqPos  OneLetter  ResName  PDB_ResSeq")
-
-                    shown = set()
+                    chain_residues = list(chain.residues)  # 转换为列表
                     for r_idx in resid:
-                        if r_idx in shown:
-                            continue
-                        shown.add(r_idx)
-                        res = s.top._residues[r_idx]
-                        # 在该链中查找此残基的序列位置
-                        for seq_idx, res_chain in enumerate(chain.residues):
-                            if res_chain.index == r_idx:
-                                one_letter = one_letter_map.get(res.name, "X")
-                                output.append(f"{seq_idx + 1:<8} {one_letter:<10} {res.name:<8} {res.resSeq}")
-                                break
+                        if r_idx in [res.index for res in chain_residues]:
+                            for seq_idx, res_chain in enumerate(chain_residues):
+                                if res_chain.index == r_idx:
+                                    chain_binding_info[chainid].add(seq_idx)
+                                    break
+
+        # 为每个有结合位点的链输出完整序列信息
+        if chain_binding_info:
+            output.append("\n========== Complete Sequence Information ==========")
+            
+            one_letter_map = {
+                'ALA': 'A', 'ARG': 'R', 'ASN': 'N', 'ASP': 'D',
+                'CYS': 'C', 'GLU': 'E', 'GLN': 'Q', 'GLY': 'G',
+                'HIS': 'H', 'ILE': 'I', 'LEU': 'L', 'LYS': 'K',
+                'MET': 'M', 'PHE': 'F', 'PRO': 'P', 'SER': 'S',
+                'THR': 'T', 'TRP': 'W', 'TYR': 'Y', 'VAL': 'V'
+            }
+            
+            for chainid in sorted(chain_binding_info.keys()):
+                chain = s.top.chain(chainid)
+                chain_residues = list(chain.residues)  # 转换为列表
+                binding_positions = chain_binding_info[chainid]
+                
+                output.append(f"\nChain {chainid} - Complete Sequence:")
+                output.append("SeqPos  OneLetter  ResName  PDB_ResSeq  Binding")
+                output.append("-" * 50)
+                
+                for seq_idx, res in enumerate(chain_residues):
+                    one_letter = one_letter_map.get(res.name, "X")
+                    binding_status = "Y" if seq_idx in binding_positions else "N"
+                    output.append(f"{seq_idx + 1:<8} {one_letter:<10} {res.name:<8} {res.resSeq:<10} {binding_status}")
+                
+                # 额外输出结合位点摘要
+                binding_list = sorted(list(binding_positions))
+                if binding_list:
+                    binding_summary = [str(pos + 1) for pos in binding_list]
+                    output.append(f"\nBinding positions for chain {chainid}: {', '.join(binding_summary)}")
+                    
+                    # 输出结合位点的序列模式（Y/N序列）
+                    binding_pattern = ""
+                    for seq_idx in range(len(chain_residues)):
+                        binding_pattern += "Y" if seq_idx in binding_positions else "N"
+                    output.append(f"Binding pattern: {binding_pattern}")
+                
         if not found:
             output.append(f"{file} has no residue we care about")
     except ValueError as ve:
@@ -228,7 +259,7 @@ if __name__ == '__main__':
     else:
         parser.error("请使用 --folder 指定包含PDB文件的目录")
 
-# 使用imap保持顺序的并行处理
+    # 使用imap保持顺序的并行处理
     with Pool(processes=8) as pool:
         results = pool.imap(process_pdb, pdb_files)
 
@@ -237,4 +268,3 @@ if __name__ == '__main__':
             for result in results:
                 f_out.write(str(result) + "\n")
                 f_out.write("-" * 60 + "\n")
-

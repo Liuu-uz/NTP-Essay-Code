@@ -1,2 +1,0 @@
-PDB_ID,TM_score,Global_RMSD,Aligned_Length,Active_Site_RMSD,Exp_Chains,Exp_Residues,AF_Chains,AF_Residues,AF_Avg_B_factor
-1d4x,0.98843,0.78,368,32.21916,2,492,1,368,94.59026114206128
