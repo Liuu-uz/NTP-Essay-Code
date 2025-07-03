@@ -9,11 +9,9 @@ for file in *.pdb; do
         --dat /home/webserver/student/zhijing/DAT
 done
 
-实现脚本：我现在已经有sequence_to_json.py能实现用户给一个sequence,我转成json文件，现在需要新的脚本实现，
-将scp /Users/napkin/NTP-Essay-Code-1/NTP-Essay-Code/sequences_file/*.json webserver@coulomb.phys.ucl.ac.uk:/home/webserver/student/zhijing/input_jsons
-把文件传到虚拟环境，然后远程连接ssh webserver@coulomb.phys.ucl.ac.uk，输入密码之后，激活conda activate protoneix，进入/home/webserver/student/zhijin完成alphafold的预测
-protenix predict   --input /home/webserver/student/zhijing/input_jsons/my_protein.json    --out_dir /home/webserver/student/zhijing/predicted_structures/my_protein_output   --seeds 101   --use_msa_server
-预测结束后，需要把cif文件转成pdb，
-python3 /home/webserver/student/zhijing/convert_cif_to_pdb.py   /home/webserver/student/zhijing/predicted_structures/my_protein_output/my_protein/seed_101/predictions/my_protein_seed_101_sample_0.cif   /home/webserver/student/zhijing/predicted_structures/my_protein.pdb
-再完成dali的对比/home/wenhao/6tx0/software/dali/DaliLite.v5/bin/dali.pl   -query /home/webserver/student/zhijing/predicted_structures/my_protein.pdb   -db /home/webserver/student/zhijing/dali_database   -title my_protein   -outfmt summary
-dali在base环境，运行之前考虑换环境
+改suquence list
+生成json文件
+上传
+ssh连接
+conda activate protoneix
+python remote_pipeline.py sequence_1.json
