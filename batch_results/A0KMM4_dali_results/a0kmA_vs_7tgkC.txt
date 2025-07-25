@@ -1,0 +1,39 @@
+# Job: test
+# Query: a0kmA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7tgk-C  6.2  4.1  184   592   10  MOL_ID: 1; MOLECULE: DESFERRIOXAMINE SYNTHETASE DESD; CHAIN: D, B, E, 
+
+# Structural equivalences
+   1: a0km-A 7tgk-C   108 - 113 <=>  189 - 194   (ARG  108  - HIS  113  <=> ALA  188  - ALA  193 )                          
+   1: a0km-A 7tgk-C   290 - 293 <=>  201 - 204   (GLN  290  - GLY  293  <=> GLY  200  - TYR  203 )                          
+   1: a0km-A 7tgk-C   295 - 303 <=>  205 - 213   (THR  295  - GLN  303  <=> ALA  204  - GLY  212 )                          
+   1: a0km-A 7tgk-C   308 - 314 <=>  267 - 273   (SER  308  - ILE  314  <=> SER  266  - ALA  272 )                          
+   1: a0km-A 7tgk-C   317 - 320 <=>  274 - 277   (GLY  317  - GLY  320  <=> GLN  273  - ILE  276 )                          
+   1: a0km-A 7tgk-C   324 - 331 <=>  278 - 285   (SER  324  - TYR  331  <=> ARG  277  - HIS  284 )                          
+   1: a0km-A 7tgk-C   332 - 346 <=>  288 - 302   (ASP  332  - LYS  346  <=> LYS  287  - PHE  301 )                          
+   1: a0km-A 7tgk-C   355 - 362 <=>  313 - 320   (ALA  355  - GLN  362  <=> ALA  312  - TRP  319 )                          
+   1: a0km-A 7tgk-C   363 - 366 <=>  322 - 325   (HIS  363  - VAL  366  <=> ASP  321  - ILE  324 )                          
+   1: a0km-A 7tgk-C   367 - 372 <=>  336 - 341   (GLY  367  - THR  372  <=> LEU  335  - GLU  340 )                          
+   1: a0km-A 7tgk-C   373 - 376 <=>  343 - 346   (GLN  373  - THR  376  <=> ALA  342  - GLY  345 )                          
+   1: a0km-A 7tgk-C   398 - 401 <=>  362 - 365   (PRO  398  - LEU  401  <=> TYR  361  - MET  364 )                          
+   1: a0km-A 7tgk-C   411 - 419 <=>  366 - 374   (LYS  411  - MET  419  <=> LEU  365  - PRO  373 )                          
+   1: a0km-A 7tgk-C   420 - 424 <=>  385 - 389   (ILE  420  - LEU  424  <=> THR  384  - ALA  388 )                          
+   1: a0km-A 7tgk-C   426 - 429 <=>  390 - 393   (LEU  426  - ALA  429  <=> LEU  389  - VAL  392 )                          
+   1: a0km-A 7tgk-C   430 - 449 <=>  412 - 431   (ASP  430  - ALA  449  <=> PRO  411  - PHE  430 )                          
+   1: a0km-A 7tgk-C   450 - 455 <=>  433 - 438   (ALA  450  - PRO  455  <=> ALA  432  - PHE  437 )                          
+   1: a0km-A 7tgk-C   457 - 468 <=>  439 - 450   (ASP  457  - HIS  468  <=> MET  438  - LYS  449 )                          
+   1: a0km-A 7tgk-C   469 - 476 <=>  455 - 462   (GLY  469  - TYR  476  <=> GLN  454  - ILE  461 )                          
+   1: a0km-A 7tgk-C   477 - 484 <=>  464 - 471   (ASP  477  - GLU  484  <=> GLU  463  - PRO  470 )                          
+   1: a0km-A 7tgk-C   485 - 488 <=>  486 - 489   (CYS  485  - ARG  488  <=> VAL  485  - ASP  488 )                          
+   1: a0km-A 7tgk-C   512 - 515 <=>  490 - 493   (ASP  512  - PRO  515  <=> MET  489  - LEU  492 )                          
+   1: a0km-A 7tgk-C   516 - 519 <=>  496 - 499   (GLU  516  - ALA  519  <=> PHE  495  - VAL  498 )                          
+   1: a0km-A 7tgk-C   520 - 523 <=>  501 - 504   (THR  520  - LEU  523  <=> ASP  500  - PHE  503 )                          
+   1: a0km-A 7tgk-C   524 - 527 <=>  506 - 509   (GLN  524  - GLN  527  <=> PHE  505  - ALA  508 )                          
+   1: a0km-A 7tgk-C   529 - 537 <=>  523 - 531   (ARG  529  - LYS  537  <=> TRP  522  - ARG  530 )                          
+   1: a0km-A 7tgk-C   541 - 544 <=>  546 - 549   (ASP  541  - TYR  544  <=> GLN  545  - LEU  548 )                          
+
+# Translation-rotation matrices
+-matrix  "a0km-A 7tgk-C  U(1,.)   0.674507  0.309910 -0.670071         -145.754395"
+-matrix  "a0km-A 7tgk-C  U(2,.)   0.582745 -0.780740  0.225508           -9.011141"
+-matrix  "a0km-A 7tgk-C  U(3,.)  -0.453264 -0.542587 -0.707213           69.327431"
+

@@ -1,0 +1,22 @@
+# Job: test
+# Query: a2t3A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-D  2.7  8.3   72   249   11  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: a2t3-A 3wdl-D   155 - 160 <=>  104 - 109   (ILE  155  - SER  160  <=> THR  107  - ARG  112 )                          
+   1: a2t3-A 3wdl-D   214 - 217 <=>  129 - 132   (GLU  214  - PHE  217  <=> LYS  134  - PRO  137 )                          
+   1: a2t3-A 3wdl-D   267 - 271 <=>  142 - 146   (THR  267  - TYR  271  <=> ASN  149  - LYS  153 )                          
+   1: a2t3-A 3wdl-D   279 - 287 <=>  147 - 155   (LYS  279  - SER  287  <=> ALA  154  - GLU  162 )                          
+   1: a2t3-A 3wdl-D   290 - 298 <=>  157 - 165   (SER  290  - HIS  298  <=> GLY  164  - ARG  172 )                          
+   1: a2t3-A 3wdl-D   300 - 311 <=>  166 - 177   (SER  300  - ASP  311  <=> MET  173  - PRO  184 )                          
+   1: a2t3-A 3wdl-D   312 - 323 <=>  182 - 193   (THR  312  - PHE  323  <=> ALA  189  - ILE  200 )                          
+   1: a2t3-A 3wdl-D   324 - 330 <=>  197 - 203   (PHE  324  - LYS  330  <=> TYR  204  - LEU  210 )                          
+   1: a2t3-A 3wdl-D   345 - 348 <=>  238 - 241   (ARG  345  - ALA  348  <=> ARG  245  - ARG  248 )                          
+   1: a2t3-A 3wdl-D   349 - 352 <=>  243 - 246   (ASP  349  - LYS  352  <=> ALA  250  - GLY  253 )                          
+
+# Translation-rotation matrices
+-matrix  "a2t3-A 3wdl-D  U(1,.)  -0.134124 -0.829626  0.541970           -7.163916"
+-matrix  "a2t3-A 3wdl-D  U(2,.)   0.989635 -0.140462  0.029897           15.993239"
+-matrix  "a2t3-A 3wdl-D  U(3,.)   0.051323  0.540362  0.839866          -48.536152"
+

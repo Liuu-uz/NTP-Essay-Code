@@ -1,0 +1,27 @@
+# Job: test
+# Query: a0b7A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  2.3  5.4  102  1095    6  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a0b7-A 4ff3-A    18 -  24 <=>  303 - 309   (GLN   18  - GLU   24  <=> ASP  308  - ASN  314 )                          
+   1: a0b7-A 4ff3-A    25 -  28 <=>  313 - 316   (ARG   25  - LEU   28  <=> ARG  318  - ALA  321 )                          
+   1: a0b7-A 4ff3-A    55 -  58 <=>  803 - 806   (GLY   55  - LEU   58  <=> SER  808  - TYR  811 )                          
+   1: a0b7-A 4ff3-A   112 - 119 <=>  820 - 827   (ALA  112  - ALA  119  <=> VAL  825  - LYS  832 )                          
+   1: a0b7-A 4ff3-A   121 - 124 <=>  830 - 833   (ARG  121  - ASP  124  <=> VAL  835  - LYS  838 )                          
+   1: a0b7-A 4ff3-A   214 - 217 <=>  847 - 850   (ALA  214  - ASP  217  <=> ASP  852  - THR  855 )                          
+   1: a0b7-A 4ff3-A   275 - 279 <=>  901 - 905   (MET  275  - GLY  279  <=> PRO  906  - TYR  910 )                          
+   1: a0b7-A 4ff3-A   304 - 307 <=>  912 - 915   (GLY  304  - PRO  307  <=> VAL  917  - ILE  920 )                          
+   1: a0b7-A 4ff3-A   312 - 318 <=>  916 - 922   (GLY  312  - LEU  318  <=> PRO  921  - THR  927 )                          
+   1: a0b7-A 4ff3-A   319 - 328 <=>  924 - 933   (SER  319  - GLU  328  <=> ASP  929  - THR  938 )                          
+   1: a0b7-A 4ff3-A   329 - 333 <=>  937 - 941   (GLU  329  - VAL  333  <=> ALA  942  - THR  946 )                          
+   1: a0b7-A 4ff3-A   335 - 339 <=>  942 - 946   (GLU  335  - LYS  339  <=> LEU  947  - ASP  951 )                          
+   1: a0b7-A 4ff3-A   357 - 361 <=>  947 - 951   (GLN  357  - LYS  361  <=> GLY  952  - GLY  956 )                          
+   1: a0b7-A 4ff3-A   363 - 383 <=>  952 - 972   (GLY  363  - ASP  383  <=> LEU  957  - GLY  977 )                          
+   1: a0b7-A 4ff3-A   386 - 394 <=>  973 - 981   (ARG  386  - GLY  394  <=> ASN  978  - SER  986 )                          
+
+# Translation-rotation matrices
+-matrix  "a0b7-A 4ff3-A  U(1,.)  -0.681936 -0.282136  0.674805         -264.045624"
+-matrix  "a0b7-A 4ff3-A  U(2,.)   0.564733  0.383196  0.730915         -273.988708"
+-matrix  "a0b7-A 4ff3-A  U(3,.)  -0.464800  0.879523 -0.101984           66.126259"
+

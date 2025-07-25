@@ -1,0 +1,22 @@
+# Job: test
+# Query: b6yxA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ig2-C  2.0  3.9   78   278    9  MOL_ID: 1; MOLECULE: PHOSPHATIDATE CYTIDYLYLTRANSFERASE, MITOCHONDRIAL
+
+# Structural equivalences
+   1: b6yx-A 6ig2-C     9 -  14 <=>   22 -  27   (PRO    9  - LEU   14  <=> GLU   54  - GLU   59 )                          
+   1: b6yx-A 6ig2-C    19 -  22 <=>   52 -  55   (LYS   19  - GLU   22  <=> ARG   84  - PRO   94 )                          
+   1: b6yx-A 6ig2-C    37 -  40 <=>   57 -  60   (HIS   37  - GLY   40  <=> ILE   96  - ILE   99 )                          
+   1: b6yx-A 6ig2-C    44 -  48 <=>  148 - 152   (ASP   44  - GLY   48  <=> ILE  187  - GLU  191 )                          
+   1: b6yx-A 6ig2-C    52 -  71 <=>  156 - 175   (ILE   52  - ASN   71  <=> TYR  195  - ALA  214 )                          
+   1: b6yx-A 6ig2-C    96 -  99 <=>  179 - 182   (ASN   96  - LEU   99  <=> THR  218  - ASP  221 )                          
+   1: b6yx-A 6ig2-C   156 - 159 <=>  186 - 189   (VAL  156  - VAL  159  <=> THR  225  - SER  228 )                          
+   1: b6yx-A 6ig2-C   166 - 169 <=>  193 - 196   (ARG  166  - ALA  169  <=> LEU  232  - ILE  235 )                          
+   1: b6yx-A 6ig2-C   201 - 216 <=>  217 - 232   (VAL  201  - ASP  216  <=> ALA  256  - GLY  271 )                          
+   1: b6yx-A 6ig2-C   218 - 228 <=>  264 - 274   (SER  218  - GLU  228  <=> SER  303  - LEU  313 )                          
+
+# Translation-rotation matrices
+-matrix  "b6yx-A 6ig2-C  U(1,.)   0.571743 -0.645586  0.506289           25.719559"
+-matrix  "b6yx-A 6ig2-C  U(2,.)   0.811303  0.353083 -0.465961           -6.523393"
+-matrix  "b6yx-A 6ig2-C  U(3,.)   0.122056  0.677164  0.725639          -72.982231"
+

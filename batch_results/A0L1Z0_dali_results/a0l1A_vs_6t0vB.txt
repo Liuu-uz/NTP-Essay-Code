@@ -1,0 +1,19 @@
+# Job: test
+# Query: a0l1A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  3.1  5.1   83   745    5  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a0l1-A 6t0v-B    45 -  54 <=>  618 - 627   (THR   45  - GLY   54  <=> PRO  618  - PRO  627 )                          
+   1: a0l1-A 6t0v-B    61 -  65 <=>  630 - 634   (ALA   61  - ALA   65  <=> PRO  630  - HIS  634 )                          
+   1: a0l1-A 6t0v-B   166 - 169 <=>  641 - 644   (ARG  166  - ARG  169  <=> LYS  653  - GLU  656 )                          
+   1: a0l1-A 6t0v-B   185 - 200 <=>  670 - 685   (ARG  185  - LYS  200  <=> ILE  682  - GLU  697 )                          
+   1: a0l1-A 6t0v-B   204 - 207 <=>  695 - 698   (PRO  204  - SER  207  <=> ARG  707  - GLY  710 )                          
+   1: a0l1-A 6t0v-B   214 - 237 <=>  700 - 723   (LYS  214  - ALA  237  <=> ALA  712  - ILE  735 )                          
+   1: a0l1-A 6t0v-B   281 - 300 <=>  724 - 743   (PHE  281  - THR  300  <=> SER  736  - ARG  755 )                          
+
+# Translation-rotation matrices
+-matrix  "a0l1-A 6t0v-B  U(1,.)   0.143740 -0.870113  0.471425           51.226345"
+-matrix  "a0l1-A 6t0v-B  U(2,.)   0.850073  0.352458  0.391342         -173.183685"
+-matrix  "a0l1-A 6t0v-B  U(3,.)  -0.506670  0.344494  0.790322          -58.526840"
+

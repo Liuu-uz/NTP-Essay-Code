@@ -1,0 +1,17 @@
+# Job: test
+# Query: a0a8A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-C  2.1  4.2   57   254   16  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: a0a8-A 3wdl-C   219 - 236 <=>    4 -  21   (SER  219  - GLU  236  <=> ARG   10  - GLY   27 )                          
+   1: a0a8-A 3wdl-C   241 - 261 <=>   23 -  43   (PHE  241  - ASN  261  <=> THR   29  - GLU   49 )                          
+   1: a0a8-A 3wdl-C   303 - 307 <=>   98 - 102   (GLU  303  - GLU  307  <=> PHE  104  - GLU  108 )                          
+   1: a0a8-A 3wdl-C   309 - 317 <=>  104 - 112   (LEU  309  - LEU  317  <=> ARG  110  - LEU  118 )                          
+   1: a0a8-A 3wdl-C   318 - 321 <=>  114 - 117   (LYS  318  - GLN  321  <=> LYS  120  - PRO  123 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a8-A 3wdl-C  U(1,.)   0.296549 -0.470947 -0.830824           12.884909"
+-matrix  "a0a8-A 3wdl-C  U(2,.)   0.219529 -0.813045  0.539226            0.203984"
+-matrix  "a0a8-A 3wdl-C  U(3,.)  -0.929444 -0.342297 -0.137721            8.705094"
+

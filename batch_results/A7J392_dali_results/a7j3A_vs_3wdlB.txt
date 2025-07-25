@@ -1,0 +1,28 @@
+# Job: test
+# Query: a7j3A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-B  2.4  7.0  115   253   10  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: a7j3-A 3wdl-B   163 - 166 <=>    1 -   4   (LEU  163  - GLN  166  <=> ILE    4  - SER    7 )                          
+   1: a7j3-A 3wdl-B   250 - 253 <=>    6 -   9   (ARG  250  - GLN  253  <=> PRO    9  - TRP   12 )                          
+   1: a7j3-A 3wdl-B   254 - 257 <=>   11 -  14   (PHE  254  - GLY  257  <=> LEU   14  - ARG   17 )                          
+   1: a7j3-A 3wdl-B   270 - 275 <=>   57 -  62   (TYR  270  - ILE  275  <=> ARG   60  - LYS   65 )                          
+   1: a7j3-A 3wdl-B   276 - 279 <=>   64 -  67   (TYR  276  - LYS  279  <=> LEU   67  - GLU   70 )                          
+   1: a7j3-A 3wdl-B   280 - 285 <=>   69 -  74   (PRO  280  - ILE  285  <=> PRO   72  - ASN   77 )                          
+   1: a7j3-A 3wdl-B   286 - 289 <=>   76 -  79   (GLY  286  - PRO  289  <=> ASN   79  - ALA   82 )                          
+   1: a7j3-A 3wdl-B   290 - 306 <=>   82 -  98   (SER  290  - THR  306  <=> PRO   85  - ILE  101 )                          
+   1: a7j3-A 3wdl-B   308 - 312 <=>  108 - 112   (ASP  308  - THR  312  <=> VAL  111  - ALA  115 )                          
+   1: a7j3-A 3wdl-B   314 - 319 <=>  122 - 127   (TYR  314  - HIS  319  <=> ILE  125  - ILE  130 )                          
+   1: a7j3-A 3wdl-B   324 - 327 <=>  140 - 143   (TYR  324  - ASP  327  <=> ARG  143  - VAL  146 )                          
+   1: a7j3-A 3wdl-B   330 - 339 <=>  149 - 158   (ARG  330  - ILE  339  <=> TRP  152  - LEU  161 )                          
+   1: a7j3-A 3wdl-B   364 - 384 <=>  160 - 180   (ASN  364  - MET  384  <=> ASP  163  - ASN  183 )                          
+   1: a7j3-A 3wdl-B   411 - 415 <=>  186 - 190   (LEU  411  - ILE  415  <=> ALA  189  - ASP  193 )                          
+   1: a7j3-A 3wdl-B   427 - 437 <=>  233 - 243   (LYS  427  - THR  437  <=> SER  236  - LEU  246 )                          
+   1: a7j3-A 3wdl-B   503 - 506 <=>  250 - 253   (LYS  503  - TYR  506  <=> GLY  253  - ARG  256 )                          
+
+# Translation-rotation matrices
+-matrix  "a7j3-A 3wdl-B  U(1,.)  -0.838871 -0.530801 -0.120602          -16.116886"
+-matrix  "a7j3-A 3wdl-B  U(2,.)  -0.187863  0.074374  0.979375            7.533957"
+-matrix  "a7j3-A 3wdl-B  U(3,.)  -0.510884  0.844226 -0.162108           55.798004"
+

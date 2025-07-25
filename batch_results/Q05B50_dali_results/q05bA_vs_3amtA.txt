@@ -1,0 +1,27 @@
+# Job: test
+# Query: q05bA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  4.0  5.4   95   417    9  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: q05b-A 3amt-A    37 -  40 <=>    1 -   4   (TYR   37  - ASP   40  <=> HIS    0  - VAL    3 )                          
+   1: q05b-A 3amt-A    42 -  46 <=>   36 -  40   (GLU   42  - THR   46  <=> LYS   35  - PHE   39 )                          
+   1: q05b-A 3amt-A    48 -  59 <=>  154 - 165   (LEU   48  - GLY   59  <=> LEU  153  - ARG  164 )                          
+   1: q05b-A 3amt-A    62 -  67 <=>  166 - 171   (PHE   62  - GLU   67  <=> TYR  165  - GLY  170 )                          
+   1: q05b-A 3amt-A    79 -  82 <=>  174 - 177   (ALA   79  - LEU   82  <=> ARG  173  - ASP  176 )                          
+   1: q05b-A 3amt-A    84 -  95 <=>  178 - 189   (THR   84  - GLU   95  <=> GLU  177  - TYR  188 )                          
+   1: q05b-A 3amt-A    96 - 100 <=>  191 - 195   (ASP   96  - ALA  100  <=> GLN  190  - ASN  194 )                          
+   1: q05b-A 3amt-A   101 - 104 <=>  205 - 208   (TYR  101  - SER  104  <=> CYS  204  - ASN  207 )                          
+   1: q05b-A 3amt-A   106 - 112 <=>  214 - 220   (GLU  106  - LYS  112  <=> LEU  213  - GLU  219 )                          
+   1: q05b-A 3amt-A   124 - 134 <=>  223 - 233   (LYS  124  - ALA  134  <=> GLU  222  - LYS  232 )                          
+   1: q05b-A 3amt-A   158 - 164 <=>  240 - 246   (GLY  158  - PRO  164  <=> ARG  239  - ASN  245 )                          
+   1: q05b-A 3amt-A   165 - 168 <=>  248 - 251   (SER  165  - THR  168  <=> ALA  247  - UNK  250 )                          
+   1: q05b-A 3amt-A   283 - 286 <=>  333 - 336   (GLY  283  - PHE  286  <=> ASN  332  - LYS  335 )                          
+   1: q05b-A 3amt-A   288 - 291 <=>  391 - 394   (LYS  288  - PRO  291  <=> TYR  394  - PRO  397 )                          
+   1: q05b-A 3amt-A   293 - 298 <=>  404 - 409   (ILE  293  - SER  298  <=> PRO  407  - ASN  412 )                          
+
+# Translation-rotation matrices
+-matrix  "q05b-A 3amt-A  U(1,.)  -0.024818  0.445541 -0.894918           44.112072"
+-matrix  "q05b-A 3amt-A  U(2,.)  -0.965053  0.222931  0.137750           -4.521358"
+-matrix  "q05b-A 3amt-A  U(3,.)   0.260878  0.867061  0.424438         -113.819717"
+

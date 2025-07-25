@@ -1,0 +1,16 @@
+# Job: test
+# Query: a1rxA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  2.1 10.4   58   417    3  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: a1rx-A 3amt-A    85 - 107 <=>   13 -  35   (LEU   85  - LEU  107  <=> SER   12  - GLY   34 )                          
+   1: a1rx-A 3amt-A   114 - 133 <=>   67 -  86   (VAL  114  - GLY  133  <=> ASP   66  - LEU   85 )                          
+   1: a1rx-A 3amt-A   135 - 138 <=>   87 -  90   (PHE  135  - ARG  138  <=> ASP   86  - LYS   89 )                          
+   1: a1rx-A 3amt-A   188 - 198 <=>  120 - 130   (LEU  188  - GLY  198  <=> ILE  119  - TYR  129 )                          
+
+# Translation-rotation matrices
+-matrix  "a1rx-A 3amt-A  U(1,.)   0.548229  0.824991  0.137241          -87.344986"
+-matrix  "a1rx-A 3amt-A  U(2,.)   0.419304 -0.129150 -0.898613           81.105705"
+-matrix  "a1rx-A 3amt-A  U(3,.)  -0.723623  0.550191 -0.416725          -11.962496"
+

@@ -1,0 +1,26 @@
+# Job: test
+# Query: a0a8A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ig2-A  4.0  8.0  109   272   11  MOL_ID: 1; MOLECULE: PHOSPHATIDATE CYTIDYLYLTRANSFERASE, MITOCHONDRIAL
+
+# Structural equivalences
+   1: a0a8-A 6ig2-A    31 -  44 <=>   22 -  35   (ALA   31  - PHE   44  <=> GLU   54  - TYR   67 )                          
+   1: a0a8-A 6ig2-A    47 -  50 <=>   36 -  39   (THR   47  - GLU   50  <=> PHE   68  - PRO   71 )                          
+   1: a0a8-A 6ig2-A    56 -  68 <=>   40 -  52   (CYS   56  - ASP   68  <=> ILE   72  - ARG   84 )                          
+   1: a0a8-A 6ig2-A    75 -  86 <=>   53 -  64   (ASN   75  - ARG   86  <=> ASN   93  - ASP  104 )                          
+   1: a0a8-A 6ig2-A   116 - 125 <=>   89 -  98   (ASP  116  - ARG  125  <=> SER  132  - GLY  141 )                          
+   1: a0a8-A 6ig2-A   154 - 157 <=>  100 - 103   (VAL  154  - GLN  157  <=> TYR  143  - THR  146 )                          
+   1: a0a8-A 6ig2-A   158 - 161 <=>  105 - 108   (MET  158  - ASN  161  <=> VAL  148  - GLU  151 )                          
+   1: a0a8-A 6ig2-A   168 - 179 <=>  109 - 120   (TRP  168  - ALA  179  <=> GLY  152  - LYS  163 )                          
+   1: a0a8-A 6ig2-A   184 - 187 <=>  127 - 130   (ILE  184  - GLU  187  <=> LYS  170  - ASN  173 )                          
+   1: a0a8-A 6ig2-A   204 - 213 <=>  133 - 142   (ARG  204  - GLN  213  <=> TYR  176  - VAL  185 )                          
+   1: a0a8-A 6ig2-A   245 - 248 <=>  200 - 203   (THR  245  - HIS  248  <=> ASN  243  - LYS  246 )                          
+   1: a0a8-A 6ig2-A   249 - 255 <=>  206 - 212   (ILE  249  - TYR  255  <=> ASN  249  - ILE  255 )                          
+   1: a0a8-A 6ig2-A   258 - 264 <=>  244 - 250   (GLU  258  - ASN  264  <=> SER  287  - LEU  293 )                          
+   1: a0a8-A 6ig2-A   318 - 321 <=>  253 - 256   (LYS  318  - GLN  321  <=> HIS  296  - ILE  299 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a8-A 6ig2-A  U(1,.)  -0.275519  0.300988  0.912960          -52.422756"
+-matrix  "a0a8-A 6ig2-A  U(2,.)  -0.742028  0.537183 -0.401034           14.298345"
+-matrix  "a0a8-A 6ig2-A  U(3,.)  -0.611133 -0.787934  0.075337           13.580670"
+

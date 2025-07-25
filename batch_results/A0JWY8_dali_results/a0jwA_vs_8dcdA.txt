@@ -1,0 +1,30 @@
+# Job: test
+# Query: a0jwA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  8dcd-A  2.3  4.2  126   481    9  MOL_ID: 1; MOLECULE: TRNA-SPLICING LIGASE RTCB; CHAIN: A, B; SYNONYM: 
+
+# Structural equivalences
+   1: a0jw-A 8dcd-A     1 -   4 <=>   89 -  92   (MET    1  - ARG    4  <=> PRO   89  - ILE   92 )                          
+   1: a0jw-A 8dcd-A     5 -  16 <=>   96 - 107   (ILE    5  - TYR   16  <=> ILE   96  - LEU  107 )                          
+   1: a0jw-A 8dcd-A    25 -  29 <=>  108 - 112   (ALA   25  - VAL   29  <=> THR  108  - VAL  112 )                          
+   1: a0jw-A 8dcd-A    33 -  40 <=>  119 - 126   (LEU   33  - TRP   40  <=> LEU  119  - ASN  126 )                          
+   1: a0jw-A 8dcd-A    48 -  51 <=>  197 - 200   (LEU   48  - GLY   51  <=> SER  197  - SER  200 )                          
+   1: a0jw-A 8dcd-A    52 -  59 <=>  203 - 210   (SER   52  - GLY   59  <=> HIS  203  - VAL  210 )                          
+   1: a0jw-A 8dcd-A    60 -  69 <=>  229 - 238   (SER   60  - CYS   69  <=> VAL  229  - ARG  238 )                          
+   1: a0jw-A 8dcd-A    71 -  95 <=>  288 - 312   (ASP   71  - GLU   95  <=> ALA  288  - LYS  312 )                          
+   1: a0jw-A 8dcd-A   105 - 111 <=>  318 - 324   (THR  105  - ASN  111  <=> ASP  318  - VAL  324 )                          
+   1: a0jw-A 8dcd-A   121 - 128 <=>  325 - 332   (GLY  121  - ILE  128  <=> TYR  325  - GLY  332 )                          
+   1: a0jw-A 8dcd-A   135 - 138 <=>  345 - 348   (SER  135  - ALA  138  <=> LYS  345  - VAL  348 )                          
+   1: a0jw-A 8dcd-A   146 - 149 <=>  360 - 363   (VAL  146  - GLN  149  <=> GLY  360  - ALA  363 )                          
+   1: a0jw-A 8dcd-A   153 - 156 <=>  364 - 367   (GLY  153  - LYS  156  <=> VAL  364  - LEU  367 )                          
+   1: a0jw-A 8dcd-A   171 - 175 <=>  368 - 372   (ARG  171  - ILE  175  <=> TYR  368  - GLY  372 )                          
+   1: a0jw-A 8dcd-A   184 - 187 <=>  387 - 390   (THR  184  - ARG  187  <=> ILE  387  - GLY  390 )                          
+   1: a0jw-A 8dcd-A   189 - 192 <=>  400 - 403   (ILE  189  - THR  192  <=> GLY  400  - CYS  403 )                          
+   1: a0jw-A 8dcd-A   195 - 199 <=>  405 - 409   (GLU  195  - ASP  199  <=> GLY  405  - VAL  409 )                          
+   1: a0jw-A 8dcd-A   414 - 418 <=>  439 - 443   (ARG  414  - VAL  418  <=> SER  439  - VAL  443 )                          
+
+# Translation-rotation matrices
+-matrix  "a0jw-A 8dcd-A  U(1,.)  -0.320239 -0.819316  0.475572            7.370571"
+-matrix  "a0jw-A 8dcd-A  U(2,.)  -0.778241 -0.058722 -0.625215           34.510345"
+-matrix  "a0jw-A 8dcd-A  U(3,.)   0.540175 -0.570328 -0.618820           27.703701"
+

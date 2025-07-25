@@ -1,0 +1,29 @@
+# Job: test
+# Query: d3z5A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ig2-C  3.4  8.2  127   278    9  MOL_ID: 1; MOLECULE: PHOSPHATIDATE CYTIDYLYLTRANSFERASE, MITOCHONDRIAL
+
+# Structural equivalences
+   1: d3z5-A 6ig2-C    64 -  71 <=>   13 -  20   (PRO   64  - LEU   71  <=> THR   45  - GLN   52 )                          
+   1: d3z5-A 6ig2-C    75 -  84 <=>   21 -  30   (GLN   75  - SER   84  <=> PRO   53  - THR   62 )                          
+   1: d3z5-A 6ig2-C   101 - 105 <=>   31 -  35   (GLN  101  - ILE  105  <=> LYS   63  - TYR   67 )                          
+   1: d3z5-A 6ig2-C   107 - 110 <=>   36 -  39   (LYS  107  - ARG  110  <=> PHE   68  - PRO   71 )                          
+   1: d3z5-A 6ig2-C   120 - 132 <=>   40 -  52   (VAL  120  - HIS  132  <=> ILE   72  - ARG   84 )                          
+   1: d3z5-A 6ig2-C   141 - 152 <=>   53 -  64   (GLY  141  - ASP  152  <=> GLN   85  - GLU  103 )                          
+   1: d3z5-A 6ig2-C   158 - 171 <=>   65 -  78   (GLU  158  - LEU  171  <=> ASP  104  - PRO  117 )                          
+   1: d3z5-A 6ig2-C   188 - 191 <=>   81 -  84   (LEU  188  - ALA  191  <=> TYR  120  - VAL  123 )                          
+   1: d3z5-A 6ig2-C   197 - 200 <=>   98 - 101   (VAL  197  - CYS  200  <=> SER  137  - THR  140 )                          
+   1: d3z5-A 6ig2-C   205 - 213 <=>  102 - 110   (ARG  205  - ASN  213  <=> GLY  141  - GLU  149 )                          
+   1: d3z5-A 6ig2-C   217 - 225 <=>  114 - 122   (LYS  217  - ASP  225  <=> ASN  153  - SER  161 )                          
+   1: d3z5-A 6ig2-C   227 - 232 <=>  138 - 143   (LEU  227  - GLU  232  <=> LEU  177  - GLN  182 )                          
+   1: d3z5-A 6ig2-C   237 - 244 <=>  144 - 151   (SER  237  - SER  244  <=> LYS  183  - GLY  190 )                          
+   1: d3z5-A 6ig2-C   286 - 289 <=>  187 - 190   (ALA  286  - ASN  289  <=> ILE  226  - LEU  229 )                          
+   1: d3z5-A 6ig2-C   290 - 294 <=>  192 - 196   (PRO  290  - ARG  294  <=> TYR  231  - ILE  235 )                          
+   1: d3z5-A 6ig2-C   299 - 302 <=>  204 - 207   (LEU  299  - CYS  302  <=> ASN  243  - LYS  246 )                          
+   1: d3z5-A 6ig2-C   371 - 378 <=>  257 - 264   (THR  371  - GLU  378  <=> HIS  296  - SER  303 )                          
+
+# Translation-rotation matrices
+-matrix  "d3z5-A 6ig2-C  U(1,.)  -0.049715 -0.922948  0.381700           57.867313"
+-matrix  "d3z5-A 6ig2-C  U(2,.)  -0.054652 -0.379086 -0.923746           61.880543"
+-matrix  "d3z5-A 6ig2-C  U(3,.)   0.997267 -0.066785 -0.031595            2.221179"
+

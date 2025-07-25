@@ -1,0 +1,28 @@
+# Job: test
+# Query: a1jrA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-C  2.7 12.1  113   740    9  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a1jr-A 6t0v-C     3 -  23 <=>  255 - 275   (THR    3  - ARG   23  <=> ASP  253  - ALA  273 )                          
+   1: a1jr-A 6t0v-C    51 -  64 <=>  276 - 289   (ILE   51  - GLN   64  <=> ILE  274  - THR  287 )                          
+   1: a1jr-A 6t0v-C    67 -  71 <=>  290 - 294   (HIS   67  - GLN   71  <=> SER  288  - GLU  292 )                          
+   1: a1jr-A 6t0v-C    78 -  81 <=>  302 - 305   (PHE   78  - ARG   81  <=> SER  300  - THR  303 )                          
+   1: a1jr-A 6t0v-C   101 - 111 <=>  308 - 318   (SER  101  - PHE  111  <=> GLN  306  - GLY  316 )                          
+   1: a1jr-A 6t0v-C   120 - 123 <=>  320 - 323   (LYS  120  - VAL  123  <=> ARG  318  - ASN  321 )                          
+   1: a1jr-A 6t0v-C   126 - 132 <=>  333 - 339   (SER  126  - PHE  132  <=> LYS  331  - SER  337 )                          
+   1: a1jr-A 6t0v-C   134 - 143 <=>  340 - 349   (GLU  134  - PHE  143  <=> GLN  338  - GLY  347 )                          
+   1: a1jr-A 6t0v-C   193 - 198 <=>  350 - 355   (ARG  193  - ASN  198  <=> ASN  348  - THR  353 )                          
+   1: a1jr-A 6t0v-C   271 - 274 <=>  408 - 411   (LEU  271  - ILE  274  <=> GLN  406  - LYS  409 )                          
+   1: a1jr-A 6t0v-C   298 - 302 <=>  508 - 512   (TYR  298  - LEU  302  <=> ASN  506  - GLU  510 )                          
+   1: a1jr-A 6t0v-C   448 - 453 <=>  558 - 563   (LEU  448  - ILE  453  <=> ASN  556  - LYS  561 )                          
+   1: a1jr-A 6t0v-C   481 - 484 <=>  565 - 568   (TYR  481  - GLU  484  <=> GLN  563  - THR  566 )                          
+   1: a1jr-A 6t0v-C   513 - 516 <=>  606 - 609   (VAL  513  - GLU  516  <=> ARG  604  - GLU  607 )                          
+   1: a1jr-A 6t0v-C   540 - 543 <=>  610 - 613   (PHE  540  - SER  543  <=> GLY  608  - ASP  611 )                          
+   1: a1jr-A 6t0v-C   564 - 567 <=>  661 - 664   (ARG  564  - GLN  567  <=> ASN  659  - GLU  662 )                          
+
+# Translation-rotation matrices
+-matrix  "a1jr-A 6t0v-C  U(1,.)  -0.076656 -0.623378 -0.778154          212.087921"
+-matrix  "a1jr-A 6t0v-C  U(2,.)  -0.348679  0.747932 -0.564819           16.386871"
+-matrix  "a1jr-A 6t0v-C  U(3,.)   0.934102  0.228030 -0.274692         -158.814972"
+

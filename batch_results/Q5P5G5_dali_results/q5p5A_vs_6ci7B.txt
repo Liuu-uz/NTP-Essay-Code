@@ -1,0 +1,28 @@
+# Job: test
+# Query: q5p5A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ci7-B  2.2  6.9  116   364    6  MOL_ID: 1; MOLECULE: YCAO; CHAIN: A, B, C, D, E, F; ENGINEERED: YES   
+
+# Structural equivalences
+   1: q5p5-A 6ci7-B    53 -  56 <=>   14 -  17   (VAL   53  - CYS   56  <=> PHE   15  - LYS   18 )                          
+   1: q5p5-A 6ci7-B   108 - 116 <=>   34 -  42   (ASP  108  - ASP  116  <=> VAL   35  - VAL   43 )                          
+   1: q5p5-A 6ci7-B   124 - 139 <=>   43 -  58   (ASN  124  - LEU  139  <=> GLY   44  - GLU   59 )                          
+   1: q5p5-A 6ci7-B   141 - 148 <=>   59 -  66   (ALA  141  - HIS  148  <=> PHE   60  - THR   67 )                          
+   1: q5p5-A 6ci7-B   207 - 228 <=>   67 -  88   (ASP  207  - ARG  228  <=> THR   68  - ARG   89 )                          
+   1: q5p5-A 6ci7-B   229 - 232 <=>  133 - 136   (GLU  229  - ASP  232  <=> PHE  134  - TRP  137 )                          
+   1: q5p5-A 6ci7-B   236 - 239 <=>  143 - 146   (GLY  236  - ARG  239  <=> SER  144  - ASN  147 )                          
+   1: q5p5-A 6ci7-B   243 - 253 <=>  168 - 178   (GLN  243  - ILE  253  <=> ARG  169  - ARG  179 )                          
+   1: q5p5-A 6ci7-B   308 - 311 <=>  201 - 204   (ALA  308  - GLN  311  <=> VAL  202  - VAL  205 )                          
+   1: q5p5-A 6ci7-B   318 - 321 <=>  205 - 208   (SER  318  - ILE  321  <=> GLU  206  - LEU  209 )                          
+   1: q5p5-A 6ci7-B   325 - 328 <=>  209 - 212   (LEU  325  - SER  328  <=> LEU  210  - ARG  213 )                          
+   1: q5p5-A 6ci7-B   349 - 352 <=>  224 - 227   (LEU  349  - ASP  352  <=> GLU  225  - ARG  228 )                          
+   1: q5p5-A 6ci7-B   370 - 373 <=>  285 - 288   (ALA  370  - ASN  373  <=> GLU  295  - GLY  298 )                          
+   1: q5p5-A 6ci7-B   390 - 393 <=>  289 - 292   (ALA  390  - GLY  393  <=> THR  299  - ILE  302 )                          
+   1: q5p5-A 6ci7-B   432 - 435 <=>  294 - 297   (GLY  432  - ALA  435  <=> ASP  304  - ARG  307 )                          
+   1: q5p5-A 6ci7-B   445 - 454 <=>  300 - 309   (ARG  445  - ASN  454  <=> THR  310  - GLU  319 )                          
+
+# Translation-rotation matrices
+-matrix  "q5p5-A 6ci7-B  U(1,.)   0.981106 -0.136969 -0.136637            3.590045"
+-matrix  "q5p5-A 6ci7-B  U(2,.)  -0.148517 -0.080591 -0.985621           68.537460"
+-matrix  "q5p5-A 6ci7-B  U(3,.)   0.123988  0.987292 -0.099410          -27.888441"
+

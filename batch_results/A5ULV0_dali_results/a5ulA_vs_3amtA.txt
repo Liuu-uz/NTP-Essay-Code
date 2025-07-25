@@ -1,0 +1,23 @@
+# Job: test
+# Query: a5ulA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  4.9  3.5   83   417   12  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: a5ul-A 3amt-A   135 - 143 <=>    2 -  10   (GLN  135  - SER  143  <=> UNK    1  - ASP    9 )                          
+   1: a5ul-A 3amt-A   153 - 156 <=>   14 -  17   (SER  153  - ASP  156  <=> SER   13  - UNK   16 )                          
+   1: a5ul-A 3amt-A   160 - 174 <=>   18 -  32   (MET  160  - LYS  174  <=> CYS   17  - ARG   31 )                          
+   1: a5ul-A 3amt-A   175 - 178 <=>   34 -  37   (LYS  175  - LEU  178  <=> LEU   33  - VAL   36 )                          
+   1: a5ul-A 3amt-A   180 - 184 <=>   40 -  44   (PHE  180  - GLY  184  <=> PHE   39  - ILE   43 )                          
+   1: a5ul-A 3amt-A   185 - 191 <=>   60 -  66   (ASP  185  - CYS  191  <=> VAL   59  - VAL   65 )                          
+   1: a5ul-A 3amt-A   194 - 211 <=>   67 -  84   (LEU  194  - GLY  211  <=> ASP   66  - ALA   83 )                          
+   1: a5ul-A 3amt-A   212 - 219 <=>   93 - 100   (ILE  212  - GLY  219  <=> PRO   92  - GLU   99 )                          
+   1: a5ul-A 3amt-A   230 - 233 <=>  101 - 104   (MET  230  - LEU  233  <=> GLU  100  - VAL  103 )                          
+   1: a5ul-A 3amt-A   239 - 243 <=>  123 - 127   (ARG  239  - ASN  243  <=> ALA  122  - ILE  126 )                          
+   1: a5ul-A 3amt-A   244 - 247 <=>  131 - 134   (GLY  244  - THR  247  <=> PHE  130  - HIS  133 )                          
+
+# Translation-rotation matrices
+-matrix  "a5ul-A 3amt-A  U(1,.)   0.520673 -0.450445  0.725258          -31.190329"
+-matrix  "a5ul-A 3amt-A  U(2,.)   0.226755  0.891942  0.391179         -102.600471"
+-matrix  "a5ul-A 3amt-A  U(3,.)  -0.823093 -0.039221  0.566551          -41.965843"
+

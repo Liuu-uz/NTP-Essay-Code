@@ -1,0 +1,16 @@
+# Job: test
+# Query: a0jnA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3f2b-A  3.6  8.9   50   994   12  MOL_ID: 1; MOLECULE: DNA-DIRECTED DNA POLYMERASE III ALPHA CHAIN; CHAI
+
+# Structural equivalences
+   1: a0jn-A 3f2b-A     1 -   4 <=>  662 - 665   (MET    1  - THR    4  <=> GLN 1112  - SER 1115 )                          
+   1: a0jn-A 3f2b-A    15 -  32 <=>  866 - 883   (GLY   15  - THR   32  <=> LYS 1316  - ILE 1333 )                          
+   1: a0jn-A 3f2b-A   462 - 485 <=>  884 - 907   (ALA  462  - ALA  485  <=> GLN 1334  - PHE 1357 )                          
+   1: a0jn-A 3f2b-A   489 - 492 <=>  923 - 926   (GLN  489  - TRP  492  <=> VAL 1373  - GLY 1376 )                          
+
+# Translation-rotation matrices
+-matrix  "a0jn-A 3f2b-A  U(1,.)  -0.493388 -0.794169 -0.354773            6.026565"
+-matrix  "a0jn-A 3f2b-A  U(2,.)   0.688953 -0.605792  0.397945          -47.673195"
+-matrix  "a0jn-A 3f2b-A  U(3,.)  -0.530954 -0.048081  0.846035            6.936528"
+

@@ -1,0 +1,30 @@
+# Job: test
+# Query: b0bnA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ig2-C  4.0  6.0  123   278   11  MOL_ID: 1; MOLECULE: PHOSPHATIDATE CYTIDYLYLTRANSFERASE, MITOCHONDRIAL
+
+# Structural equivalences
+   1: b0bn-A 6ig2-C    41 -  46 <=>   10 -  15   (SER   41  - GLY   46  <=> ASN   42  - GLU   47 )                          
+   1: b0bn-A 6ig2-C    49 -  52 <=>   16 -  19   (GLN   49  - LEU   52  <=> ASN   48  - ILE   51 )                          
+   1: b0bn-A 6ig2-C    59 -  65 <=>   21 -  27   (ARG   59  - LYS   65  <=> PRO   53  - GLU   59 )                          
+   1: b0bn-A 6ig2-C    82 -  89 <=>   28 -  35   (GLN   82  - VAL   89  <=> ASN   60  - TYR   67 )                          
+   1: b0bn-A 6ig2-C    92 -  95 <=>   36 -  39   (SER   92  - GLU   95  <=> PHE   68  - PRO   71 )                          
+   1: b0bn-A 6ig2-C   101 - 113 <=>   40 -  52   (VAL  101  - HIS  113  <=> ILE   72  - ARG   84 )                          
+   1: b0bn-A 6ig2-C   122 - 133 <=>   53 -  64   (GLY  122  - ASP  133  <=> GLN   85  - GLU  103 )                          
+   1: b0bn-A 6ig2-C   139 - 152 <=>   65 -  78   (SER  139  - LEU  152  <=> ASP  104  - PRO  117 )                          
+   1: b0bn-A 6ig2-C   169 - 172 <=>   81 -  84   (LEU  169  - ALA  172  <=> TYR  120  - VAL  123 )                          
+   1: b0bn-A 6ig2-C   185 - 193 <=>  101 - 109   (ASP  185  - SER  193  <=> THR  140  - VAL  148 )                          
+   1: b0bn-A 6ig2-C   197 - 206 <=>  113 - 122   (GLY  197  - ASP  206  <=> GLY  152  - SER  161 )                          
+   1: b0bn-A 6ig2-C   210 - 213 <=>  137 - 140   (ARG  210  - GLU  213  <=> TYR  176  - GLY  179 )                          
+   1: b0bn-A 6ig2-C   218 - 224 <=>  144 - 150   (SER  218  - ASP  224  <=> LYS  183  - LYS  189 )                          
+   1: b0bn-A 6ig2-C   253 - 257 <=>  162 - 166   (ASP  253  - ALA  257  <=> ASN  201  - ALA  205 )                          
+   1: b0bn-A 6ig2-C   262 - 265 <=>  183 - 186   (GLN  262  - VAL  265  <=> LEU  222  - THR  225 )                          
+   1: b0bn-A 6ig2-C   266 - 269 <=>  189 - 192   (ILE  266  - ARG  269  <=> SER  228  - TYR  231 )                          
+   1: b0bn-A 6ig2-C   284 - 287 <=>  207 - 210   (HIS  284  - VAL  287  <=> LYS  246  - ASN  249 )                          
+   1: b0bn-A 6ig2-C   422 - 425 <=>  275 - 278   (THR  422  - PRO  425  <=> ASN  314  - LYS  317 )                          
+
+# Translation-rotation matrices
+-matrix  "b0bn-A 6ig2-C  U(1,.)  -0.707379 -0.127879 -0.695171           38.310760"
+-matrix  "b0bn-A 6ig2-C  U(2,.)  -0.659373 -0.234926  0.714168           -3.151242"
+-matrix  "b0bn-A 6ig2-C  U(3,.)  -0.254641  0.963565  0.081862          -74.855995"
+

@@ -1,0 +1,19 @@
+# Job: test
+# Query: a2bnA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-A  2.3  4.0   66   705    3  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a2bn-A 6t0v-A     1 -   4 <=>  381 - 384   (MET    1  - LEU    4  <=> SER  390  - PRO  393 )                          
+   1: a2bn-A 6t0v-A     7 -  27 <=>  637 - 657   (PRO    7  - LEU   27  <=> ALA  646  - ALA  666 )                          
+   1: a2bn-A 6t0v-A    28 -  31 <=>  660 - 663   (LYS   28  - GLY   31  <=> ASP  669  - ASP  672 )                          
+   1: a2bn-A 6t0v-A    54 -  57 <=>  664 - 667   (GLU   54  - ALA   57  <=> PRO  673  - PHE  676 )                          
+   1: a2bn-A 6t0v-A    91 -  94 <=>  669 - 672   (MET   91  - ASP   94  <=> LEU  678  - LEU  681 )                          
+   1: a2bn-A 6t0v-A   122 - 126 <=>  674 - 678   (SER  122  - LEU  126  <=> GLU  683  - GLU  687 )                          
+   1: a2bn-A 6t0v-A   139 - 162 <=>  682 - 705   (VAL  139  - ARG  162  <=> ASN  691  - GLY  714 )                          
+
+# Translation-rotation matrices
+-matrix  "a2bn-A 6t0v-A  U(1,.)  -0.314328 -0.949308 -0.003464          166.827576"
+-matrix  "a2bn-A 6t0v-A  U(2,.)   0.227971 -0.071941 -0.971007          133.280899"
+-matrix  "a2bn-A 6t0v-A  U(3,.)   0.921535 -0.306004  0.239027         -126.742783"
+

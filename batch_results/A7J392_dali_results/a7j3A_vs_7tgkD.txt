@@ -1,0 +1,29 @@
+# Job: test
+# Query: a7j3A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7tgk-D  2.1  7.1  101   593    6  MOL_ID: 1; MOLECULE: DESFERRIOXAMINE SYNTHETASE DESD; CHAIN: D, B, E, 
+
+# Structural equivalences
+   1: a7j3-A 7tgk-D    11 -  14 <=>    3 -   6   (ALA   11  - TYR   14  <=> SER    2  - ASP    5 )                          
+   1: a7j3-A 7tgk-D    18 -  21 <=>   10 -  13   (GLN   18  - THR   21  <=> HIS    9  - PRO   12 )                          
+   1: a7j3-A 7tgk-D   583 - 586 <=>   21 -  24   (THR  583  - SER  586  <=> ARG   20  - VAL   23 )                          
+   1: a7j3-A 7tgk-D   595 - 598 <=>   71 -  74   (ASN  595  - PHE  598  <=> HIS   70  - VAL   73 )                          
+   1: a7j3-A 7tgk-D   604 - 608 <=>  152 - 156   (ASN  604  - SER  608  <=> GLU  151  - CYS  155 )                          
+   1: a7j3-A 7tgk-D   611 - 614 <=>  388 - 391   (GLY  611  - TYR  614  <=> ALA  387  - VAL  390 )                          
+   1: a7j3-A 7tgk-D   615 - 619 <=>  399 - 403   (ASN  615  - TYR  619  <=> SER  398  - GLU  402 )                          
+   1: a7j3-A 7tgk-D   620 - 625 <=>  405 - 410   (TYR  620  - SER  625  <=> ILE  404  - LEU  409 )                          
+   1: a7j3-A 7tgk-D   627 - 638 <=>  415 - 426   (ASP  627  - GLY  638  <=> TRP  414  - PRO  425 )                          
+   1: a7j3-A 7tgk-D   639 - 645 <=>  456 - 462   (LYS  639  - GLY  645  <=> ARG  455  - ILE  461 )                          
+   1: a7j3-A 7tgk-D   650 - 653 <=>  498 - 501   (HIS  650  - ILE  653  <=> ASP  497  - ASP  500 )                          
+   1: a7j3-A 7tgk-D   654 - 665 <=>  503 - 514   (GLU  654  - PHE  665  <=> PHE  502  - GLU  513 )                          
+   1: a7j3-A 7tgk-D   673 - 676 <=>  515 - 518   (THR  673  - ARG  676  <=> GLU  514  - ALA  517 )                          
+   1: a7j3-A 7tgk-D   678 - 690 <=>  519 - 531   (SER  678  - SER  690  <=> GLU  518  - ARG  530 )                          
+   1: a7j3-A 7tgk-D   691 - 695 <=>  549 - 553   (ILE  691  - ASP  695  <=> LEU  548  - GLU  552 )                          
+   1: a7j3-A 7tgk-D   814 - 817 <=>  566 - 569   (LYS  814  - ILE  817  <=> ASP  565  - GLN  568 )                          
+   1: a7j3-A 7tgk-D   819 - 822 <=>  572 - 575   (SER  819  - LEU  822  <=> ASP  571  - ASP  574 )                          
+
+# Translation-rotation matrices
+-matrix  "a7j3-A 7tgk-D  U(1,.)  -0.387088 -0.921949 -0.013145          141.333054"
+-matrix  "a7j3-A 7tgk-D  U(2,.)  -0.636735  0.277595 -0.719381          -37.371178"
+-matrix  "a7j3-A 7tgk-D  U(3,.)   0.666882 -0.270094 -0.694491          -69.700668"
+

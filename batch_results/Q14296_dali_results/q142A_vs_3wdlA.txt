@@ -1,0 +1,24 @@
+# Job: test
+# Query: q142A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-A  2.8  7.7   81   257    6  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: q142-A 3wdl-A    40 -  44 <=>    1 -   5   (LEU   40  - THR   44  <=> ILE    4  - HIS    8 )                          
+   1: q142-A 3wdl-A   255 - 269 <=>    7 -  21   (PRO  255  - GLU  269  <=> ARG   10  - MET   24 )                          
+   1: q142-A 3wdl-A   270 - 288 <=>   24 -  42   (THR  270  - ASN  288  <=> GLY   27  - TYR   45 )                          
+   1: q142-A 3wdl-A   299 - 302 <=>   79 -  82   (CYS  299  - ARG  302  <=> ALA   82  - PRO   85 )                          
+   1: q142-A 3wdl-A   309 - 312 <=>   98 - 101   (GLY  309  - PRO  312  <=> ILE  101  - PHE  104 )                          
+   1: q142-A 3wdl-A   342 - 347 <=>  137 - 142   (ILE  342  - GLY  347  <=> GLU  140  - LYS  145 )                          
+   1: q142-A 3wdl-A   353 - 357 <=>  161 - 165   (ILE  353  - TYR  357  <=> GLY  164  - GLU  168 )                          
+   1: q142-A 3wdl-A   381 - 386 <=>  169 - 174   (GLN  381  - PHE  386  <=> ARG  172  - VAL  177 )                          
+   1: q142-A 3wdl-A   388 - 392 <=>  190 - 194   (GLN  388  - THR  392  <=> ASP  193  - VAL  197 )                          
+   1: q142-A 3wdl-A   394 - 397 <=>  235 - 238   (ARG  394  - CYS  397  <=> VAL  238  - HIS  241 )                          
+   1: q142-A 3wdl-A   484 - 487 <=>  240 - 243   (ARG  484  - PHE  487  <=> ARG  243  - LEU  246 )                          
+   1: q142-A 3wdl-A   516 - 519 <=>  247 - 250   (PRO  516  - GLU  519  <=> ALA  250  - GLY  253 )                          
+
+# Translation-rotation matrices
+-matrix  "q142-A 3wdl-A  U(1,.)   0.747731  0.031134 -0.663271          -17.222536"
+-matrix  "q142-A 3wdl-A  U(2,.)  -0.563160  0.558939 -0.608636           72.335449"
+-matrix  "q142-A 3wdl-A  U(3,.)   0.351779  0.828624  0.435470            8.565839"
+

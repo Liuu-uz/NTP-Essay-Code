@@ -1,0 +1,20 @@
+# Job: test
+# Query: a6u4A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  2.3  9.9   54  1095    2  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a6u4-A 4ff3-A     1 -   6 <=>  550 - 555   (MET    1  - MET    6  <=> TYR  555  - GLY  560 )                          
+   1: a6u4-A 4ff3-A     9 -  12 <=>  562 - 565   (SER    9  - ASP   12  <=> ASN  567  - MET  570 )                          
+   1: a6u4-A 4ff3-A    13 -  16 <=>  921 - 924   (VAL   13  - SER   16  <=> GLY  926  - ASP  929 )                          
+   1: a6u4-A 4ff3-A    18 -  39 <=>  946 - 967   (ALA   18  - PHE   39  <=> ASP  951  - TYR  972 )                          
+   1: a6u4-A 4ff3-A    40 -  43 <=>  969 - 972   (PHE   40  - ASN   43  <=> SER  974  - GLY  977 )                          
+   1: a6u4-A 4ff3-A    50 -  53 <=> 1054 -1057   (ASN   50  - ILE   53  <=> GLN 1059  - ALA 1062 )                          
+   1: a6u4-A 4ff3-A    67 -  70 <=> 1071 -1074   (GLN   67  - GLU   70  <=> SER 1076  - THR 1079 )                          
+   1: a6u4-A 4ff3-A    94 -  99 <=> 1086 -1091   (MET   94  - ASN   99  <=> PHE 1091  - GLU 1096 )                          
+
+# Translation-rotation matrices
+-matrix  "a6u4-A 4ff3-A  U(1,.)  -0.685253  0.725968  0.058297          -12.941829"
+-matrix  "a6u4-A 4ff3-A  U(2,.)   0.530518  0.442717  0.722878         -241.673706"
+-matrix  "a6u4-A 4ff3-A  U(3,.)   0.498977  0.526282 -0.688513          263.481598"
+

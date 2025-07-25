@@ -1,0 +1,27 @@
+# Job: test
+# Query: d3z5A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  2.4  8.5  114   417   13  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: d3z5-A 3amt-A    85 -  88 <=>   12 -  15   (GLU   85  - PRO   88  <=> ASP   11  - ARG   14 )                          
+   1: d3z5-A 3amt-A    99 - 121 <=>   16 -  38   (GLU   99  - ARG  121  <=> GLY   15  - ILE   37 )                          
+   1: d3z5-A 3amt-A   122 - 126 <=>   40 -  44   (ASP  122  - ASN  126  <=> PHE   39  - ILE   43 )                          
+   1: d3z5-A 3amt-A   130 - 133 <=>   45 -  48   (ALA  130  - VAL  133  <=> ARG   44  - PRO   47 )                          
+   1: d3z5-A 3amt-A   139 - 142 <=>   49 -  52   (GLY  139  - TYR  142  <=> THR   48  - TYR   51 )                          
+   1: d3z5-A 3amt-A   146 - 152 <=>   59 -  65   (ASP  146  - ASP  152  <=> ALA   58  - GLU   64 )                          
+   1: d3z5-A 3amt-A   157 - 173 <=>   67 -  83   (GLU  157  - PHE  173  <=> ASP   66  - HIS   82 )                          
+   1: d3z5-A 3amt-A   212 - 226 <=>   86 - 100   (SER  212  - SER  226  <=> LEU   85  - GLU   99 )                          
+   1: d3z5-A 3amt-A   227 - 232 <=>  103 - 108   (LEU  227  - GLU  232  <=> ALA  102  - PRO  107 )                          
+   1: d3z5-A 3amt-A   234 - 237 <=>  111 - 114   (SER  234  - SER  237  <=> ASP  110  - ILE  113 )                          
+   1: d3z5-A 3amt-A   244 - 247 <=>  160 - 163   (SER  244  - LEU  247  <=> GLU  159  - ALA  162 )                          
+   1: d3z5-A 3amt-A   257 - 261 <=>  188 - 192   (THR  257  - HIS  261  <=> LEU  187  - THR  191 )                          
+   1: d3z5-A 3amt-A   274 - 279 <=>  249 - 254   (HIS  274  - HIS  279  <=> THR  248  - ILE  253 )                          
+   1: d3z5-A 3amt-A   310 - 314 <=>  257 - 261   (ARG  310  - GLU  314  <=> GLU  256  - ARG  260 )                          
+   1: d3z5-A 3amt-A   410 - 414 <=>  275 - 279   (TYR  410  - PRO  414  <=> THR  274  - TYR  278 )                          
+
+# Translation-rotation matrices
+-matrix  "d3z5-A 3amt-A  U(1,.)   0.674887 -0.424247 -0.603774           70.372040"
+-matrix  "d3z5-A 3amt-A  U(2,.)  -0.736829 -0.431943 -0.520104           80.241409"
+-matrix  "d3z5-A 3amt-A  U(3,.)  -0.040144  0.795889 -0.604110          -29.684917"
+

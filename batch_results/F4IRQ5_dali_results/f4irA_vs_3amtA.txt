@@ -1,0 +1,26 @@
+# Job: test
+# Query: f4irA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  4.3  5.2  105   417    9  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: f4ir-A 3amt-A   336 - 343 <=>    1 -   8   (TRP  336  - GLY  343  <=> HIS    0  - ILE    7 )                          
+   1: f4ir-A 3amt-A   352 - 355 <=>   13 -  16   (VAL  352  - PHE  355  <=> SER   12  - GLY   15 )                          
+   1: f4ir-A 3amt-A   362 - 378 <=>   18 -  34   (GLN  362  - PHE  378  <=> CYS   17  - LEU   33 )                          
+   1: f4ir-A 3amt-A   381 - 384 <=>   35 -  38   (ILE  381  - ALA  384  <=> GLY   34  - ILE   37 )                          
+   1: f4ir-A 3amt-A   385 - 388 <=>   40 -  43   (TYR  385  - SER  388  <=> PHE   39  - LEU   42 )                          
+   1: f4ir-A 3amt-A   389 - 395 <=>   60 -  66   (ASP  389  - LEU  395  <=> VAL   59  - VAL   65 )                          
+   1: f4ir-A 3amt-A   409 - 426 <=>   68 -  85   (ILE  409  - GLY  426  <=> ASP   67  - UNK   84 )                          
+   1: f4ir-A 3amt-A   432 - 446 <=>   87 - 101   (LYS  432  - CYS  446  <=> ASP   86  - GLU  100 )                          
+   1: f4ir-A 3amt-A   460 - 463 <=>  151 - 154   (ARG  460  - ASP  463  <=> GLY  150  - LEU  153 )                          
+   1: f4ir-A 3amt-A   467 - 470 <=>  246 - 249   (ASN  467  - TYR  470  <=> ASN  245  - THR  248 )                          
+   1: f4ir-A 3amt-A   473 - 476 <=>  250 - 253   (CYS  473  - MET  476  <=> ASP  249  - LEU  252 )                          
+   1: f4ir-A 3amt-A   485 - 488 <=>  265 - 268   (THR  485  - GLN  488  <=> TYR  264  - TYR  267 )                          
+   1: f4ir-A 3amt-A   492 - 495 <=>  333 - 336   (LYS  492  - GLN  495  <=> ASN  332  - LYS  335 )                          
+   1: f4ir-A 3amt-A   499 - 506 <=>  403 - 410   (LYS  499  - GLN  506  <=> LYS  406  - VAL  413 )                          
+
+# Translation-rotation matrices
+-matrix  "f4ir-A 3amt-A  U(1,.)   0.334596  0.510764 -0.791938           15.952341"
+-matrix  "f4ir-A 3amt-A  U(2,.)   0.165231 -0.859155 -0.484305          116.454285"
+-matrix  "f4ir-A 3amt-A  U(3,.)  -0.927763  0.031194 -0.371864           23.440649"
+

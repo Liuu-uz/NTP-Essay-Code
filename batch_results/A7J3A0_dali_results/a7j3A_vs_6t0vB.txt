@@ -1,0 +1,32 @@
+# Job: test
+# Query: a7j3A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  3.6  7.5  125   745    5  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a7j3-A 6t0v-B     5 -   8 <=>   38 -  41   (ALA    5  - HIS    8  <=> TYR   38  - ASP   41 )                          
+   1: a7j3-A 6t0v-B    10 -  13 <=>   46 -  49   (VAL   10  - VAL   13  <=> THR   46  - TYR   49 )                          
+   1: a7j3-A 6t0v-B    23 -  26 <=>  135 - 138   (ASP   23  - LYS   26  <=> ARG  135  - PRO  138 )                          
+   1: a7j3-A 6t0v-B    53 -  56 <=>  229 - 232   (LEU   53  - LEU   56  <=> LYS  229  - GLU  232 )                          
+   1: a7j3-A 6t0v-B    59 -  62 <=>  233 - 236   (SER   59  - ALA   62  <=> ARG  233  - LEU  236 )                          
+   1: a7j3-A 6t0v-B    63 -  66 <=>  238 - 241   (ALA   63  - ILE   66  <=> ARG  238  - ILE  241 )                          
+   1: a7j3-A 6t0v-B    74 -  77 <=>  306 - 309   (THR   74  - ARG   77  <=> ASN  306  - TRP  309 )                          
+   1: a7j3-A 6t0v-B    91 -  94 <=>  480 - 483   (LEU   91  - TYR   94  <=> LYS  480  - TYR  483 )                          
+   1: a7j3-A 6t0v-B   175 - 180 <=>  485 - 490   (GLU  175  - SER  180  <=> ASN  485  - PHE  490 )                          
+   1: a7j3-A 6t0v-B   182 - 185 <=>  491 - 494   (PRO  182  - ARG  185  <=> GLU  491  - SER  494 )                          
+   1: a7j3-A 6t0v-B   621 - 624 <=>  505 - 508   (ARG  621  - TYR  624  <=> PHE  505  - GLU  508 )                          
+   1: a7j3-A 6t0v-B   650 - 668 <=>  517 - 535   (HIS  650  - LEU  668  <=> ASN  517  - ILE  535 )                          
+   1: a7j3-A 6t0v-B   669 - 691 <=>  539 - 561   (GLN  669  - ILE  691  <=> LEU  539  - CYS  561 )                          
+   1: a7j3-A 6t0v-B   695 - 698 <=>  620 - 623   (ASP  695  - ASN  698  <=> TYR  620  - ARG  623 )                          
+   1: a7j3-A 6t0v-B   699 - 702 <=>  625 - 628   (TYR  699  - GLY  702  <=> CYS  625  - ASN  628 )                          
+   1: a7j3-A 6t0v-B   703 - 707 <=>  634 - 638   (ILE  703  - ASN  707  <=> HIS  634  - GLU  638 )                          
+   1: a7j3-A 6t0v-B   714 - 725 <=>  641 - 652   (VAL  714  - ASN  725  <=> LYS  653  - HIS  664 )                          
+   1: a7j3-A 6t0v-B   777 - 780 <=>  654 - 657   (LEU  777  - ALA  780  <=> TRP  666  - LYS  669 )                          
+   1: a7j3-A 6t0v-B   807 - 810 <=>  678 - 681   (VAL  807  - ILE  810  <=> GLN  690  - CYS  693 )                          
+   1: a7j3-A 6t0v-B   812 - 815 <=>  687 - 690   (SER  812  - LEU  815  <=> PHE  699  - SER  702 )                          
+
+# Translation-rotation matrices
+-matrix  "a7j3-A 6t0v-B  U(1,.)   0.516218 -0.832286 -0.202036           59.027660"
+-matrix  "a7j3-A 6t0v-B  U(2,.)   0.629372  0.208649  0.748569         -224.961823"
+-matrix  "a7j3-A 6t0v-B  U(3,.)  -0.580869 -0.513581  0.631526           48.080841"
+

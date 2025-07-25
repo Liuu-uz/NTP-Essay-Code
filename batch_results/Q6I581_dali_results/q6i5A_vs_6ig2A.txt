@@ -1,0 +1,26 @@
+# Job: test
+# Query: q6i5A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ig2-A  2.7  4.0   92   272    7  MOL_ID: 1; MOLECULE: PHOSPHATIDATE CYTIDYLYLTRANSFERASE, MITOCHONDRIAL
+
+# Structural equivalences
+   1: q6i5-A 6ig2-A    65 -  68 <=>    1 -   4   (ASN   65  - GLU   68  <=> CYS   33  - ALA   36 )                          
+   1: q6i5-A 6ig2-A    91 -  94 <=>    8 -  11   (LEU   91  - SER   94  <=> LYS   40  - LEU   43 )                          
+   1: q6i5-A 6ig2-A    95 -  99 <=>   15 -  19   (SER   95  - HIS   99  <=> GLU   47  - ILE   51 )                          
+   1: q6i5-A 6ig2-A   428 - 431 <=>   21 -  24   (ARG  428  - LEU  431  <=> PRO   53  - GLU   56 )                          
+   1: q6i5-A 6ig2-A   441 - 450 <=>   25 -  34   (THR  441  - GLU  450  <=> LEU   57  - ASN   66 )                          
+   1: q6i5-A 6ig2-A   452 - 455 <=>   35 -  38   (ALA  452  - PHE  455  <=> TYR   67  - ALA   70 )                          
+   1: q6i5-A 6ig2-A   462 - 471 <=>   39 -  48   (GLU  462  - GLU  471  <=> PRO   71  - SER   80 )                          
+   1: q6i5-A 6ig2-A   476 - 488 <=>   53 -  65   (PRO  476  - ASP  488  <=> ASN   93  - PRO  105 )                          
+   1: q6i5-A 6ig2-A   489 - 494 <=>   68 -  73   (ALA  489  - LEU  494  <=> TRP  108  - LEU  113 )                          
+   1: q6i5-A 6ig2-A   496 - 499 <=>   76 -  79   (SER  496  - ASN  499  <=> ASN  116  - HIS  119 )                          
+   1: q6i5-A 6ig2-A   502 - 506 <=>  105 - 109   (ASP  502  - ILE  506  <=> VAL  148  - GLY  152 )                          
+   1: q6i5-A 6ig2-A   521 - 529 <=>  111 - 119   (PRO  521  - LYS  529  <=> ILE  154  - LYS  162 )                          
+   1: q6i5-A 6ig2-A   530 - 535 <=>  121 - 126   (GLY  530  - ILE  535  <=> ASP  164  - LEU  169 )                          
+   1: q6i5-A 6ig2-A   536 - 543 <=>  155 - 162   (LEU  536  - GLY  543  <=> ASN  198  - ALA  205 )                          
+
+# Translation-rotation matrices
+-matrix  "q6i5-A 6ig2-A  U(1,.)   0.985287 -0.029578  0.168328           10.403964"
+-matrix  "q6i5-A 6ig2-A  U(2,.)   0.166478 -0.056670 -0.984415           52.292164"
+-matrix  "q6i5-A 6ig2-A  U(3,.)   0.038656  0.997955 -0.050913           -9.932632"
+

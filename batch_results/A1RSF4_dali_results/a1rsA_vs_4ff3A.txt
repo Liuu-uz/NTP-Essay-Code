@@ -1,0 +1,20 @@
+# Job: test
+# Query: a1rsA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  2.2  4.3   77  1095    8  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a1rs-A 4ff3-A     1 -   4 <=>   12 -  15   (MET    1  - LEU    4  <=> PRO   17  - VAL   20 )                          
+   1: a1rs-A 4ff3-A     5 -  20 <=>  143 - 158   (TYR    5  - ALA   20  <=> ASN  148  - ARG  163 )                          
+   1: a1rs-A 4ff3-A    21 -  28 <=>  160 - 167   (VAL   21  - ILE   28  <=> THR  165  - ILE  172 )                          
+   1: a1rs-A 4ff3-A    29 -  32 <=>  194 - 197   (ARG   29  - ILE   32  <=> THR  199  - THR  202 )                          
+   1: a1rs-A 4ff3-A    52 -  61 <=>  200 - 209   (GLU   52  - GLY   61  <=> GLU  205  - ILE  214 )                          
+   1: a1rs-A 4ff3-A    63 -  70 <=>  210 - 217   (PHE   63  - LEU   70  <=> GLU  215  - ARG  222 )                          
+   1: a1rs-A 4ff3-A    76 -  95 <=>  226 - 245   (SER   76  - ALA   95  <=> THR  231  - THR  250 )                          
+   1: a1rs-A 4ff3-A   152 - 158 <=>  277 - 283   (TYR  152  - ARG  158  <=> ASP  282  - PRO  288 )                          
+
+# Translation-rotation matrices
+-matrix  "a1rs-A 4ff3-A  U(1,.)   0.158358 -0.549162 -0.820576          292.975250"
+-matrix  "a1rs-A 4ff3-A  U(2,.)  -0.879103 -0.456801  0.136057          -52.222736"
+-matrix  "a1rs-A 4ff3-A  U(3,.)  -0.449557  0.699825 -0.555107          265.223114"
+

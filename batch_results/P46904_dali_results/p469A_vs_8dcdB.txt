@@ -1,0 +1,27 @@
+# Job: test
+# Query: p469A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  8dcd-B  2.3  4.7  122   481    7  MOL_ID: 1; MOLECULE: TRNA-SPLICING LIGASE RTCB; CHAIN: A, B; SYNONYM: 
+
+# Structural equivalences
+   1: p469-A 8dcd-B     6 -  12 <=>  179 - 185   (TYR    6  - ASP   12  <=> ASP  179  - GLN  185 )                          
+   1: p469-A 8dcd-B    13 -  16 <=>  187 - 190   (ALA   13  - ASP   16  <=> ALA  187  - ARG  190 )                          
+   1: p469-A 8dcd-B    19 -  26 <=>  191 - 198   (THR   19  - VAL   26  <=> GLY  191  - LEU  198 )                          
+   1: p469-A 8dcd-B   169 - 172 <=>  225 - 228   (GLY  169  - ALA  172  <=> PHE  225  - GLN  228 )                          
+   1: p469-A 8dcd-B   177 - 180 <=>  229 - 232   (ALA  177  - PRO  180  <=> VAL  229  - MET  232 )                          
+   1: p469-A 8dcd-B   184 - 187 <=>  233 - 236   (LEU  184  - ILE  187  <=> VAL  233  - GLY  236 )                          
+   1: p469-A 8dcd-B   191 - 203 <=>  237 - 249   (ALA  191  - LYS  203  <=> SER  237  - LEU  249 )                          
+   1: p469-A 8dcd-B   206 - 215 <=>  250 - 259   (LYS  206  - PRO  215  <=> ARG  250  - TYR  259 )                          
+   1: p469-A 8dcd-B   216 - 256 <=>  275 - 315   (VAL  216  - LYS  256  <=> SER  275  - PRO  315 )                          
+   1: p469-A 8dcd-B   257 - 260 <=>  317 - 320   (THR  257  - GLN  260  <=> GLY  317  - GLY  320 )                          
+   1: p469-A 8dcd-B   271 - 274 <=>  324 - 327   (ALA  271  - LEU  274  <=> VAL  324  - VAL  327 )                          
+   1: p469-A 8dcd-B   282 - 285 <=>  329 - 332   (LEU  282  - ALA  285  <=> HIS  329  - GLY  332 )                          
+   1: p469-A 8dcd-B   312 - 318 <=>  378 - 384   (VAL  312  - ILE  318  <=> PRO  378  - ALA  384 )                          
+   1: p469-A 8dcd-B   350 - 353 <=>  388 - 391   (VAL  350  - ALA  353  <=> LEU  388  - THR  391 )                          
+   1: p469-A 8dcd-B   359 - 362 <=>  401 - 404   (SER  359  - ILE  362  <=> SER  401  - HIS  404 )                          
+
+# Translation-rotation matrices
+-matrix  "p469-A 8dcd-B  U(1,.)  -0.656574 -0.738336 -0.154175           26.693615"
+-matrix  "p469-A 8dcd-B  U(2,.)   0.381941 -0.149193 -0.912065           45.193214"
+-matrix  "p469-A 8dcd-B  U(3,.)   0.650409 -0.657724  0.379957          -43.736858"
+

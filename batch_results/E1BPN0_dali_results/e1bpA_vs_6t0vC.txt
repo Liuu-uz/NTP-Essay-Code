@@ -1,0 +1,21 @@
+# Job: test
+# Query: e1bpA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-C  2.1  8.9   70   740    6  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: e1bp-A 6t0v-C     1 -   5 <=>  113 - 117   (MET    1  - LEU    5  <=> TYR  111  - TYR  115 )                          
+   1: e1bp-A 6t0v-C    12 -  17 <=>  172 - 177   (PRO   12  - TRP   17  <=> ASN  170  - ARG  175 )                          
+   1: e1bp-A 6t0v-C    24 -  27 <=>  184 - 187   (ARG   24  - LEU   27  <=> GLN  182  - ILE  185 )                          
+   1: e1bp-A 6t0v-C    34 -  56 <=>  253 - 275   (ARG   34  - GLN   56  <=> GLU  251  - ALA  273 )                          
+   1: e1bp-A 6t0v-C    69 -  82 <=>  276 - 289   (VAL   69  - ALA   82  <=> ILE  274  - THR  287 )                          
+   1: e1bp-A 6t0v-C   316 - 319 <=>  293 - 296   (LEU  316  - VAL  319  <=> SER  291  - LEU  294 )                          
+   1: e1bp-A 6t0v-C   320 - 323 <=>  299 - 302   (SER  320  - ASP  323  <=> ILE  297  - SER  300 )                          
+   1: e1bp-A 6t0v-C   473 - 478 <=>  331 - 336   (ALA  473  - GLU  478  <=> ASN  329  - LYS  334 )                          
+   1: e1bp-A 6t0v-C   481 - 484 <=>  508 - 511   (VAL  481  - THR  484  <=> ASN  506  - GLY  509 )                          
+
+# Translation-rotation matrices
+-matrix  "e1bp-A 6t0v-C  U(1,.)   0.261310 -0.626915 -0.733959          113.535233"
+-matrix  "e1bp-A 6t0v-C  U(2,.)  -0.919123 -0.393864  0.009188          193.620743"
+-matrix  "e1bp-A 6t0v-C  U(3,.)  -0.294840  0.672197 -0.679132           19.510784"
+

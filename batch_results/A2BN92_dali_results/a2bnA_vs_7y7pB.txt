@@ -1,0 +1,18 @@
+# Job: test
+# Query: a2bnA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7y7p-B  2.1  5.5   58   908    3  MOL_ID: 1; MOLECULE: RNA-DEPENDENT RNA POLYMERASE; CHAIN: A, B; EC: 2.
+
+# Structural equivalences
+   1: a2bn-A 7y7p-B    38 -  43 <=>  615 - 620   (LYS   38  - GLY   43  <=> THR 1045  - LEU 1050 )                          
+   1: a2bn-A 7y7p-B    48 -  56 <=>  642 - 650   (GLY   48  - LEU   56  <=> SER 1072  - ASN 1080 )                          
+   1: a2bn-A 7y7p-B    59 -  77 <=>  651 - 669   (GLY   59  - PRO   77  <=> PHE 1081  - VAL 1099 )                          
+   1: a2bn-A 7y7p-B    78 -  91 <=>  672 - 685   (LYS   78  - MET   91  <=> LYS 1102  - VAL 1115 )                          
+   1: a2bn-A 7y7p-B    93 -  98 <=>  686 - 691   (GLY   93  - ALA   98  <=> ASP 1116  - GLY 1121 )                          
+   1: a2bn-A 7y7p-B   132 - 135 <=>  705 - 708   (GLY  132  - VAL  135  <=> GLU 1135  - GLY 1138 )                          
+
+# Translation-rotation matrices
+-matrix  "a2bn-A 7y7p-B  U(1,.)   0.842524 -0.380794 -0.380984          -31.896072"
+-matrix  "a2bn-A 7y7p-B  U(2,.)  -0.027552  0.675893 -0.736485          131.039276"
+-matrix  "a2bn-A 7y7p-B  U(3,.)   0.537953  0.631003  0.558964         -129.073364"
+

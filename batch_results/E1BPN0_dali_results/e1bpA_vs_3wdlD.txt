@@ -1,0 +1,21 @@
+# Job: test
+# Query: e1bpA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-D  2.4 11.5   66   249    9  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: e1bp-A 3wdl-D    36 -  39 <=>    2 -   5   (ARG   36  - ASN   39  <=> PRO    5  - HIS    8 )                          
+   1: e1bp-A 3wdl-D    41 -  58 <=>    6 -  23   (ARG   41  - ALA   58  <=> PRO    9  - LYS   26 )                          
+   1: e1bp-A 3wdl-D    59 -  62 <=>   25 -  28   (GLY   59  - TRP   62  <=> MET   28  - LYS   31 )                          
+   1: e1bp-A 3wdl-D    70 -  86 <=>   29 -  45   (SER   70  - ALA   86  <=> ALA   32  - GLY   48 )                          
+   1: e1bp-A 3wdl-D   277 - 280 <=>   50 -  53   (MET  277  - LEU  280  <=> GLU   53  - GLU   56 )                          
+   1: e1bp-A 3wdl-D   422 - 425 <=>   58 -  61   (HIS  422  - GLN  425  <=> ALA   61  - ALA   64 )                          
+   1: e1bp-A 3wdl-D   436 - 441 <=>   64 -  69   (ASP  436  - PHE  441  <=> LEU   67  - PRO   72 )                          
+   1: e1bp-A 3wdl-D   481 - 485 <=>  166 - 170   (VAL  481  - GLY  485  <=> MET  173  - VAL  177 )                          
+   1: e1bp-A 3wdl-D   490 - 493 <=>  203 - 206   (PHE  490  - SER  493  <=> LEU  210  - GLU  213 )                          
+
+# Translation-rotation matrices
+-matrix  "e1bp-A 3wdl-D  U(1,.)  -0.749711 -0.066167 -0.658449           -9.820987"
+-matrix  "e1bp-A 3wdl-D  U(2,.)   0.447705 -0.783436 -0.431031          -11.393575"
+-matrix  "e1bp-A 3wdl-D  U(3,.)  -0.487333 -0.617940  0.616974           -5.409876"
+

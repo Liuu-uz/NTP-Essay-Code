@@ -1,0 +1,26 @@
+# Job: test
+# Query: a7j3A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-C  2.3  4.6   96   254    5  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: a7j3-A 3wdl-C   160 - 163 <=>    3 -   6   (SER  160  - LEU  163  <=> PRO    9  - TRP   12 )                          
+   1: a7j3-A 3wdl-C   246 - 249 <=>   40 -  43   (TRP  246  - LYS  249  <=> LEU   46  - GLU   49 )                          
+   1: a7j3-A 3wdl-C   263 - 272 <=>   54 -  63   (LEU  263  - TYR  272  <=> ARG   60  - ALA   69 )                          
+   1: a7j3-A 3wdl-C   279 - 286 <=>   64 -  71   (LYS  279  - GLY  286  <=> GLU   70  - ASN   77 )                          
+   1: a7j3-A 3wdl-C   289 - 295 <=>   78 -  84   (PRO  289  - ASP  295  <=> VAL   84  - GLU   90 )                          
+   1: a7j3-A 3wdl-C   302 - 307 <=>   90 -  95   (LEU  302  - TRP  307  <=> ASN   96  - ILE  101 )                          
+   1: a7j3-A 3wdl-C   309 - 313 <=>  108 - 112   (PRO  309  - PRO  313  <=> ILE  114  - LEU  118 )                          
+   1: a7j3-A 3wdl-C   316 - 320 <=>  120 - 124   (ASP  316  - LYS  320  <=> GLU  126  - ILE  130 )                          
+   1: a7j3-A 3wdl-C   324 - 327 <=>  137 - 140   (TYR  324  - ASP  327  <=> ARG  143  - VAL  146 )                          
+   1: a7j3-A 3wdl-C   331 - 341 <=>  145 - 155   (LEU  331  - ILE  341  <=> ILE  151  - LEU  161 )                          
+   1: a7j3-A 3wdl-C   364 - 375 <=>  157 - 168   (ASN  364  - GLY  375  <=> ASP  163  - GLY  174 )                          
+   1: a7j3-A 3wdl-C   378 - 389 <=>  169 - 180   (LYS  378  - LEU  389  <=> LYS  175  - SER  186 )                          
+   1: a7j3-A 3wdl-C   411 - 414 <=>  185 - 188   (LEU  411  - ASP  414  <=> MET  191  - ILE  194 )                          
+   1: a7j3-A 3wdl-C   443 - 446 <=>  219 - 222   (PHE  443  - GLN  446  <=> ILE  225  - GLU  228 )                          
+
+# Translation-rotation matrices
+-matrix  "a7j3-A 3wdl-C  U(1,.)   0.081437 -0.338710 -0.937360           13.853876"
+-matrix  "a7j3-A 3wdl-C  U(2,.)  -0.654983  0.690699 -0.306485           54.492970"
+-matrix  "a7j3-A 3wdl-C  U(3,.)   0.751243  0.638914 -0.165601           -8.966573"
+

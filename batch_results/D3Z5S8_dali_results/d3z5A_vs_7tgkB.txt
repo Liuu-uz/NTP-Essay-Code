@@ -1,0 +1,30 @@
+# Job: test
+# Query: d3z5A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7tgk-B  2.2  4.8  103   593   11  MOL_ID: 1; MOLECULE: DESFERRIOXAMINE SYNTHETASE DESD; CHAIN: D, B, E, 
+
+# Structural equivalences
+   1: d3z5-A 7tgk-B    89 -  92 <=>   22 -  25   (ILE   89  - ARG   92  <=> LEU   21  - ARG   24 )                          
+   1: d3z5-A 7tgk-B    94 -  97 <=>   90 -  93   (ASN   94  - THR   97  <=> LEU   89  - LEU   92 )                          
+   1: d3z5-A 7tgk-B   105 - 109 <=>  126 - 130   (ILE  105  - VAL  109  <=> TYR  125  - LYS  129 )                          
+   1: d3z5-A 7tgk-B   130 - 133 <=>  134 - 137   (ALA  130  - VAL  133  <=> THR  133  - GLY  136 )                          
+   1: d3z5-A 7tgk-B   146 - 149 <=>  146 - 149   (ASP  146  - PHE  149  <=> LEU  145  - GLY  148 )                          
+   1: d3z5-A 7tgk-B   151 - 154 <=>  179 - 182   (ALA  151  - ARG  154  <=> ALA  178  - VAL  181 )                          
+   1: d3z5-A 7tgk-B   205 - 209 <=>  272 - 276   (ARG  205  - ILE  209  <=> LEU  271  - SER  275 )                          
+   1: d3z5-A 7tgk-B   269 - 273 <=>  377 - 381   (VAL  269  - PHE  273  <=> ALA  376  - GLY  380 )                          
+   1: d3z5-A 7tgk-B   282 - 285 <=>  407 - 410   (ASN  282  - ILE  285  <=> ARG  406  - LEU  409 )                          
+   1: d3z5-A 7tgk-B   305 - 308 <=>  412 - 415   (LEU  305  - GLY  308  <=> PRO  411  - TRP  414 )                          
+   1: d3z5-A 7tgk-B   326 - 332 <=>  426 - 432   (ARG  326  - SER  332  <=> PRO  425  - TYR  431 )                          
+   1: d3z5-A 7tgk-B   333 - 339 <=>  491 - 497   (ASP  333  - ARG  339  <=> LYS  490  - THR  496 )                          
+   1: d3z5-A 7tgk-B   340 - 353 <=>  499 - 512   (LYS  340  - GLU  353  <=> VAL  498  - ALA  511 )                          
+   1: d3z5-A 7tgk-B   354 - 369 <=>  517 - 532   (ASP  354  - GLU  369  <=> LEU  516  - GLU  531 )                          
+   1: d3z5-A 7tgk-B   370 - 373 <=>  535 - 538   (SER  370  - CYS  373  <=> GLU  534  - PRO  537 )                          
+   1: d3z5-A 7tgk-B   375 - 378 <=>  544 - 547   (MET  375  - GLU  378  <=> PHE  543  - TYR  546 )                          
+   1: d3z5-A 7tgk-B   381 - 384 <=>  548 - 551   (GLN  381  - ASN  384  <=> ASP  547  - ALA  550 )                          
+   1: d3z5-A 7tgk-B   429 - 432 <=>  583 - 586   (VAL  429  - VAL  432  <=> VAL  582  - LEU  585 )                          
+
+# Translation-rotation matrices
+-matrix  "d3z5-A 7tgk-B  U(1,.)   0.825640 -0.530421 -0.192282          -90.027931"
+-matrix  "d3z5-A 7tgk-B  U(2,.)   0.375058  0.770597 -0.515279          -66.816895"
+-matrix  "d3z5-A 7tgk-B  U(3,.)   0.421487  0.353318  0.835174            8.164759"
+

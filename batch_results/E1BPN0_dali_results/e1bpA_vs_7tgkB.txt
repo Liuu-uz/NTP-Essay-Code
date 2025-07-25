@@ -1,0 +1,23 @@
+# Job: test
+# Query: e1bpA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7tgk-B  2.4 11.3   84   593   10  MOL_ID: 1; MOLECULE: DESFERRIOXAMINE SYNTHETASE DESD; CHAIN: D, B, E, 
+
+# Structural equivalences
+   1: e1bp-A 7tgk-B     1 -   9 <=>  205 - 213   (MET    1  - LYS    9  <=> ALA  204  - GLY  212 )                          
+   1: e1bp-A 7tgk-B    13 -  16 <=>  238 - 241   (SER   13  - THR   16  <=> PRO  237  - PRO  240 )                          
+   1: e1bp-A 7tgk-B    23 -  28 <=>  306 - 311   (ALA   23  - MET   28  <=> LEU  305  - MET  310 )                          
+   1: e1bp-A 7tgk-B    32 -  35 <=>  466 - 469   (ARG   32  - ARG   35  <=> ILE  465  - MET  468 )                          
+   1: e1bp-A 7tgk-B    37 -  47 <=>  491 - 501   (LEU   37  - ARG   47  <=> LYS  490  - ASP  500 )                          
+   1: e1bp-A 7tgk-B    48 -  62 <=>  503 - 517   (LEU   48  - TRP   62  <=> PHE  502  - LEU  516 )                          
+   1: e1bp-A 7tgk-B    70 -  88 <=>  518 - 536   (SER   70  - SER   88  <=> ALA  517  - ALA  535 )                          
+   1: e1bp-A 7tgk-B   145 - 148 <=>  539 - 542   (GLY  145  - ILE  148  <=> GLU  538  - ASP  541 )                          
+   1: e1bp-A 7tgk-B   313 - 316 <=>  543 - 546   (ASN  313  - LEU  316  <=> ARG  542  - GLN  545 )                          
+   1: e1bp-A 7tgk-B   387 - 390 <=>  578 - 581   (SER  387  - LYS  390  <=> ALA  577  - GLN  580 )                          
+   1: e1bp-A 7tgk-B   473 - 476 <=>  582 - 585   (ALA  473  - GLU  476  <=> LEU  581  - THR  584 )                          
+
+# Translation-rotation matrices
+-matrix  "e1bp-A 7tgk-B  U(1,.)   0.783413  0.503818 -0.363911         -121.273987"
+-matrix  "e1bp-A 7tgk-B  U(2,.)  -0.551488  0.293539 -0.780831            3.978904"
+-matrix  "e1bp-A 7tgk-B  U(3,.)  -0.286574  0.812406  0.507811           48.488468"
+

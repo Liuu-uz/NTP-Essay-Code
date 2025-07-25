@@ -1,0 +1,23 @@
+# Job: test
+# Query: a1jrA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  2.2 15.3   86  1095    9  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a1jr-A 4ff3-A     1 -  33 <=>  810 - 842   (MET    1  - HIS   33  <=> GLN  815  - THR  847 )                          
+   1: a1jr-A 4ff3-A    53 -  65 <=>  853 - 865   (LEU   53  - LEU   65  <=> GLU  858  - ALA  870 )                          
+   1: a1jr-A 4ff3-A    74 -  77 <=>  871 - 874   (PHE   74  - ASN   77  <=> GLY  876  - THR  879 )                          
+   1: a1jr-A 4ff3-A    84 -  87 <=>  876 - 879   (GLU   84  - THR   87  <=> TYR  881  - GLY  884 )                          
+   1: a1jr-A 4ff3-A    90 -  95 <=>  880 - 885   (LEU   90  - ARG   95  <=> SER  885  - VAL  890 )                          
+   1: a1jr-A 4ff3-A   133 - 136 <=>  899 - 902   (ARG  133  - PRO  136  <=> ARG  904  - MET  907 )                          
+   1: a1jr-A 4ff3-A   310 - 315 <=> 1047 -1052   (GLU  310  - ALA  315  <=> LYS 1052  - ILE 1057 )                          
+   1: a1jr-A 4ff3-A   326 - 329 <=> 1063 -1066   (PHE  326  - PRO  329  <=> GLN 1068  - GLY 1071 )                          
+   1: a1jr-A 4ff3-A   384 - 387 <=> 1068 -1071   (ARG  384  - ALA  387  <=> ILE 1073  - SER 1076 )                          
+   1: a1jr-A 4ff3-A   394 - 397 <=> 1074 -1077   (GLN  394  - VAL  397  <=> THR 1079  - GLN 1082 )                          
+   1: a1jr-A 4ff3-A   403 - 406 <=> 1086 -1089   (ASP  403  - ASP  406  <=> PHE 1091  - GLU 1094 )                          
+
+# Translation-rotation matrices
+-matrix  "a1jr-A 4ff3-A  U(1,.)   0.078056  0.935094  0.345697          -97.200584"
+-matrix  "a1jr-A 4ff3-A  U(2,.)   0.887389  0.092869 -0.451572          183.657928"
+-matrix  "a1jr-A 4ff3-A  U(3,.)  -0.454366  0.342015 -0.822543          326.746063"
+

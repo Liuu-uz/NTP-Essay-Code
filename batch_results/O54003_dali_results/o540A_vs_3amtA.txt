@@ -1,0 +1,27 @@
+# Job: test
+# Query: o540A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  3.4  7.6  117   417    8  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: o540-A 3amt-A   288 - 300 <=>    1 -  13   (ILE  288  - GLU  300  <=> HIS    0  - SER   12 )                          
+   1: o540-A 3amt-A   319 - 336 <=>   18 -  35   (ALA  319  - ALA  336  <=> CYS   17  - GLY   34 )                          
+   1: o540-A 3amt-A   347 - 356 <=>   37 -  46   (PHE  347  - THR  356  <=> VAL   36  - LEU   45 )                          
+   1: o540-A 3amt-A   360 - 363 <=>   47 -  50   (ASN  360  - GLU  363  <=> ASN   46  - ILE   49 )                          
+   1: o540-A 3amt-A   364 - 374 <=>   56 -  66   (PRO  364  - PHE  374  <=> GLY   55  - VAL   65 )                          
+   1: o540-A 3amt-A   389 - 392 <=>   67 -  70   (PRO  389  - SER  392  <=> ASP   66  - GLY   69 )                          
+   1: o540-A 3amt-A   394 - 407 <=>   71 -  84   (SER  394  - LEU  407  <=> GLU   70  - ALA   83 )                          
+   1: o540-A 3amt-A   411 - 416 <=>   85 -  90   (PHE  411  - SER  416  <=> UNK   84  - LYS   89 )                          
+   1: o540-A 3amt-A   424 - 429 <=>   93 -  98   (PHE  424  - GLY  429  <=> PRO   92  - VAL   97 )                          
+   1: o540-A 3amt-A   442 - 448 <=>  100 - 106   (VAL  442  - TYR  448  <=> GLU   99  - LEU  105 )                          
+   1: o540-A 3amt-A   451 - 456 <=>  108 - 113   (ARG  451  - ASN  456  <=> PRO  107  - ALA  112 )                          
+   1: o540-A 3amt-A   457 - 460 <=>  115 - 118   (PHE  457  - TYR  460  <=> LYS  114  - LEU  117 )                          
+   1: o540-A 3amt-A   467 - 472 <=>  262 - 267   (ASP  467  - SER  472  <=> LEU  261  - SER  266 )                          
+   1: o540-A 3amt-A   478 - 481 <=>  399 - 402   (ARG  478  - PHE  481  <=> ARG  402  - SER  405 )                          
+   1: o540-A 3amt-A   641 - 644 <=>  409 - 412   (ILE  641  - LEU  644  <=> ASN  412  - GLY  415 )                          
+
+# Translation-rotation matrices
+-matrix  "o540-A 3amt-A  U(1,.)  -0.538407  0.229784  0.810751          -71.761154"
+-matrix  "o540-A 3amt-A  U(2,.)   0.361027  0.932235 -0.024463          -65.259598"
+-matrix  "o540-A 3amt-A  U(3,.)  -0.761431  0.279532 -0.584880           30.911736"
+

@@ -1,0 +1,26 @@
+# Job: test
+# Query: a4fzA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  8dcd-B  2.9  4.1   99   481    4  MOL_ID: 1; MOLECULE: TRNA-SPLICING LIGASE RTCB; CHAIN: A, B; SYNONYM: 
+
+# Structural equivalences
+   1: a4fz-A 8dcd-B    63 -  66 <=>   65 -  68   (GLY   63  - LEU   66  <=> ASP   65  - GLN   68 )                          
+   1: a4fz-A 8dcd-B   127 - 130 <=>   90 -  93   (VAL  127  - GLY  130  <=> GLY   90  - GLY   93 )                          
+   1: a4fz-A 8dcd-B   131 - 142 <=>   97 - 108   (TYR  131  - ILE  142  <=> ASN   97  - THR  108 )                          
+   1: a4fz-A 8dcd-B   155 - 169 <=>  112 - 126   (THR  155  - GLU  169  <=> VAL  112  - ASN  126 )                          
+   1: a4fz-A 8dcd-B   171 - 174 <=>  127 - 130   (LYS  171  - ASP  174  <=> VAL  127  - GLY  130 )                          
+   1: a4fz-A 8dcd-B   175 - 182 <=>  203 - 210   (SER  175  - GLY  182  <=> HIS  203  - VAL  210 )                          
+   1: a4fz-A 8dcd-B   183 - 191 <=>  229 - 237   (ASP  183  - GLY  191  <=> VAL  229  - SER  237 )                          
+   1: a4fz-A 8dcd-B   193 - 209 <=>  295 - 311   (SER  193  - GLY  209  <=> ASN  295  - PHE  311 )                          
+   1: a4fz-A 8dcd-B   211 - 214 <=>  320 - 323   (GLU  211  - ALA  214  <=> GLY  320  - ILE  323 )                          
+   1: a4fz-A 8dcd-B   215 - 220 <=>  325 - 330   (GLY  215  - LYS  220  <=> TYR  325  - ASN  330 )                          
+   1: a4fz-A 8dcd-B   221 - 224 <=>  351 - 354   (THR  221  - ASP  224  <=> LYS  351  - THR  354 )                          
+   1: a4fz-A 8dcd-B   238 - 241 <=>  366 - 369   (GLU  238  - THR  241  <=> ARG  366  - ARG  369 )                          
+   1: a4fz-A 8dcd-B   253 - 256 <=>  399 - 402   (GLU  253  - LYS  256  <=> PHE  399  - THR  402 )                          
+   1: a4fz-A 8dcd-B   259 - 262 <=>  457 - 460   (THR  259  - TYR  262  <=> VAL  457  - VAL  460 )                          
+
+# Translation-rotation matrices
+-matrix  "a4fz-A 8dcd-B  U(1,.)  -0.621789 -0.315184 -0.716965           58.534180"
+-matrix  "a4fz-A 8dcd-B  U(2,.)   0.458174  0.596060 -0.659385           24.869202"
+-matrix  "a4fz-A 8dcd-B  U(3,.)   0.635181 -0.738493 -0.226214          -14.191027"
+

@@ -1,0 +1,23 @@
+# Job: test
+# Query: a0l1A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  3.2 12.3   99  1095   14  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a0l1-A 4ff3-A    16 -  27 <=>  750 - 761   (ALA   16  - HIS   27  <=> GLY  755  - ALA  766 )                          
+   1: a0l1-A 4ff3-A    43 -  52 <=>  771 - 780   (GLN   43  - LEU   52  <=> THR  776  - LEU  785 )                          
+   1: a0l1-A 4ff3-A    57 -  62 <=>  782 - 787   (ALA   57  - SER   62  <=> GLU  787  - PHE  792 )                          
+   1: a0l1-A 4ff3-A   207 - 236 <=>  808 - 837   (SER  207  - PHE  236  <=> THR  813  - LYS  842 )                          
+   1: a0l1-A 4ff3-A   260 - 265 <=>  838 - 843   (PHE  260  - GLN  265  <=> ALA  843  - TRP  848 )                          
+   1: a0l1-A 4ff3-A   280 - 283 <=>  848 - 851   (ALA  280  - GLN  283  <=> PHE  853  - GLN  856 )                          
+   1: a0l1-A 4ff3-A   284 - 296 <=>  853 - 865   (GLN  284  - ALA  296  <=> GLU  858  - ALA  870 )                          
+   1: a0l1-A 4ff3-A   298 - 301 <=>  867 - 870   (ALA  298  - PRO  301  <=> MET  872  - THR  875 )                          
+   1: a0l1-A 4ff3-A   309 - 313 <=>  876 - 880   (ILE  309  - ASN  313  <=> TYR  881  - SER  885 )                          
+   1: a0l1-A 4ff3-A   320 - 324 <=>  883 - 887   (VAL  320  - LEU  324  <=> ALA  888  - ASN  892 )                          
+   1: a0l1-A 4ff3-A   342 - 345 <=>  899 - 902   (GLU  342  - GLN  345  <=> ARG  904  - MET  907 )                          
+
+# Translation-rotation matrices
+-matrix  "a0l1-A 4ff3-A  U(1,.)   0.373548  0.811118 -0.450055          187.414154"
+-matrix  "a0l1-A 4ff3-A  U(2,.)   0.341730 -0.571385 -0.746150          279.623749"
+-matrix  "a0l1-A 4ff3-A  U(3,.)  -0.862370  0.124926 -0.490623          212.731979"
+

@@ -1,0 +1,28 @@
+# Job: test
+# Query: a0a6A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7y7p-B  2.0  7.9  103   908    8  MOL_ID: 1; MOLECULE: RNA-DEPENDENT RNA POLYMERASE; CHAIN: A, B; EC: 2.
+
+# Structural equivalences
+   1: a0a6-A 7y7p-B     9 -  12 <=>  138 - 141   (LEU    9  - GLU   12  <=> THR  546  - SER  549 )                          
+   1: a0a6-A 7y7p-B    39 -  42 <=>  481 - 484   (PHE   39  - HIS   42  <=> ASN  911  - VAL  914 )                          
+   1: a0a6-A 7y7p-B    45 -  48 <=>  485 - 488   (ASN   45  - LYS   48  <=> GLY  915  - ALA  918 )                          
+   1: a0a6-A 7y7p-B    90 -  95 <=>  492 - 497   (PHE   90  - PRO   95  <=> MET  922  - TRP  927 )                          
+   1: a0a6-A 7y7p-B   143 - 147 <=>  501 - 505   (LEU  143  - LEU  147  <=> GLU  931  - VAL  935 )                          
+   1: a0a6-A 7y7p-B   180 - 183 <=>  518 - 521   (GLU  180  - THR  183  <=> GLU  948  - THR  951 )                          
+   1: a0a6-A 7y7p-B   266 - 271 <=>  571 - 576   (LEU  266  - GLN  271  <=> LYS 1001  - GLY 1006 )                          
+   1: a0a6-A 7y7p-B   280 - 299 <=>  649 - 668   (ASN  280  - GLN  299  <=> PRO 1079  - SER 1098 )                          
+   1: a0a6-A 7y7p-B   300 - 315 <=>  670 - 685   (TYR  300  - LYS  315  <=> SER 1100  - VAL 1115 )                          
+   1: a0a6-A 7y7p-B   319 - 322 <=>  691 - 694   (ASN  319  - PHE  322  <=> GLY 1121  - PHE 1124 )                          
+   1: a0a6-A 7y7p-B   327 - 335 <=>  695 - 703   (LEU  327  - LEU  335  <=> ASN 1125  - ARG 1133 )                          
+   1: a0a6-A 7y7p-B   336 - 339 <=>  705 - 708   (THR  336  - THR  339  <=> GLU 1135  - GLY 1138 )                          
+   1: a0a6-A 7y7p-B   376 - 379 <=>  709 - 712   (ILE  376  - ARG  379  <=> GLY 1139  - SER 1142 )                          
+   1: a0a6-A 7y7p-B   400 - 404 <=>  714 - 718   (THR  400  - SER  404  <=> PRO 1144  - TYR 1148 )                          
+   1: a0a6-A 7y7p-B   406 - 409 <=>  719 - 722   (GLU  406  - LYS  409  <=> LYS 1149  - SER 1152 )                          
+   1: a0a6-A 7y7p-B   428 - 431 <=>  748 - 751   (GLN  428  - SER  431  <=> GLU 1178  - ALA 1181 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a6-A 7y7p-B  U(1,.)  -0.805476  0.398530  0.438614           14.470705"
+-matrix  "a0a6-A 7y7p-B  U(2,.)  -0.483769 -0.014667 -0.875073          167.749268"
+-matrix  "a0a6-A 7y7p-B  U(3,.)  -0.342310 -0.917038  0.204611          -23.015768"
+

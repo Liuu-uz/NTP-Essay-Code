@@ -1,0 +1,18 @@
+# Job: test
+# Query: sequA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  2xan-A  2.3  3.0   54   414    6  MOL_ID: 1; MOLECULE: INOSITOL-PENTAKISPHOSPHATE 2-KINASE; CHAIN: A, B;
+
+# Structural equivalences
+   1: sequ-A 2xan-A    57 -  61 <=>  164 - 168   (ASP   57  - GLY   61  <=> GLY  181  - MET  185 )                          
+   1: sequ-A 2xan-A    66 -  79 <=>  297 - 310   (PRO   66  - LEU   79  <=> ASP  314  - ASN  327 )                          
+   1: sequ-A 2xan-A   190 - 193 <=>  314 - 317   (ILE  190  - ASP  193  <=> PRO  331  - LYS  334 )                          
+   1: sequ-A 2xan-A   215 - 221 <=>  319 - 325   (ALA  215  - GLU  221  <=> GLU  342  - LEU  348 )                          
+   1: sequ-A 2xan-A   224 - 227 <=>  326 - 329   (ARG  224  - GLU  227  <=> PRO  349  - GLU  352 )                          
+   1: sequ-A 2xan-A   239 - 258 <=>  390 - 409   (GLU  239  - ARG  258  <=> LEU  413  - ARG  432 )                          
+
+# Translation-rotation matrices
+-matrix  "sequ-A 2xan-A  U(1,.)   0.582605 -0.810655 -0.058397           16.094114"
+-matrix  "sequ-A 2xan-A  U(2,.)  -0.337029 -0.175585 -0.924976           72.369591"
+-matrix  "sequ-A 2xan-A  U(3,.)   0.739582  0.558578 -0.375511          -26.063137"
+

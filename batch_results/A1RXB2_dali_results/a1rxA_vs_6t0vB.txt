@@ -1,0 +1,16 @@
+# Job: test
+# Query: a1rxA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  2.9  3.6   49   745    4  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a1rx-A 6t0v-B     3 -  25 <=>  516 - 538   (ILE    3  - LEU   25  <=> GLY  516  - ASP  538 )                          
+   1: a1rx-A 6t0v-B   173 - 190 <=>  540 - 557   (ALA  173  - THR  190  <=> GLY  540  - TYR  557 )                          
+   1: a1rx-A 6t0v-B   191 - 194 <=>  560 - 563   (ASN  191  - ALA  194  <=> ARG  560  - ARG  563 )                          
+   1: a1rx-A 6t0v-B   197 - 200 <=>  573 - 576   (LEU  197  - LYS  200  <=> THR  573  - ILE  576 )                          
+
+# Translation-rotation matrices
+-matrix  "a1rx-A 6t0v-B  U(1,.)  -0.715017 -0.163962  0.679608           23.991827"
+-matrix  "a1rx-A 6t0v-B  U(2,.)  -0.670894  0.434299 -0.601070          130.653168"
+-matrix  "a1rx-A 6t0v-B  U(3,.)  -0.196600 -0.885720 -0.420533          176.097351"
+

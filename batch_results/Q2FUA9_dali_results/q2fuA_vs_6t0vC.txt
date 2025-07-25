@@ -1,0 +1,18 @@
+# Job: test
+# Query: q2fuA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-C  2.5 11.6   55   740    9  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: q2fu-A 6t0v-C    22 -  25 <=>  127 - 130   (THR   22  - GLY   25  <=> LEU  125  - GLY  128 )                          
+   1: q2fu-A 6t0v-C    47 -  64 <=>  154 - 171   (GLU   47  - LEU   64  <=> LYS  152  - PRO  169 )                          
+   1: q2fu-A 6t0v-C   171 - 176 <=>  175 - 180   (LYS  171  - ASP  176  <=> GLY  173  - SER  178 )                          
+   1: q2fu-A 6t0v-C   195 - 209 <=>  181 - 195   (VAL  195  - LEU  209  <=> SER  179  - LEU  193 )                          
+   1: q2fu-A 6t0v-C   210 - 216 <=>  202 - 208   (ASP  210  - GLY  216  <=> PRO  200  - MET  206 )                          
+   1: q2fu-A 6t0v-C   237 - 241 <=>  437 - 441   (ARG  237  - VAL  241  <=> LEU  435  - GLN  439 )                          
+
+# Translation-rotation matrices
+-matrix  "q2fu-A 6t0v-C  U(1,.)   0.002630  0.647182  0.762331         -163.904678"
+-matrix  "q2fu-A 6t0v-C  U(2,.)   0.786431 -0.472213  0.398173          -80.598366"
+-matrix  "q2fu-A 6t0v-C  U(3,.)   0.617673  0.598473 -0.510206         -118.737404"
+

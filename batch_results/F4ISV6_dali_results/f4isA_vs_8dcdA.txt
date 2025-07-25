@@ -1,0 +1,27 @@
+# Job: test
+# Query: f4isA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  8dcd-A  4.6  6.4  117   481    8  MOL_ID: 1; MOLECULE: TRNA-SPLICING LIGASE RTCB; CHAIN: A, B; SYNONYM: 
+
+# Structural equivalences
+   1: f4is-A 8dcd-A   297 - 308 <=>   94 - 105   (LEU  297  - GLY  308  <=> TYR   94  - THR  105 )                          
+   1: f4is-A 8dcd-A   310 - 313 <=>  106 - 109   (HIS  310  - ARG  313  <=> ASN  106  - GLU  109 )                          
+   1: f4is-A 8dcd-A   326 - 341 <=>  113 - 128   (GLU  326  - GLU  341  <=> ARG  113  - PRO  128 )                          
+   1: f4is-A 8dcd-A   343 - 346 <=>  196 - 199   (PHE  343  - ILE  346  <=> GLY  196  - GLY  199 )                          
+   1: f4is-A 8dcd-A   347 - 353 <=>  203 - 209   (ALA  347  - SER  353  <=> HIS  203  - VAL  209 )                          
+   1: f4is-A 8dcd-A   354 - 360 <=>  229 - 235   (ASP  354  - LEU  360  <=> VAL  229  - THR  235 )                          
+   1: f4is-A 8dcd-A   362 - 365 <=>  236 - 239   (ASN  362  - GLU  365  <=> GLY  236  - GLY  239 )                          
+   1: f4is-A 8dcd-A   369 - 391 <=>  290 - 312   (ARG  369  - GLY  391  <=> ASN  290  - LYS  312 )                          
+   1: f4is-A 8dcd-A   401 - 407 <=>  317 - 323   (TYR  401  - GLY  407  <=> GLY  317  - ILE  323 )                          
+   1: f4is-A 8dcd-A   408 - 413 <=>  325 - 330   (ARG  408  - PRO  413  <=> TYR  325  - ASN  330 )                          
+   1: f4is-A 8dcd-A   414 - 417 <=>  351 - 354   (THR  414  - ILE  417  <=> LYS  351  - THR  354 )                          
+   1: f4is-A 8dcd-A   421 - 428 <=>  377 - 384   (TYR  421  - ASP  428  <=> ILE  377  - ALA  384 )                          
+   1: f4is-A 8dcd-A   459 - 462 <=>  417 - 420   (THR  459  - ARG  462  <=> ARG  417  - ARG  420 )                          
+   1: f4is-A 8dcd-A   479 - 483 <=>  430 - 434   (LEU  479  - PHE  483  <=> ASN  430  - TYR  434 )                          
+   1: f4is-A 8dcd-A   486 - 491 <=>  476 - 481   (GLY  486  - ARG  491  <=> ILE  476  - GLY  481 )                          
+
+# Translation-rotation matrices
+-matrix  "f4is-A 8dcd-A  U(1,.)  -0.268997  0.915706  0.298534          -35.330475"
+-matrix  "f4is-A 8dcd-A  U(2,.)  -0.952093 -0.206002 -0.226012           36.177025"
+-matrix  "f4is-A 8dcd-A  U(3,.)  -0.145462 -0.345029  0.927252          -23.475857"
+

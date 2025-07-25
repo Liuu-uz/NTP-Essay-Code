@@ -1,0 +1,26 @@
+# Job: test
+# Query: a0a3A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ig2-C  2.4  4.6   92   278    4  MOL_ID: 1; MOLECULE: PHOSPHATIDATE CYTIDYLYLTRANSFERASE, MITOCHONDRIAL
+
+# Structural equivalences
+   1: a0a3-A 6ig2-C    73 -  76 <=>    1 -   4   (ASN   73  - GLU   76  <=> CYS   33  - ALA   36 )                          
+   1: a0a3-A 6ig2-C   165 - 168 <=>   10 -  13   (THR  165  - THR  168  <=> ASN   42  - THR   45 )                          
+   1: a0a3-A 6ig2-C   427 - 431 <=>   20 -  24   (CYS  427  - LEU  431  <=> GLN   52  - GLU   56 )                          
+   1: a0a3-A 6ig2-C   441 - 451 <=>   25 -  35   (THR  441  - ALA  451  <=> LEU   57  - TYR   67 )                          
+   1: a0a3-A 6ig2-C   453 - 456 <=>   36 -  39   (ALA  453  - LEU  456  <=> PHE   68  - PRO   71 )                          
+   1: a0a3-A 6ig2-C   463 - 471 <=>   40 -  48   (VAL  463  - ASN  471  <=> ILE   72  - SER   80 )                          
+   1: a0a3-A 6ig2-C   476 - 487 <=>   54 -  65   (PRO  476  - GLY  487  <=> ASN   93  - ASP  104 )                          
+   1: a0a3-A 6ig2-C   488 - 494 <=>   68 -  74   (GLU  488  - LEU  494  <=> LYS  107  - LEU  113 )                          
+   1: a0a3-A 6ig2-C   496 - 499 <=>   77 -  80   (ASP  496  - ASN  499  <=> ASN  116  - HIS  119 )                          
+   1: a0a3-A 6ig2-C   502 - 506 <=>  109 - 113   (ASP  502  - ILE  506  <=> VAL  148  - GLY  152 )                          
+   1: a0a3-A 6ig2-C   521 - 529 <=>  115 - 123   (ALA  521  - ARG  529  <=> ILE  154  - LYS  162 )                          
+   1: a0a3-A 6ig2-C   530 - 535 <=>  125 - 130   (GLY  530  - ILE  535  <=> ASP  164  - LEU  169 )                          
+   1: a0a3-A 6ig2-C   536 - 543 <=>  159 - 166   (LEU  536  - GLY  543  <=> ASN  198  - ALA  205 )                          
+   1: a0a3-A 6ig2-C   557 - 560 <=>  192 - 195   (PRO  557  - SER  560  <=> TYR  231  - ASP  234 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a3-A 6ig2-C  U(1,.)  -0.713007  0.419638 -0.561717          -23.937492"
+-matrix  "a0a3-A 6ig2-C  U(2,.)  -0.549836  0.162488  0.819315          -53.816376"
+-matrix  "a0a3-A 6ig2-C  U(3,.)   0.435088  0.893030  0.114877          -61.439472"
+

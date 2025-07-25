@@ -1,0 +1,21 @@
+# Job: test
+# Query: o189A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-C  2.7 17.5   83   254    4  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: o189-A 3wdl-C     3 -   6 <=>   25 -  28   (ASP    3  - GLU    6  <=> LYS   31  - LEU   34 )                          
+   1: o189-A 3wdl-C     7 -  19 <=>   30 -  42   (SER    7  - SER   19  <=> ALA   36  - GLY   48 )                          
+   1: o189-A 3wdl-C    22 -  40 <=>   45 -  63   (GLY   22  - ASN   40  <=> THR   51  - ALA   69 )                          
+   1: o189-A 3wdl-C    41 -  47 <=>   89 -  95   (LYS   41  - VAL   47  <=> LEU   95  - ILE  101 )                          
+   1: o189-A 3wdl-C   120 - 126 <=>   97 - 103   (GLN  120  - VAL  126  <=> LEU  103  - GLU  109 )                          
+   1: o189-A 3wdl-C   465 - 468 <=>  125 - 128   (ILE  465  - GLU  468  <=> ASN  131  - LYS  134 )                          
+   1: o189-A 3wdl-C   473 - 487 <=>  209 - 223   (PRO  473  - PHE  487  <=> LYS  215  - TYR  229 )                          
+   1: o189-A 3wdl-C   490 - 493 <=>  224 - 227   (ILE  490  - ALA  493  <=> ASP  230  - LYS  233 )                          
+   1: o189-A 3wdl-C   494 - 503 <=>  229 - 238   (VAL  494  - HIS  503  <=> LEU  235  - ASP  244 )                          
+
+# Translation-rotation matrices
+-matrix  "o189-A 3wdl-C  U(1,.)  -0.808130 -0.060075 -0.585932           53.852062"
+-matrix  "o189-A 3wdl-C  U(2,.)   0.146486  0.943030 -0.298724          -34.265202"
+-matrix  "o189-A 3wdl-C  U(3,.)   0.570497 -0.327239 -0.753291          -21.595726"
+

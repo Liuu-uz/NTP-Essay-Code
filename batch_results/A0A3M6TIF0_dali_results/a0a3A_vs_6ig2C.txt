@@ -1,0 +1,29 @@
+# Job: test
+# Query: a0a3A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ig2-C  4.8  6.6  117   278    9  MOL_ID: 1; MOLECULE: PHOSPHATIDATE CYTIDYLYLTRANSFERASE, MITOCHONDRIAL
+
+# Structural equivalences
+   1: a0a3-A 6ig2-C     5 -   9 <=>    2 -   6   (VAL    5  - LEU    9  <=> THR   34  - LEU   38 )                          
+   1: a0a3-A 6ig2-C    25 -  38 <=>   22 -  35   (VAL   25  - GLN   38  <=> GLU   54  - TYR   67 )                          
+   1: a0a3-A 6ig2-C    41 -  44 <=>   36 -  39   (ASN   41  - GLY   44  <=> PHE   68  - PRO   71 )                          
+   1: a0a3-A 6ig2-C    52 -  64 <=>   41 -  53   (ASN   52  - SER   64  <=> ASP   73  - GLN   85 )                          
+   1: a0a3-A 6ig2-C    69 -  79 <=>   54 -  64   (PRO   69  - ASN   79  <=> ASN   93  - GLU  103 )                          
+   1: a0a3-A 6ig2-C   135 - 148 <=>   65 -  78   (ILE  135  - ALA  148  <=> ASP  104  - PRO  117 )                          
+   1: a0a3-A 6ig2-C   174 - 177 <=>   82 -  85   (GLU  174  - ALA  177  <=> SER  121  - LYS  124 )                          
+   1: a0a3-A 6ig2-C   183 - 187 <=>  103 - 107   (GLY  183  - THR  187  <=> VAL  142  - THR  146 )                          
+   1: a0a3-A 6ig2-C   188 - 191 <=>  109 - 112   (LEU  188  - ASN  191  <=> VAL  148  - GLU  151 )                          
+   1: a0a3-A 6ig2-C   201 - 209 <=>  113 - 121   (ASN  201  - VAL  209  <=> GLY  152  - THR  160 )                          
+   1: a0a3-A 6ig2-C   210 - 213 <=>  125 - 128   (ILE  210  - ARG  213  <=> ASP  164  - GLU  167 )                          
+   1: a0a3-A 6ig2-C   214 - 217 <=>  131 - 134   (GLY  214  - SER  217  <=> LYS  170  - ASN  173 )                          
+   1: a0a3-A 6ig2-C   219 - 224 <=>  163 - 168   (CYS  219  - ARG  224  <=> LEU  202  - HIS  207 )                          
+   1: a0a3-A 6ig2-C   225 - 229 <=>  170 - 174   (LEU  225  - HIS  229  <=> GLY  209  - LEU  213 )                          
+   1: a0a3-A 6ig2-C   302 - 305 <=>  204 - 207   (LYS  302  - ALA  305  <=> ASN  243  - LYS  246 )                          
+   1: a0a3-A 6ig2-C   308 - 313 <=>  208 - 213   (THR  308  - GLU  313  <=> VAL  247  - SER  252 )                          
+   1: a0a3-A 6ig2-C   320 - 324 <=>  250 - 254   (SER  320  - ARG  324  <=> ASN  289  - LEU  293 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a3-A 6ig2-C  U(1,.)  -0.611132  0.734260 -0.295601          -43.220631"
+-matrix  "a0a3-A 6ig2-C  U(2,.)   0.628881  0.677201  0.381978          -69.175323"
+-matrix  "a0a3-A 6ig2-C  U(3,.)   0.480653  0.047541 -0.875621           27.978527"
+

@@ -1,0 +1,30 @@
+# Job: test
+# Query: a0kaA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  2xan-A  4.0  4.5  137   414   13  MOL_ID: 1; MOLECULE: INOSITOL-PENTAKISPHOSPHATE 2-KINASE; CHAIN: A, B;
+
+# Structural equivalences
+   1: a0ka-A 2xan-A   322 - 328 <=>    9 -  15   (ASP  322  - PRO  328  <=> SER   11  - GLY   17 )                          
+   1: a0ka-A 2xan-A   331 - 342 <=>   16 -  27   (LYS  331  - SER  342  <=> GLU   18  - GLY   29 )                          
+   1: a0ka-A 2xan-A   343 - 353 <=>   33 -  43   (PHE  343  - HIS  353  <=> VAL   35  - ARG   45 )                          
+   1: a0ka-A 2xan-A   364 - 374 <=>   66 -  76   (GLN  364  - ARG  374  <=> LYS   81  - ASN   91 )                          
+   1: a0ka-A 2xan-A   375 - 378 <=>   80 -  83   (HIS  375  - LEU  378  <=> PRO   95  - GLY   98 )                          
+   1: a0ka-A 2xan-A   379 - 390 <=>   85 -  96   (GLY  379  - VAL  390  <=> LYS  100  - SER  111 )                          
+   1: a0ka-A 2xan-A   391 - 394 <=>   99 - 102   (ALA  391  - LEU  394  <=> PHE  114  - CYS  117 )                          
+   1: a0ka-A 2xan-A   399 - 404 <=>  105 - 110   (HIS  399  - GLU  404  <=> LYS  120  - GLN  125 )                          
+   1: a0ka-A 2xan-A   408 - 412 <=>  121 - 125   (GLU  408  - LEU  412  <=> VAL  136  - HIS  140 )                          
+   1: a0ka-A 2xan-A   423 - 432 <=>  126 - 135   (LYS  423  - THR  432  <=> ASP  141  - SER  150 )                          
+   1: a0ka-A 2xan-A   433 - 436 <=>  147 - 150   (PRO  433  - LEU  436  <=> SER  164  - ILE  167 )                          
+   1: a0ka-A 2xan-A   441 - 452 <=>  270 - 281   (GLY  441  - GLU  452  <=> PHE  287  - SER  298 )                          
+   1: a0ka-A 2xan-A   453 - 462 <=>  283 - 292   (TYR  453  - LYS  462  <=> VAL  300  - LYS  309 )                          
+   1: a0ka-A 2xan-A   466 - 469 <=>  342 - 345   (PHE  466  - ASP  469  <=> THR  365  - ASP  368 )                          
+   1: a0ka-A 2xan-A   474 - 479 <=>  347 - 352   (ASN  474  - ARG  479  <=> SER  370  - PHE  375 )                          
+   1: a0ka-A 2xan-A   480 - 490 <=>  377 - 387   (HIS  480  - GLU  490  <=> ASP  400  - LEU  410 )                          
+   1: a0ka-A 2xan-A   499 - 502 <=>  396 - 399   (VAL  499  - VAL  502  <=> TYR  419  - LEU  422 )                          
+   1: a0ka-A 2xan-A   516 - 519 <=>  404 - 407   (PRO  516  - THR  519  <=> ILE  427  - TYR  430 )                          
+
+# Translation-rotation matrices
+-matrix  "a0ka-A 2xan-A  U(1,.)  -0.170260 -0.788355 -0.591191           75.729614"
+-matrix  "a0ka-A 2xan-A  U(2,.)  -0.764863  0.483993 -0.425130           -5.041391"
+-matrix  "a0ka-A 2xan-A  U(3,.)   0.621286  0.379798 -0.685389          -24.683393"
+

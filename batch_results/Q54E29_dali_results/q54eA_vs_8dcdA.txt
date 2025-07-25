@@ -1,0 +1,28 @@
+# Job: test
+# Query: q54eA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  8dcd-A  4.3  4.0  120   481    7  MOL_ID: 1; MOLECULE: TRNA-SPLICING LIGASE RTCB; CHAIN: A, B; SYNONYM: 
+
+# Structural equivalences
+   1: q54e-A 8dcd-A    19 -  31 <=>   94 - 106   (LEU   19  - ARG   31  <=> TYR   94  - ASN  106 )                          
+   1: q54e-A 8dcd-A    33 -  37 <=>  107 - 111   (PHE   33  - THR   37  <=> LEU  107  - GLU  111 )                          
+   1: q54e-A 8dcd-A    48 -  63 <=>  113 - 128   (ASP   48  - LYS   63  <=> ARG  113  - PRO  128 )                          
+   1: q54e-A 8dcd-A    65 -  68 <=>  197 - 200   (PHE   65  - ILE   68  <=> SER  197  - SER  200 )                          
+   1: q54e-A 8dcd-A    69 -  75 <=>  203 - 209   (VAL   69  - SER   75  <=> HIS  203  - VAL  209 )                          
+   1: q54e-A 8dcd-A    76 -  82 <=>  229 - 235   (ASP   76  - LEU   82  <=> VAL  229  - THR  235 )                          
+   1: q54e-A 8dcd-A    84 -  87 <=>  236 - 239   (LYS   84  - ASN   87  <=> GLY  236  - GLY  239 )                          
+   1: q54e-A 8dcd-A    90 -  93 <=>  290 - 293   (GLU   90  - SER   93  <=> ASN  290  - TRP  293 )                          
+   1: q54e-A 8dcd-A    95 - 113 <=>  294 - 312   (LYS   95  - LYS  113  <=> ALA  294  - LYS  312 )                          
+   1: q54e-A 8dcd-A   123 - 129 <=>  317 - 323   (TYR  123  - SER  129  <=> GLY  317  - ILE  323 )                          
+   1: q54e-A 8dcd-A   130 - 135 <=>  325 - 330   (ARG  130  - PRO  135  <=> TYR  325  - ASN  330 )                          
+   1: q54e-A 8dcd-A   136 - 139 <=>  351 - 354   (THR  136  - ASN  139  <=> LYS  351  - THR  354 )                          
+   1: q54e-A 8dcd-A   143 - 150 <=>  377 - 384   (TYR  143  - ASP  150  <=> ILE  377  - ALA  384 )                          
+   1: q54e-A 8dcd-A   202 - 205 <=>  430 - 433   (LEU  202  - GLU  205  <=> ASN  430  - ILE  433 )                          
+   1: q54e-A 8dcd-A   212 - 217 <=>  436 - 441   (ILE  212  - VAL  217  <=> ARG  436  - ARG  441 )                          
+   1: q54e-A 8dcd-A   240 - 245 <=>  447 - 452   (ILE  240  - PHE  245  <=> ALA  447  - LYS  452 )                          
+
+# Translation-rotation matrices
+-matrix  "q54e-A 8dcd-A  U(1,.)  -0.331159  0.613731  0.716706          -25.543709"
+-matrix  "q54e-A 8dcd-A  U(2,.)  -0.857229  0.121740 -0.500337           39.727684"
+-matrix  "q54e-A 8dcd-A  U(3,.)  -0.394324 -0.780073  0.485793           13.674386"
+

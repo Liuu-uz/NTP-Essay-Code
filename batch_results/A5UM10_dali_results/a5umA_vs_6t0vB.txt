@@ -1,0 +1,20 @@
+# Job: test
+# Query: a5umA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  2.7 16.3   85   745    6  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a5um-A 6t0v-B     1 -   4 <=>  124 - 127   (MET    1  - CYS    4  <=> GLN  124  - GLN  127 )                          
+   1: a5um-A 6t0v-B    37 -  43 <=>  500 - 506   (ASN   37  - LEU   43  <=> GLY  500  - SER  506 )                          
+   1: a5um-A 6t0v-B    60 -  80 <=>  518 - 538   (VAL   60  - SER   80  <=> ASN  518  - ASP  538 )                          
+   1: a5um-A 6t0v-B    82 -  99 <=>  539 - 556   (VAL   82  - HIS   99  <=> LEU  539  - ARG  556 )                          
+   1: a5um-A 6t0v-B   100 - 103 <=>  559 - 562   (GLU  100  - LYS  103  <=> TYR  559  - HIS  562 )                          
+   1: a5um-A 6t0v-B   104 - 110 <=>  596 - 602   (ARG  104  - THR  110  <=> PRO  596  - ARG  602 )                          
+   1: a5um-A 6t0v-B   162 - 176 <=>  707 - 721   (PRO  162  - LEU  176  <=> LEU  719  - GLY  733 )                          
+   1: a5um-A 6t0v-B   185 - 193 <=>  724 - 732   (THR  185  - THR  193  <=> SER  736  - THR  744 )                          
+
+# Translation-rotation matrices
+-matrix  "a5um-A 6t0v-B  U(1,.)  -0.086027 -0.995626 -0.036457          134.909561"
+-matrix  "a5um-A 6t0v-B  U(2,.)   0.811644 -0.091257  0.576980         -156.031815"
+-matrix  "a5um-A 6t0v-B  U(3,.)  -0.577783  0.020046  0.815944          -17.606684"
+

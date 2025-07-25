@@ -1,0 +1,20 @@
+# Job: test
+# Query: a1k4A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  2.3 13.5   68   745    1  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a1k4-A 6t0v-B    12 -  33 <=>  517 - 538   (GLN   12  - SER   33  <=> ASN  517  - ASP  538 )                          
+   1: a1k4-A 6t0v-B    54 -  72 <=>  540 - 558   (ASP   54  - GLU   72  <=> GLY  540  - THR  558 )                          
+   1: a1k4-A 6t0v-B    74 -  78 <=>  559 - 563   (PHE   74  - SER   78  <=> TYR  559  - ARG  563 )                          
+   1: a1k4-A 6t0v-B    80 -  83 <=>  576 - 579   (ASP   80  - THR   83  <=> ILE  576  - LEU  579 )                          
+   1: a1k4-A 6t0v-B   119 - 122 <=>  585 - 588   (THR  119  - ASN  122  <=> SER  585  - GLY  588 )                          
+   1: a1k4-A 6t0v-B   296 - 299 <=>  600 - 603   (LEU  296  - GLN  299  <=> ASN  600  - ASN  603 )                          
+   1: a1k4-A 6t0v-B   436 - 441 <=>  709 - 714   (ALA  436  - VAL  441  <=> ARG  721  - ALA  726 )                          
+   1: a1k4-A 6t0v-B   534 - 537 <=>  717 - 720   (ARG  534  - LYS  537  <=> ASP  729  - SER  732 )                          
+
+# Translation-rotation matrices
+-matrix  "a1k4-A 6t0v-B  U(1,.)  -0.733691 -0.641730  0.223338          150.445160"
+-matrix  "a1k4-A 6t0v-B  U(2,.)  -0.597877  0.765884  0.236567          -51.657932"
+-matrix  "a1k4-A 6t0v-B  U(3,.)  -0.322863  0.040039 -0.945598          141.817200"
+

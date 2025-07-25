@@ -1,0 +1,21 @@
+# Job: test
+# Query: a3cxA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  2.4 13.0   83   417    6  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: a3cx-A 3amt-A    40 -  48 <=>    1 -   9   (ILE   40  - PHE   48  <=> HIS    0  - ASP    8 )                          
+   1: a3cx-A 3amt-A    49 -  52 <=>   11 -  14   (VAL   49  - PRO   52  <=> THR   10  - SER   13 )                          
+   1: a3cx-A 3amt-A    57 -  60 <=>   15 -  18   (GLY   57  - LEU   60  <=> ARG   14  - CYS   17 )                          
+   1: a3cx-A 3amt-A    63 -  78 <=>   19 -  34   (ASN   63  - ASP   78  <=> UNK   18  - LEU   33 )                          
+   1: a3cx-A 3amt-A    79 -  99 <=>   66 -  86   (VAL   79  - TYR   99  <=> VAL   65  - LEU   85 )                          
+   1: a3cx-A 3amt-A   101 - 111 <=>   91 - 101   (GLU  101  - PHE  111  <=> THR   90  - GLU  100 )                          
+   1: a3cx-A 3amt-A   131 - 137 <=>  132 - 138   (HIS  131  - GLN  137  <=> ILE  131  - LYS  137 )                          
+   1: a3cx-A 3amt-A   285 - 291 <=>  253 - 259   (GLU  285  - HIS  291  <=> LEU  252  - VAL  258 )                          
+   1: a3cx-A 3amt-A   309 - 312 <=>  413 - 416   (ASP  309  - THR  312  <=> ARG  416  - PHE  419 )                          
+
+# Translation-rotation matrices
+-matrix  "a3cx-A 3amt-A  U(1,.)   0.285708  0.887505 -0.361531          -44.892265"
+-matrix  "a3cx-A 3amt-A  U(2,.)  -0.607760 -0.123879 -0.784399           68.535301"
+-matrix  "a3cx-A 3amt-A  U(3,.)  -0.740945  0.443833  0.503997          -64.800247"
+

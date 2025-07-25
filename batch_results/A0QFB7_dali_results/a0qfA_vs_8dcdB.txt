@@ -1,0 +1,29 @@
+# Job: test
+# Query: a0qfA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  8dcd-B  2.7  3.8  117   481    8  MOL_ID: 1; MOLECULE: TRNA-SPLICING LIGASE RTCB; CHAIN: A, B; SYNONYM: 
+
+# Structural equivalences
+   1: a0qf-A 8dcd-B     3 -   6 <=>   93 -  96   (ARG    3  - MET    6  <=> GLY   93  - ILE   96 )                          
+   1: a0qf-A 8dcd-B     7 -  16 <=>   98 - 107   (GLY    7  - CYS   16  <=> CYS   98  - LEU  107 )                          
+   1: a0qf-A 8dcd-B    26 -  31 <=>  108 - 113   (PRO   26  - ARG   31  <=> THR  108  - ARG  113 )                          
+   1: a0qf-A 8dcd-B    35 -  38 <=>  118 - 121   (ARG   35  - VAL   38  <=> GLN  118  - ASP  121 )                          
+   1: a0qf-A 8dcd-B    48 -  51 <=>  127 - 130   (LEU   48  - GLY   51  <=> VAL  127  - GLY  130 )                          
+   1: a0qf-A 8dcd-B    52 -  59 <=>  203 - 210   (ALA   52  - GLY   59  <=> HIS  203  - VAL  210 )                          
+   1: a0qf-A 8dcd-B    60 -  69 <=>  229 - 238   (SER   60  - CYS   69  <=> VAL  229  - ARG  238 )                          
+   1: a0qf-A 8dcd-B    71 -  95 <=>  288 - 312   (ASN   71  - GLN   95  <=> ALA  288  - LYS  312 )                          
+   1: a0qf-A 8dcd-B   105 - 111 <=>  318 - 324   (ASP  105  - ASN  111  <=> ASP  318  - VAL  324 )                          
+   1: a0qf-A 8dcd-B   121 - 126 <=>  325 - 330   (GLY  121  - TYR  126  <=> TYR  325  - ASN  330 )                          
+   1: a0qf-A 8dcd-B   141 - 144 <=>  334 - 337   (LEU  141  - PHE  144  <=> VAL  334  - HIS  337 )                          
+   1: a0qf-A 8dcd-B   150 - 156 <=>  361 - 367   (LEU  150  - LYS  156  <=> HIS  361  - LEU  367 )                          
+   1: a0qf-A 8dcd-B   167 - 171 <=>  370 - 374   (CYS  167  - ARG  171  <=> ASP  370  - PRO  374 )                          
+   1: a0qf-A 8dcd-B   183 - 186 <=>  386 - 389   (THR  183  - SER  186  <=> TYR  386  - ALA  389 )                          
+   1: a0qf-A 8dcd-B   189 - 192 <=>  400 - 403   (ILE  189  - THR  192  <=> GLY  400  - CYS  403 )                          
+   1: a0qf-A 8dcd-B   197 - 201 <=>  407 - 411   (HIS  197  - GLU  201  <=> GLY  407  - SER  411 )                          
+   1: a0qf-A 8dcd-B   414 - 417 <=>  440 - 443   (ASP  414  - VAL  417  <=> MET  440  - VAL  443 )                          
+
+# Translation-rotation matrices
+-matrix  "a0qf-A 8dcd-B  U(1,.)   0.788723  0.586514 -0.184166          -24.815916"
+-matrix  "a0qf-A 8dcd-B  U(2,.)  -0.580574  0.612172 -0.536823           58.631901"
+-matrix  "a0qf-A 8dcd-B  U(3,.)  -0.202113  0.530327  0.823349          -42.356411"
+

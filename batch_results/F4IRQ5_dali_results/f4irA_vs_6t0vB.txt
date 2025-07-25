@@ -1,0 +1,28 @@
+# Job: test
+# Query: f4irA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  3.6 15.1  118   745    7  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: f4ir-A 6t0v-B     1 -   7 <=>   53 -  59   (MET    1  - VAL    7  <=> GLY   53  - SER   59 )                          
+   1: f4ir-A 6t0v-B    13 -  16 <=>  189 - 192   (GLU   13  - ASN   16  <=> LYS  189  - ARG  192 )                          
+   1: f4ir-A 6t0v-B    31 -  34 <=>  194 - 197   (SER   31  - ALA   34  <=> ASN  194  - LYS  197 )                          
+   1: f4ir-A 6t0v-B    67 -  83 <=>  296 - 312   (LEU   67  - PHE   83  <=> GLU  296  - ASN  312 )                          
+   1: f4ir-A 6t0v-B    86 -  89 <=>  406 - 409   (VAL   86  - PHE   89  <=> GLY  406  - MET  409 )                          
+   1: f4ir-A 6t0v-B    94 - 106 <=>  410 - 422   (ASP   94  - ALA  106  <=> GLY  410  - SER  422 )                          
+   1: f4ir-A 6t0v-B   108 - 113 <=>  423 - 428   (VAL  108  - PRO  113  <=> VAL  423  - GLN  428 )                          
+   1: f4ir-A 6t0v-B   114 - 117 <=>  437 - 440   (ASP  114  - PHE  117  <=> TRP  437  - GLY  440 )                          
+   1: f4ir-A 6t0v-B   119 - 130 <=>  441 - 452   (TYR  119  - LYS  130  <=> LEU  441  - ASN  452 )                          
+   1: f4ir-A 6t0v-B   135 - 139 <=>  453 - 457   (PHE  135  - ARG  139  <=> GLY  453  - GLU  457 )                          
+   1: f4ir-A 6t0v-B   140 - 155 <=>  459 - 474   (ALA  140  - TYR  155  <=> ILE  459  - GLY  474 )                          
+   1: f4ir-A 6t0v-B   172 - 175 <=>  476 - 479   (PRO  172  - SER  175  <=> ASN  476  - GLN  479 )                          
+   1: f4ir-A 6t0v-B   176 - 181 <=>  482 - 487   (SER  176  - CYS  181  <=> SER  482  - THR  487 )                          
+   1: f4ir-A 6t0v-B   194 - 197 <=>  492 - 495   (ARG  194  - ASP  197  <=> PHE  492  - PHE  495 )                          
+   1: f4ir-A 6t0v-B   313 - 319 <=>  500 - 506   (ASP  313  - PRO  319  <=> GLY  500  - SER  506 )                          
+   1: f4ir-A 6t0v-B   531 - 535 <=>  668 - 672   (GLU  531  - VAL  535  <=> ARG  680  - GLU  684 )                          
+
+# Translation-rotation matrices
+-matrix  "f4ir-A 6t0v-B  U(1,.)   0.246537  0.782552  0.571693         -226.731354"
+-matrix  "f4ir-A 6t0v-B  U(2,.)   0.264908 -0.621851  0.736970          -58.501408"
+-matrix  "f4ir-A 6t0v-B  U(3,.)   0.932225 -0.030244 -0.360614          -58.403919"
+

@@ -1,0 +1,29 @@
+# Job: test
+# Query: q05bA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  8dcd-A  5.3 11.6  119   481    7  MOL_ID: 1; MOLECULE: TRNA-SPLICING LIGASE RTCB; CHAIN: A, B; SYNONYM: 
+
+# Structural equivalences
+   1: q05b-A 8dcd-A    16 -  19 <=>   19 -  22   (THR   16  - THR   19  <=> ASP   19  - MET   22 )                          
+   1: q05b-A 8dcd-A    48 -  58 <=>   94 - 104   (LEU   48  - ASP   58  <=> TYR   94  - ARG  104 )                          
+   1: q05b-A 8dcd-A    60 -  63 <=>  105 - 108   (ARG   60  - HIS   63  <=> THR  105  - THR  108 )                          
+   1: q05b-A 8dcd-A    77 -  92 <=>  113 - 128   (SER   77  - ASN   92  <=> ARG  113  - PRO  128 )                          
+   1: q05b-A 8dcd-A    93 -  96 <=>  196 - 199   (GLU   93  - ASP   96  <=> GLY  196  - GLY  199 )                          
+   1: q05b-A 8dcd-A    98 - 104 <=>  203 - 209   (VAL   98  - SER  104  <=> HIS  203  - VAL  209 )                          
+   1: q05b-A 8dcd-A   105 - 111 <=>  229 - 235   (ASP  105  - PHE  111  <=> VAL  229  - THR  235 )                          
+   1: q05b-A 8dcd-A   113 - 116 <=>  236 - 239   (ARG  113  - ASN  116  <=> GLY  236  - GLY  239 )                          
+   1: q05b-A 8dcd-A   119 - 122 <=>  290 - 293   (LYS  119  - ALA  122  <=> ASN  290  - TRP  293 )                          
+   1: q05b-A 8dcd-A   124 - 142 <=>  294 - 312   (LYS  124  - ARG  142  <=> ALA  294  - LYS  312 )                          
+   1: q05b-A 8dcd-A   152 - 158 <=>  317 - 323   (TYR  152  - GLY  158  <=> GLY  317  - ILE  323 )                          
+   1: q05b-A 8dcd-A   159 - 164 <=>  325 - 330   (ARG  159  - PRO  164  <=> TYR  325  - ASN  330 )                          
+   1: q05b-A 8dcd-A   165 - 168 <=>  351 - 354   (SER  165  - THR  168  <=> LYS  351  - THR  354 )                          
+   1: q05b-A 8dcd-A   172 - 179 <=>  377 - 384   (TYR  172  - ASP  179  <=> ILE  377  - ALA  384 )                          
+   1: q05b-A 8dcd-A   211 - 214 <=>  417 - 420   (THR  211  - ALA  214  <=> ARG  417  - ARG  420 )                          
+   1: q05b-A 8dcd-A   231 - 234 <=>  430 - 433   (GLU  231  - MET  234  <=> ASN  430  - ILE  433 )                          
+   1: q05b-A 8dcd-A   238 - 243 <=>  476 - 481   (GLY  238  - TRP  243  <=> ILE  476  - GLY  481 )                          
+
+# Translation-rotation matrices
+-matrix  "q05b-A 8dcd-A  U(1,.)   0.235510 -0.283487 -0.929608           33.383533"
+-matrix  "q05b-A 8dcd-A  U(2,.)  -0.720697  0.590775 -0.362742           21.707752"
+-matrix  "q05b-A 8dcd-A  U(3,.)   0.652021  0.755394 -0.065175          -28.651161"
+

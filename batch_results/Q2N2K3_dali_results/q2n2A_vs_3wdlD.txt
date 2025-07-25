@@ -1,0 +1,19 @@
+# Job: test
+# Query: q2n2A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-D  4.5 10.0   73   249   10  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: q2n2-A 3wdl-D    65 -  69 <=>    2 -   6   (GLY   65  - LEU   69  <=> PRO    5  - PRO    9 )                          
+   1: q2n2-A 3wdl-D    71 -  92 <=>    7 -  28   (THR   71  - GLN   92  <=> ARG   10  - LYS   31 )                          
+   1: q2n2-A 3wdl-D    94 - 110 <=>   29 -  45   (LEU   94  - SER  110  <=> ALA   32  - GLY   48 )                          
+   1: q2n2-A 3wdl-D   155 - 160 <=>   83 -  88   (GLU  155  - GLU  160  <=> LYS   86  - LEU   91 )                          
+   1: q2n2-A 3wdl-D   201 - 207 <=>  154 - 160   (ASP  201  - PHE  207  <=> LEU  161  - THR  167 )                          
+   1: q2n2-A 3wdl-D   224 - 228 <=>  180 - 184   (ALA  224  - ILE  228  <=> ARG  187  - MET  191 )                          
+   1: q2n2-A 3wdl-D   232 - 242 <=>  227 - 237   (LEU  232  - SER  242  <=> THR  234  - ASP  244 )                          
+
+# Translation-rotation matrices
+-matrix  "q2n2-A 3wdl-D  U(1,.)  -0.347619  0.922645  0.166994            3.991280"
+-matrix  "q2n2-A 3wdl-D  U(2,.)  -0.518689 -0.040856 -0.853986            7.148273"
+-matrix  "q2n2-A 3wdl-D  U(3,.)  -0.781103 -0.383480  0.492768           -0.249349"
+

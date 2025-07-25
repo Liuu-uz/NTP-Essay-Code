@@ -1,0 +1,27 @@
+# Job: test
+# Query: a0qfA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-B  2.1  5.7  112  1095    6  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a0qf-A 4ff3-B    17 -  20 <=>  625 - 628   (THR   17  - GLY   20  <=> TYR  630  - ASN  633 )                          
+   1: a0qf-A 4ff3-B    26 -  29 <=>  635 - 638   (PRO   26  - VAL   29  <=> ILE  640  - LEU  643 )                          
+   1: a0qf-A 4ff3-B    38 -  42 <=>  756 - 760   (VAL   38  - ARG   42  <=> SER  761  - GLY  765 )                          
+   1: a0qf-A 4ff3-B    54 -  57 <=>  779 - 782   (LEU   54  - ASP   57  <=> ALA  784  - GLU  787 )                          
+   1: a0qf-A 4ff3-B    60 -  63 <=>  783 - 786   (SER   60  - GLU   63  <=> ASN  788  - HIS  791 )                          
+   1: a0qf-A 4ff3-B   109 - 112 <=>  791 - 794   (PHE  109  - ASN  112  <=> PRO  796  - ASN  799 )                          
+   1: a0qf-A 4ff3-B   213 - 216 <=>  796 - 799   (SER  213  - CYS  216  <=> ILE  801  - THR  804 )                          
+   1: a0qf-A 4ff3-B   221 - 237 <=>  806 - 822   (MET  221  - GLY  237  <=> TYR  811  - LEU  827 )                          
+   1: a0qf-A 4ff3-B   238 - 245 <=>  866 - 873   (VAL  238  - LEU  245  <=> PRO  871  - GLN  878 )                          
+   1: a0qf-A 4ff3-B   251 - 254 <=>  923 - 926   (ALA  251  - GLU  254  <=> GLY  928  - MET  931 )                          
+   1: a0qf-A 4ff3-B   262 - 265 <=>  966 - 969   (ARG  262  - VAL  265  <=> VAL  971  - SER  974 )                          
+   1: a0qf-A 4ff3-B   273 - 276 <=>  970 - 973   (ALA  273  - LEU  276  <=> TRP  975  - ASN  978 )                          
+   1: a0qf-A 4ff3-B   278 - 294 <=>  974 - 990   (ILE  278  - GLU  294  <=> PRO  979  - ASP  995 )                          
+   1: a0qf-A 4ff3-B   295 - 316 <=> 1020 -1041   (PRO  295  - GLN  316  <=> ILE 1025  - ARG 1046 )                          
+   1: a0qf-A 4ff3-B   333 - 339 <=> 1074 -1080   (LEU  333  - ASP  339  <=> THR 1079  - ASP 1085 )                          
+
+# Translation-rotation matrices
+-matrix  "a0qf-A 4ff3-B  U(1,.)   0.737850 -0.377639  0.559434         -292.264435"
+-matrix  "a0qf-A 4ff3-B  U(2,.)  -0.627708 -0.688594  0.363071         -167.288315"
+-matrix  "a0qf-A 4ff3-B  U(3,.)   0.248113 -0.619053 -0.745126          207.852768"
+

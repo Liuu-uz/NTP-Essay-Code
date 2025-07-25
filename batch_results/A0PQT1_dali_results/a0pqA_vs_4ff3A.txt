@@ -1,0 +1,23 @@
+# Job: test
+# Query: a0pqA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  3.0  4.3   98  1095    3  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a0pq-A 4ff3-A    13 -  16 <=>  621 - 624   (GLY   13  - CYS   16  <=> LEU  626  - ASN  629 )                          
+   1: a0pq-A 4ff3-A    32 -  35 <=>  751 - 754   (TYR   32  - ARG   35  <=> VAL  756  - LEU  759 )                          
+   1: a0pq-A 4ff3-A    37 -  40 <=>  755 - 758   (VAL   37  - TRP   40  <=> GLN  760  - GLY  763 )                          
+   1: a0pq-A 4ff3-A    55 -  61 <=>  782 - 788   (TYR   55  - HIS   61  <=> GLU  787  - PHE  793 )                          
+   1: a0pq-A 4ff3-A   119 - 122 <=>  791 - 794   (SER  119  - CYS  122  <=> PRO  796  - ASN  799 )                          
+   1: a0pq-A 4ff3-A   166 - 170 <=>  799 - 803   (PHE  166  - GLN  170  <=> THR  804  - SER  808 )                          
+   1: a0pq-A 4ff3-A   220 - 237 <=>  805 - 822   (THR  220  - GLY  237  <=> VAL  810  - LEU  827 )                          
+   1: a0pq-A 4ff3-A   238 - 241 <=>  866 - 869   (VAL  238  - ARG  241  <=> PRO  871  - GLU  874 )                          
+   1: a0pq-A 4ff3-A   264 - 270 <=>  923 - 929   (PRO  264  - GLY  270  <=> GLY  928  - GLN  934 )                          
+   1: a0pq-A 4ff3-A   276 - 295 <=>  972 - 991   (LEU  276  - PRO  295  <=> GLY  977  - PHE  996 )                          
+   1: a0pq-A 4ff3-A   296 - 316 <=> 1021 -1041   (ASN  296  - GLN  316  <=> ALA 1026  - ARG 1046 )                          
+
+# Translation-rotation matrices
+-matrix  "a0pq-A 4ff3-A  U(1,.)   0.948656 -0.244969  0.200102          -90.457596"
+-matrix  "a0pq-A 4ff3-A  U(2,.)   0.218873  0.051676 -0.974384          364.172394"
+-matrix  "a0pq-A 4ff3-A  U(3,.)   0.228354  0.968153  0.102640          -37.054970"
+

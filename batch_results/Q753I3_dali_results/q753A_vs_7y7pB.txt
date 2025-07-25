@@ -1,0 +1,19 @@
+# Job: test
+# Query: q753A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7y7p-B  2.5  8.1   64   908    8  MOL_ID: 1; MOLECULE: RNA-DEPENDENT RNA POLYMERASE; CHAIN: A, B; EC: 2.
+
+# Structural equivalences
+   1: q753-A 7y7p-B     2 -   5 <=>  136 - 139   (ALA    2  - GLU    5  <=> THR  544  - SER  547 )                          
+   1: q753-A 7y7p-B    26 -  29 <=>  564 - 567   (SER   26  - GLU   29  <=> LYS  994  - VAL  997 )                          
+   1: q753-A 7y7p-B    32 -  36 <=>  598 - 602   (SER   32  - GLY   36  <=> ALA 1028  - LEU 1032 )                          
+   1: q753-A 7y7p-B   110 - 115 <=>  606 - 611   (ILE  110  - LEU  115  <=> LEU 1036  - LYS 1041 )                          
+   1: q753-A 7y7p-B   121 - 124 <=>  647 - 650   (ASP  121  - TYR  124  <=> LEU 1077  - ASN 1080 )                          
+   1: q753-A 7y7p-B   127 - 143 <=>  651 - 667   (VAL  127  - VAL  143  <=> PHE 1081  - ASN 1097 )                          
+   1: q753-A 7y7p-B   171 - 194 <=>  670 - 693   (TYR  171  - LEU  194  <=> SER 1100  - VAL 1123 )                          
+
+# Translation-rotation matrices
+-matrix  "q753-A 7y7p-B  U(1,.)  -0.021232  0.659035 -0.751812          132.714890"
+-matrix  "q753-A 7y7p-B  U(2,.)  -0.880348  0.344086  0.326486           41.627922"
+-matrix  "q753-A 7y7p-B  U(3,.)   0.473854  0.668788  0.572874         -112.124863"
+

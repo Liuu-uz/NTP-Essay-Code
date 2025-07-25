@@ -1,0 +1,43 @@
+# Job: test
+# Query: a0l1A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7tgk-E 10.2  4.4  245   593   12  MOL_ID: 1; MOLECULE: DESFERRIOXAMINE SYNTHETASE DESD; CHAIN: D, B, E, 
+
+# Structural equivalences
+   1: a0l1-A 7tgk-E     6 -   9 <=>  142 - 145   (ASP    6  - THR    9  <=> GLY  141  - ALA  144 )                          
+   1: a0l1-A 7tgk-E    11 -  14 <=>  147 - 150   (LEU   11  - PHE   14  <=> GLU  146  - MET  149 )                          
+   1: a0l1-A 7tgk-E    15 -  25 <=>  179 - 189   (TYR   15  - ASN   25  <=> ALA  178  - ALA  188 )                          
+   1: a0l1-A 7tgk-E    27 -  34 <=>  194 - 201   (HIS   27  - ASP   34  <=> ALA  193  - GLY  200 )                          
+   1: a0l1-A 7tgk-E    43 -  48 <=>  203 - 208   (GLN   43  - LEU   48  <=> ASP  202  - VAL  207 )                          
+   1: a0l1-A 7tgk-E    56 -  59 <=>  265 - 268   (ALA   56  - GLU   59  <=> GLY  264  - ASP  267 )                          
+   1: a0l1-A 7tgk-E    61 -  66 <=>  269 - 274   (ALA   61  - GLN   66  <=> ASP  268  - GLN  273 )                          
+   1: a0l1-A 7tgk-E    81 -  88 <=>  275 - 282   (GLY   81  - LEU   88  <=> GLN  274  - ASN  281 )                          
+   1: a0l1-A 7tgk-E    89 -  92 <=>  285 - 288   (GLY   89  - LEU   92  <=> HIS  284  - LYS  287 )                          
+   1: a0l1-A 7tgk-E   100 - 104 <=>  289 - 293   (VAL  100  - GLY  104  <=> HIS  288  - THR  292 )                          
+   1: a0l1-A 7tgk-E   111 - 137 <=>  299 - 325   (SER  111  - GLY  137  <=> ASN  298  - ILE  324 )                          
+   1: a0l1-A 7tgk-E   139 - 150 <=>  337 - 348   (PRO  139  - ASP  150  <=> SER  336  - ARG  347 )                          
+   1: a0l1-A 7tgk-E   155 - 159 <=>  359 - 363   (ARG  155  - GLU  159  <=> TYR  358  - ARG  362 )                          
+   1: a0l1-A 7tgk-E   160 - 170 <=>  365 - 375   (THR  160  - SER  170  <=> MET  364  - VAL  374 )                          
+   1: a0l1-A 7tgk-E   172 - 180 <=>  385 - 393   (ILE  172  - PHE  180  <=> THR  384  - VAL  392 )                          
+   1: a0l1-A 7tgk-E   184 - 188 <=>  394 - 398   (GLU  184  - ALA  188  <=> ASP  393  - ARG  397 )                          
+   1: a0l1-A 7tgk-E   205 - 208 <=>  407 - 410   (HIS  205  - CYS  208  <=> ARG  406  - LEU  409 )                          
+   1: a0l1-A 7tgk-E   212 - 232 <=>  411 - 431   (GLY  212  - GLN  232  <=> ALA  410  - PHE  430 )                          
+   1: a0l1-A 7tgk-E   233 - 238 <=>  433 - 438   (ALA  233  - HIS  238  <=> ALA  432  - PHE  437 )                          
+   1: a0l1-A 7tgk-E   240 - 248 <=>  439 - 447   (VAL  240  - ILE  248  <=> MET  438  - LEU  446 )                          
+   1: a0l1-A 7tgk-E   249 - 255 <=>  456 - 462   (LEU  249  - PHE  255  <=> ARG  455  - ILE  461 )                          
+   1: a0l1-A 7tgk-E   256 - 263 <=>  464 - 471   (GLY  256  - THR  263  <=> GLU  463  - PRO  470 )                          
+   1: a0l1-A 7tgk-E   264 - 267 <=>  487 - 490   (PHE  264  - TYR  267  <=> PRO  486  - MET  489 )                          
+   1: a0l1-A 7tgk-E   281 - 285 <=>  491 - 495   (PHE  281  - PRO  285  <=> LYS  490  - ILE  494 )                          
+   1: a0l1-A 7tgk-E   286 - 289 <=>  497 - 500   (GLY  286  - LEU  289  <=> THR  496  - PHE  499 )                          
+   1: a0l1-A 7tgk-E   290 - 300 <=>  502 - 512   (TRP  290  - THR  300  <=> CYS  501  - ALA  511 )                          
+   1: a0l1-A 7tgk-E   301 - 317 <=>  515 - 531   (PRO  301  - HIS  317  <=> GLU  514  - ARG  530 )                          
+   1: a0l1-A 7tgk-E   321 - 325 <=>  532 - 536   (GLN  321  - MET  325  <=> GLU  531  - ALA  535 )                          
+   1: a0l1-A 7tgk-E   344 - 348 <=>  537 - 541   (ASP  344  - LEU  348  <=> HIS  536  - ASP  540 )                          
+   1: a0l1-A 7tgk-E   350 - 355 <=>  542 - 547   (LEU  350  - THR  355  <=> ASP  541  - TYR  546 )                          
+   1: a0l1-A 7tgk-E   478 - 481 <=>  571 - 574   (LEU  478  - SER  481  <=> VAL  570  - ALA  573 )                          
+
+# Translation-rotation matrices
+-matrix  "a0l1-A 7tgk-E  U(1,.)  -0.518231 -0.696381 -0.496478           63.552387"
+-matrix  "a0l1-A 7tgk-E  U(2,.)  -0.751374  0.093444  0.653227           32.239071"
+-matrix  "a0l1-A 7tgk-E  U(3,.)  -0.408501  0.711563 -0.571668           25.161167"
+

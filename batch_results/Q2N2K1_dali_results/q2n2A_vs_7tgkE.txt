@@ -1,0 +1,30 @@
+# Job: test
+# Query: q2n2A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7tgk-E  2.7  4.7  112   593    6  MOL_ID: 1; MOLECULE: DESFERRIOXAMINE SYNTHETASE DESD; CHAIN: D, B, E, 
+
+# Structural equivalences
+   1: q2n2-A 7tgk-E    23 -  26 <=>   64 -  67   (THR   23  - ASN   26  <=> ALA   63  - ARG   66 )                          
+   1: q2n2-A 7tgk-E    43 -  46 <=>  386 - 389   (PRO   43  - VAL   46  <=> THR  385  - ALA  388 )                          
+   1: q2n2-A 7tgk-E    47 -  53 <=>  392 - 398   (ARG   47  - PRO   53  <=> HIS  391  - ARG  397 )                          
+   1: q2n2-A 7tgk-E    56 -  59 <=>  403 - 406   (VAL   56  - GLY   59  <=> GLU  402  - ALA  405 )                          
+   1: q2n2-A 7tgk-E    61 -  73 <=>  409 - 421   (GLY   61  - VAL   73  <=> GLY  408  - ARG  420 )                          
+   1: q2n2-A 7tgk-E    74 -  82 <=>  423 - 431   (GLY   74  - LEU   82  <=> TYR  422  - PHE  430 )                          
+   1: q2n2-A 7tgk-E    83 -  86 <=>  433 - 436   (VAL   83  - PHE   86  <=> ALA  432  - LEU  435 )                          
+   1: q2n2-A 7tgk-E    92 -  99 <=>  479 - 486   (ARG   92  - LEU   99  <=> VAL  478  - VAL  485 )                          
+   1: q2n2-A 7tgk-E   103 - 113 <=>  490 - 500   (LEU  103  - LEU  113  <=> MET  489  - PHE  499 )                          
+   1: q2n2-A 7tgk-E   114 - 117 <=>  502 - 505   (VAL  114  - PRO  117  <=> CYS  501  - ARG  504 )                          
+   1: q2n2-A 7tgk-E   121 - 124 <=>  517 - 520   (ASN  121  - LYS  124  <=> LEU  516  - ASP  519 )                          
+   1: q2n2-A 7tgk-E   125 - 139 <=>  522 - 536   (ALA  125  - ARG  139  <=> PHE  521  - ALA  535 )                          
+   1: q2n2-A 7tgk-E   141 - 144 <=>  537 - 540   (LEU  141  - GLY  144  <=> HIS  536  - LEU  539 )                          
+   1: q2n2-A 7tgk-E   168 - 171 <=>  542 - 545   (ARG  168  - LEU  171  <=> ASP  541  - ARG  544 )                          
+   1: q2n2-A 7tgk-E   173 - 176 <=>  548 - 551   (TYR  173  - ILE  176  <=> ASP  547  - ALA  550 )                          
+   1: q2n2-A 7tgk-E   194 - 197 <=>  553 - 556   (SER  194  - MET  197  <=> GLU  552  - LEU  555 )                          
+   1: q2n2-A 7tgk-E   206 - 209 <=>  576 - 579   (ASP  206  - GLY  209  <=> PRO  575  - ALA  578 )                          
+   1: q2n2-A 7tgk-E   234 - 238 <=>  581 - 585   (PHE  234  - VAL  238  <=> GLN  580  - THR  584 )                          
+
+# Translation-rotation matrices
+-matrix  "q2n2-A 7tgk-E  U(1,.)  -0.888725 -0.416007 -0.192627           83.876205"
+-matrix  "q2n2-A 7tgk-E  U(2,.)  -0.312058  0.856767 -0.410573            1.170501"
+-matrix  "q2n2-A 7tgk-E  U(3,.)   0.335838 -0.304776 -0.891249           -2.530735"
+

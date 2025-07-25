@@ -1,0 +1,21 @@
+# Job: test
+# Query: a6qjA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  2.9  4.1   73   417    4  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: a6qj-A 3amt-A     1 -  11 <=>  156 - 166   (MET    1  - GLN   11  <=> ASP  155  - TYR  165 )                          
+   1: a6qj-A 3amt-A    13 -  21 <=>  212 - 220   (VAL   13  - ILE   21  <=> PRO  211  - GLU  219 )                          
+   1: a6qj-A 3amt-A    27 -  36 <=>  221 - 230   (ILE   27  - ASN   36  <=> SER  220  - GLU  229 )                          
+   1: a6qj-A 3amt-A    42 -  55 <=>  233 - 246   (GLU   42  - LYS   55  <=> LYS  232  - ASN  245 )                          
+   1: a6qj-A 3amt-A   160 - 164 <=>  300 - 304   (TYR  160  - GLU  164  <=> ALA  299  - PRO  303 )                          
+   1: a6qj-A 3amt-A   179 - 184 <=>  306 - 311   (ALA  179  - GLY  184  <=> LYS  305  - VAL  310 )                          
+   1: a6qj-A 3amt-A   207 - 210 <=>  329 - 332   (ASP  207  - ASP  210  <=> LYS  328  - ILE  331 )                          
+   1: a6qj-A 3amt-A   217 - 223 <=>  398 - 404   (PHE  217  - LYS  223  <=> ARG  401  - PRO  407 )                          
+   1: a6qj-A 3amt-A   224 - 230 <=>  406 - 412   (GLN  224  - VAL  230  <=> ILE  409  - GLY  415 )                          
+
+# Translation-rotation matrices
+-matrix  "a6qj-A 3amt-A  U(1,.)   0.646049  0.659658 -0.384020          -45.530689"
+-matrix  "a6qj-A 3amt-A  U(2,.)  -0.059318  0.544976  0.836351         -108.826469"
+-matrix  "a6qj-A 3amt-A  U(3,.)   0.760987 -0.517544  0.391211          -11.193123"
+

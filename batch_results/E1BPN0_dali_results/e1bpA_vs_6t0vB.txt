@@ -1,0 +1,19 @@
+# Job: test
+# Query: e1bpA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  2.0  4.0   59   745    5  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: e1bp-A 6t0v-B     1 -   4 <=>   59 -  62   (MET    1  - SER    4  <=> SER   59  - GLY   62 )                          
+   1: e1bp-A 6t0v-B     6 -   9 <=>   63 -  66   (LEU    6  - LYS    9  <=> ALA   63  - LEU   66 )                          
+   1: e1bp-A 6t0v-B    23 -  26 <=>  129 - 132   (ALA   23  - GLN   26  <=> TYR  129  - THR  132 )                          
+   1: e1bp-A 6t0v-B    30 -  33 <=>  147 - 150   (SER   30  - PRO   33  <=> ILE  147  - PHE  150 )                          
+   1: e1bp-A 6t0v-B    38 -  60 <=>  700 - 722   (ARG   38  - ALA   60  <=> ALA  712  - ARG  734 )                          
+   1: e1bp-A 6t0v-B    70 -  85 <=>  723 - 738   (SER   70  - ARG   85  <=> ILE  735  - ILE  750 )                          
+   1: e1bp-A 6t0v-B   315 - 318 <=>  742 - 745   (LEU  315  - SER  318  <=> LYS  754  - GLY  757 )                          
+
+# Translation-rotation matrices
+-matrix  "e1bp-A 6t0v-B  U(1,.)  -0.971064  0.158589  0.178564           42.419933"
+-matrix  "e1bp-A 6t0v-B  U(2,.)   0.165200 -0.093897  0.981780         -117.019417"
+-matrix  "e1bp-A 6t0v-B  U(3,.)   0.172466  0.982870  0.064982         -165.032104"
+

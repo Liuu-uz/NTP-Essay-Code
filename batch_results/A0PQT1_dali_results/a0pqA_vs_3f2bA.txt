@@ -1,0 +1,26 @@
+# Job: test
+# Query: a0pqA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3f2b-A  2.4 19.8  124   994    6  MOL_ID: 1; MOLECULE: DNA-DIRECTED DNA POLYMERASE III ALPHA CHAIN; CHAI
+
+# Structural equivalences
+   1: a0pq-A 3f2b-A    20 -  23 <=>  372 - 375   (GLY   20  - ARG   23  <=> TYR  822  - ARG  825 )                          
+   1: a0pq-A 3f2b-A    25 -  36 <=>  421 - 432   (SER   25  - ARG   36  <=> VAL  871  - LYS  882 )                          
+   1: a0pq-A 3f2b-A    53 -  58 <=>  439 - 444   (ARG   53  - VAL   58  <=> LEU  889  - GLY  894 )                          
+   1: a0pq-A 3f2b-A    59 -  64 <=>  523 - 528   (GLY   59  - TYR   64  <=> ASP  973  - PHE  978 )                          
+   1: a0pq-A 3f2b-A    81 -  84 <=>  529 - 532   (ALA   81  - TRP   84  <=> SER  979  - TYR  982 )                          
+   1: a0pq-A 3f2b-A    86 -  98 <=>  533 - 545   (LEU   86  - ALA   98  <=> GLN  983  - GLY  995 )                          
+   1: a0pq-A 3f2b-A   102 - 105 <=>  547 - 550   (ILE  102  - ASP  105  <=> ASP  997  - TYR 1000 )                          
+   1: a0pq-A 3f2b-A   126 - 134 <=>  736 - 744   (TYR  126  - PHE  134  <=> HIS 1186  - ASN 1194 )                          
+   1: a0pq-A 3f2b-A   216 - 222 <=>  853 - 859   (CYS  216  - LEU  222  <=> THR 1303  - PHE 1309 )                          
+   1: a0pq-A 3f2b-A   274 - 290 <=>  866 - 882   (SER  274  - LEU  290  <=> LYS 1316  - GLY 1332 )                          
+   1: a0pq-A 3f2b-A   293 - 319 <=>  883 - 909   (ARG  293  - ALA  319  <=> ILE 1333  - PHE 1359 )                          
+   1: a0pq-A 3f2b-A   329 - 332 <=>  922 - 925   (ILE  329  - LYS  332  <=> PHE 1372  - ASP 1375 )                          
+   1: a0pq-A 3f2b-A   370 - 374 <=>  940 - 944   (LEU  370  - GLY  374  <=> GLY 1390  - ALA 1394 )                          
+   1: a0pq-A 3f2b-A   427 - 432 <=>  989 - 994   (GLN  427  - VAL  432  <=> ASN 1439  - PHE 1444 )                          
+
+# Translation-rotation matrices
+-matrix  "a0pq-A 3f2b-A  U(1,.)  -0.172674  0.950186 -0.259482          -36.626789"
+-matrix  "a0pq-A 3f2b-A  U(2,.)   0.908627  0.051965 -0.414362          -36.878307"
+-matrix  "a0pq-A 3f2b-A  U(3,.)  -0.380237 -0.307322 -0.872338            9.916621"
+

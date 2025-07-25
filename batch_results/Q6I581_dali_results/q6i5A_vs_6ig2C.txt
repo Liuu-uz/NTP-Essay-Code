@@ -1,0 +1,24 @@
+# Job: test
+# Query: q6i5A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ig2-C  2.8  3.9   83   278    6  MOL_ID: 1; MOLECULE: PHOSPHATIDATE CYTIDYLYLTRANSFERASE, MITOCHONDRIAL
+
+# Structural equivalences
+   1: q6i5-A 6ig2-C    90 -  93 <=>    3 -   6   (ASN   90  - LEU   93  <=> VAL   35  - LEU   38 )                          
+   1: q6i5-A 6ig2-C    95 -  99 <=>   15 -  19   (SER   95  - HIS   99  <=> GLU   47  - ILE   51 )                          
+   1: q6i5-A 6ig2-C   428 - 431 <=>   21 -  24   (ARG  428  - LEU  431  <=> PRO   53  - GLU   56 )                          
+   1: q6i5-A 6ig2-C   441 - 450 <=>   25 -  34   (THR  441  - GLU  450  <=> LEU   57  - ASN   66 )                          
+   1: q6i5-A 6ig2-C   452 - 455 <=>   35 -  38   (ALA  452  - PHE  455  <=> TYR   67  - ALA   70 )                          
+   1: q6i5-A 6ig2-C   462 - 471 <=>   39 -  48   (GLU  462  - GLU  471  <=> PRO   71  - SER   80 )                          
+   1: q6i5-A 6ig2-C   476 - 490 <=>   54 -  68   (PRO  476  - SER  490  <=> ASN   93  - LYS  107 )                          
+   1: q6i5-A 6ig2-C   491 - 495 <=>   70 -  74   (ASP  491  - SER  495  <=> HIS  109  - LEU  113 )                          
+   1: q6i5-A 6ig2-C   502 - 506 <=>  109 - 113   (ASP  502  - ILE  506  <=> VAL  148  - GLY  152 )                          
+   1: q6i5-A 6ig2-C   521 - 529 <=>  115 - 123   (PRO  521  - LYS  529  <=> ILE  154  - LYS  162 )                          
+   1: q6i5-A 6ig2-C   530 - 533 <=>  125 - 128   (GLY  530  - LYS  533  <=> ASP  164  - GLU  167 )                          
+   1: q6i5-A 6ig2-C   536 - 543 <=>  160 - 167   (LEU  536  - GLY  543  <=> SER  199  - LEU  206 )                          
+
+# Translation-rotation matrices
+-matrix  "q6i5-A 6ig2-C  U(1,.)   0.973774  0.209873 -0.087855            8.022524"
+-matrix  "q6i5-A 6ig2-C  U(2,.)   0.050601  0.176698  0.982964          -53.122993"
+-matrix  "q6i5-A 6ig2-C  U(3,.)   0.221821 -0.961630  0.161444           71.879211"
+

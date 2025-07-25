@@ -1,0 +1,27 @@
+# Job: test
+# Query: q753A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  3.5  4.6  108  1095    6  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: q753-A 4ff3-A     1 -   5 <=>  414 - 418   (MET    1  - GLU    5  <=> MET  419  - GLY  423 )                          
+   1: q753-A 4ff3-A    12 -  16 <=>  671 - 675   (SER   12  - THR   16  <=> THR  676  - SER  680 )                          
+   1: q753-A 4ff3-A    19 -  24 <=>  676 - 681   (ARG   19  - ASP   24  <=> GLY  681  - ALA  686 )                          
+   1: q753-A 4ff3-A    44 -  48 <=>  815 - 819   (THR   44  - ALA   48  <=> THR  820  - SER  824 )                          
+   1: q753-A 4ff3-A    50 -  53 <=>  909 - 912   (THR   50  - GLY   53  <=> GLN  914  - VAL  917 )                          
+   1: q753-A 4ff3-A   117 - 121 <=>  922 - 926   (LEU  117  - ASP  121  <=> THR  927  - MET  931 )                          
+   1: q753-A 4ff3-A   123 - 127 <=>  969 - 973   (ASP  123  - VAL  127  <=> SER  974  - ASN  978 )                          
+   1: q753-A 4ff3-A   130 - 145 <=>  974 - 989   (PRO  130  - ARG  145  <=> PRO  979  - VAL  994 )                          
+   1: q753-A 4ff3-A   151 - 154 <=>  990 - 993   (PHE  151  - LEU  154  <=> ASP  995  - LYS  998 )                          
+   1: q753-A 4ff3-A   156 - 164 <=>  999 -1007   (CYS  156  - ARG  164  <=> LEU 1004  - LEU 1012 )                          
+   1: q753-A 4ff3-A   166 - 170 <=> 1018 -1022   (LYS  166  - THR  170  <=> ASP 1023  - ASN 1027 )                          
+   1: q753-A 4ff3-A   171 - 192 <=> 1024 -1045   (TYR  171  - VAL  192  <=> ALA 1029  - LEU 1050 )                          
+   1: q753-A 4ff3-A   250 - 254 <=> 1051 -1055   (PRO  250  - HIS  254  <=> SER 1056  - MET 1060 )                          
+   1: q753-A 4ff3-A   264 - 271 <=> 1069 -1076   (ASN  264  - SER  271  <=> ASP 1074  - GLU 1081 )                          
+   1: q753-A 4ff3-A   308 - 311 <=> 1082 -1085   (MET  308  - ILE  311  <=> LEU 1087  - LEU 1090 )                          
+
+# Translation-rotation matrices
+-matrix  "q753-A 4ff3-A  U(1,.)  -0.760517  0.036488  0.648291         -243.174393"
+-matrix  "q753-A 4ff3-A  U(2,.)  -0.624009  0.234960 -0.745256          282.791046"
+-matrix  "q753-A 4ff3-A  U(3,.)  -0.179516 -0.971320 -0.155922           49.558475"
+

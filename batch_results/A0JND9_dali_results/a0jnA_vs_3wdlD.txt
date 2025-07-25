@@ -1,0 +1,18 @@
+# Job: test
+# Query: a0jnA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-D  2.3  8.9   54   249    7  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: a0jn-A 3wdl-D     2 -   5 <=>   45 -  48   (GLY    2  - TRP    5  <=> GLY   48  - THR   51 )                          
+   1: a0jn-A 3wdl-D     8 -  26 <=>   49 -  67   (ARG    8  - LEU   26  <=> ILE   52  - GLU   70 )                          
+   1: a0jn-A 3wdl-D   456 - 461 <=>  125 - 130   (ALA  456  - TRP  461  <=> ILE  130  - ARG  135 )                          
+   1: a0jn-A 3wdl-D   469 - 481 <=>  210 - 222   (ALA  469  - ALA  481  <=> TYR  217  - TYR  229 )                          
+   1: a0jn-A 3wdl-D   484 - 491 <=>  223 - 230   (GLY  484  - PHE  491  <=> ASP  230  - ASP  237 )                          
+   1: a0jn-A 3wdl-D   492 - 495 <=>  233 - 236   (TRP  492  - ASP  495  <=> LEU  240  - ARG  243 )                          
+
+# Translation-rotation matrices
+-matrix  "a0jn-A 3wdl-D  U(1,.)  -0.482333  0.869288  0.108135          -40.868114"
+-matrix  "a0jn-A 3wdl-D  U(2,.)  -0.527065 -0.386590  0.756803          -65.933205"
+-matrix  "a0jn-A 3wdl-D  U(3,.)   0.699683  0.308037  0.644637           -3.061144"
+

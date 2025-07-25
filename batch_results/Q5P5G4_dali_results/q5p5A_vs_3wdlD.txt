@@ -1,0 +1,28 @@
+# Job: test
+# Query: q5p5A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-D  3.1  4.0  105   249    8  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: q5p5-A 3wdl-D    88 -  91 <=>   64 -  67   (GLN   88  - ARG   91  <=> LEU   67  - GLU   70 )                          
+   1: q5p5-A 3wdl-D    92 - 100 <=>   69 -  77   (ILE   92  - HIS  100  <=> PRO   72  - VAL   80 )                          
+   1: q5p5-A 3wdl-D   102 - 106 <=>   83 -  87   (ASP  102  - ILE  106  <=> LYS   86  - GLU   90 )                          
+   1: q5p5-A 3wdl-D   132 - 135 <=>   90 -  93   (PRO  132  - GLU  135  <=> LYS   93  - ASN   96 )                          
+   1: q5p5-A 3wdl-D   138 - 145 <=>   95 - 102   (LEU  138  - ARG  145  <=> LYS   98  - TYR  105 )                          
+   1: q5p5-A 3wdl-D   162 - 171 <=>  137 - 146   (ARG  162  - ARG  171  <=> GLY  144  - LYS  153 )                          
+   1: q5p5-A 3wdl-D   173 - 180 <=>  147 - 154   (ALA  173  - LEU  180  <=> ALA  154  - LEU  161 )                          
+   1: q5p5-A 3wdl-D   189 - 200 <=>  155 - 166   (HIS  189  - GLU  200  <=> GLU  162  - MET  173 )                          
+   1: q5p5-A 3wdl-D   208 - 215 <=>  167 - 174   (PHE  208  - HIS  215  <=> GLY  174  - ASP  181 )                          
+   1: q5p5-A 3wdl-D   216 - 219 <=>  188 - 191   (SER  216  - SER  219  <=> THR  195  - ASP  198 )                          
+   1: q5p5-A 3wdl-D   222 - 229 <=>  192 - 199   (GLY  222  - THR  229  <=> ASN  199  - ARG  206 )                          
+   1: q5p5-A 3wdl-D   238 - 243 <=>  216 - 221   (ARG  238  - ASP  243  <=> LEU  223  - GLU  228 )                          
+   1: q5p5-A 3wdl-D   273 - 276 <=>  222 - 225   (PHE  273  - PRO  276  <=> TYR  229  - GLY  232 )                          
+   1: q5p5-A 3wdl-D   510 - 513 <=>  229 - 232   (HIS  510  - GLU  513  <=> SER  236  - LEU  239 )                          
+   1: q5p5-A 3wdl-D   542 - 545 <=>  235 - 238   (MET  542  - ARG  545  <=> ILE  242  - ARG  245 )                          
+   1: q5p5-A 3wdl-D   584 - 590 <=>  243 - 249   (LEU  584  - GLU  590  <=> ALA  250  - ARG  256 )                          
+
+# Translation-rotation matrices
+-matrix  "q5p5-A 3wdl-D  U(1,.)  -0.519884 -0.500824  0.692023           -2.968896"
+-matrix  "q5p5-A 3wdl-D  U(2,.)  -0.758428 -0.102155 -0.643701          -18.234180"
+-matrix  "q5p5-A 3wdl-D  U(3,.)   0.393075 -0.859500 -0.326731           -1.670224"
+

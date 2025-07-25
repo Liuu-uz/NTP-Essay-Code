@@ -1,0 +1,21 @@
+# Job: test
+# Query: b6yxA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  2.2 12.0   71   745    8  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: b6yx-A 6t0v-B     7 -  13 <=>  112 - 118   (SER    7  - SER   13  <=> ASP  112  - ARG  118 )                          
+   1: b6yx-A 6t0v-B    16 -  21 <=>  119 - 124   (TYR   16  - ILE   21  <=> VAL  119  - GLN  124 )                          
+   1: b6yx-A 6t0v-B    29 -  32 <=>  125 - 128   (THR   29  - ALA   32  <=> GLY  125  - THR  128 )                          
+   1: b6yx-A 6t0v-B    33 -  40 <=>  139 - 146   (GLY   33  - GLY   40  <=> ALA  139  - THR  146 )                          
+   1: b6yx-A 6t0v-B    45 -  48 <=>  157 - 160   (TYR   45  - GLY   48  <=> LEU  157  - SER  160 )                          
+   1: b6yx-A 6t0v-B    50 -  53 <=>  699 - 702   (ARG   50  - GLU   53  <=> MET  711  - MET  714 )                          
+   1: b6yx-A 6t0v-B    54 -  69 <=>  704 - 719   (PRO   54  - ALA   69  <=> ASP  716  - GLU  731 )                          
+   1: b6yx-A 6t0v-B   215 - 229 <=>  721 - 735   (LYS  215  - TYR  229  <=> GLY  733  - CYS  747 )                          
+   1: b6yx-A 6t0v-B   230 - 236 <=>  738 - 744   (ASP  230  - ASN  236  <=> ILE  750  - GLN  756 )                          
+
+# Translation-rotation matrices
+-matrix  "b6yx-A 6t0v-B  U(1,.)   0.638439  0.661807 -0.392947         -121.475594"
+-matrix  "b6yx-A 6t0v-B  U(2,.)  -0.713889  0.699999  0.019061          -25.208059"
+-matrix  "b6yx-A 6t0v-B  U(3,.)   0.287677  0.268351  0.919363         -166.498444"
+

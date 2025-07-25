@@ -1,0 +1,22 @@
+# Job: test
+# Query: a7j3A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-C  2.1  9.6   71   254    8  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: a7j3-A 3wdl-C   106 - 109 <=>  131 - 134   (GLN  106  - ILE  109  <=> PRO  137  - GLU  140 )                          
+   1: a7j3-A 3wdl-C   256 - 260 <=>  135 - 139   (ILE  256  - LYS  260  <=> HIS  141  - LYS  145 )                          
+   1: a7j3-A 3wdl-C   267 - 270 <=>  143 - 146   (THR  267  - TYR  270  <=> ASN  149  - TRP  152 )                          
+   1: a7j3-A 3wdl-C   279 - 287 <=>  148 - 156   (LYS  279  - SER  287  <=> ALA  154  - GLU  162 )                          
+   1: a7j3-A 3wdl-C   289 - 298 <=>  157 - 166   (PRO  289  - GLN  298  <=> ASP  163  - ARG  172 )                          
+   1: a7j3-A 3wdl-C   300 - 311 <=>  167 - 178   (SER  300  - ASP  311  <=> MET  173  - PRO  184 )                          
+   1: a7j3-A 3wdl-C   312 - 323 <=>  183 - 194   (THR  312  - PHE  323  <=> ALA  189  - ILE  200 )                          
+   1: a7j3-A 3wdl-C   324 - 329 <=>  198 - 203   (TYR  324  - GLN  329  <=> TYR  204  - GLU  209 )                          
+   1: a7j3-A 3wdl-C   371 - 375 <=>  205 - 209   (TYR  371  - GLY  375  <=> ALA  211  - LYS  215 )                          
+   1: a7j3-A 3wdl-C   426 - 429 <=>  248 - 251   (PRO  426  - VAL  429  <=> ILE  254  - ARG  257 )                          
+
+# Translation-rotation matrices
+-matrix  "a7j3-A 3wdl-C  U(1,.)   0.961448  0.251664  0.110832          -45.875462"
+-matrix  "a7j3-A 3wdl-C  U(2,.)   0.152817 -0.824057  0.545507           20.138721"
+-matrix  "a7j3-A 3wdl-C  U(3,.)   0.228617 -0.507539 -0.830746           15.486715"
+

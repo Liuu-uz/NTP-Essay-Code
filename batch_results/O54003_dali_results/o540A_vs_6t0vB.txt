@@ -1,0 +1,23 @@
+# Job: test
+# Query: o540A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  3.6  5.8   99   745    3  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: o540-A 6t0v-B    21 -  24 <=>  593 - 596   (LEU   21  - ASP   24  <=> ASP  593  - PRO  596 )                          
+   1: o540-A 6t0v-B   133 - 138 <=>  607 - 612   (LYS  133  - ILE  138  <=> PRO  607  - LYS  612 )                          
+   1: o540-A 6t0v-B   156 - 159 <=>  614 - 617   (LEU  156  - LYS  159  <=> SER  614  - ASP  617 )                          
+   1: o540-A 6t0v-B   162 - 166 <=>  620 - 624   (TYR  162  - ALA  166  <=> TYR  620  - LEU  624 )                          
+   1: o540-A 6t0v-B   179 - 182 <=>  656 - 659   (LEU  179  - ASP  182  <=> PRO  668  - ASN  671 )                          
+   1: o540-A 6t0v-B   244 - 248 <=>  662 - 666   (PRO  244  - ILE  248  <=> ILE  674  - ASN  678 )                          
+   1: o540-A 6t0v-B   251 - 270 <=>  667 - 686   (GLY  251  - GLU  270  <=> GLN  679  - LYS  698 )                          
+   1: o540-A 6t0v-B   271 - 274 <=>  689 - 692   (GLY  271  - VAL  274  <=> PRO  701  - THR  704 )                          
+   1: o540-A 6t0v-B   283 - 286 <=>  693 - 696   (THR  283  - HIS  286  <=> TYR  705  - PRO  708 )                          
+   1: o540-A 6t0v-B   503 - 526 <=>  698 - 721   (SER  503  - LEU  526  <=> GLY  710  - GLY  733 )                          
+   1: o540-A 6t0v-B   541 - 559 <=>  724 - 742   (LEU  541  - GLY  559  <=> SER  736  - LYS  754 )                          
+
+# Translation-rotation matrices
+-matrix  "o540-A 6t0v-B  U(1,.)  -0.078049  0.934898 -0.346229          -54.566330"
+-matrix  "o540-A 6t0v-B  U(2,.)   0.082651  0.352161  0.932283         -163.495102"
+-matrix  "o540-A 6t0v-B  U(3,.)   0.993518  0.044148 -0.104756         -102.916176"
+

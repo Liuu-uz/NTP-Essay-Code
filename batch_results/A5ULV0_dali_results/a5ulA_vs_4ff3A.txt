@@ -1,0 +1,30 @@
+# Job: test
+# Query: a5ulA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  2.5  4.7  117  1095   11  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a5ul-A 4ff3-A    12 -  18 <=>  159 - 165   (TYR   12  - THR   18  <=> LEU  164  - THR  170 )                          
+   1: a5ul-A 4ff3-A    24 -  27 <=>  267 - 270   (GLU   24  - LEU   27  <=> LEU  272  - ILE  275 )                          
+   1: a5ul-A 4ff3-A    63 -  69 <=>  340 - 346   (GLY   63  - HIS   69  <=> PRO  345  - GLU  351 )                          
+   1: a5ul-A 4ff3-A    71 -  74 <=>  349 - 352   (ARG   71  - ARG   74  <=> GLY  354  - ARG  357 )                          
+   1: a5ul-A 4ff3-A    77 -  80 <=>  378 - 381   (ARG   77  - TYR   80  <=> LYS  383  - SER  386 )                          
+   1: a5ul-A 4ff3-A    83 -  86 <=>  387 - 390   (THR   83  - MET   86  <=> ASN  392  - PHE  395 )                          
+   1: a5ul-A 4ff3-A   105 - 108 <=>  395 - 398   (LEU  105  - GLU  108  <=> GLN  400  - ALA  403 )                          
+   1: a5ul-A 4ff3-A   125 - 130 <=>  531 - 536   (LEU  125  - GLU  130  <=> MET  536  - TYR  541 )                          
+   1: a5ul-A 4ff3-A   133 - 139 <=>  549 - 555   (LEU  133  - ILE  139  <=> LEU  554  - GLY  560 )                          
+   1: a5ul-A 4ff3-A   140 - 143 <=>  558 - 561   (ASP  140  - SER  143  <=> ASN  563  - ILE  566 )                          
+   1: a5ul-A 4ff3-A   145 - 148 <=>  670 - 673   (THR  145  - LEU  148  <=> ILE  675  - TYR  678 )                          
+   1: a5ul-A 4ff3-A   149 - 152 <=>  808 - 811   (THR  149  - GLU  152  <=> THR  813  - LEU  816 )                          
+   1: a5ul-A 4ff3-A   153 - 174 <=>  912 - 933   (SER  153  - LYS  174  <=> VAL  917  - THR  938 )                          
+   1: a5ul-A 4ff3-A   175 - 181 <=>  939 - 945   (LYS  175  - PHE  181  <=> LYS  944  - PHE  950 )                          
+   1: a5ul-A 4ff3-A   187 - 192 <=>  946 - 951   (PHE  187  - ASN  192  <=> ASP  951  - GLY  956 )                          
+   1: a5ul-A 4ff3-A   193 - 196 <=>  954 - 957   (GLY  193  - GLU  196  <=> ASP  959  - ASP  962 )                          
+   1: a5ul-A 4ff3-A   197 - 210 <=>  960 - 973   (LYS  197  - ILE  210  <=> ARG  965  - ASN  978 )                          
+   1: a5ul-A 4ff3-A   215 - 219 <=> 1054 -1058   (LYS  215  - GLY  219  <=> GLN 1059  - VAL 1063 )                          
+
+# Translation-rotation matrices
+-matrix  "a5ul-A 4ff3-A  U(1,.)   0.510299 -0.587379  0.628157         -257.967987"
+-matrix  "a5ul-A 4ff3-A  U(2,.)  -0.717795  0.111398  0.687285         -237.669815"
+-matrix  "a5ul-A 4ff3-A  U(3,.)  -0.473673 -0.801608 -0.364772          109.511215"
+

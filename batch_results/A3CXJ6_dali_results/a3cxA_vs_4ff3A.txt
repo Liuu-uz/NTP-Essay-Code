@@ -1,0 +1,23 @@
+# Job: test
+# Query: a3cxA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  2.8  5.1   81  1095   12  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a3cx-A 4ff3-A     1 -   4 <=>  315 - 318   (MET    1  - PRO    4  <=> PRO  320  - ARG  323 )                          
+   1: a3cx-A 4ff3-A    30 -  34 <=>  441 - 445   (GLU   30  - PRO   34  <=> THR  446  - LEU  450 )                          
+   1: a3cx-A 4ff3-A    35 -  40 <=>  544 - 549   (GLY   35  - ILE   40  <=> ALA  549  - LEU  554 )                          
+   1: a3cx-A 4ff3-A    43 -  47 <=>  551 - 555   (SER   43  - VAL   47  <=> VAL  556  - GLY  560 )                          
+   1: a3cx-A 4ff3-A    51 -  54 <=>  566 - 569   (LEU   51  - SER   54  <=> LEU  571  - GLY  574 )                          
+   1: a3cx-A 4ff3-A    58 -  73 <=>  918 - 933   (ALA   58  - GLN   73  <=> MET  923  - THR  938 )                          
+   1: a3cx-A 4ff3-A    74 -  78 <=>  937 - 941   (ALA   74  - ASP   78  <=> ALA  942  - THR  946 )                          
+   1: a3cx-A 4ff3-A    80 -  98 <=>  953 - 971   (ASN   80  - GLU   98  <=> ASN  958  - GLN  976 )                          
+   1: a3cx-A 4ff3-A   101 - 104 <=> 1050 -1053   (GLU  101  - GLU  104  <=> LEU 1055  - ASP 1058 )                          
+   1: a3cx-A 4ff3-A   105 - 108 <=> 1055 -1058   (VAL  105  - ARG  108  <=> MET 1060  - VAL 1063 )                          
+   1: a3cx-A 4ff3-A   133 - 141 <=> 1059 -1067   (LYS  133  - GLY  141  <=> GLY 1064  - LYS 1072 )                          
+
+# Translation-rotation matrices
+-matrix  "a3cx-A 4ff3-A  U(1,.)  -0.702566  0.711142  0.026046           22.320543"
+-matrix  "a3cx-A 4ff3-A  U(2,.)  -0.418846 -0.383650 -0.823032          276.121277"
+-matrix  "a3cx-A 4ff3-A  U(3,.)  -0.575300 -0.589143  0.567398         -209.651550"
+

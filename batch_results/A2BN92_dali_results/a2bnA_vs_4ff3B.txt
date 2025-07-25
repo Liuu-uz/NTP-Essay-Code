@@ -1,0 +1,19 @@
+# Job: test
+# Query: a2bnA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-B  2.4  4.6   68  1095    7  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a2bn-A 4ff3-B     1 -   6 <=>  312 - 317   (MET    1  - THR    6  <=> LEU  317  - VAL  322 )                          
+   1: a2bn-A 4ff3-B    37 -  40 <=>  576 - 579   (GLY   37  - PHE   40  <=> TRP  581  - ASN  584 )                          
+   1: a2bn-A 4ff3-B    49 -  75 <=>  801 - 827   (PRO   49  - CYS   75  <=> GLY  806  - LYS  832 )                          
+   1: a2bn-A 4ff3-B    77 -  80 <=>  906 - 909   (PRO   77  - TYR   80  <=> ALA  911  - GLN  914 )                          
+   1: a2bn-A 4ff3-B    83 -  97 <=>  910 - 924   (GLY   83  - GLY   97  <=> ALA  915  - ASP  929 )                          
+   1: a2bn-A 4ff3-B   111 - 118 <=>  965 - 972   (PRO  111  - LEU  118  <=> ALA  970  - GLY  977 )                          
+   1: a2bn-A 4ff3-B   164 - 167 <=> 1039 -1042   (LYS  164  - PRO  167  <=> ASP 1044  - HIS 1047 )                          
+
+# Translation-rotation matrices
+-matrix  "a2bn-A 4ff3-B  U(1,.)   0.259430  0.713401  0.650965         -208.382492"
+-matrix  "a2bn-A 4ff3-B  U(2,.)  -0.081202 -0.655543  0.750779         -339.373047"
+-matrix  "a2bn-A 4ff3-B  U(3,.)   0.962342 -0.247634 -0.112138          -48.210030"
+

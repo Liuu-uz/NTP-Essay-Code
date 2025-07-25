@@ -1,0 +1,21 @@
+# Job: test
+# Query: p871A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3f2b-A  2.4  8.8   72   994    7  MOL_ID: 1; MOLECULE: DNA-DIRECTED DNA POLYMERASE III ALPHA CHAIN; CHAI
+
+# Structural equivalences
+   1: p871-A 3f2b-A     1 -   8 <=>  595 - 602   (MET    1  - SER    8  <=> ARG 1045  - GLY 1052 )                          
+   1: p871-A 3f2b-A    20 -  23 <=>  854 - 857   (ALA   20  - THR   23  <=> VAL 1304  - GLU 1307 )                          
+   1: p871-A 3f2b-A    41 -  59 <=>  866 - 884   (GLN   41  - ILE   59  <=> LYS 1316  - GLN 1334 )                          
+   1: p871-A 3f2b-A    86 - 105 <=>  889 - 908   (TRP   86  - GLU  105  <=> GLU 1339  - SER 1358 )                          
+   1: p871-A 3f2b-A   107 - 110 <=>  927 - 930   (ILE  107  - MET  110  <=> ASN 1377  - ILE 1380 )                          
+   1: p871-A 3f2b-A   117 - 120 <=>  932 - 935   (TRP  117  - THR  120  <=> PRO 1382  - ALA 1385 )                          
+   1: p871-A 3f2b-A   122 - 126 <=>  939 - 943   (ALA  122  - GLY  126  <=> LEU 1389  - VAL 1393 )                          
+   1: p871-A 3f2b-A   143 - 146 <=>  945 - 948   (ALA  143  - LEU  146  <=> GLN 1395  - VAL 1398 )                          
+   1: p871-A 3f2b-A   181 - 184 <=>  980 - 983   (LEU  181  - ILE  184  <=> GLY 1430  - ASP 1433 )                          
+
+# Translation-rotation matrices
+-matrix  "p871-A 3f2b-A  U(1,.)  -0.096710 -0.979648 -0.175889           36.524021"
+-matrix  "p871-A 3f2b-A  U(2,.)  -0.938869  0.148455 -0.310623           13.077654"
+-matrix  "p871-A 3f2b-A  U(3,.)   0.330413  0.135097 -0.934118          -21.968296"
+

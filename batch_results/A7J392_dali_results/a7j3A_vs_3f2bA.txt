@@ -1,0 +1,31 @@
+# Job: test
+# Query: a7j3A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3f2b-A  2.5 25.2  142   994    4  MOL_ID: 1; MOLECULE: DNA-DIRECTED DNA POLYMERASE III ALPHA CHAIN; CHAI
+
+# Structural equivalences
+   1: a7j3-A 3f2b-A    10 -  15 <=>    5 -  10   (VAL   10  - ALA   15  <=> GLU  237  - GLU  242 )                          
+   1: a7j3-A 3f2b-A    68 -  71 <=>   15 -  18   (LYS   68  - GLU   71  <=> VAL  247  - GLY  250 )                          
+   1: a7j3-A 3f2b-A    77 -  83 <=>   21 -  27   (ARG   77  - ASP   83  <=> PHE  253  - GLU  259 )                          
+   1: a7j3-A 3f2b-A    89 -  93 <=>   34 -  38   (VAL   89  - ASP   93  <=> LEU  266  - LYS  270 )                          
+   1: a7j3-A 3f2b-A   135 - 141 <=>   89 -  95   (ARG  135  - SER  141  <=> ALA  321  - ILE  327 )                          
+   1: a7j3-A 3f2b-A   247 - 252 <=>  174 - 179   (LEU  247  - SER  252  <=> ALA  406  - ASP  411 )                          
+   1: a7j3-A 3f2b-A   383 - 388 <=>  184 - 189   (LYS  383  - ASP  388  <=> THR  622  - ASN  627 )                          
+   1: a7j3-A 3f2b-A   425 - 437 <=>  190 - 202   (ILE  425  - THR  437  <=> GLU  628  - LEU  640 )                          
+   1: a7j3-A 3f2b-A   439 - 442 <=>  205 - 208   (THR  439  - VAL  442  <=> ILE  643  - PHE  646 )                          
+   1: a7j3-A 3f2b-A   453 - 458 <=>  433 - 438   (LEU  453  - ILE  458  <=> SER  883  - TYR  888 )                          
+   1: a7j3-A 3f2b-A   468 - 471 <=>  648 - 651   (LEU  468  - ARG  471  <=> ASP 1098  - GLY 1101 )                          
+   1: a7j3-A 3f2b-A   474 - 481 <=>  652 - 659   (VAL  474  - GLN  481  <=> HIS 1102  - ARG 1109 )                          
+   1: a7j3-A 3f2b-A   512 - 516 <=>  851 - 855   (PRO  512  - GLU  516  <=> TYR 1301  - ARG 1305 )                          
+   1: a7j3-A 3f2b-A   650 - 665 <=>  866 - 881   (HIS  650  - PHE  665  <=> LYS 1316  - LYS 1331 )                          
+   1: a7j3-A 3f2b-A   667 - 691 <=>  882 - 906   (LYS  667  - ILE  691  <=> GLY 1332  - GLY 1356 )                          
+   1: a7j3-A 3f2b-A   706 - 711 <=>  952 - 957   (LYS  706  - LYS  711  <=> GLU 1402  - LEU 1407 )                          
+   1: a7j3-A 3f2b-A   712 - 717 <=>  961 - 966   (TYR  712  - PRO  717  <=> ASP 1411  - GLY 1416 )                          
+   1: a7j3-A 3f2b-A   767 - 770 <=>  977 - 980   (ILE  767  - VAL  770  <=> GLU 1427  - GLY 1430 )                          
+   1: a7j3-A 3f2b-A   802 - 805 <=>  988 - 991   (PHE  802  - GLU  805  <=> HIS 1438  - LEU 1441 )                          
+
+# Translation-rotation matrices
+-matrix  "a7j3-A 3f2b-A  U(1,.)  -0.928380  0.296437  0.224133           26.945988"
+-matrix  "a7j3-A 3f2b-A  U(2,.)  -0.193503  0.129317 -0.972540          -22.666595"
+-matrix  "a7j3-A 3f2b-A  U(3,.)  -0.317281 -0.946257 -0.062694           25.527416"
+

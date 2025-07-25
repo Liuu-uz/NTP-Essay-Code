@@ -1,0 +1,8 @@
+# Job: test
+# Query: a7grA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+
+# Structural equivalences
+
+# Translation-rotation matrices
+

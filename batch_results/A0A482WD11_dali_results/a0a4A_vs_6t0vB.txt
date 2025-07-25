@@ -1,0 +1,24 @@
+# Job: test
+# Query: a0a4A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  2.7  7.4   97   745    5  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a0a4-A 6t0v-B    16 -  22 <=>  140 - 146   (SER   16  - ARG   22  <=> ALA  140  - THR  146 )                          
+   1: a0a4-A 6t0v-B    29 -  32 <=>  557 - 560   (SER   29  - GLN   32  <=> TYR  557  - ARG  560 )                          
+   1: a0a4-A 6t0v-B    36 -  45 <=>  572 - 581   (GLY   36  - PHE   45  <=> ARG  572  - THR  581 )                          
+   1: a0a4-A 6t0v-B    79 -  83 <=>  612 - 616   (PRO   79  - GLN   83  <=> LYS  612  - MET  616 )                          
+   1: a0a4-A 6t0v-B   217 - 220 <=>  627 - 630   (PHE  217  - VAL  220  <=> PRO  627  - PRO  630 )                          
+   1: a0a4-A 6t0v-B   242 - 245 <=>  633 - 636   (GLU  242  - ARG  245  <=> HIS  633  - GLU  636 )                          
+   1: a0a4-A 6t0v-B   254 - 258 <=>  680 - 684   (LEU  254  - VAL  258  <=> CYS  692  - PHE  696 )                          
+   1: a0a4-A 6t0v-B   279 - 282 <=>  685 - 688   (LYS  279  - ILE  282  <=> GLU  697  - PHE  700 )                          
+   1: a0a4-A 6t0v-B   284 - 290 <=>  689 - 695   (HIS  284  - ASP  290  <=> PRO  701  - ARG  707 )                          
+   1: a0a4-A 6t0v-B   293 - 296 <=>  696 - 699   (PHE  293  - ARG  296  <=> PRO  708  - MET  711 )                          
+   1: a0a4-A 6t0v-B   299 - 316 <=>  700 - 717   (SER  299  - LYS  316  <=> ALA  712  - ASP  729 )                          
+   1: a0a4-A 6t0v-B   330 - 354 <=>  721 - 745   (SER  330  - ARG  354  <=> GLY  733  - GLY  757 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a4-A 6t0v-B  U(1,.)  -0.141534  0.249615  0.957946         -117.356361"
+-matrix  "a0a4-A 6t0v-B  U(2,.)  -0.721817  0.636211 -0.272426           37.409653"
+-matrix  "a0a4-A 6t0v-B  U(3,.)  -0.677457 -0.730020  0.090131          153.030441"
+

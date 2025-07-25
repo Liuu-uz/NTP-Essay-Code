@@ -1,0 +1,32 @@
+# Job: test
+# Query: o540A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-C  2.6 14.0  115   740    9  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: o540-A 6t0v-C     4 -   8 <=>   41 -  45   (TYR    4  - PHE    8  <=> GLN   39  - PRO   43 )                          
+   1: o540-A 6t0v-C    82 -  87 <=>  103 - 108   (LEU   82  - GLY   87  <=> ARG  101  - SER  106 )                          
+   1: o540-A 6t0v-C    88 -  91 <=>  110 - 113   (VAL   88  - LYS   91  <=> VAL  108  - TYR  111 )                          
+   1: o540-A 6t0v-C   197 - 200 <=>  114 - 117   (GLN  197  - GLY  200  <=> PRO  112  - TYR  115 )                          
+   1: o540-A 6t0v-C   242 - 248 <=>  124 - 130   (TYR  242  - ILE  248  <=> LEU  122  - GLY  128 )                          
+   1: o540-A 6t0v-C   254 - 257 <=>  132 - 135   (GLU  254  - ARG  257  <=> PHE  130  - VAL  133 )                          
+   1: o540-A 6t0v-C   299 - 302 <=>  145 - 148   (LYS  299  - SER  302  <=> LYS  143  - ASP  146 )                          
+   1: o540-A 6t0v-C   306 - 312 <=>  151 - 157   (TRP  306  - GLY  312  <=> PRO  149  - THR  155 )                          
+   1: o540-A 6t0v-C   317 - 339 <=>  253 - 275   (PHE  317  - GLU  339  <=> GLU  251  - ALA  273 )                          
+   1: o540-A 6t0v-C   340 - 343 <=>  277 - 280   (HIS  340  - GLY  343  <=> ASP  275  - ALA  278 )                          
+   1: o540-A 6t0v-C   345 - 348 <=>  283 - 286   (LEU  345  - GLY  348  <=> LEU  281  - CYS  284 )                          
+   1: o540-A 6t0v-C   349 - 352 <=>  289 - 292   (PHE  349  - ASN  352  <=> THR  287  - SER  290 )                          
+   1: o540-A 6t0v-C   367 - 374 <=>  528 - 535   (HIS  367  - PHE  374  <=> LYS  526  - SER  533 )                          
+   1: o540-A 6t0v-C   386 - 389 <=>  536 - 539   (ARG  386  - PRO  389  <=> SER  534  - TRP  537 )                          
+   1: o540-A 6t0v-C   393 - 397 <=>  582 - 586   (GLU  393  - LYS  397  <=> PHE  580  - ILE  584 )                          
+   1: o540-A 6t0v-C   511 - 515 <=>  675 - 679   (ARG  511  - LEU  515  <=> GLY  673  - ARG  677 )                          
+   1: o540-A 6t0v-C   518 - 522 <=>  680 - 684   (PHE  518  - ILE  522  <=> SER  678  - GLU  682 )                          
+   1: o540-A 6t0v-C   525 - 528 <=>  685 - 688   (ASP  525  - VAL  528  <=> SER  683  - ILE  686 )                          
+   1: o540-A 6t0v-C   532 - 535 <=>  700 - 703   (LYS  532  - ASP  535  <=> GLY  698  - ASN  701 )                          
+   1: o540-A 6t0v-C   599 - 602 <=>  714 - 717   (SER  599  - ASN  602  <=> GLU  712  - LYS  715 )                          
+
+# Translation-rotation matrices
+-matrix  "o540-A 6t0v-C  U(1,.)   0.921571  0.382414  0.066827         -195.319809"
+-matrix  "o540-A 6t0v-C  U(2,.)  -0.024142  0.228262 -0.973300           96.816452"
+-matrix  "o540-A 6t0v-C  U(3,.)  -0.387457  0.895353  0.219592          -88.344139"
+

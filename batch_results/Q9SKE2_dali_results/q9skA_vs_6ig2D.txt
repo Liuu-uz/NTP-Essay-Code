@@ -1,0 +1,26 @@
+# Job: test
+# Query: q9skA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ig2-D  2.6  4.9   91   278    8  MOL_ID: 1; MOLECULE: PHOSPHATIDATE CYTIDYLYLTRANSFERASE, MITOCHONDRIAL
+
+# Structural equivalences
+   1: q9sk-A 6ig2-D    71 -  74 <=>    1 -   4   (VAL   71  - GLU   74  <=> CYS   33  - ALA   36 )                          
+   1: q9sk-A 6ig2-D    97 - 100 <=>    8 -  11   (ILE   97  - SER  100  <=> LYS   40  - LEU   43 )                          
+   1: q9sk-A 6ig2-D   101 - 105 <=>   15 -  19   (SER  101  - GLN  105  <=> GLU   47  - ILE   51 )                          
+   1: q9sk-A 6ig2-D   426 - 429 <=>   20 -  23   (ASN  426  - LEU  429  <=> GLN   52  - GLU   55 )                          
+   1: q9sk-A 6ig2-D   436 - 447 <=>   24 -  35   (ASN  436  - SER  447  <=> GLU   56  - TYR   67 )                          
+   1: q9sk-A 6ig2-D   449 - 452 <=>   36 -  39   (ALA  449  - LEU  452  <=> PHE   68  - PRO   71 )                          
+   1: q9sk-A 6ig2-D   459 - 467 <=>   40 -  48   (VAL  459  - ASP  467  <=> ILE   72  - SER   80 )                          
+   1: q9sk-A 6ig2-D   472 - 486 <=>   54 -  68   (PRO  472  - ASN  486  <=> ASN   93  - LYS  107 )                          
+   1: q9sk-A 6ig2-D   487 - 491 <=>   70 -  74   (GLU  487  - GLN  491  <=> HIS  109  - LEU  113 )                          
+   1: q9sk-A 6ig2-D   498 - 502 <=>  109 - 113   (ASP  498  - ILE  502  <=> VAL  148  - GLY  152 )                          
+   1: q9sk-A 6ig2-D   517 - 525 <=>  115 - 123   (ALA  517  - LYS  525  <=> ILE  154  - LYS  162 )                          
+   1: q9sk-A 6ig2-D   526 - 531 <=>  125 - 130   (GLY  526  - ILE  531  <=> ASP  164  - LEU  169 )                          
+   1: q9sk-A 6ig2-D   533 - 536 <=>  158 - 161   (GLU  533  - LEU  536  <=> GLU  197  - TYR  200 )                          
+   1: q9sk-A 6ig2-D   540 - 544 <=>  163 - 167   (SER  540  - GLN  544  <=> LEU  202  - LEU  206 )                          
+
+# Translation-rotation matrices
+-matrix  "q9sk-A 6ig2-D  U(1,.)  -0.051847 -0.967479  0.247582           51.958237"
+-matrix  "q9sk-A 6ig2-D  U(2,.)   0.220875 -0.252885 -0.941947           23.994589"
+-matrix  "q9sk-A 6ig2-D  U(3,.)   0.973923  0.005848  0.226803          -38.070705"
+

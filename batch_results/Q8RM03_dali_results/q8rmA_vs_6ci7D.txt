@@ -1,0 +1,27 @@
+# Job: test
+# Query: q8rmA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ci7-D  2.8  4.3  121   362    6  MOL_ID: 1; MOLECULE: YCAO; CHAIN: A, B, C, D, E, F; ENGINEERED: YES   
+
+# Structural equivalences
+   1: q8rm-A 6ci7-D    50 -  56 <=>   53 -  59   (ARG   50  - LEU   56  <=> ARG   54  - PHE   60 )                          
+   1: q8rm-A 6ci7-D    61 -  64 <=>   60 -  63   (PHE   61  - LEU   64  <=> TYR   61  - GLY   64 )                          
+   1: q8rm-A 6ci7-D    67 -  70 <=>   64 -  67   (GLY   67  - ASP   70  <=> LYS   65  - THR   68 )                          
+   1: q8rm-A 6ci7-D   107 - 128 <=>  159 - 180   (GLY  107  - GLU  128  <=> ILE  160  - HIS  181 )                          
+   1: q8rm-A 6ci7-D   135 - 140 <=>  203 - 208   (ASP  135  - CYS  140  <=> ARG  204  - LEU  209 )                          
+   1: q8rm-A 6ci7-D   141 - 144 <=>  210 - 213   (ASN  141  - SER  144  <=> PRO  211  - VAL  214 )                          
+   1: q8rm-A 6ci7-D   151 - 165 <=>  214 - 228   (PRO  151  - GLU  165  <=> GLU  215  - VAL  229 )                          
+   1: q8rm-A 6ci7-D   167 - 175 <=>  231 - 239   (ILE  167  - HIS  175  <=> UNK  232  - PRO  240 )                          
+   1: q8rm-A 6ci7-D   233 - 257 <=>  240 - 264   (ASP  233  - ILE  257  <=> ASP  241  - GLU  265 )                          
+   1: q8rm-A 6ci7-D   263 - 266 <=>  265 - 268   (PHE  263  - GLU  266  <=> SER  266  - ARG  269 )                          
+   1: q8rm-A 6ci7-D   346 - 349 <=>  315 - 318   (ASN  346  - GLN  349  <=> GLU  327  - LEU  330 )                          
+   1: q8rm-A 6ci7-D   352 - 355 <=>  319 - 322   (PHE  352  - GLY  355  <=> GLY  331  - ILE  334 )                          
+   1: q8rm-A 6ci7-D   359 - 363 <=>  323 - 327   (MET  359  - THR  363  <=> GLU  335  - THR  339 )                          
+   1: q8rm-A 6ci7-D   364 - 367 <=>  332 - 335   (LEU  364  - SER  367  <=> ASP  344  - VAL  347 )                          
+   1: q8rm-A 6ci7-D   771 - 774 <=>  352 - 355   (VAL  771  - VAL  774  <=> ARG  364  - ASN  367 )                          
+
+# Translation-rotation matrices
+-matrix  "q8rm-A 6ci7-D  U(1,.)   0.317121  0.678038 -0.663098           34.774166"
+-matrix  "q8rm-A 6ci7-D  U(2,.)  -0.145790  0.725728  0.672357          -60.128819"
+-matrix  "q8rm-A 6ci7-D  U(3,.)   0.937113 -0.116545  0.328994           43.286396"
+

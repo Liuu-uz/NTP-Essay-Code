@@ -1,0 +1,14 @@
+# Job: test
+# Query: sequA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-B 37.8  1.3  241   253   53  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: sequ-A 3wdl-B    17 - 135 <=>    1 - 119   (ILE   17  - GLY  135  <=> ILE    4  - ASP  122 )                          
+   1: sequ-A 3wdl-B   137 - 258 <=>  122 - 243   (ALA  137  - ARG  258  <=> ILE  125  - LEU  246 )                          
+
+# Translation-rotation matrices
+-matrix  "sequ-A 3wdl-B  U(1,.)  -0.382285  0.633417  0.672785           12.140716"
+-matrix  "sequ-A 3wdl-B  U(2,.)  -0.918588 -0.339510 -0.202309           12.454468"
+-matrix  "sequ-A 3wdl-B  U(3,.)   0.100271 -0.695352  0.711639          -44.284344"
+

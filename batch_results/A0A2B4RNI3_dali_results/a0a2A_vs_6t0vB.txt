@@ -1,0 +1,22 @@
+# Job: test
+# Query: a0a2A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  2.6 10.8   93   745    8  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a0a2-A 6t0v-B     6 -   9 <=>  566 - 569   (GLU    6  - ALA    9  <=> THR  566  - GLU  569 )                          
+   1: a0a2-A 6t0v-B    30 -  35 <=>  577 - 582   (GLY   30  - SER   35  <=> LYS  577  - GLU  582 )                          
+   1: a0a2-A 6t0v-B   270 - 273 <=>  604 - 607   (LYS  270  - ASP  273  <=> LEU  604  - PRO  607 )                          
+   1: a0a2-A 6t0v-B   274 - 277 <=>  610 - 613   (ALA  274  - PHE  277  <=> CYS  610  - TRP  613 )                          
+   1: a0a2-A 6t0v-B   278 - 286 <=>  615 - 623   (ALA  278  - LEU  286  <=> LEU  615  - ARG  623 )                          
+   1: a0a2-A 6t0v-B   306 - 309 <=>  628 - 631   (ASN  306  - GLU  309  <=> ASN  628  - PHE  631 )                          
+   1: a0a2-A 6t0v-B   383 - 398 <=>  674 - 689   (LYS  383  - LEU  398  <=> GLU  686  - PRO  701 )                          
+   1: a0a2-A 6t0v-B   430 - 433 <=>  690 - 693   (LYS  430  - ILE  433  <=> SER  702  - TYR  705 )                          
+   1: a0a2-A 6t0v-B   484 - 504 <=>  701 - 721   (THR  484  - HIS  504  <=> SER  713  - GLY  733 )                          
+   1: a0a2-A 6t0v-B   522 - 542 <=>  725 - 745   (ASN  522  - ALA  542  <=> SER  737  - GLY  757 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a2-A 6t0v-B  U(1,.)  -0.513269 -0.709482 -0.482898          193.171921"
+-matrix  "a0a2-A 6t0v-B  U(2,.)  -0.781223  0.619187 -0.079364           30.488316"
+-matrix  "a0a2-A 6t0v-B  U(3,.)   0.355312  0.336515 -0.872073           10.660021"
+

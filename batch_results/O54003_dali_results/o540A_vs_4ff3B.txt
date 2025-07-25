@@ -1,0 +1,29 @@
+# Job: test
+# Query: o540A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-B  2.9 19.9  133  1095   11  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: o540-A 4ff3-B   413 - 425 <=>    1 -  13   (GLU  413  - ASP  425  <=> GLU    6  - SER   18 )                          
+   1: o540-A 4ff3-B   469 - 475 <=>  120 - 126   (SER  469  - ASP  475  <=> GLU  125  - GLY  131 )                          
+   1: o540-A 4ff3-B   485 - 488 <=>  321 - 324   (ASN  485  - GLU  488  <=> PRO  326  - LYS  329 )                          
+   1: o540-A 4ff3-B   489 - 497 <=>  327 - 335   (ARG  489  - LYS  497  <=> LEU  332  - PHE  340 )                          
+   1: o540-A 4ff3-B   502 - 512 <=>  336 - 346   (MET  502  - VAL  512  <=> TYR  341  - GLU  351 )                          
+   1: o540-A 4ff3-B   513 - 521 <=>  348 - 356   (GLN  513  - ARG  521  <=> LEU  353  - LEU  361 )                          
+   1: o540-A 4ff3-B   522 - 525 <=>  359 - 362   (ILE  522  - ASP  525  <=> ALA  364  - LEU  367 )                          
+   1: o540-A 4ff3-B   529 - 559 <=>  363 - 393   (ASN  529  - GLY  559  <=> ASN  368  - ILE  398 )                          
+   1: o540-A 4ff3-B   566 - 569 <=>  427 - 430   (ARG  566  - GLU  569  <=> ASN  432  - SER  435 )                          
+   1: o540-A 4ff3-B   574 - 577 <=>  552 - 555   (LEU  574  - ASN  577  <=> GLU  557  - GLY  560 )                          
+   1: o540-A 4ff3-B   581 - 584 <=>  558 - 561   (THR  581  - ARG  584  <=> ASN  563  - ILE  566 )                          
+   1: o540-A 4ff3-B   587 - 597 <=>  605 - 615   (HIS  587  - GLY  597  <=> ASP  610  - MET  620 )                          
+   1: o540-A 4ff3-B   599 - 602 <=>  663 - 666   (SER  599  - ASN  602  <=> ILE  668  - ASN  671 )                          
+   1: o540-A 4ff3-B   603 - 606 <=>  670 - 673   (TYR  603  - TYR  606  <=> ILE  675  - TYR  678 )                          
+   1: o540-A 4ff3-B   607 - 610 <=>  912 - 915   (VAL  607  - GLU  610  <=> VAL  917  - ILE  920 )                          
+   1: o540-A 4ff3-B   613 - 618 <=>  974 - 979   (SER  613  - VAL  618  <=> PRO  979  - TYR  984 )                          
+   1: o540-A 4ff3-B   623 - 626 <=> 1024 -1027   (ASP  623  - LEU  626  <=> ALA 1029  - ILE 1032 )                          
+
+# Translation-rotation matrices
+-matrix  "o540-A 4ff3-B  U(1,.)  -0.153023  0.897923 -0.412697          239.439362"
+-matrix  "o540-A 4ff3-B  U(2,.)   0.267708  0.439665  0.857337         -319.853180"
+-matrix  "o540-A 4ff3-B  U(3,.)   0.951271  0.020710 -0.307660           62.056541"
+

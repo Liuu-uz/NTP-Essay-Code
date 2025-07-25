@@ -1,0 +1,26 @@
+# Job: test
+# Query: a1jrA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-B  3.2 13.1  107  1095    9  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a1jr-A 4ff3-B     5 -  13 <=>  338 - 346   (LEU    5  - ILE   13  <=> HIS  343  - GLU  351 )                          
+   1: a1jr-A 4ff3-B    14 -  22 <=>  348 - 356   (LEU   14  - GLY   22  <=> LEU  353  - LEU  361 )                          
+   1: a1jr-A 4ff3-B    23 -  26 <=>  359 - 362   (ARG   23  - GLU   26  <=> ALA  364  - LEU  367 )                          
+   1: a1jr-A 4ff3-B    29 -  32 <=>  363 - 366   (ALA   29  - GLN   32  <=> ASN  368  - LEU  371 )                          
+   1: a1jr-A 4ff3-B    43 -  78 <=>  368 - 403   (VAL   43  - PHE   78  <=> ASN  373  - ILE  408 )                          
+   1: a1jr-A 4ff3-B    88 -  91 <=>  504 - 507   (GLY   88  - PRO   91  <=> GLY  509  - PRO  512 )                          
+   1: a1jr-A 4ff3-B    93 -  97 <=>  508 - 512   (TYR   93  - GLU   97  <=> GLU  513  - ASP  517 )                          
+   1: a1jr-A 4ff3-B   161 - 164 <=>  704 - 707   (PRO  161  - LEU  164  <=> ALA  709  - PRO  712 )                          
+   1: a1jr-A 4ff3-B   208 - 211 <=>  715 - 718   (TRP  208  - GLY  211  <=> MET  720  - LYS  723 )                          
+   1: a1jr-A 4ff3-B   238 - 249 <=>  721 - 732   (THR  238  - VAL  249  <=> ALA  726  - ARG  737 )                          
+   1: a1jr-A 4ff3-B   443 - 446 <=>  739 - 742   (ASN  443  - LYS  446  <=> THR  744  - SER  747 )                          
+   1: a1jr-A 4ff3-B   451 - 454 <=>  772 - 775   (ALA  451  - PHE  454  <=> ILE  777  - GLU  780 )                          
+   1: a1jr-A 4ff3-B   455 - 458 <=>  779 - 782   (PRO  455  - MET  458  <=> ALA  784  - GLU  787 )                          
+   1: a1jr-A 4ff3-B   459 - 462 <=>  785 - 788   (LEU  459  - ASN  462  <=> LEU  790  - PHE  793 )                          
+
+# Translation-rotation matrices
+-matrix  "a1jr-A 4ff3-B  U(1,.)   0.714076  0.678207  0.173583          -37.828323"
+-matrix  "a1jr-A 4ff3-B  U(2,.)  -0.676790  0.732183 -0.076574          108.257965"
+-matrix  "a1jr-A 4ff3-B  U(3,.)  -0.179028 -0.062799  0.981838         -359.877563"
+

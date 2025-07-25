@@ -1,0 +1,25 @@
+# Job: test
+# Query: a0a3A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ig2-D  2.3  4.5   96   278    6  MOL_ID: 1; MOLECULE: PHOSPHATIDATE CYTIDYLYLTRANSFERASE, MITOCHONDRIAL
+
+# Structural equivalences
+   1: a0a3-A 6ig2-D    76 -  79 <=>    1 -   4   (GLU   76  - ILE   79  <=> CYS   33  - ALA   36 )                          
+   1: a0a3-A 6ig2-D   112 - 115 <=>    5 -   8   (PHE  112  - PHE  115  <=> GLN   37  - LYS   40 )                          
+   1: a0a3-A 6ig2-D   165 - 168 <=>   10 -  13   (THR  165  - THR  168  <=> ASN   42  - THR   45 )                          
+   1: a0a3-A 6ig2-D   427 - 431 <=>   20 -  24   (CYS  427  - LEU  431  <=> GLN   52  - GLU   56 )                          
+   1: a0a3-A 6ig2-D   441 - 453 <=>   25 -  37   (THR  441  - ALA  453  <=> LEU   57  - GLN   69 )                          
+   1: a0a3-A 6ig2-D   462 - 471 <=>   39 -  48   (GLU  462  - ASN  471  <=> PRO   71  - SER   80 )                          
+   1: a0a3-A 6ig2-D   476 - 487 <=>   54 -  65   (PRO  476  - GLY  487  <=> ASN   93  - ASP  104 )                          
+   1: a0a3-A 6ig2-D   488 - 494 <=>   68 -  74   (GLU  488  - LEU  494  <=> LYS  107  - LEU  113 )                          
+   1: a0a3-A 6ig2-D   496 - 499 <=>   77 -  80   (ASP  496  - ASN  499  <=> ASN  116  - HIS  119 )                          
+   1: a0a3-A 6ig2-D   502 - 506 <=>  109 - 113   (ASP  502  - ILE  506  <=> VAL  148  - GLY  152 )                          
+   1: a0a3-A 6ig2-D   521 - 537 <=>  115 - 131   (ALA  521  - ASP  537  <=> ILE  154  - LYS  170 )                          
+   1: a0a3-A 6ig2-D   538 - 544 <=>  159 - 165   (HIS  538  - GLY  544  <=> ASN  198  - SER  204 )                          
+   1: a0a3-A 6ig2-D   558 - 561 <=>  192 - 195   (LYS  558  - SER  561  <=> TYR  231  - ASP  234 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a3-A 6ig2-D  U(1,.)   0.713711  0.566074 -0.412526          -47.453663"
+-matrix  "a0a3-A 6ig2-D  U(2,.)   0.549889 -0.817629 -0.170599           30.299047"
+-matrix  "a0a3-A 6ig2-D  U(3,.)  -0.433865 -0.105085 -0.894828           37.726234"
+

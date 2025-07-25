@@ -1,0 +1,28 @@
+# Job: test
+# Query: f4isA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  2.4 12.3  109   745    7  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: f4is-A 6t0v-B    19 -  24 <=>    9 -  14   (MET   19  - ILE   24  <=> PHE    9  - VAL   14 )                          
+   1: f4is-A 6t0v-B   109 - 112 <=>   73 -  76   (VAL  109  - TRP  112  <=> LEU   73  - ASP   76 )                          
+   1: f4is-A 6t0v-B   218 - 222 <=>  175 - 179   (PHE  218  - SER  222  <=> GLU  175  - MET  179 )                          
+   1: f4is-A 6t0v-B   232 - 235 <=>  236 - 239   (VAL  232  - ASP  235  <=> LEU  236  - ARG  239 )                          
+   1: f4is-A 6t0v-B   298 - 309 <=>  294 - 305   (PRO  298  - CYS  309  <=> THR  294  - ASP  305 )                          
+   1: f4is-A 6t0v-B   311 - 314 <=>  306 - 309   (PHE  311  - PHE  314  <=> ASN  306  - TRP  309 )                          
+   1: f4is-A 6t0v-B   316 - 319 <=>  310 - 313   (GLU  316  - GLU  319  <=> ASN  310  - GLN  313 )                          
+   1: f4is-A 6t0v-B   322 - 325 <=>  412 - 415   (LYS  322  - ASP  325  <=> PHE  412  - LEU  415 )                          
+   1: f4is-A 6t0v-B   326 - 337 <=>  417 - 428   (GLU  326  - VAL  337  <=> THR  417  - GLN  428 )                          
+   1: f4is-A 6t0v-B   341 - 344 <=>  432 - 435   (GLU  341  - GLN  344  <=> LEU  432  - THR  435 )                          
+   1: f4is-A 6t0v-B   349 - 353 <=>  438 - 442   (ALA  349  - SER  353  <=> TRP  438  - GLN  442 )                          
+   1: f4is-A 6t0v-B   354 - 361 <=>  447 - 454   (ASP  354  - LYS  361  <=> PHE  447  - HIS  454 )                          
+   1: f4is-A 6t0v-B   372 - 390 <=>  456 - 474   (SER  372  - TRP  390  <=> LYS  456  - GLY  474 )                          
+   1: f4is-A 6t0v-B   401 - 404 <=>  476 - 479   (TYR  401  - SER  404  <=> ASN  476  - GLN  479 )                          
+   1: f4is-A 6t0v-B   405 - 410 <=>  482 - 487   (PHE  405  - VAL  410  <=> SER  482  - THR  487 )                          
+   1: f4is-A 6t0v-B   453 - 460 <=>  504 - 511   (GLN  453  - GLN  460  <=> ASN  504  - SER  511 )                          
+
+# Translation-rotation matrices
+-matrix  "f4is-A 6t0v-B  U(1,.)  -0.718145 -0.237701  0.654038           28.773350"
+-matrix  "f4is-A 6t0v-B  U(2,.)   0.666132 -0.506725  0.547263         -100.755440"
+-matrix  "f4is-A 6t0v-B  U(3,.)   0.201333  0.828690  0.522242         -232.748138"
+

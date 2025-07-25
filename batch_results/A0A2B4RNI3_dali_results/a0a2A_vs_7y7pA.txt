@@ -1,0 +1,29 @@
+# Job: test
+# Query: a0a2A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7y7p-A  2.1 16.8  127   933    5  MOL_ID: 1; MOLECULE: RNA-DEPENDENT RNA POLYMERASE; CHAIN: A, B; EC: 2.
+
+# Structural equivalences
+   1: a0a2-A 7y7p-A     3 -   9 <=>    4 -  10   (LYS    3  - ALA    9  <=> VAL  393  - ARG  399 )                          
+   1: a0a2-A 7y7p-A   177 - 180 <=>   12 -  15   (ARG  177  - VAL  180  <=> ILE  401  - LYS  404 )                          
+   1: a0a2-A 7y7p-A   223 - 227 <=>   21 -  25   (VAL  223  - MET  227  <=> HIS  410  - LEU  414 )                          
+   1: a0a2-A 7y7p-A   238 - 242 <=>   42 -  46   (SER  238  - ALA  242  <=> LEU  431  - SER  435 )                          
+   1: a0a2-A 7y7p-A   330 - 335 <=>   49 -  54   (LYS  330  - ASP  335  <=> LYS  439  - TRP  444 )                          
+   1: a0a2-A 7y7p-A   336 - 342 <=>   56 -  62   (HIS  336  - ILE  342  <=> THR  446  - ASP  452 )                          
+   1: a0a2-A 7y7p-A   346 - 349 <=>   77 -  80   (CYS  346  - LEU  349  <=> PHE  468  - LYS  471 )                          
+   1: a0a2-A 7y7p-A   355 - 359 <=>  454 - 458   (SER  355  - SER  359  <=> PHE  863  - LEU  867 )                          
+   1: a0a2-A 7y7p-A   365 - 368 <=>  466 - 469   (GLN  365  - GLN  368  <=> LEU  875  - LEU  878 )                          
+   1: a0a2-A 7y7p-A   374 - 385 <=>  477 - 488   (PHE  374  - ASN  385  <=> LYS  886  - ASP  897 )                          
+   1: a0a2-A 7y7p-A   406 - 409 <=>  789 - 792   (LEU  406  - ILE  409  <=> TYR 1207  - PHE 1210 )                          
+   1: a0a2-A 7y7p-A   411 - 437 <=>  797 - 823   (MET  411  - ALA  437  <=> ASP 1215  - LEU 1241 )                          
+   1: a0a2-A 7y7p-A   444 - 455 <=>  824 - 835   (GLN  444  - ASP  455  <=> ASP 1252  - GLU 1263 )                          
+   1: a0a2-A 7y7p-A   456 - 459 <=>  837 - 840   (ALA  456  - PRO  459  <=> TRP 1265  - ILE 1268 )                          
+   1: a0a2-A 7y7p-A   465 - 472 <=>  872 - 879   (THR  465  - LEU  472  <=> PHE 1310  - SER 1317 )                          
+   1: a0a2-A 7y7p-A   590 - 598 <=>  897 - 905   (PHE  590  - MET  598  <=> GLN 1335  - GLY 1343 )                          
+   1: a0a2-A 7y7p-A   631 - 634 <=>  930 - 933   (SER  631  - SER  634  <=> ALA 1368  - GLU 1371 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a2-A 7y7p-A  U(1,.)  -0.385230  0.921519 -0.049002           -4.858628"
+-matrix  "a0a2-A 7y7p-A  U(2,.)  -0.040821  0.036032  0.998517         -123.203644"
+-matrix  "a0a2-A 7y7p-A  U(3,.)   0.921917  0.386659  0.023737          -45.762684"
+

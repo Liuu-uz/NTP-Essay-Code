@@ -1,0 +1,24 @@
+# Job: test
+# Query: a5umA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7tgk-B  2.1 16.6   88   593    9  MOL_ID: 1; MOLECULE: DESFERRIOXAMINE SYNTHETASE DESD; CHAIN: D, B, E, 
+
+# Structural equivalences
+   1: a5um-A 7tgk-B    17 -  22 <=>    1 -   6   (ILE   17  - VAL   22  <=> HIS    0  - ASP    5 )                          
+   1: a5um-A 7tgk-B    61 -  80 <=>   12 -  31   (HIS   61  - SER   80  <=> SER   11  - PHE   30 )                          
+   1: a5um-A 7tgk-B    83 - 101 <=>  113 - 131   (GLU   83  - TYR  101  <=> TYR  112  - PRO  130 )                          
+   1: a5um-A 7tgk-B   138 - 141 <=>  170 - 173   (GLY  138  - GLU  141  <=> GLU  169  - ALA  172 )                          
+   1: a5um-A 7tgk-B   144 - 147 <=>  174 - 177   (GLU  144  - ILE  147  <=> TYR  173  - GLU  176 )                          
+   1: a5um-A 7tgk-B   158 - 162 <=>  197 - 201   (MET  158  - PRO  162  <=> THR  196  - GLY  200 )                          
+   1: a5um-A 7tgk-B   209 - 214 <=>  297 - 302   (VAL  209  - GLU  214  <=> VAL  296  - PHE  301 )                          
+   1: a5um-A 7tgk-B   226 - 230 <=>  340 - 344   (GLU  226  - SER  230  <=> ARG  339  - ALA  343 )                          
+   1: a5um-A 7tgk-B   235 - 238 <=>  377 - 380   (LEU  235  - ARG  238  <=> ALA  376  - ASP  379 )                          
+   1: a5um-A 7tgk-B   260 - 265 <=>  461 - 466   (ARG  260  - LYS  265  <=> ASP  460  - ILE  465 )                          
+   1: a5um-A 7tgk-B   291 - 294 <=>  475 - 478   (ARG  291  - ALA  294  <=> LEU  474  - GLU  477 )                          
+   1: a5um-A 7tgk-B   301 - 305 <=>  572 - 576   (THR  301  - LEU  305  <=> ASP  571  - PRO  575 )                          
+
+# Translation-rotation matrices
+-matrix  "a5um-A 7tgk-B  U(1,.)  -0.921556  0.287385 -0.261044           64.128983"
+-matrix  "a5um-A 7tgk-B  U(2,.)  -0.385050 -0.762614  0.519765           79.020958"
+-matrix  "a5um-A 7tgk-B  U(3,.)  -0.049703  0.579507  0.813450           49.499836"
+

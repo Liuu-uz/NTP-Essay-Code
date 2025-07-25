@@ -1,0 +1,22 @@
+# Job: test
+# Query: q54eA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  3.9  3.8   93  1095    9  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: q54e-A 4ff3-A    13 -  18 <=>  450 - 455   (GLU   13  - LEU   18  <=> GLN  455  - PHE  460 )                          
+   1: q54e-A 4ff3-A    20 -  43 <=>  545 - 568   (GLN   20  - ALA   43  <=> PHE  550  - THR  573 )                          
+   1: q54e-A 4ff3-A    46 -  49 <=>  918 - 921   (ASN   46  - ARG   49  <=> MET  923  - GLY  926 )                          
+   1: q54e-A 4ff3-A    50 -  60 <=>  923 - 933   (GLY   50  - GLU   60  <=> GLY  928  - THR  938 )                          
+   1: q54e-A 4ff3-A    62 -  65 <=>  934 - 937   (CYS   62  - PHE   65  <=> MET  939  - ALA  942 )                          
+   1: q54e-A 4ff3-A    70 -  81 <=>  940 - 951   (ILE   70  - VAL   81  <=> ASN  945  - GLY  956 )                          
+   1: q54e-A 4ff3-A    95 - 114 <=>  953 - 972   (LYS   95  - GLU  114  <=> ASN  958  - GLY  977 )                          
+   1: q54e-A 4ff3-A   117 - 120 <=> 1039 -1042   (GLY  117  - GLU  120  <=> ASP 1044  - HIS 1047 )                          
+   1: q54e-A 4ff3-A   123 - 126 <=> 1050 -1053   (TYR  123  - THR  126  <=> LEU 1055  - ASP 1058 )                          
+   1: q54e-A 4ff3-A   127 - 130 <=> 1055 -1058   (PHE  127  - ARG  130  <=> MET 1060  - VAL 1063 )                          
+
+# Translation-rotation matrices
+-matrix  "q54e-A 4ff3-A  U(1,.)  -0.543426  0.242580 -0.803644          306.717041"
+-matrix  "q54e-A 4ff3-A  U(2,.)   0.799094 -0.143801 -0.583756          205.868713"
+-matrix  "q54e-A 4ff3-A  U(3,.)  -0.257172 -0.959415 -0.115699           10.764176"
+

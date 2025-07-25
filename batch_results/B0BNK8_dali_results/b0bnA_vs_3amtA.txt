@@ -1,0 +1,30 @@
+# Job: test
+# Query: b0bnA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  3.1 12.4  124   417   11  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: b0bn-A 3amt-A    80 - 102 <=>   16 -  38   (SER   80  - HIS  102  <=> GLY   15  - ILE   37 )                          
+   1: b0bn-A 3amt-A   103 - 107 <=>   40 -  44   (SER  103  - HIS  107  <=> PHE   39  - ILE   43 )                          
+   1: b0bn-A 3amt-A   111 - 114 <=>   45 -  48   (ALA  111  - VAL  114  <=> ARG   44  - PRO   47 )                          
+   1: b0bn-A 3amt-A   121 - 124 <=>   49 -  52   (LEU  121  - LYS  124  <=> THR   48  - TYR   51 )                          
+   1: b0bn-A 3amt-A   127 - 133 <=>   59 -  65   (ASP  127  - ASP  133  <=> ALA   58  - GLU   64 )                          
+   1: b0bn-A 3amt-A   138 - 154 <=>   67 -  83   (ALA  138  - PHE  154  <=> ASP   66  - HIS   82 )                          
+   1: b0bn-A 3amt-A   193 - 207 <=>   86 - 100   (SER  193  - SER  207  <=> LEU   85  - GLU   99 )                          
+   1: b0bn-A 3amt-A   208 - 211 <=>  103 - 106   (VAL  208  - GLN  211  <=> ALA  102  - LEU  105 )                          
+   1: b0bn-A 3amt-A   212 - 216 <=>  109 - 113   (PHE  212  - ILE  216  <=> PHE  108  - ALA  112 )                          
+   1: b0bn-A 3amt-A   224 - 227 <=>  159 - 162   (ASP  224  - LEU  227  <=> LEU  158  - ILE  161 )                          
+   1: b0bn-A 3amt-A   230 - 233 <=>  163 - 166   (GLY  230  - SER  233  <=> ALA  162  - TYR  165 )                          
+   1: b0bn-A 3amt-A   238 - 241 <=>  181 - 184   (SER  238  - PHE  241  <=> PHE  180  - UNK  183 )                          
+   1: b0bn-A 3amt-A   243 - 246 <=>  217 - 220   (PRO  243  - THR  246  <=> ILE  216  - GLU  219 )                          
+   1: b0bn-A 3amt-A   261 - 264 <=>  252 - 255   (LEU  261  - ARG  264  <=> HIS  251  - GLY  254 )                          
+   1: b0bn-A 3amt-A   291 - 295 <=>  257 - 261   (ARG  291  - SER  295  <=> GLU  256  - ARG  260 )                          
+   1: b0bn-A 3amt-A   352 - 358 <=>  272 - 278   (GLU  352  - MET  358  <=> GLY  271  - PRO  277 )                          
+   1: b0bn-A 3amt-A   360 - 363 <=>  313 - 316   (HIS  360  - ARG  363  <=> ARG  312  - ARG  315 )                          
+   1: b0bn-A 3amt-A   405 - 408 <=>  341 - 344   (TYR  405  - THR  408  <=> GLU  340  - GLU  343 )                          
+
+# Translation-rotation matrices
+-matrix  "b0bn-A 3amt-A  U(1,.)  -0.564192 -0.788893  0.243589           59.582096"
+-matrix  "b0bn-A 3amt-A  U(2,.)   0.525254 -0.115320  0.843095          -57.616848"
+-matrix  "b0bn-A 3amt-A  U(3,.)  -0.637021  0.603614  0.479432          -71.477623"
+

@@ -1,0 +1,24 @@
+# Job: test
+# Query: a4fzA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  5.1  4.5   90   417    7  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: a4fz-A 3amt-A   132 - 142 <=>    1 -  11   (VAL  132  - ILE  142  <=> HIS    0  - THR   10 )                          
+   1: a4fz-A 3amt-A   152 - 155 <=>   14 -  17   (ALA  152  - THR  155  <=> SER   13  - UNK   16 )                          
+   1: a4fz-A 3amt-A   158 - 171 <=>   18 -  31   (SER  158  - LYS  171  <=> CYS   17  - GLU   30 )                          
+   1: a4fz-A 3amt-A   172 - 176 <=>   33 -  37   (LYS  172  - LEU  176  <=> GLU   32  - VAL   36 )                          
+   1: a4fz-A 3amt-A   178 - 182 <=>   40 -  44   (PHE  178  - GLY  182  <=> PHE   39  - ILE   43 )                          
+   1: a4fz-A 3amt-A   183 - 189 <=>   60 -  66   (ASP  183  - CYS  189  <=> VAL   59  - VAL   65 )                          
+   1: a4fz-A 3amt-A   192 - 209 <=>   67 -  84   (MET  192  - GLY  209  <=> ASP   66  - ALA   83 )                          
+   1: a4fz-A 3amt-A   210 - 217 <=>   93 - 100   (ILE  210  - GLY  217  <=> PRO   92  - GLU   99 )                          
+   1: a4fz-A 3amt-A   228 - 231 <=>  101 - 104   (LEU  228  - ILE  231  <=> GLU  100  - VAL  103 )                          
+   1: a4fz-A 3amt-A   237 - 241 <=>  123 - 127   (ARG  237  - THR  241  <=> ALA  122  - ILE  126 )                          
+   1: a4fz-A 3amt-A   242 - 245 <=>  131 - 134   (ASP  242  - VAL  245  <=> PHE  130  - HIS  133 )                          
+   1: a4fz-A 3amt-A   262 - 266 <=>  406 - 410   (TYR  262  - ILE  266  <=> ILE  409  - VAL  413 )                          
+
+# Translation-rotation matrices
+-matrix  "a4fz-A 3amt-A  U(1,.)   0.667367 -0.287753  0.686892          -41.607925"
+-matrix  "a4fz-A 3amt-A  U(2,.)  -0.738696 -0.372940  0.561466          -13.309361"
+-matrix  "a4fz-A 3amt-A  U(3,.)   0.094606 -0.882108 -0.461450          105.745598"
+

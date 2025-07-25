@@ -1,0 +1,25 @@
+# Job: test
+# Query: a7j3A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  3.3 12.5   96   745    6  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a7j3-A 6t0v-B     5 -   9 <=>   38 -  42   (ALA    5  - SER    9  <=> TYR   38  - THR   42 )                          
+   1: a7j3-A 6t0v-B    10 -  13 <=>   45 -  48   (VAL   10  - VAL   13  <=> ARG   45  - ASP   48 )                          
+   1: a7j3-A 6t0v-B    35 -  45 <=>  230 - 240   (ILE   35  - TYR   45  <=> ASP  230  - ALA  240 )                          
+   1: a7j3-A 6t0v-B   184 - 190 <=>  253 - 259   (ALA  184  - VAL  190  <=> TYR  253  - ALA  259 )                          
+   1: a7j3-A 6t0v-B   580 - 583 <=>  274 - 277   (GLU  580  - THR  583  <=> GLY  274  - GLU  277 )                          
+   1: a7j3-A 6t0v-B   614 - 617 <=>  509 - 512   (TYR  614  - LEU  617  <=> LEU  509  - PHE  512 )                          
+   1: a7j3-A 6t0v-B   650 - 668 <=>  517 - 535   (HIS  650  - LEU  668  <=> ASN  517  - ILE  535 )                          
+   1: a7j3-A 6t0v-B   669 - 672 <=>  537 - 540   (GLN  669  - VAL  672  <=> ASN  537  - GLY  540 )                          
+   1: a7j3-A 6t0v-B   673 - 691 <=>  543 - 561   (THR  673  - ILE  691  <=> THR  543  - CYS  561 )                          
+   1: a7j3-A 6t0v-B   694 - 700 <=>  624 - 630   (ALA  694  - PHE  700  <=> LEU  624  - PRO  630 )                          
+   1: a7j3-A 6t0v-B   701 - 704 <=>  633 - 636   (ILE  701  - LYS  704  <=> HIS  633  - GLU  636 )                          
+   1: a7j3-A 6t0v-B   705 - 708 <=>  685 - 688   (PHE  705  - ILE  708  <=> GLU  697  - PHE  700 )                          
+   1: a7j3-A 6t0v-B   750 - 753 <=>  692 - 695   (ILE  750  - SER  753  <=> THR  704  - ARG  707 )                          
+
+# Translation-rotation matrices
+-matrix  "a7j3-A 6t0v-B  U(1,.)  -0.704900 -0.494928 -0.508097          231.441162"
+-matrix  "a7j3-A 6t0v-B  U(2,.)   0.099659 -0.778330  0.619896          -14.579006"
+-matrix  "a7j3-A 6t0v-B  U(3,.)  -0.702271  0.386328  0.597969          -39.732136"
+

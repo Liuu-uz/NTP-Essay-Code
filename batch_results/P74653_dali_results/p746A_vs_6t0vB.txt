@@ -1,0 +1,17 @@
+# Job: test
+# Query: p746A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  5.0  7.4   62   745    2  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: p746-A 6t0v-B    18 -  61 <=>  517 - 560   (GLY   18  - TRP   61  <=> ASN  517  - ARG  560 )                          
+   1: p746-A 6t0v-B    71 -  74 <=>  588 - 591   (ALA   71  - GLY   74  <=> GLY  588  - VAL  591 )                          
+   1: p746-A 6t0v-B    75 -  78 <=>  595 - 598   (VAL   75  - ALA   78  <=> GLY  595  - PRO  598 )                          
+   1: p746-A 6t0v-B    92 -  95 <=>  600 - 603   (SER   92  - SER   95  <=> ASN  600  - ASN  603 )                          
+   1: p746-A 6t0v-B   183 - 188 <=>  659 - 664   (PHE  183  - ILE  188  <=> ASN  671  - ASN  676 )                          
+
+# Translation-rotation matrices
+-matrix  "p746-A 6t0v-B  U(1,.)   0.351398 -0.689572  0.633254          -55.290295"
+-matrix  "p746-A 6t0v-B  U(2,.)   0.744596 -0.204180 -0.635521            5.525134"
+-matrix  "p746-A 6t0v-B  U(3,.)   0.567536  0.694839  0.441704         -208.802261"
+

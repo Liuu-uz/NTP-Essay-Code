@@ -1,0 +1,26 @@
+# Job: test
+# Query: a4fzA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  4.8  3.7  107   745   12  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a4fz-A 6t0v-B    31 -  38 <=>  274 - 281   (GLN   31  - MET   38  <=> GLY  274  - LYS  281 )                          
+   1: a4fz-A 6t0v-B    57 -  60 <=>  284 - 287   (ILE   57  - ILE   60  <=> ASN  284  - LYS  287 )                          
+   1: a4fz-A 6t0v-B    94 -  99 <=>  289 - 294   (ALA   94  - LYS   99  <=> MET  289  - THR  294 )                          
+   1: a4fz-A 6t0v-B   132 - 145 <=>  299 - 312   (VAL  132  - LYS  145  <=> SER  299  - ASN  312 )                          
+   1: a4fz-A 6t0v-B   146 - 151 <=>  406 - 411   (LEU  146  - THR  151  <=> GLY  406  - MET  411 )                          
+   1: a4fz-A 6t0v-B   154 - 164 <=>  412 - 422   (ASP  154  - LEU  164  <=> PHE  412  - SER  422 )                          
+   1: a4fz-A 6t0v-B   166 - 172 <=>  423 - 429   (LEU  166  - LYS  172  <=> VAL  423  - ARG  429 )                          
+   1: a4fz-A 6t0v-B   173 - 179 <=>  436 - 442   (TYR  173  - PHE  179  <=> TYR  436  - GLN  442 )                          
+   1: a4fz-A 6t0v-B   181 - 191 <=>  443 - 453   (GLY  181  - GLY  191  <=> SER  443  - GLY  453 )                          
+   1: a4fz-A 6t0v-B   193 - 206 <=>  459 - 472   (SER  193  - GLU  206  <=> ILE  459  - LEU  472 )                          
+   1: a4fz-A 6t0v-B   208 - 213 <=>  473 - 478   (CYS  208  - LYS  213  <=> VAL  473  - SER  478 )                          
+   1: a4fz-A 6t0v-B   214 - 218 <=>  482 - 486   (ALA  214  - ILE  218  <=> SER  482  - LYS  486 )                          
+   1: a4fz-A 6t0v-B   225 - 228 <=>  487 - 490   (ALA  225  - LEU  228  <=> THR  487  - PHE  490 )                          
+   1: a4fz-A 6t0v-B   263 - 266 <=>  535 - 538   (MET  263  - ILE  266  <=> ILE  535  - ASP  538 )                          
+
+# Translation-rotation matrices
+-matrix  "a4fz-A 6t0v-B  U(1,.)   0.109164  0.209348 -0.971729           90.408081"
+-matrix  "a4fz-A 6t0v-B  U(2,.)   0.787644  0.578129  0.213035         -227.142029"
+-matrix  "a4fz-A 6t0v-B  U(3,.)   0.606383 -0.788632 -0.101781           42.283649"
+

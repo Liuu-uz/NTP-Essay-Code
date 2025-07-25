@@ -1,0 +1,27 @@
+# Job: test
+# Query: q8rmA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ci7-C  3.2  5.8  122   361    7  MOL_ID: 1; MOLECULE: YCAO; CHAIN: A, B, C, D, E, F; ENGINEERED: YES   
+
+# Structural equivalences
+   1: q8rm-A 6ci7-C    44 -  47 <=>   30 -  33   (LEU   44  - LEU   47  <=> ARG   31  - GLY   34 )                          
+   1: q8rm-A 6ci7-C    49 -  54 <=>   52 -  57   (LEU   49  - PRO   54  <=> ARG   53  - GLY   58 )                          
+   1: q8rm-A 6ci7-C    57 -  60 <=>   58 -  61   (TYR   57  - LEU   60  <=> GLU   59  - HIS   62 )                          
+   1: q8rm-A 6ci7-C    67 -  70 <=>   63 -  66   (GLY   67  - ASP   70  <=> GLY   64  - THR   67 )                          
+   1: q8rm-A 6ci7-C   107 - 128 <=>  159 - 180   (GLY  107  - GLU  128  <=> ILE  160  - HIS  181 )                          
+   1: q8rm-A 6ci7-C   135 - 143 <=>  203 - 211   (ASP  135  - ASP  143  <=> ARG  204  - SER  212 )                          
+   1: q8rm-A 6ci7-C   148 - 151 <=>  212 - 215   (ASN  148  - PRO  151  <=> ARG  213  - GLY  216 )                          
+   1: q8rm-A 6ci7-C   153 - 165 <=>  216 - 228   (ASP  153  - GLU  165  <=> VAL  217  - VAL  229 )                          
+   1: q8rm-A 6ci7-C   167 - 175 <=>  231 - 239   (ILE  167  - HIS  175  <=> UNK  232  - PRO  240 )                          
+   1: q8rm-A 6ci7-C   233 - 257 <=>  240 - 264   (ASP  233  - ILE  257  <=> ASP  241  - GLU  265 )                          
+   1: q8rm-A 6ci7-C   347 - 350 <=>  314 - 317   (ALA  347  - VAL  350  <=> GLU  327  - LEU  330 )                          
+   1: q8rm-A 6ci7-C   353 - 356 <=>  318 - 321   (THR  353  - ILE  356  <=> GLY  331  - ILE  334 )                          
+   1: q8rm-A 6ci7-C   360 - 363 <=>  322 - 325   (MET  360  - THR  363  <=> GLU  335  - LEU  338 )                          
+   1: q8rm-A 6ci7-C   367 - 370 <=>  333 - 336   (SER  367  - ILE  370  <=> PRO  346  - ARG  349 )                          
+   1: q8rm-A 6ci7-C   769 - 774 <=>  349 - 354   (HIS  769  - VAL  774  <=> GLU  362  - ASN  367 )                          
+
+# Translation-rotation matrices
+-matrix  "q8rm-A 6ci7-C  U(1,.)  -0.305366  0.620946  0.721927          -66.384552"
+-matrix  "q8rm-A 6ci7-C  U(2,.)   0.063291  0.769698 -0.635263          -46.808392"
+-matrix  "q8rm-A 6ci7-C  U(3,.)  -0.950129 -0.148296 -0.274340           -2.352596"
+

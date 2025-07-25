@@ -1,0 +1,23 @@
+# Job: test
+# Query: q9skA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-C  2.3  5.2   74   254    9  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: q9sk-A 3wdl-C   197 - 200 <=>   32 -  35   (ASP  197  - GLN  200  <=> GLY   38  - GLU   41 )                          
+   1: q9sk-A 3wdl-C   212 - 215 <=>   59 -  62   (PHE  212  - GLN  215  <=> LYS   65  - LEU   68 )                          
+   1: q9sk-A 3wdl-C   217 - 221 <=>   66 -  70   (GLN  217  - ALA  221  <=> PRO   72  - VAL   76 )                          
+   1: q9sk-A 3wdl-C   224 - 231 <=>   71 -  78   (ALA  224  - PHE  231  <=> ASN   77  - VAL   84 )                          
+   1: q9sk-A 3wdl-C   290 - 293 <=>   82 -  85   (LEU  290  - ALA  293  <=> THR   88  - LEU   91 )                          
+   1: q9sk-A 3wdl-C   295 - 304 <=>   87 -  96   (PHE  295  - ILE  304  <=> LYS   93  - ASN  102 )                          
+   1: q9sk-A 3wdl-C   306 - 309 <=>  101 - 104   (THR  306  - MET  309  <=> THR  107  - ARG  110 )                          
+   1: q9sk-A 3wdl-C   310 - 329 <=>  106 - 125   (GLU  310  - ASP  329  <=> ARG  112  - ASN  131 )                          
+   1: q9sk-A 3wdl-C   333 - 337 <=>  132 - 136   (SER  333  - ILE  337  <=> GLY  138  - GLU  142 )                          
+   1: q9sk-A 3wdl-C   340 - 343 <=>  141 - 144   (ASN  340  - PRO  343  <=> ASP  147  - GLY  150 )                          
+   1: q9sk-A 3wdl-C   536 - 541 <=>  177 - 182   (LEU  536  - SER  541  <=> ASN  183  - SER  188 )                          
+
+# Translation-rotation matrices
+-matrix  "q9sk-A 3wdl-C  U(1,.)  -0.048258  0.829255 -0.556783           -7.748477"
+-matrix  "q9sk-A 3wdl-C  U(2,.)   0.491897  0.504881  0.709318          -24.756958"
+-matrix  "q9sk-A 3wdl-C  U(3,.)   0.869315 -0.239650 -0.432273          -13.597237"
+

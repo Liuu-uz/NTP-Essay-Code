@@ -1,0 +1,30 @@
+# Job: test
+# Query: a4zcA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7tgk-B  2.1  6.5  110   593    5  MOL_ID: 1; MOLECULE: DESFERRIOXAMINE SYNTHETASE DESD; CHAIN: D, B, E, 
+
+# Structural equivalences
+   1: a4zc-A 7tgk-B    11 -  14 <=>  171 - 174   (ALA   11  - TYR   14  <=> TYR  170  - TYR  173 )                          
+   1: a4zc-A 7tgk-B    15 -  19 <=>  178 - 182   (ALA   15  - VAL   19  <=> THR  177  - VAL  181 )                          
+   1: a4zc-A 7tgk-B    22 -  25 <=>  288 - 291   (HIS   22  - THR   25  <=> LYS  287  - VAL  290 )                          
+   1: a4zc-A 7tgk-B    27 -  30 <=>  371 - 374   (ASP   27  - GLU   30  <=> ARG  370  - PRO  373 )                          
+   1: a4zc-A 7tgk-B    52 -  60 <=>  375 - 383   (THR   52  - GLY   60  <=> VAL  374  - SER  382 )                          
+   1: a4zc-A 7tgk-B   567 - 570 <=>  384 - 387   (THR  567  - SER  570  <=> LEU  383  - MET  386 )                          
+   1: a4zc-A 7tgk-B   577 - 580 <=>  393 - 396   (ARG  577  - GLU  580  <=> VAL  392  - GLU  395 )                          
+   1: a4zc-A 7tgk-B   619 - 624 <=>  400 - 405   (TYR  619  - TYR  624  <=> VAL  399  - ILE  404 )                          
+   1: a4zc-A 7tgk-B   627 - 631 <=>  418 - 422   (ASP  627  - TRP  631  <=> HIS  417  - ALA  421 )                          
+   1: a4zc-A 7tgk-B   632 - 638 <=>  424 - 430   (ILE  632  - GLU  638  <=> TYR  423  - SER  429 )                          
+   1: a4zc-A 7tgk-B   648 - 651 <=>  438 - 441   (TYR  648  - ALA  651  <=> PHE  437  - HIS  440 )                          
+   1: a4zc-A 7tgk-B   653 - 657 <=>  497 - 501   (ILE  653  - TYR  657  <=> THR  496  - ASP  500 )                          
+   1: a4zc-A 7tgk-B   658 - 673 <=>  503 - 518   (ALA  658  - THR  673  <=> PHE  502  - ALA  517 )                          
+   1: a4zc-A 7tgk-B   675 - 688 <=>  519 - 532   (LEU  675  - VAL  688  <=> GLU  518  - GLU  531 )                          
+   1: a4zc-A 7tgk-B   690 - 694 <=>  549 - 553   (SER  690  - ALA  694  <=> LEU  548  - GLU  552 )                          
+   1: a4zc-A 7tgk-B   790 - 795 <=>  554 - 559   (GLN  790  - ILE  795  <=> PHE  553  - LEU  558 )                          
+   1: a4zc-A 7tgk-B   796 - 799 <=>  562 - 565   (PRO  796  - THR  799  <=> LEU  561  - ARG  564 )                          
+   1: a4zc-A 7tgk-B   820 - 823 <=>  572 - 575   (ILE  820  - ARG  823  <=> ASP  571  - ASP  574 )                          
+
+# Translation-rotation matrices
+-matrix  "a4zc-A 7tgk-B  U(1,.)  -0.529431  0.105356 -0.841786           -5.035408"
+-matrix  "a4zc-A 7tgk-B  U(2,.)  -0.589373 -0.759384  0.275636           67.406212"
+-matrix  "a4zc-A 7tgk-B  U(3,.)  -0.610199  0.642056  0.464135          104.366493"
+

@@ -1,0 +1,26 @@
+# Job: test
+# Query: a0kmA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ci7-F  2.1  4.5   92   362    5  MOL_ID: 1; MOLECULE: YCAO; CHAIN: A, B, C, D, E, F; ENGINEERED: YES   
+
+# Structural equivalences
+   1: a0km-A 6ci7-F   176 - 179 <=>   34 -  37   (ILE  176  - HIS  179  <=> VAL   35  - LYS   38 )                          
+   1: a0km-A 6ci7-F   182 - 185 <=>   50 -  53   (GLU  182  - PRO  185  <=> ARG   51  - ARG   54 )                          
+   1: a0km-A 6ci7-F   222 - 225 <=>   54 -  57   (PRO  222  - LEU  225  <=> SER   55  - GLY   58 )                          
+   1: a0km-A 6ci7-F   242 - 247 <=>   82 -  87   (GLU  242  - SER  247  <=> ARG   83  - PRO   88 )                          
+   1: a0km-A 6ci7-F   275 - 281 <=>   88 -  94   (MET  275  - TYR  281  <=> ARG   89  - ARG   95 )                          
+   1: a0km-A 6ci7-F   329 - 335 <=>   96 - 102   (PRO  329  - PHE  335  <=> PRO   97  - THR  103 )                          
+   1: a0km-A 6ci7-F   372 - 375 <=>  105 - 108   (THR  372  - PHE  375  <=> TRP  106  - THR  109 )                          
+   1: a0km-A 6ci7-F   418 - 425 <=>  115 - 122   (LYS  418  - TYR  425  <=> GLU  116  - ARG  123 )                          
+   1: a0km-A 6ci7-F   431 - 452 <=>  152 - 173   (GLU  431  - ASN  452  <=> ARG  153  - ILE  174 )                          
+   1: a0km-A 6ci7-F   456 - 459 <=>  316 - 319   (GLY  456  - LEU  459  <=> ALA  328  - GLY  331 )                          
+   1: a0km-A 6ci7-F   462 - 468 <=>  320 - 326   (ASN  462  - HIS  468  <=> LYS  332  - LEU  338 )                          
+   1: a0km-A 6ci7-F   469 - 475 <=>  336 - 342   (GLY  469  - ASP  475  <=> VAL  348  - GLY  354 )                          
+   1: a0km-A 6ci7-F   478 - 481 <=>  354 - 357   (GLU  478  - TYR  481  <=> GLY  366  - PRO  369 )                          
+   1: a0km-A 6ci7-F   483 - 486 <=>  359 - 362   (THR  483  - ASN  486  <=> LYS  371  - GLY  374 )                          
+
+# Translation-rotation matrices
+-matrix  "a0km-A 6ci7-F  U(1,.)   0.664157  0.119225 -0.738025           45.595901"
+-matrix  "a0km-A 6ci7-F  U(2,.)   0.692599 -0.469756  0.547391           30.111336"
+-matrix  "a0km-A 6ci7-F  U(3,.)  -0.281429 -0.874709 -0.394567          -18.357683"
+

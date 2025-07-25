@@ -1,0 +1,19 @@
+# Job: test
+# Query: o189A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-B  2.7  7.5   67  1095    7  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: o189-A 4ff3-B     1 -   8 <=>  326 - 333   (MET    1  - GLU    8  <=> ALA  331  - THR  338 )                          
+   1: o189-A 4ff3-B    13 -  17 <=>  335 - 339   (CYS   13  - ILE   17  <=> PHE  340  - THR  344 )                          
+   1: o189-A 4ff3-B    19 -  25 <=>  340 - 346   (SER   19  - CYS   25  <=> PRO  345  - GLU  351 )                          
+   1: o189-A 4ff3-B    26 -  34 <=>  348 - 356   (ILE   26  - ALA   34  <=> LEU  353  - LEU  361 )                          
+   1: o189-A 4ff3-B    35 -  39 <=>  359 - 363   (LEU   35  - GLN   39  <=> ALA  364  - ASN  368 )                          
+   1: o189-A 4ff3-B   476 - 504 <=>  371 - 399   (PRO  476  - LYS  504  <=> HIS  376  - GLN  404 )                          
+   1: o189-A 4ff3-B   506 - 509 <=>  405 - 408   (SER  506  - TRP  509  <=> THR  410  - ILE  413 )                          
+
+# Translation-rotation matrices
+-matrix  "o189-A 4ff3-B  U(1,.)   0.615281  0.788240 -0.010348           49.643173"
+-matrix  "o189-A 4ff3-B  U(2,.)  -0.274922  0.202258 -0.939952          331.542145"
+-matrix  "o189-A 4ff3-B  U(3,.)  -0.738814  0.581180  0.341150          -68.931076"
+

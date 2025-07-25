@@ -1,0 +1,25 @@
+# Job: test
+# Query: a0pqA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  2.8  8.1   92   745    3  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a0pq-A 6t0v-B     5 -  12 <=>  295 - 302   (ILE    5  - PHE   12  <=> ASP  295  - ILE  302 )                          
+   1: a0pq-A 6t0v-B    13 -  16 <=>  304 - 307   (GLY   13  - CYS   16  <=> GLY  304  - THR  307 )                          
+   1: a0pq-A 6t0v-B    17 -  20 <=>  309 - 312   (THR   17  - GLY   20  <=> TRP  309  - ASN  312 )                          
+   1: a0pq-A 6t0v-B    25 -  34 <=>  415 - 424   (SER   25  - PHE   34  <=> LEU  415  - LEU  424 )                          
+   1: a0pq-A 6t0v-B    44 -  47 <=>  425 - 428   (SER   44  - PHE   47  <=> ASN  425  - GLN  428 )                          
+   1: a0pq-A 6t0v-B    48 -  57 <=>  432 - 441   (LEU   48  - ASP   57  <=> LEU  432  - LEU  441 )                          
+   1: a0pq-A 6t0v-B    60 -  67 <=>  447 - 454   (SER   60  - ALA   67  <=> PHE  447  - HIS  454 )                          
+   1: a0pq-A 6t0v-B    75 -  94 <=>  455 - 474   (LEU   75  - GLU   94  <=> PHE  455  - GLY  474 )                          
+   1: a0pq-A 6t0v-B   120 - 123 <=>  484 - 487   (TYR  120  - HIS  123  <=> ILE  484  - THR  487 )                          
+   1: a0pq-A 6t0v-B   183 - 186 <=>  498 - 501   (THR  183  - SER  186  <=> ARG  498  - PHE  501 )                          
+   1: a0pq-A 6t0v-B   249 - 254 <=>  504 - 509   (ILE  249  - GLU  254  <=> ASN  504  - LEU  509 )                          
+   1: a0pq-A 6t0v-B   261 - 264 <=>  527 - 530   (GLY  261  - PRO  264  <=> THR  527  - ILE  530 )                          
+   1: a0pq-A 6t0v-B   266 - 271 <=>  539 - 544   (ARG  266  - ARG  271  <=> LEU  539  - ALA  544 )                          
+
+# Translation-rotation matrices
+-matrix  "a0pq-A 6t0v-B  U(1,.)   0.015384  0.794971 -0.606453          -26.899885"
+-matrix  "a0pq-A 6t0v-B  U(2,.)  -0.949695 -0.178124 -0.257586          202.591782"
+-matrix  "a0pq-A 6t0v-B  U(3,.)  -0.312798  0.579908  0.752239         -150.153336"
+

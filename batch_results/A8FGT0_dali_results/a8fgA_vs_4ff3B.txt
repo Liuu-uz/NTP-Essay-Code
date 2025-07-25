@@ -1,0 +1,27 @@
+# Job: test
+# Query: a8fgA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-B  2.9  4.0  105  1095   10  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a8fg-A 4ff3-B    20 -  32 <=>   88 - 100   (GLU   20  - ALA   32  <=> MET   93  - SER  105 )                          
+   1: a8fg-A 4ff3-B    33 -  36 <=>  102 - 105   (SER   33  - THR   36  <=> LEU  107  - PHE  110 )                          
+   1: a8fg-A 4ff3-B    38 -  41 <=>  133 - 136   (ARG   38  - GLN   41  <=> VAL  138  - ASP  141 )                          
+   1: a8fg-A 4ff3-B    44 -  65 <=>  143 - 164   (ASP   44  - SER   65  <=> ASN  148  - ASN  169 )                          
+   1: a8fg-A 4ff3-B    67 -  70 <=>  165 - 168   (ALA   67  - ALA   70  <=> THR  170  - LYS  173 )                          
+   1: a8fg-A 4ff3-B    71 -  74 <=>  172 - 175   (ILE   71  - ARG   74  <=> ASP  177  - ALA  180 )                          
+   1: a8fg-A 4ff3-B   116 - 135 <=>  197 - 216   (CYS  116  - GLU  135  <=> THR  202  - SER  221 )                          
+   1: a8fg-A 4ff3-B   140 - 143 <=>  217 - 220   (ARG  140  - SER  143  <=> ARG  222  - ASN  225 )                          
+   1: a8fg-A 4ff3-B   153 - 156 <=>  226 - 229   (THR  153  - ILE  156  <=> THR  231  - ILE  234 )                          
+   1: a8fg-A 4ff3-B   165 - 168 <=>  236 - 239   (ILE  165  - ASP  168  <=> GLU  241  - ALA  244 )                          
+   1: a8fg-A 4ff3-B   171 - 175 <=>  249 - 253   (TYR  171  - PRO  175  <=> GLU  254  - ASP  258 )                          
+   1: a8fg-A 4ff3-B   177 - 180 <=>  254 - 257   (PHE  177  - GLN  180  <=> MET  259  - ILE  262 )                          
+   1: a8fg-A 4ff3-B   185 - 189 <=>  264 - 268   (ARG  185  - VAL  189  <=> THR  269  - TYR  273 )                          
+   1: a8fg-A 4ff3-B   202 - 205 <=>  269 - 272   (LEU  202  - LEU  205  <=> THR  274  - GLU  277 )                          
+   1: a8fg-A 4ff3-B   230 - 233 <=>  896 - 899   (PRO  230  - THR  233  <=> ASP  901  - ARG  904 )                          
+
+# Translation-rotation matrices
+-matrix  "a8fg-A 4ff3-B  U(1,.)  -0.625113 -0.166449  0.762580         -286.594421"
+-matrix  "a8fg-A 4ff3-B  U(2,.)  -0.774030  0.258064 -0.578171          282.292603"
+-matrix  "a8fg-A 4ff3-B  U(3,.)  -0.100558 -0.951681 -0.290156           58.995449"
+

@@ -1,0 +1,23 @@
+# Job: test
+# Query: p746A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-D  3.2 10.6   76   249    5  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: p746-A 3wdl-D    12 -  15 <=>    3 -   6   (PRO   12  - ILE   15  <=> LYS    6  - PRO    9 )                          
+   1: p746-A 3wdl-D    17 -  35 <=>    7 -  25   (VAL   17  - ASN   35  <=> ARG   10  - MET   28 )                          
+   1: p746-A 3wdl-D    45 -  60 <=>   27 -  42   (THR   45  - ALA   60  <=> ALA   30  - TYR   45 )                          
+   1: p746-A 3wdl-D    61 -  64 <=>   44 -  47   (TRP   61  - SER   64  <=> ILE   47  - ARG   50 )                          
+   1: p746-A 3wdl-D    80 -  87 <=>   81 -  88   (ILE   80  - LEU   87  <=> VAL   84  - LEU   91 )                          
+   1: p746-A 3wdl-D   140 - 143 <=>  100 - 103   (ALA  140  - VAL  143  <=> LEU  103  - ARG  106 )                          
+   1: p746-A 3wdl-D   150 - 153 <=>  129 - 132   (HIS  150  - GLN  153  <=> LYS  134  - PRO  137 )                          
+   1: p746-A 3wdl-D   157 - 161 <=>  135 - 139   (PHE  157  - TRP  161  <=> GLU  140  - VAL  146 )                          
+   1: p746-A 3wdl-D   166 - 169 <=>  158 - 161   (THR  166  - LEU  169  <=> ASP  165  - GLU  168 )                          
+   1: p746-A 3wdl-D   172 - 175 <=>  180 - 183   (PHE  172  - THR  175  <=> ARG  187  - ARG  190 )                          
+   1: p746-A 3wdl-D   179 - 182 <=>  227 - 230   (LEU  179  - THR  182  <=> THR  234  - ASP  237 )                          
+
+# Translation-rotation matrices
+-matrix  "p746-A 3wdl-D  U(1,.)   0.291312 -0.098393  0.951555          -13.575115"
+-matrix  "p746-A 3wdl-D  U(2,.)   0.603160  0.790959 -0.102867           -2.430283"
+-matrix  "p746-A 3wdl-D  U(3,.)  -0.742519  0.603906  0.289762           -5.844186"
+

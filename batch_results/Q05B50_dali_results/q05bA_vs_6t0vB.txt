@@ -1,0 +1,26 @@
+# Job: test
+# Query: q05bA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  2.6 25.3  104   745    7  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: q05b-A 6t0v-B     2 -   6 <=>  193 - 197   (TRP    2  - ALA    6  <=> ASP  193  - LYS  197 )                          
+   1: q05b-A 6t0v-B    49 -  60 <=>  294 - 305   (PRO   49  - ARG   60  <=> THR  294  - ASP  305 )                          
+   1: q05b-A 6t0v-B    62 -  68 <=>  306 - 312   (PHE   62  - LYS   68  <=> ASN  306  - ASN  312 )                          
+   1: q05b-A 6t0v-B    69 -  72 <=>  408 - 411   (HIS   69  - ILE   72  <=> MET  408  - MET  411 )                          
+   1: q05b-A 6t0v-B    75 -  92 <=>  412 - 429   (ASN   75  - ASN   92  <=> PHE  412  - ARG  429 )                          
+   1: q05b-A 6t0v-B    93 -  96 <=>  431 - 434   (GLU   93  - ASP   96  <=> ILE  431  - ARG  434 )                          
+   1: q05b-A 6t0v-B   100 - 103 <=>  439 - 442   (ALA  100  - GLN  103  <=> ASP  439  - GLN  442 )                          
+   1: q05b-A 6t0v-B   104 - 111 <=>  446 - 453   (SER  104  - PHE  111  <=> ASP  446  - GLY  453 )                          
+   1: q05b-A 6t0v-B   122 - 141 <=>  455 - 474   (ALA  122  - TRP  141  <=> PHE  455  - GLY  474 )                          
+   1: q05b-A 6t0v-B   156 - 161 <=>  482 - 487   (PHE  156  - ILE  161  <=> SER  482  - THR  487 )                          
+   1: q05b-A 6t0v-B   180 - 183 <=>  493 - 496   (CYS  180  - ASN  183  <=> THR  493  - PHE  496 )                          
+   1: q05b-A 6t0v-B   210 - 213 <=>  504 - 507   (GLY  210  - ALA  213  <=> ASN  504  - MET  507 )                          
+   1: q05b-A 6t0v-B   215 - 218 <=>  508 - 511   (ASP  215  - GLU  218  <=> GLU  508  - SER  511 )                          
+   1: q05b-A 6t0v-B   257 - 260 <=>  609 - 612   (PRO  257  - MET  260  <=> VAL  609  - LYS  612 )                          
+
+# Translation-rotation matrices
+-matrix  "q05b-A 6t0v-B  U(1,.)   0.775194  0.630760  0.034869         -201.553497"
+-matrix  "q05b-A 6t0v-B  U(2,.)  -0.522794  0.609563  0.595919         -102.594704"
+-matrix  "q05b-A 6t0v-B  U(3,.)   0.354627 -0.480182  0.802287          -91.920532"
+

@@ -1,0 +1,28 @@
+# Job: test
+# Query: p532A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  8dcd-B  3.5  4.1  118   481    8  MOL_ID: 1; MOLECULE: TRNA-SPLICING LIGASE RTCB; CHAIN: A, B; SYNONYM: 
+
+# Structural equivalences
+   1: p532-A 8dcd-B    19 -  29 <=>   94 - 104   (LEU   19  - ASP   29  <=> TYR   94  - ARG  104 )                          
+   1: p532-A 8dcd-B    31 -  34 <=>  105 - 108   (LYS   31  - HIS   34  <=> THR  105  - THR  108 )                          
+   1: p532-A 8dcd-B    45 -  62 <=>  110 - 127   (PRO   45  - VAL   62  <=> LYS  110  - VAL  127 )                          
+   1: p532-A 8dcd-B    64 -  67 <=>  128 - 131   (LYS   64  - ASN   67  <=> PRO  128  - VAL  131 )                          
+   1: p532-A 8dcd-B    70 -  76 <=>  203 - 209   (ILE   70  - SER   76  <=> HIS  203  - VAL  209 )                          
+   1: p532-A 8dcd-B    77 -  83 <=>  229 - 235   (ASP   77  - LEU   83  <=> VAL  229  - THR  235 )                          
+   1: p532-A 8dcd-B    85 -  88 <=>  236 - 239   (SER   85  - THR   88  <=> GLY  236  - GLY  239 )                          
+   1: p532-A 8dcd-B    91 -  94 <=>  290 - 293   (ASN   91  - LYS   94  <=> ASN  290  - TRP  293 )                          
+   1: p532-A 8dcd-B    96 - 114 <=>  294 - 312   (LYS   96  - ALA  114  <=> ALA  294  - LYS  312 )                          
+   1: p532-A 8dcd-B   126 - 132 <=>  317 - 323   (HIS  126  - SER  132  <=> GLY  317  - ILE  323 )                          
+   1: p532-A 8dcd-B   133 - 138 <=>  325 - 330   (ARG  133  - PRO  138  <=> TYR  325  - ASN  330 )                          
+   1: p532-A 8dcd-B   139 - 142 <=>  351 - 354   (ASN  139  - THR  142  <=> LYS  351  - THR  354 )                          
+   1: p532-A 8dcd-B   146 - 153 <=>  377 - 384   (TYR  146  - ASP  153  <=> ILE  377  - ALA  384 )                          
+   1: p532-A 8dcd-B   205 - 208 <=>  430 - 433   (GLU  205  - MET  208  <=> ASN  430  - ILE  433 )                          
+   1: p532-A 8dcd-B   220 - 223 <=>  435 - 438   (GLU  220  - HIS  223  <=> VAL  435  - ALA  438 )                          
+   1: p532-A 8dcd-B   225 - 231 <=>  446 - 452   (ASN  225  - ASP  231  <=> GLU  446  - LYS  452 )                          
+
+# Translation-rotation matrices
+-matrix  "p532-A 8dcd-B  U(1,.)   0.054013  0.272910 -0.960522           61.854027"
+-matrix  "p532-A 8dcd-B  U(2,.)   0.676672  0.697372  0.236193          -33.055027"
+-matrix  "p532-A 8dcd-B  U(3,.)   0.734301 -0.662716 -0.147003          -15.008368"
+

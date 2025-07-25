@@ -1,0 +1,25 @@
+# Job: test
+# Query: q9jiA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-B  3.2 12.0   90  1095    7  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: q9ji-A 4ff3-B    40 -  43 <=>  200 - 203   (GLY   40  - PRO   43  <=> GLU  205  - SER  208 )                          
+   1: q9ji-A 4ff3-B    61 -  64 <=>  213 - 216   (LEU   61  - LEU   64  <=> TRP  218  - SER  221 )                          
+   1: q9ji-A 4ff3-B    83 -  87 <=>  221 - 225   (LEU   83  - LEU   87  <=> ALA  226  - TYR  230 )                          
+   1: q9ji-A 4ff3-B   212 - 215 <=>  323 - 326   (HIS  212  - ARG  215  <=> GLN  328  - ALA  331 )                          
+   1: q9ji-A 4ff3-B   249 - 252 <=>  330 - 333   (LEU  249  - MET  252  <=> GLU  335  - THR  338 )                          
+   1: q9ji-A 4ff3-B   287 - 301 <=>  334 - 348   (LEU  287  - PRO  301  <=> GLU  339  - LEU  353 )                          
+   1: q9ji-A 4ff3-B   303 - 306 <=>  349 - 352   (PHE  303  - HIS  306  <=> GLY  354  - ARG  357 )                          
+   1: q9ji-A 4ff3-B   307 - 311 <=>  357 - 361   (ILE  307  - PRO  311  <=> MET  362  - THR  366 )                          
+   1: q9ji-A 4ff3-B   312 - 333 <=>  378 - 399   (PRO  312  - GLY  333  <=> LYS  383  - GLN  404 )                          
+   1: q9ji-A 4ff3-B   356 - 360 <=>  413 - 417   (ARG  356  - LYS  360  <=> ASN  418  - VAL  422 )                          
+   1: q9ji-A 4ff3-B   386 - 389 <=>  424 - 427   (VAL  386  - GLY  389  <=> GLY  429  - ASN  432 )                          
+   1: q9ji-A 4ff3-B   487 - 495 <=>  852 - 860   (GLY  487  - LEU  495  <=> LYS  857  - SER  865 )                          
+   1: q9ji-A 4ff3-B   497 - 501 <=>  861 - 865   (GLN  497  - ALA  501  <=> LEU  866  - ALA  870 )                          
+
+# Translation-rotation matrices
+-matrix  "q9ji-A 4ff3-B  U(1,.)  -0.858135  0.353186 -0.372644          222.307480"
+-matrix  "q9ji-A 4ff3-B  U(2,.)   0.437538  0.882819 -0.170852          100.289589"
+-matrix  "q9ji-A 4ff3-B  U(3,.)   0.268635 -0.309660 -0.912111          313.493713"
+

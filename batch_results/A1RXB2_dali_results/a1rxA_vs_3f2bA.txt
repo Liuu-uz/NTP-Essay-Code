@@ -1,0 +1,15 @@
+# Job: test
+# Query: a1rxA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3f2b-A  2.6  4.9   52   994   12  MOL_ID: 1; MOLECULE: DNA-DIRECTED DNA POLYMERASE III ALPHA CHAIN; CHAI
+
+# Structural equivalences
+   1: a1rx-A 3f2b-A     3 -  18 <=>  841 - 856   (ILE    3  - SER   18  <=> VAL 1291  - ALA 1306 )                          
+   1: a1rx-A 3f2b-A   154 - 165 <=>  871 - 882   (LEU  154  - GLY  165  <=> ILE 1321  - GLY 1332 )                          
+   1: a1rx-A 3f2b-A   169 - 192 <=>  883 - 906   (LYS  169  - MET  192  <=> ILE 1333  - GLY 1356 )                          
+
+# Translation-rotation matrices
+-matrix  "a1rx-A 3f2b-A  U(1,.)   0.797504 -0.193747  0.571357          -21.146296"
+-matrix  "a1rx-A 3f2b-A  U(2,.)   0.407320  0.871526 -0.273006          -33.470493"
+-matrix  "a1rx-A 3f2b-A  U(3,.)  -0.445059  0.450448  0.773963           -4.805334"
+

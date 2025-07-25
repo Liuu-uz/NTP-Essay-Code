@@ -1,0 +1,16 @@
+# Job: test
+# Query: p469A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  2.4  8.4   56   745    4  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: p469-A 6t0v-B     1 -  15 <=>  671 - 685   (MET    1  - ARG   15  <=> LEU  683  - GLU  697 )                          
+   1: p469-A 6t0v-B    17 -  37 <=>  701 - 721   (ARG   17  - PHE   37  <=> SER  713  - GLY  733 )                          
+   1: p469-A 6t0v-B   178 - 192 <=>  724 - 738   (ILE  178  - MET  192  <=> SER  736  - ILE  750 )                          
+   1: p469-A 6t0v-B   287 - 291 <=>  741 - 745   (GLU  287  - SER  291  <=> LEU  753  - GLY  757 )                          
+
+# Translation-rotation matrices
+-matrix  "p469-A 6t0v-B  U(1,.)  -0.434319 -0.169322 -0.884702          140.210846"
+-matrix  "p469-A 6t0v-B  U(2,.)  -0.569777 -0.709068  0.415424          118.921692"
+-matrix  "p469-A 6t0v-B  U(3,.)  -0.697654  0.684509  0.211486          -41.686611"
+

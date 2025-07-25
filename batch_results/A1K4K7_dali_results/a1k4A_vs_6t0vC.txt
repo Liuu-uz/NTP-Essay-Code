@@ -1,0 +1,31 @@
+# Job: test
+# Query: a1k4A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-C  2.4 17.9  120   740   13  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a1k4-A 6t0v-C     4 -   7 <=>  253 - 256   (GLN    4  - ASP    7  <=> GLU  251  - ASP  254 )                          
+   1: a1k4-A 6t0v-C     8 -  25 <=>  259 - 276   (ASN    8  - HIS   25  <=> GLN  257  - ILE  274 )                          
+   1: a1k4-A 6t0v-C    61 -  74 <=>  277 - 290   (ASP   61  - PHE   74  <=> ASP  275  - SER  288 )                          
+   1: a1k4-A 6t0v-C    75 -  79 <=>  295 - 299   (ASP   75  - LEU   79  <=> PRO  293  - ILE  297 )                          
+   1: a1k4-A 6t0v-C    80 -  83 <=>  302 - 305   (ASP   80  - THR   83  <=> SER  300  - THR  303 )                          
+   1: a1k4-A 6t0v-C   109 - 117 <=>  311 - 319   (ASN  109  - HIS  117  <=> ASN  309  - ILE  317 )                          
+   1: a1k4-A 6t0v-C   120 - 124 <=>  320 - 324   (TYR  120  - ASP  124  <=> ARG  318  - SER  322 )                          
+   1: a1k4-A 6t0v-C   130 - 136 <=>  338 - 344   (PRO  130  - TYR  136  <=> SER  336  - LYS  342 )                          
+   1: a1k4-A 6t0v-C   143 - 147 <=>  346 - 350   (VAL  143  - TYR  147  <=> VAL  344  - ASN  348 )                          
+   1: a1k4-A 6t0v-C   196 - 199 <=>  444 - 447   (GLU  196  - CYS  199  <=> SER  442  - LEU  445 )                          
+   1: a1k4-A 6t0v-C   222 - 226 <=>  449 - 453   (ASN  222  - ASP  226  <=> LYS  447  - THR  451 )                          
+   1: a1k4-A 6t0v-C   243 - 249 <=>  459 - 465   (ILE  243  - ASP  249  <=> ILE  457  - ILE  463 )                          
+   1: a1k4-A 6t0v-C   302 - 306 <=>  508 - 512   (THR  302  - ARG  306  <=> ASN  506  - GLU  510 )                          
+   1: a1k4-A 6t0v-C   366 - 370 <=>  559 - 563   (MET  366  - VAL  370  <=> TRP  557  - LYS  561 )                          
+   1: a1k4-A 6t0v-C   371 - 374 <=>  566 - 569   (ASP  371  - GLY  374  <=> TRP  564  - ASP  567 )                          
+   1: a1k4-A 6t0v-C   452 - 457 <=>  603 - 608   (ILE  452  - ILE  457  <=> GLN  601  - VAL  606 )                          
+   1: a1k4-A 6t0v-C   483 - 486 <=>  614 - 617   (TYR  483  - ILE  486  <=> SER  612  - ILE  615 )                          
+   1: a1k4-A 6t0v-C   490 - 494 <=>  684 - 688   (THR  490  - PHE  494  <=> GLU  682  - ILE  686 )                          
+   1: a1k4-A 6t0v-C   495 - 498 <=>  699 - 702   (ARG  495  - PRO  498  <=> LEU  697  - ALA  700 )                          
+
+# Translation-rotation matrices
+-matrix  "a1k4-A 6t0v-C  U(1,.)   0.175785  0.481295 -0.858752            5.555872"
+-matrix  "a1k4-A 6t0v-C  U(2,.)  -0.597339  0.745537  0.295569          -61.875336"
+-matrix  "a1k4-A 6t0v-C  U(3,.)   0.782487  0.461009  0.418551         -257.911316"
+

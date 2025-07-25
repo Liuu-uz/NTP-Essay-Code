@@ -1,0 +1,27 @@
+# Job: test
+# Query: q9skA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ig2-C  2.3  4.8   94   278    7  MOL_ID: 1; MOLECULE: PHOSPHATIDATE CYTIDYLYLTRANSFERASE, MITOCHONDRIAL
+
+# Structural equivalences
+   1: q9sk-A 6ig2-C    70 -  74 <=>    1 -   5   (ASP   70  - GLU   74  <=> CYS   33  - GLN   37 )                          
+   1: q9sk-A 6ig2-C    98 - 101 <=>   11 -  14   (SER   98  - SER  101  <=> LEU   43  - PHE   46 )                          
+   1: q9sk-A 6ig2-C   102 - 105 <=>   16 -  19   (GLY  102  - GLN  105  <=> ASN   48  - ILE   51 )                          
+   1: q9sk-A 6ig2-C   426 - 429 <=>   20 -  23   (ASN  426  - LEU  429  <=> GLN   52  - GLU   55 )                          
+   1: q9sk-A 6ig2-C   436 - 446 <=>   24 -  34   (ASN  436  - GLU  446  <=> GLU   56  - ASN   66 )                          
+   1: q9sk-A 6ig2-C   448 - 451 <=>   35 -  38   (ALA  448  - ARG  451  <=> TYR   67  - ALA   70 )                          
+   1: q9sk-A 6ig2-C   458 - 467 <=>   39 -  48   (GLU  458  - ASP  467  <=> PRO   71  - SER   80 )                          
+   1: q9sk-A 6ig2-C   472 - 481 <=>   54 -  63   (PRO  472  - ILE  481  <=> ASN   93  - VAL  102 )                          
+   1: q9sk-A 6ig2-C   482 - 485 <=>   65 -  68   (SER  482  - THR  485  <=> ASP  104  - LYS  107 )                          
+   1: q9sk-A 6ig2-C   486 - 489 <=>   71 -  74   (ASN  486  - VAL  489  <=> LYS  110  - LEU  113 )                          
+   1: q9sk-A 6ig2-C   492 - 495 <=>   77 -  80   (ASP  492  - ASN  495  <=> ASN  116  - HIS  119 )                          
+   1: q9sk-A 6ig2-C   498 - 502 <=>  109 - 113   (ASP  498  - ILE  502  <=> VAL  148  - GLY  152 )                          
+   1: q9sk-A 6ig2-C   517 - 533 <=>  115 - 131   (ALA  517  - GLU  533  <=> ILE  154  - LYS  170 )                          
+   1: q9sk-A 6ig2-C   534 - 537 <=>  158 - 161   (HIS  534  - GLY  537  <=> GLU  197  - TYR  200 )                          
+   1: q9sk-A 6ig2-C   540 - 543 <=>  163 - 166   (SER  540  - GLY  543  <=> LEU  202  - ALA  205 )                          
+
+# Translation-rotation matrices
+-matrix  "q9sk-A 6ig2-C  U(1,.)   0.026451 -0.311620  0.949839           -9.935485"
+-matrix  "q9sk-A 6ig2-C  U(2,.)  -0.177032  0.933692  0.311253          -86.451859"
+-matrix  "q9sk-A 6ig2-C  U(3,.)  -0.983850 -0.176385 -0.030470           -5.872457"
+

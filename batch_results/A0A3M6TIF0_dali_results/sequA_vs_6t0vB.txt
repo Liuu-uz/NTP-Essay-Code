@@ -1,0 +1,16 @@
+# Job: test
+# Query: sequA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  2.1  4.3   51   745   10  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: sequ-A 6t0v-B    12 -  16 <=>  685 - 689   (ASP   12  - GLU   16  <=> GLU  697  - PRO  701 )                          
+   1: sequ-A 6t0v-B    19 -  22 <=>  698 - 701   (GLU   19  - PRO   22  <=> GLY  710  - SER  713 )                          
+   1: sequ-A 6t0v-B    23 -  60 <=>  704 - 741   (ARG   23  - LEU   60  <=> ASP  716  - LEU  753 )                          
+   1: sequ-A 6t0v-B    62 -  65 <=>  742 - 745   (GLU   62  - ILE   65  <=> LYS  754  - GLY  757 )                          
+
+# Translation-rotation matrices
+-matrix  "sequ-A 6t0v-B  U(1,.)   0.292150 -0.585176 -0.756450          113.122993"
+-matrix  "sequ-A 6t0v-B  U(2,.)   0.132749 -0.758489  0.638022           14.880639"
+-matrix  "sequ-A 6t0v-B  U(3,.)  -0.947115 -0.286816 -0.143911          140.517151"
+

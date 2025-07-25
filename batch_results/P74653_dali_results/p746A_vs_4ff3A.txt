@@ -1,0 +1,20 @@
+# Job: test
+# Query: p746A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  2.9  5.6   76  1095   13  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: p746-A 4ff3-A    11 -  38 <=>  813 - 840   (LEU   11  - SER   38  <=> LYS  818  - ASP  845 )                          
+   1: p746-A 4ff3-A    42 -  60 <=>  847 - 865   (ALA   42  - ALA   60  <=> ASP  852  - ALA  870 )                          
+   1: p746-A 4ff3-A    67 -  70 <=>  874 - 877   (GLY   67  - GLY   70  <=> THR  879  - ILE  882 )                          
+   1: p746-A 4ff3-A    73 -  76 <=>  878 - 881   (ALA   73  - PHE   76  <=> ALA  883  - GLU  886 )                          
+   1: p746-A 4ff3-A    78 -  81 <=>  882 - 885   (ALA   78  - ALA   81  <=> ASN  887  - VAL  890 )                          
+   1: p746-A 4ff3-A    86 -  89 <=>  899 - 902   (ARG   86  - ILE   89  <=> ARG  904  - MET  907 )                          
+   1: p746-A 4ff3-A   119 - 122 <=>  918 - 921   (SER  119  - LEU  122  <=> MET  923  - GLY  926 )                          
+   1: p746-A 4ff3-A   225 - 233 <=>  929 - 937   (TRP  225  - GLY  233  <=> GLN  934  - ALA  942 )                          
+
+# Translation-rotation matrices
+-matrix  "p746-A 4ff3-A  U(1,.)   0.357783 -0.914814 -0.187366           43.807049"
+-matrix  "p746-A 4ff3-A  U(2,.)   0.930800  0.333297  0.150079          -49.744205"
+-matrix  "p746-A 4ff3-A  U(3,.)  -0.074846 -0.228096  0.970758         -390.311798"
+

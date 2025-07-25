@@ -1,0 +1,26 @@
+# Job: test
+# Query: a5ulA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  4.5  6.7  102   745    7  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a5ul-A 6t0v-B     2 -  15 <=>  299 - 312   (ILE    2  - TRP   15  <=> SER  299  - ASN  312 )                          
+   1: a5ul-A 6t0v-B    16 -  19 <=>  406 - 409   (THR   16  - PRO   19  <=> GLY  406  - MET  409 )                          
+   1: a5ul-A 6t0v-B    25 -  39 <=>  411 - 425   (SER   25  - GLU   39  <=> MET  411  - ASN  425 )                          
+   1: a5ul-A 6t0v-B    41 -  44 <=>  426 - 429   (GLN   41  - ASN   44  <=> LEU  426  - ARG  429 )                          
+   1: a5ul-A 6t0v-B    45 -  51 <=>  436 - 442   (LYS   45  - PHE   51  <=> TYR  436  - GLN  442 )                          
+   1: a5ul-A 6t0v-B    53 -  63 <=>  443 - 453   (ARG   53  - GLY   63  <=> SER  443  - GLY  453 )                          
+   1: a5ul-A 6t0v-B    65 -  80 <=>  459 - 474   (ASP   65  - TYR   80  <=> ILE  459  - GLY  474 )                          
+   1: a5ul-A 6t0v-B    82 -  85 <=>  475 - 478   (ILE   82  - SER   85  <=> ILE  475  - SER  478 )                          
+   1: a5ul-A 6t0v-B    86 -  90 <=>  482 - 486   (MET   86  - ALA   90  <=> SER  482  - LYS  486 )                          
+   1: a5ul-A 6t0v-B    96 -  99 <=>  488 - 491   (GLU   96  - LYS   99  <=> GLY  488  - GLU  491 )                          
+   1: a5ul-A 6t0v-B   176 - 179 <=>  499 - 502   (GLY  176  - LEU  179  <=> TYR  499  - VAL  502 )                          
+   1: a5ul-A 6t0v-B   200 - 203 <=>  535 - 538   (GLU  200  - LEU  203  <=> ILE  535  - ASP  538 )                          
+   1: a5ul-A 6t0v-B   206 - 211 <=>  539 - 544   (ILE  206  - GLY  211  <=> LEU  539  - ALA  544 )                          
+   1: a5ul-A 6t0v-B   241 - 244 <=>  603 - 606   (HIS  241  - GLY  244  <=> ASN  603  - ILE  606 )                          
+
+# Translation-rotation matrices
+-matrix  "a5ul-A 6t0v-B  U(1,.)  -0.682551  0.193377  0.704790          -30.071962"
+-matrix  "a5ul-A 6t0v-B  U(2,.)  -0.296771 -0.954609 -0.025486          181.202713"
+-matrix  "a5ul-A 6t0v-B  U(3,.)   0.667870 -0.226557  0.708958         -162.308594"
+

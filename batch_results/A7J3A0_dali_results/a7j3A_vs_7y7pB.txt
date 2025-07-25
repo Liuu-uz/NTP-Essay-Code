@@ -1,0 +1,28 @@
+# Job: test
+# Query: a7j3A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7y7p-B  2.1 21.0  100   908    6  MOL_ID: 1; MOLECULE: RNA-DEPENDENT RNA POLYMERASE; CHAIN: A, B; EC: 2.
+
+# Structural equivalences
+   1: a7j3-A 7y7p-B     6 -   9 <=>  197 - 200   (LEU    6  - SER    9  <=> ALA  616  - GLY  619 )                          
+   1: a7j3-A 7y7p-B    10 -  13 <=>  203 - 206   (VAL   10  - VAL   13  <=> PHE  622  - ASP  625 )                          
+   1: a7j3-A 7y7p-B    21 -  24 <=>  219 - 222   (THR   21  - GLU   24  <=> GLN  649  - ASP  652 )                          
+   1: a7j3-A 7y7p-B   102 - 107 <=>  253 - 258   (ILE  102  - HIS  107  <=> MET  683  - HIS  688 )                          
+   1: a7j3-A 7y7p-B   456 - 459 <=>  271 - 274   (GLU  456  - VAL  459  <=> SER  701  - GLY  704 )                          
+   1: a7j3-A 7y7p-B   494 - 497 <=>  369 - 372   (PHE  494  - GLU  497  <=> LEU  799  - LEU  802 )                          
+   1: a7j3-A 7y7p-B   504 - 509 <=>  526 - 531   (ASP  504  - THR  509  <=> CYS  956  - ALA  961 )                          
+   1: a7j3-A 7y7p-B   514 - 517 <=>  574 - 577   (ASP  514  - THR  517  <=> SER 1004  - ASP 1007 )                          
+   1: a7j3-A 7y7p-B   544 - 548 <=>  596 - 600   (GLY  544  - LEU  548  <=> VAL 1026  - MET 1030 )                          
+   1: a7j3-A 7y7p-B   624 - 628 <=>  602 - 606   (TYR  624  - LEU  628  <=> LEU 1032  - LEU 1036 )                          
+   1: a7j3-A 7y7p-B   639 - 643 <=>  612 - 616   (LYS  639  - GLU  643  <=> LYS 1042  - THR 1046 )                          
+   1: a7j3-A 7y7p-B   648 - 652 <=>  646 - 650   (TYR  648  - PRO  652  <=> ALA 1076  - ASN 1080 )                          
+   1: a7j3-A 7y7p-B   654 - 673 <=>  651 - 670   (GLU  654  - THR  673  <=> PHE 1081  - SER 1100 )                          
+   1: a7j3-A 7y7p-B   675 - 689 <=>  674 - 688   (LEU  675  - TYR  689  <=> ALA 1104  - SER 1118 )                          
+   1: a7j3-A 7y7p-B   759 - 763 <=>  743 - 747   (SER  759  - TYR  763  <=> PRO 1173  - LYS 1177 )                          
+   1: a7j3-A 7y7p-B   805 - 808 <=>  751 - 754   (LYS  805  - VAL  808  <=> ALA 1181  - ASN 1184 )                          
+
+# Translation-rotation matrices
+-matrix  "a7j3-A 7y7p-B  U(1,.)  -0.327555 -0.400057 -0.855957          150.522888"
+-matrix  "a7j3-A 7y7p-B  U(2,.)   0.106146 -0.915781  0.387399          -99.889381"
+-matrix  "a7j3-A 7y7p-B  U(3,.)  -0.938851  0.036038  0.342433           20.568352"
+

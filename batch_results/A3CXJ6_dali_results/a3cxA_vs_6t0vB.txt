@@ -1,0 +1,19 @@
+# Job: test
+# Query: a3cxA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  2.5  5.2   65   745    5  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a3cx-A 6t0v-B   168 - 171 <=>    4 -   7   (ASP  168  - LEU  171  <=> ASN    4  - LEU    7 )                          
+   1: a3cx-A 6t0v-B   185 - 193 <=>   12 -  20   (GLU  185  - MET  193  <=> VAL   12  - THR   20 )                          
+   1: a3cx-A 6t0v-B   214 - 227 <=>  518 - 531   (ILE  214  - MET  227  <=> ASN  518  - LYS  531 )                          
+   1: a3cx-A 6t0v-B   228 - 231 <=>  533 - 536   (SER  228  - ILE  231  <=> ASN  533  - ASN  536 )                          
+   1: a3cx-A 6t0v-B   250 - 270 <=>  537 - 557   (ASN  250  - HIS  270  <=> ASN  537  - TYR  557 )                          
+   1: a3cx-A 6t0v-B   271 - 274 <=>  560 - 563   (ASP  271  - GLY  274  <=> ARG  560  - ARG  563 )                          
+   1: a3cx-A 6t0v-B   275 - 283 <=>  594 - 602   (ASP  275  - THR  283  <=> GLY  594  - ARG  602 )                          
+
+# Translation-rotation matrices
+-matrix  "a3cx-A 6t0v-B  U(1,.)   0.150330 -0.954845 -0.256264          119.770599"
+-matrix  "a3cx-A 6t0v-B  U(2,.)  -0.581976 -0.295009  0.757808           29.164824"
+-matrix  "a3cx-A 6t0v-B  U(3,.)  -0.799190  0.035218 -0.600046          177.760651"
+

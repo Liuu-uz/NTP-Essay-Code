@@ -1,0 +1,27 @@
+# Job: test
+# Query: p532A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  4.1  5.6  112   745    9  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: p532-A 6t0v-B    20 -  37 <=>  296 - 313   (PRO   20  - SER   37  <=> GLU  296  - GLN  313 )                          
+   1: p532-A 6t0v-B    40 -  43 <=>  405 - 408   (TYR   40  - ALA   43  <=> PRO  405  - MET  408 )                          
+   1: p532-A 6t0v-B    46 -  49 <=>  409 - 412   (ASN   46  - ASN   49  <=> MET  409  - PHE  412 )                          
+   1: p532-A 6t0v-B    51 -  67 <=>  413 - 429   (LEU   51  - ASN   67  <=> ASN  413  - ARG  429 )                          
+   1: p532-A 6t0v-B    68 -  71 <=>  437 - 440   (ASP   68  - LEU   71  <=> TRP  437  - GLY  440 )                          
+   1: p532-A 6t0v-B    73 -  84 <=>  441 - 452   (PHE   73  - LYS   84  <=> LEU  441  - ASN  452 )                          
+   1: p532-A 6t0v-B    87 -  94 <=>  453 - 460   (THR   87  - LYS   94  <=> GLY  453  - GLN  460 )                          
+   1: p532-A 6t0v-B    96 - 109 <=>  461 - 474   (LYS   96  - TYR  109  <=> GLN  461  - GLY  474 )                          
+   1: p532-A 6t0v-B   128 - 131 <=>  475 - 478   (PRO  128  - ASP  131  <=> ILE  475  - SER  478 )                          
+   1: p532-A 6t0v-B   132 - 136 <=>  482 - 486   (SER  132  - ALA  136  <=> SER  482  - LYS  486 )                          
+   1: p532-A 6t0v-B   143 - 146 <=>  487 - 490   (ILE  143  - TYR  146  <=> THR  487  - PHE  490 )                          
+   1: p532-A 6t0v-B   149 - 153 <=>  491 - 495   (TRP  149  - ASP  153  <=> GLU  491  - PHE  495 )                          
+   1: p532-A 6t0v-B   186 - 190 <=>  507 - 511   (PHE  186  - LYS  190  <=> MET  507  - SER  511 )                          
+   1: p532-A 6t0v-B   196 - 199 <=>  528 - 531   (SER  196  - GLY  199  <=> THR  528  - LYS  531 )                          
+   1: p532-A 6t0v-B   200 - 203 <=>  534 - 537   (ILE  200  - ASN  203  <=> MET  534  - ASN  537 )                          
+
+# Translation-rotation matrices
+-matrix  "p532-A 6t0v-B  U(1,.)   0.708454  0.606613 -0.360712         -129.434128"
+-matrix  "p532-A 6t0v-B  U(2,.)   0.018886  0.494622  0.868903         -199.941040"
+-matrix  "p532-A 6t0v-B  U(3,.)   0.705504 -0.622390  0.338960          -54.252613"
+

@@ -1,0 +1,20 @@
+# Job: test
+# Query: q2n2A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7y7p-A  2.4 11.8   70   933    4  MOL_ID: 1; MOLECULE: RNA-DEPENDENT RNA POLYMERASE; CHAIN: A, B; EC: 2.
+
+# Structural equivalences
+   1: q2n2-A 7y7p-A     9 -  14 <=>  131 - 136   (ILE    9  - THR   14  <=> GLY  523  - ARG  528 )                          
+   1: q2n2-A 7y7p-A    82 -  86 <=>  148 - 152   (HIS   82  - VAL   86  <=> ILE  540  - THR  544 )                          
+   1: q2n2-A 7y7p-A   112 - 118 <=>  612 - 618   (ARG  112  - LYS  118  <=> ILE 1021  - ASN 1027 )                          
+   1: q2n2-A 7y7p-A   129 - 134 <=>  627 - 632   (GLY  129  - LEU  134  <=> LEU 1036  - LYS 1041 )                          
+   1: q2n2-A 7y7p-A   141 - 144 <=>  667 - 670   (THR  141  - TRP  144  <=> ALA 1076  - PRO 1079 )                          
+   1: q2n2-A 7y7p-A   148 - 165 <=>  671 - 688   (PHE  148  - LEU  165  <=> ASN 1080  - ASN 1097 )                          
+   1: q2n2-A 7y7p-A   185 - 202 <=>  689 - 706   (GLU  185  - ILE  202  <=> SER 1098  - VAL 1115 )                          
+   1: q2n2-A 7y7p-A   204 - 209 <=>  707 - 712   (TYR  204  - PRO  209  <=> ASP 1116  - GLY 1121 )                          
+
+# Translation-rotation matrices
+-matrix  "q2n2-A 7y7p-A  U(1,.)   0.456563 -0.673144  0.581745          -98.089722"
+-matrix  "q2n2-A 7y7p-A  U(2,.)  -0.520465 -0.732394 -0.438993           54.455791"
+-matrix  "q2n2-A 7y7p-A  U(3,.)   0.721573 -0.102350 -0.684732           65.527443"
+

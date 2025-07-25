@@ -1,0 +1,21 @@
+# Job: test
+# Query: q753A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  2.5 12.6   73   417    7  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: q753-A 3amt-A     1 -   4 <=>   15 -  18   (MET    1  - GLU    4  <=> ARG   14  - CYS   17 )                          
+   1: q753-A 3amt-A     7 -  22 <=>   19 -  34   (LEU    7  - SER   22  <=> UNK   18  - LEU   33 )                          
+   1: q753-A 3amt-A    51 -  54 <=>   63 -  66   (THR   51  - ALA   54  <=> LEU   62  - VAL   65 )                          
+   1: q753-A 3amt-A   104 - 123 <=>   67 -  86   (LYS  104  - ASP  123  <=> ASP   66  - LEU   85 )                          
+   1: q753-A 3amt-A   125 - 128 <=>   91 -  94   (ARG  125  - ARG  128  <=> THR   90  - GLY   93 )                          
+   1: q753-A 3amt-A   129 - 141 <=>  141 - 153   (LEU  129  - LEU  141  <=> ARG  140  - GLU  152 )                          
+   1: q753-A 3amt-A   144 - 147 <=>  154 - 157   (ILE  144  - HIS  147  <=> LEU  153  - PHE  156 )                          
+   1: q753-A 3amt-A   289 - 292 <=>  261 - 264   (ILE  289  - PHE  292  <=> ARG  260  - ASN  263 )                          
+   1: q753-A 3amt-A   314 - 317 <=>  300 - 303   (PHE  314  - ARG  317  <=> ALA  299  - GLU  302 )                          
+
+# Translation-rotation matrices
+-matrix  "q753-A 3amt-A  U(1,.)   0.608526 -0.780084 -0.145483           75.689651"
+-matrix  "q753-A 3amt-A  U(2,.)   0.424040  0.474630 -0.771309           13.147469"
+-matrix  "q753-A 3amt-A  U(3,.)   0.670736  0.407670  0.619611          -84.188812"
+

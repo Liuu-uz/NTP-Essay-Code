@@ -1,0 +1,27 @@
+# Job: test
+# Query: a0a3A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ig2-D  4.9  7.5  118   278    8  MOL_ID: 1; MOLECULE: PHOSPHATIDATE CYTIDYLYLTRANSFERASE, MITOCHONDRIAL
+
+# Structural equivalences
+   1: a0a3-A 6ig2-D    25 -  38 <=>   22 -  35   (VAL   25  - GLN   38  <=> GLU   54  - TYR   67 )                          
+   1: a0a3-A 6ig2-D    41 -  44 <=>   36 -  39   (ASN   41  - GLY   44  <=> PHE   68  - PRO   71 )                          
+   1: a0a3-A 6ig2-D    52 -  64 <=>   41 -  53   (ASN   52  - SER   64  <=> ASP   73  - GLN   85 )                          
+   1: a0a3-A 6ig2-D    69 -  79 <=>   54 -  64   (PRO   69  - ASN   79  <=> ASN   93  - GLU  103 )                          
+   1: a0a3-A 6ig2-D   135 - 148 <=>   65 -  78   (ILE  135  - ALA  148  <=> ASP  104  - PRO  117 )                          
+   1: a0a3-A 6ig2-D   174 - 177 <=>   82 -  85   (GLU  174  - ALA  177  <=> SER  121  - LYS  124 )                          
+   1: a0a3-A 6ig2-D   183 - 190 <=>  103 - 110   (GLY  183  - LEU  190  <=> VAL  142  - GLU  149 )                          
+   1: a0a3-A 6ig2-D   201 - 209 <=>  113 - 121   (ASN  201  - VAL  209  <=> GLY  152  - THR  160 )                          
+   1: a0a3-A 6ig2-D   210 - 213 <=>  125 - 128   (ILE  210  - ARG  213  <=> ASP  164  - GLU  167 )                          
+   1: a0a3-A 6ig2-D   214 - 218 <=>  131 - 135   (GLY  214  - PHE  218  <=> LYS  170  - THR  174 )                          
+   1: a0a3-A 6ig2-D   255 - 264 <=>  137 - 146   (LYS  255  - LYS  264  <=> TYR  176  - VAL  185 )                          
+   1: a0a3-A 6ig2-D   302 - 305 <=>  204 - 207   (LYS  302  - ALA  305  <=> ASN  243  - LYS  246 )                          
+   1: a0a3-A 6ig2-D   308 - 313 <=>  208 - 213   (THR  308  - GLU  313  <=> VAL  247  - SER  252 )                          
+   1: a0a3-A 6ig2-D   317 - 324 <=>  247 - 254   (PHE  317  - ARG  324  <=> PRO  286  - LEU  293 )                          
+   1: a0a3-A 6ig2-D   401 - 404 <=>  256 - 259   (LEU  401  - GLU  404  <=> PHE  295  - ASN  298 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a3-A 6ig2-D  U(1,.)   0.606536  0.154919 -0.779817           -1.691671"
+-matrix  "a0a3-A 6ig2-D  U(2,.)  -0.718458 -0.313250 -0.621042           35.474762"
+-matrix  "a0a3-A 6ig2-D  U(3,.)  -0.340488  0.936950 -0.078695          -48.324581"
+

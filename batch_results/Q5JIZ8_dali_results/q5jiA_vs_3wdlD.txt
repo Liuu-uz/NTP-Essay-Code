@@ -1,0 +1,16 @@
+# Job: test
+# Query: q5jiA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-D 39.3  1.4  249   249   98  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: q5ji-A 3wdl-D     4 - 122 <=>    1 - 119   (ILE    4  - ASP  122  <=> ILE    4  - ASP  122 )                          
+   1: q5ji-A 3wdl-D   125 - 141 <=>  120 - 136   (ILE  125  - HIS  141  <=> ILE  125  - HIS  141 )                          
+   1: q5ji-A 3wdl-D   144 - 250 <=>  137 - 243   (GLY  144  - ALA  250  <=> GLY  144  - ALA  250 )                          
+   1: q5ji-A 3wdl-D   252 - 257 <=>  244 - 249   (GLU  252  - ARG  257  <=> GLU  251  - ARG  256 )                          
+
+# Translation-rotation matrices
+-matrix  "q5ji-A 3wdl-D  U(1,.)  -0.836632  0.384517 -0.390119           -6.141807"
+-matrix  "q5ji-A 3wdl-D  U(2,.)   0.365900 -0.137695 -0.920411            9.777763"
+-matrix  "q5ji-A 3wdl-D  U(3,.)  -0.407631 -0.912791 -0.025495            1.834231"
+

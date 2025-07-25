@@ -1,0 +1,26 @@
+# Job: test
+# Query: p469A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  8dcd-A  2.7  4.3  121   481    9  MOL_ID: 1; MOLECULE: TRNA-SPLICING LIGASE RTCB; CHAIN: A, B; SYNONYM: 
+
+# Structural equivalences
+   1: p469-A 8dcd-A     6 -  12 <=>  179 - 185   (TYR    6  - ASP   12  <=> ASP  179  - GLN  185 )                          
+   1: p469-A 8dcd-A    13 -  16 <=>  187 - 190   (ALA   13  - ASP   16  <=> ALA  187  - ARG  190 )                          
+   1: p469-A 8dcd-A    19 -  26 <=>  191 - 198   (THR   19  - VAL   26  <=> GLY  191  - LEU  198 )                          
+   1: p469-A 8dcd-A   173 - 176 <=>  227 - 230   (ILE  173  - SER  176  <=> GLY  227  - VAL  230 )                          
+   1: p469-A 8dcd-A   182 - 185 <=>  232 - 235   (LEU  182  - THR  185  <=> MET  232  - THR  235 )                          
+   1: p469-A 8dcd-A   190 - 203 <=>  236 - 249   (GLY  190  - LYS  203  <=> GLY  236  - LEU  249 )                          
+   1: p469-A 8dcd-A   206 - 215 <=>  250 - 259   (LYS  206  - PRO  215  <=> ARG  250  - TYR  259 )                          
+   1: p469-A 8dcd-A   216 - 256 <=>  275 - 315   (VAL  216  - LYS  256  <=> SER  275  - PRO  315 )                          
+   1: p469-A 8dcd-A   257 - 260 <=>  317 - 320   (THR  257  - GLN  260  <=> GLY  317  - GLY  320 )                          
+   1: p469-A 8dcd-A   269 - 274 <=>  322 - 327   (ILE  269  - LEU  274  <=> ASP  322  - VAL  327 )                          
+   1: p469-A 8dcd-A   282 - 285 <=>  329 - 332   (LEU  282  - ALA  285  <=> HIS  329  - GLY  332 )                          
+   1: p469-A 8dcd-A   312 - 318 <=>  378 - 384   (VAL  312  - ILE  318  <=> PRO  378  - ALA  384 )                          
+   1: p469-A 8dcd-A   355 - 358 <=>  387 - 390   (ILE  355  - THR  358  <=> ILE  387  - GLY  390 )                          
+   1: p469-A 8dcd-A   361 - 364 <=>  400 - 403   (THR  361  - VAL  364  <=> GLY  400  - CYS  403 )                          
+
+# Translation-rotation matrices
+-matrix  "p469-A 8dcd-A  U(1,.)   0.689956 -0.171543 -0.703231            5.037033"
+-matrix  "p469-A 8dcd-A  U(2,.)  -0.431446 -0.877538 -0.209240           39.431484"
+-matrix  "p469-A 8dcd-A  U(3,.)  -0.581218  0.447773 -0.679474           31.475973"
+

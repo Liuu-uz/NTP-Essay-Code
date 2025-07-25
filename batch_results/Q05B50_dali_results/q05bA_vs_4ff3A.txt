@@ -1,0 +1,29 @@
+# Job: test
+# Query: q05bA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  3.7 12.8  106  1095    6  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: q05b-A 4ff3-A     1 -  12 <=>    3 -  14   (MET    1  - CYS   12  <=> LEU    8  - LEU   19 )                          
+   1: q05b-A 4ff3-A    20 -  23 <=>  291 - 294   (LEU   20  - CYS   23  <=> LEU  296  - PRO  299 )                          
+   1: q05b-A 4ff3-A    46 -  49 <=>  456 - 459   (THR   46  - PRO   49  <=> SER  461  - GLN  464 )                          
+   1: q05b-A 4ff3-A    50 -  59 <=>  548 - 557   (HIS   50  - GLY   59  <=> PRO  553  - THR  562 )                          
+   1: q05b-A 4ff3-A    66 -  70 <=>  804 - 808   (ALA   66  - SER   70  <=> LEU  809  - THR  813 )                          
+   1: q05b-A 4ff3-A    73 -  76 <=>  912 - 915   (LYS   73  - ASP   76  <=> VAL  917  - ILE  920 )                          
+   1: q05b-A 4ff3-A    77 -  83 <=>  917 - 923   (SER   77  - MET   83  <=> PHE  922  - GLY  928 )                          
+   1: q05b-A 4ff3-A    84 -  92 <=>  925 - 933   (THR   84  - ASN   92  <=> GLY  930  - THR  938 )                          
+   1: q05b-A 4ff3-A    93 -  97 <=>  937 - 941   (GLU   93  - ILE   97  <=> ALA  942  - THR  946 )                          
+   1: q05b-A 4ff3-A    99 - 102 <=>  942 - 945   (ILE   99  - GLY  102  <=> LEU  947  - PHE  950 )                          
+   1: q05b-A 4ff3-A   107 - 112 <=>  946 - 951   (TYR  107  - LYS  112  <=> ASP  951  - GLY  956 )                          
+   1: q05b-A 4ff3-A   115 - 118 <=>  952 - 955   (SER  115  - PHE  118  <=> LEU  957  - ILE  960 )                          
+   1: q05b-A 4ff3-A   123 - 136 <=>  956 - 969   (SER  123  - SER  136  <=> THR  961  - SER  974 )                          
+   1: q05b-A 4ff3-A   138 - 141 <=>  970 - 973   (VAL  138  - TRP  141  <=> TRP  975  - ASN  978 )                          
+   1: q05b-A 4ff3-A   144 - 147 <=>  974 - 977   (TYR  144  - ASP  147  <=> PRO  979  - ASN  982 )                          
+   1: q05b-A 4ff3-A   149 - 153 <=> 1038 -1042   (PRO  149  - PRO  153  <=> VAL 1043  - HIS 1047 )                          
+   1: q05b-A 4ff3-A   157 - 161 <=> 1054 -1058   (ASP  157  - ILE  161  <=> GLN 1059  - VAL 1063 )                          
+
+# Translation-rotation matrices
+-matrix  "q05b-A 4ff3-A  U(1,.)   0.116661 -0.049078 -0.991958          359.842224"
+-matrix  "q05b-A 4ff3-A  U(2,.)  -0.859473 -0.505490 -0.076070           17.774015"
+-matrix  "q05b-A 4ff3-A  U(3,.)  -0.497692  0.861435 -0.101152           65.895149"
+

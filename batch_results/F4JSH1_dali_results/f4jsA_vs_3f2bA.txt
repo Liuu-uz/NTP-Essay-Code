@@ -1,0 +1,34 @@
+# Job: test
+# Query: f4jsA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3f2b-A  2.6 26.0  138   994    7  MOL_ID: 1; MOLECULE: DNA-DIRECTED DNA POLYMERASE III ALPHA CHAIN; CHAI
+
+# Structural equivalences
+   1: f4js-A 3f2b-A    37 -  41 <=>  174 - 178   (GLY   37  - SER   41  <=> ALA  406  - ASP  410 )                          
+   1: f4js-A 3f2b-A    75 -  80 <=>  228 - 233   (SER   75  - GLU   80  <=> VAL  666  - ASP  671 )                          
+   1: f4js-A 3f2b-A    87 -  90 <=>  235 - 238   (ASN   87  - SER   90  <=> GLY  673  - PHE  676 )                          
+   1: f4js-A 3f2b-A    94 -  97 <=>  269 - 272   (GLU   94  - SER   97  <=> MET  719  - ASN  722 )                          
+   1: f4js-A 3f2b-A   100 - 110 <=>  340 - 350   (ASN  100  - LEU  110  <=> PHE  790  - VAL  800 )                          
+   1: f4js-A 3f2b-A   244 - 247 <=>  530 - 533   (GLY  244  - ARG  247  <=> GLY  980  - GLN  983 )                          
+   1: f4js-A 3f2b-A   258 - 264 <=>  539 - 545   (GLY  258  - LEU  264  <=> TYR  989  - GLY  995 )                          
+   1: f4js-A 3f2b-A   360 - 363 <=>  707 - 710   (ASP  360  - VAL  363  <=> GLU 1157  - THR 1160 )                          
+   1: f4js-A 3f2b-A   364 - 368 <=>  713 - 717   (VAL  364  - LYS  368  <=> VAL 1163  - LEU 1167 )                          
+   1: f4js-A 3f2b-A   380 - 384 <=>  737 - 741   (GLU  380  - GLU  384  <=> GLY 1187  - TRP 1191 )                          
+   1: f4js-A 3f2b-A   408 - 411 <=>  825 - 828   (GLN  408  - LYS  411  <=> HIS 1275  - ALA 1278 )                          
+   1: f4js-A 3f2b-A   441 - 444 <=>  835 - 838   (SER  441  - SER  444  <=> ARG 1285  - TYR 1288 )                          
+   1: f4js-A 3f2b-A   455 - 459 <=>  842 - 846   (GLN  455  - LEU  459  <=> HIS 1292  - LEU 1296 )                          
+   1: f4js-A 3f2b-A   478 - 481 <=>  859 - 862   (VAL  478  - ARG  481  <=> PHE 1309  - ASP 1312 )                          
+   1: f4js-A 3f2b-A   489 - 505 <=>  866 - 882   (ALA  489  - ALA  505  <=> LYS 1316  - GLY 1332 )                          
+   1: f4js-A 3f2b-A   507 - 510 <=>  883 - 886   (GLN  507  - ARG  510  <=> ILE 1333  - THR 1336 )                          
+   1: f4js-A 3f2b-A   518 - 534 <=>  888 - 904   (PHE  518  - ARG  534  <=> LYS 1338  - GLU 1354 )                          
+   1: f4js-A 3f2b-A   538 - 541 <=>  905 - 908   (TYR  538  - ASP  541  <=> ARG 1355  - SER 1358 )                          
+   1: f4js-A 3f2b-A   544 - 547 <=>  909 - 912   (ILE  544  - GLY  547  <=> PHE 1359  - ILE 1362 )                          
+   1: f4js-A 3f2b-A   548 - 551 <=>  931 - 934   (SER  548  - ILE  551  <=> PRO 1381  - ASN 1384 )                          
+   1: f4js-A 3f2b-A   552 - 563 <=>  944 - 955   (THR  552  - GLY  563  <=> ALA 1394  - GLU 1405 )                          
+   1: f4js-A 3f2b-A   573 - 576 <=>  989 - 992   (LYS  573  - GLU  576  <=> ASN 1439  - SER 1442 )                          
+
+# Translation-rotation matrices
+-matrix  "f4js-A 3f2b-A  U(1,.)   0.465459  0.845513  0.261640          -24.807640"
+-matrix  "f4js-A 3f2b-A  U(2,.)   0.852155 -0.348252 -0.390579          -26.868849"
+-matrix  "f4js-A 3f2b-A  U(3,.)  -0.239123  0.404757 -0.882605          -25.691339"
+

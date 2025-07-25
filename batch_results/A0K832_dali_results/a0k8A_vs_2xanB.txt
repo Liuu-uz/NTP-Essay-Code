@@ -1,0 +1,31 @@
+# Job: test
+# Query: a0k8A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  2xan-B  2.8  4.4  132   417    7  MOL_ID: 1; MOLECULE: INOSITOL-PENTAKISPHOSPHATE 2-KINASE; CHAIN: A, B;
+
+# Structural equivalences
+   1: a0k8-A 2xan-B    73 -  76 <=>    1 -   4   (PHE   73  - LEU   76  <=> MET    3  - GLU    6 )                          
+   1: a0k8-A 2xan-B    81 -  85 <=>    5 -   9   (PRO   81  - TRP   85  <=> GLU    7  - SER   11 )                          
+   1: a0k8-A 2xan-B    89 -  94 <=>   10 -  15   (ALA   89  - SER   94  <=> ASP   12  - GLY   17 )                          
+   1: a0k8-A 2xan-B   111 - 116 <=>   20 -  25   (GLY  111  - ILE  116  <=> ASN   22  - TYR   27 )                          
+   1: a0k8-A 2xan-B   128 - 135 <=>   34 -  41   (GLU  128  - GLY  135  <=> GLY   36  - LYS   43 )                          
+   1: a0k8-A 2xan-B   150 - 160 <=>   67 -  77   (ARG  150  - GLU  160  <=> ASN   80  - GLN   90 )                          
+   1: a0k8-A 2xan-B   161 - 167 <=>   79 -  85   (ALA  161  - ILE  167  <=> VAL   92  - GLY   98 )                          
+   1: a0k8-A 2xan-B   168 - 172 <=>   88 -  92   (PRO  168  - ALA  172  <=> HIS  101  - GLY  105 )                          
+   1: a0k8-A 2xan-B   174 - 178 <=>   93 -  97   (THR  174  - SER  178  <=> VAL  106  - VAL  110 )                          
+   1: a0k8-A 2xan-B   188 - 199 <=>  126 - 137   (GLU  188  - SER  199  <=> SER  139  - SER  150 )                          
+   1: a0k8-A 2xan-B   203 - 206 <=>  223 - 226   (PHE  203  - PHE  206  <=> ASN  239  - VAL  242 )                          
+   1: a0k8-A 2xan-B   210 - 213 <=>  242 - 245   (PHE  210  - ASP  213  <=> GLY  258  - SER  261 )                          
+   1: a0k8-A 2xan-B   214 - 220 <=>  248 - 254   (ARG  214  - GLN  220  <=> ILE  264  - ASP  270 )                          
+   1: a0k8-A 2xan-B   238 - 250 <=>  270 - 282   (ASP  238  - ARG  250  <=> CYS  286  - SER  298 )                          
+   1: a0k8-A 2xan-B   253 - 262 <=>  283 - 292   (ASP  253  - GLY  262  <=> GLY  299  - GLN  308 )                          
+   1: a0k8-A 2xan-B   264 - 268 <=>  348 - 352   (CYS  264  - MET  268  <=> THR  365  - CYS  369 )                          
+   1: a0k8-A 2xan-B   272 - 275 <=>  353 - 356   (ASN  272  - ILE  275  <=> SER  370  - ILE  373 )                          
+   1: a0k8-A 2xan-B   276 - 285 <=>  381 - 390   (LEU  276  - PHE  285  <=> LYS  402  - LYS  411 )                          
+   1: a0k8-A 2xan-B   512 - 517 <=>  393 - 398   (TRP  512  - GLU  517  <=> LYS  414  - TYR  419 )                          
+
+# Translation-rotation matrices
+-matrix  "a0k8-A 2xan-B  U(1,.)   0.348287  0.460134  0.816684         -105.668709"
+-matrix  "a0k8-A 2xan-B  U(2,.)  -0.434739 -0.692583  0.575614           18.594919"
+-matrix  "a0k8-A 2xan-B  U(3,.)   0.830481 -0.555523 -0.041180          -13.974412"
+

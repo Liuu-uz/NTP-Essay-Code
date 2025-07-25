@@ -1,0 +1,15 @@
+# Job: test
+# Query: q5jiA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  3.8  4.0   47   745    9  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: q5ji-A 6t0v-B     5 -   9 <=>  698 - 702   (PRO    5  - PRO    9  <=> GLY  710  - MET  714 )                          
+   1: q5ji-A 6t0v-B    10 -  45 <=>  704 - 739   (ARG   10  - TYR   45  <=> ASP  716  - GLU  751 )                          
+   1: q5ji-A 6t0v-B    47 -  52 <=>  740 - 745   (ILE   47  - ILE   52  <=> ALA  752  - GLY  757 )                          
+
+# Translation-rotation matrices
+-matrix  "q5ji-A 6t0v-B  U(1,.)   0.560648 -0.617820  0.551336          -34.419960"
+-matrix  "q5ji-A 6t0v-B  U(2,.)  -0.101893  0.609289  0.786375         -141.366425"
+-matrix  "q5ji-A 6t0v-B  U(3,.)  -0.821761 -0.497057  0.278645          112.883972"
+

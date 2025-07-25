@@ -1,0 +1,22 @@
+# Job: test
+# Query: a1jrA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  4.2 16.5   77   745    5  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a1jr-A 6t0v-B     3 -  24 <=>  517 - 538   (THR    3  - PHE   24  <=> ASN  517  - ASP  538 )                          
+   1: a1jr-A 6t0v-B    53 -  69 <=>  540 - 556   (LEU   53  - THR   69  <=> GLY  540  - ARG  556 )                          
+   1: a1jr-A 6t0v-B    70 -  73 <=>  560 - 563   (ASP   70  - CYS   73  <=> ARG  560  - ARG  563 )                          
+   1: a1jr-A 6t0v-B    75 -  79 <=>  586 - 590   (ASP   75  - LEU   79  <=> LYS  586  - LEU  590 )                          
+   1: a1jr-A 6t0v-B   100 - 104 <=>  602 - 606   (GLU  100  - ASN  104  <=> ARG  602  - ILE  606 )                          
+   1: a1jr-A 6t0v-B   116 - 119 <=>  612 - 615   (LEU  116  - ASP  119  <=> LYS  612  - LEU  615 )                          
+   1: a1jr-A 6t0v-B   342 - 345 <=>  697 - 700   (PHE  342  - GLN  345  <=> ILE  709  - ALA  712 )                          
+   1: a1jr-A 6t0v-B   514 - 518 <=>  709 - 713   (PHE  514  - PHE  518  <=> ARG  721  - ASP  725 )                          
+   1: a1jr-A 6t0v-B   519 - 525 <=>  715 - 721   (ARG  519  - ASP  525  <=> ARG  727  - GLY  733 )                          
+   1: a1jr-A 6t0v-B   529 - 532 <=>  724 - 727   (ARG  529  - PHE  532  <=> SER  736  - ASP  739 )                          
+
+# Translation-rotation matrices
+-matrix  "a1jr-A 6t0v-B  U(1,.)   0.951549 -0.208115  0.226369         -109.448563"
+-matrix  "a1jr-A 6t0v-B  U(2,.)  -0.273835 -0.908413  0.315912          108.106285"
+-matrix  "a1jr-A 6t0v-B  U(3,.)   0.139891 -0.362594 -0.921388          134.177856"
+

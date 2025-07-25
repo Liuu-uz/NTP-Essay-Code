@@ -1,0 +1,21 @@
+# Job: test
+# Query: q5jiA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-C  2.2 12.1   78   740    9  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: q5ji-A 6t0v-C    24 -  28 <=>   21 -  25   (MET   24  - MET   28  <=> ILE   19  - THR   23 )                          
+   1: q5ji-A 6t0v-C    54 -  58 <=>  154 - 158   (PRO   54  - ALA   58  <=> LYS  152  - SER  156 )                          
+   1: q5ji-A 6t0v-C    59 -  69 <=>  160 - 170   (MET   59  - ALA   69  <=> GLU  158  - PHE  168 )                          
+   1: q5ji-A 6t0v-C    70 -  74 <=>  172 - 176   (GLU   70  - ILE   74  <=> ASN  170  - ALA  174 )                          
+   1: q5ji-A 6t0v-C   203 - 216 <=>  180 - 193   (ALA  203  - ASP  216  <=> SER  178  - GLU  191 )                          
+   1: q5ji-A 6t0v-C   218 - 228 <=>  202 - 212   (SER  218  - GLU  228  <=> PRO  200  - GLU  210 )                          
+   1: q5ji-A 6t0v-C   229 - 232 <=>  214 - 217   (TYR  229  - GLY  232  <=> VAL  212  - THR  215 )                          
+   1: q5ji-A 6t0v-C   239 - 254 <=>  253 - 268   (LEU  239  - ILE  254  <=> GLU  251  - ILE  266 )                          
+   1: q5ji-A 6t0v-C   255 - 261 <=>  271 - 277   (TRP  255  - GLU  261  <=> ARG  269  - ASP  275 )                          
+
+# Translation-rotation matrices
+-matrix  "q5ji-A 6t0v-C  U(1,.)  -0.405608  0.087396 -0.909859          139.711899"
+-matrix  "q5ji-A 6t0v-C  U(2,.)   0.845174  0.414931 -0.336916         -132.810364"
+-matrix  "q5ji-A 6t0v-C  U(3,.)   0.348083 -0.905646 -0.242165          111.684845"
+

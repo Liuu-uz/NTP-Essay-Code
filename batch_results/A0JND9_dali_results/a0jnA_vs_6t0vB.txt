@@ -1,0 +1,15 @@
+# Job: test
+# Query: a0jnA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  2.7  5.0   53   745    6  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a0jn-A 6t0v-B     1 -  14 <=>  671 - 684   (MET    1  - LEU   14  <=> LEU  683  - PHE  696 )                          
+   1: a0jn-A 6t0v-B    15 -  33 <=>  702 - 720   (GLY   15  - MET   33  <=> MET  714  - SER  732 )                          
+   1: a0jn-A 6t0v-B   461 - 480 <=>  721 - 740   (TRP  461  - ALA  480  <=> GLY  733  - ALA  752 )                          
+
+# Translation-rotation matrices
+-matrix  "a0jn-A 6t0v-B  U(1,.)   0.642752 -0.268882 -0.717337            8.983480"
+-matrix  "a0jn-A 6t0v-B  U(2,.)  -0.540558  0.504322 -0.673391            5.745809"
+-matrix  "a0jn-A 6t0v-B  U(3,.)   0.542832  0.820586  0.178808         -190.743454"
+

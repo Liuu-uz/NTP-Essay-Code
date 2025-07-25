@@ -1,0 +1,19 @@
+# Job: test
+# Query: a2spA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  2.0  5.3   64   745    6  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a2sp-A 6t0v-B   173 - 176 <=>    4 -   7   (HIS  173  - GLU  176  <=> ASN    4  - LEU    7 )                          
+   1: a2sp-A 6t0v-B   186 - 193 <=>   12 -  19   (SER  186  - PRO  193  <=> VAL   12  - SER   19 )                          
+   1: a2sp-A 6t0v-B   215 - 228 <=>  518 - 531   (VAL  215  - MET  228  <=> ASN  518  - LYS  531 )                          
+   1: a2sp-A 6t0v-B   229 - 232 <=>  533 - 536   (SER  229  - ILE  232  <=> ASN  533  - ASN  536 )                          
+   1: a2sp-A 6t0v-B   251 - 271 <=>  537 - 557   (ASN  251  - GLY  271  <=> ASN  537  - TYR  557 )                          
+   1: a2sp-A 6t0v-B   272 - 276 <=>  560 - 564   (ASP  272  - ASP  276  <=> ARG  560  - GLY  564 )                          
+   1: a2sp-A 6t0v-B   277 - 284 <=>  595 - 602   (THR  277  - THR  284  <=> GLY  595  - ARG  602 )                          
+
+# Translation-rotation matrices
+-matrix  "a2sp-A 6t0v-B  U(1,.)  -0.379906  0.920916 -0.087092          -43.973373"
+-matrix  "a2sp-A 6t0v-B  U(2,.)  -0.752467 -0.252903  0.608139           65.724091"
+-matrix  "a2sp-A 6t0v-B  U(3,.)   0.538019  0.296570  0.789039         -201.013489"
+

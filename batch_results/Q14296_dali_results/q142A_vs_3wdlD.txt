@@ -1,0 +1,23 @@
+# Job: test
+# Query: q142A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-D  2.1  8.8   76   249    7  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: q142-A 3wdl-D    40 -  44 <=>    1 -   5   (LEU   40  - THR   44  <=> ILE    4  - HIS    8 )                          
+   1: q142-A 3wdl-D   254 - 269 <=>    6 -  21   (GLU  254  - GLU  269  <=> PRO    9  - MET   24 )                          
+   1: q142-A 3wdl-D   270 - 281 <=>   24 -  35   (THR  270  - VAL  281  <=> GLY   27  - GLY   38 )                          
+   1: q142-A 3wdl-D   282 - 288 <=>   37 -  43   (LEU  282  - ASN  288  <=> GLY   40  - LEU   46 )                          
+   1: q142-A 3wdl-D   297 - 300 <=>   77 -  80   (MET  297  - LEU  300  <=> VAL   80  - LEU   83 )                          
+   1: q142-A 3wdl-D   330 - 333 <=>   96 -  99   (PHE  330  - LEU  333  <=> LEU   99  - ASN  102 )                          
+   1: q142-A 3wdl-D   338 - 347 <=>  127 - 136   (SER  338  - GLY  347  <=> PRO  132  - HIS  141 )                          
+   1: q142-A 3wdl-D   353 - 357 <=>  157 - 161   (ILE  353  - TYR  357  <=> GLY  164  - GLU  168 )                          
+   1: q142-A 3wdl-D   388 - 392 <=>  186 - 190   (GLN  388  - THR  392  <=> ASP  193  - VAL  197 )                          
+   1: q142-A 3wdl-D   421 - 424 <=>  222 - 225   (ASP  421  - VAL  424  <=> TYR  229  - GLY  232 )                          
+   1: q142-A 3wdl-D   484 - 487 <=>  236 - 239   (ARG  484  - PHE  487  <=> ARG  243  - LEU  246 )                          
+
+# Translation-rotation matrices
+-matrix  "q142-A 3wdl-D  U(1,.)  -0.741695 -0.266803  0.615389           -6.447053"
+-matrix  "q142-A 3wdl-D  U(2,.)   0.560624  0.257088  0.787151            3.805078"
+-matrix  "q142-A 3wdl-D  U(3,.)  -0.368224  0.928828 -0.041105            5.854652"
+

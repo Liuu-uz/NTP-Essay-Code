@@ -1,0 +1,31 @@
+# Job: test
+# Query: a0a3A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7tgk-B  2.5 18.0  122   593    6  MOL_ID: 1; MOLECULE: DESFERRIOXAMINE SYNTHETASE DESD; CHAIN: D, B, E, 
+
+# Structural equivalences
+   1: a0a3-A 7tgk-B     4 -   9 <=>    1 -   6   (LEU    4  - GLU    9  <=> HIS    0  - ASP    5 )                          
+   1: a0a3-A 7tgk-B    13 -  23 <=>   15 -  25   (ASP   13  - ASP   23  <=> ARG   14  - ARG   24 )                          
+   1: a0a3-A 7tgk-B    24 -  27 <=>   27 -  30   (LEU   24  - ASP   27  <=> ALA   26  - GLU   29 )                          
+   1: a0a3-A 7tgk-B    35 -  39 <=>  100 - 104   (THR   35  - ILE   39  <=> ARG   99  - GLY  103 )                          
+   1: a0a3-A 7tgk-B   116 - 136 <=>  108 - 128   (ASN  116  - ARG  136  <=> GLU  107  - LEU  127 )                          
+   1: a0a3-A 7tgk-B   138 - 141 <=>  129 - 132   (PHE  138  - GLY  141  <=> THR  128  - GLN  131 )                          
+   1: a0a3-A 7tgk-B   184 - 187 <=>  171 - 174   (CYS  184  - CYS  187  <=> TYR  170  - TYR  173 )                          
+   1: a0a3-A 7tgk-B   189 - 194 <=>  241 - 246   (SER  189  - ILE  194  <=> PRO  240  - ASN  245 )                          
+   1: a0a3-A 7tgk-B   195 - 198 <=>  248 - 251   (PHE  195  - ASP  198  <=> LEU  247  - THR  250 )                          
+   1: a0a3-A 7tgk-B   255 - 258 <=>  254 - 257   (VAL  255  - PRO  258  <=> ALA  253  - ALA  256 )                          
+   1: a0a3-A 7tgk-B   265 - 271 <=>  263 - 269   (SER  265  - ASP  271  <=> CYS  262  - ASP  268 )                          
+   1: a0a3-A 7tgk-B   274 - 278 <=>  283 - 287   (LEU  274  - ILE  278  <=> ALA  282  - GLU  286 )                          
+   1: a0a3-A 7tgk-B   280 - 287 <=>  373 - 380   (ASN  280  - ASN  287  <=> SER  372  - ASP  379 )                          
+   1: a0a3-A 7tgk-B   289 - 292 <=>  382 - 385   (TYR  289  - ILE  292  <=> GLU  381  - THR  384 )                          
+   1: a0a3-A 7tgk-B   370 - 373 <=>  412 - 415   (ASN  370  - GLY  373  <=> PRO  411  - TRP  414 )                          
+   1: a0a3-A 7tgk-B   423 - 426 <=>  501 - 504   (LEU  423  - VAL  426  <=> ASP  500  - PHE  503 )                          
+   1: a0a3-A 7tgk-B   429 - 432 <=>  518 - 521   (SER  429  - LEU  432  <=> ALA  517  - ASP  520 )                          
+   1: a0a3-A 7tgk-B   440 - 452 <=>  523 - 535   (ASN  440  - ALA  452  <=> TRP  522  - GLU  534 )                          
+   1: a0a3-A 7tgk-B   455 - 458 <=>  540 - 543   (ARG  455  - ASP  458  <=> LEU  539  - ARG  542 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a3-A 7tgk-B  U(1,.)  -0.117366  0.937878 -0.326511           -4.198761"
+-matrix  "a0a3-A 7tgk-B  U(2,.)   0.260048  0.346336  0.901347           27.941124"
+-matrix  "a0a3-A 7tgk-B  U(3,.)   0.958436  0.020879 -0.284541         -103.329285"
+

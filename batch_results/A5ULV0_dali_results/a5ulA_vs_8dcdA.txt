@@ -1,0 +1,25 @@
+# Job: test
+# Query: a5ulA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  8dcd-A  2.6  4.0   97   481   11  MOL_ID: 1; MOLECULE: TRNA-SPLICING LIGASE RTCB; CHAIN: A, B; SYNONYM: 
+
+# Structural equivalences
+   1: a5ul-A 8dcd-A    42 -  45 <=>   63 -  66   (PHE   42  - LYS   45  <=> MET   63  - GLY   66 )                          
+   1: a5ul-A 8dcd-A    62 -  65 <=>   75 -  78   (ASN   62  - ASP   65  <=> GLY   75  - ALA   78 )                          
+   1: a5ul-A 8dcd-A   127 - 132 <=>   89 -  94   (PRO  127  - ASN  132  <=> PRO   89  - TYR   94 )                          
+   1: a5ul-A 8dcd-A   133 - 144 <=>   97 - 108   (LEU  133  - VAL  144  <=> ASN   97  - THR  108 )                          
+   1: a5ul-A 8dcd-A   156 - 159 <=>  110 - 113   (ASP  156  - PHE  159  <=> LYS  110  - ARG  113 )                          
+   1: a5ul-A 8dcd-A   160 - 174 <=>  115 - 129   (MET  160  - LYS  174  <=> ARG  115  - SER  129 )                          
+   1: a5ul-A 8dcd-A   178 - 184 <=>  204 - 210   (LEU  178  - GLY  184  <=> PHE  204  - VAL  210 )                          
+   1: a5ul-A 8dcd-A   185 - 193 <=>  229 - 237   (ASP  185  - GLY  193  <=> VAL  229  - SER  237 )                          
+   1: a5ul-A 8dcd-A   194 - 211 <=>  294 - 311   (LEU  194  - GLY  211  <=> ALA  294  - PHE  311 )                          
+   1: a5ul-A 8dcd-A   213 - 216 <=>  320 - 323   (GLY  213  - ALA  216  <=> GLY  320  - ILE  323 )                          
+   1: a5ul-A 8dcd-A   217 - 222 <=>  325 - 330   (GLY  217  - ARG  222  <=> TYR  325  - ASN  330 )                          
+   1: a5ul-A 8dcd-A   223 - 226 <=>  352 - 355   (ASN  223  - ASP  226  <=> GLY  352  - ARG  355 )                          
+   1: a5ul-A 8dcd-A   229 - 232 <=>  374 - 377   (TYR  229  - ASP  232  <=> PRO  374  - ILE  377 )                          
+
+# Translation-rotation matrices
+-matrix  "a5ul-A 8dcd-A  U(1,.)   0.418047 -0.819224 -0.392567           12.937258"
+-matrix  "a5ul-A 8dcd-A  U(2,.)   0.819207  0.153211  0.552653          -38.023277"
+-matrix  "a5ul-A 8dcd-A  U(3,.)  -0.392601 -0.552629  0.735164           -3.310884"
+

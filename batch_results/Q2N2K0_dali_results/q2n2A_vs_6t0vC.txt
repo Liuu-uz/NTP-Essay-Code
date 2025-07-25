@@ -1,0 +1,22 @@
+# Job: test
+# Query: q2n2A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-C  2.8  8.5   76   740    4  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: q2n2-A 6t0v-C     1 -   4 <=>  224 - 227   (MET    1  - LEU    4  <=> GLY  222  - SER  225 )                          
+   1: q2n2-A 6t0v-C     5 -   8 <=>  230 - 233   (SER    5  - MET    8  <=> TYR  228  - VAL  231 )                          
+   1: q2n2-A 6t0v-C    47 -  51 <=>  239 - 243   (SER   47  - PRO   51  <=> GLY  237  - GLU  241 )                          
+   1: q2n2-A 6t0v-C    77 -  80 <=>  248 - 251   (SER   77  - LEU   80  <=> PRO  246  - GLU  249 )                          
+   1: q2n2-A 6t0v-C    91 - 127 <=>  253 - 289   (ALA   91  - SER  127  <=> GLU  251  - THR  287 )                          
+   1: q2n2-A 6t0v-C   130 - 134 <=>  290 - 294   (LEU  130  - LEU  134  <=> SER  288  - GLU  292 )                          
+   1: q2n2-A 6t0v-C   153 - 156 <=>  303 - 306   (PRO  153  - ASN  156  <=> ASN  301  - ASP  304 )                          
+   1: q2n2-A 6t0v-C   161 - 164 <=>  496 - 499   (LEU  161  - GLY  164  <=> ILE  494  - ASN  497 )                          
+   1: q2n2-A 6t0v-C   169 - 172 <=>  514 - 517   (LYS  169  - ALA  172  <=> LEU  512  - PRO  515 )                          
+   1: q2n2-A 6t0v-C   237 - 241 <=>  558 - 562   (ILE  237  - LYS  241  <=> ASN  556  - LEU  560 )                          
+
+# Translation-rotation matrices
+-matrix  "q2n2-A 6t0v-C  U(1,.)   0.210317  0.618567  0.757061         -204.171768"
+-matrix  "q2n2-A 6t0v-C  U(2,.)  -0.718388  0.623015 -0.309469           72.679474"
+-matrix  "q2n2-A 6t0v-C  U(3,.)  -0.663088 -0.478777  0.575402          110.090126"
+

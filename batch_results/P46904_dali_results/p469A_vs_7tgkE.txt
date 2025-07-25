@@ -1,0 +1,25 @@
+# Job: test
+# Query: p469A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7tgk-E  3.3  6.6  113   593    7  MOL_ID: 1; MOLECULE: DESFERRIOXAMINE SYNTHETASE DESD; CHAIN: D, B, E, 
+
+# Structural equivalences
+   1: p469-A 7tgk-E     2 -   6 <=>  394 - 398   (LEU    2  - TYR    6  <=> ASP  393  - ARG  397 )                          
+   1: p469-A 7tgk-E    10 -  16 <=>  402 - 408   (MET   10  - ASP   16  <=> GLY  401  - SER  407 )                          
+   1: p469-A 7tgk-E    17 -  42 <=>  410 - 435   (ARG   17  - LEU   42  <=> LEU  409  - ASP  434 )                          
+   1: p469-A 7tgk-E    45 -  48 <=>  473 - 476   (LYS   45  - GLN   48  <=> ALA  472  - PRO  475 )                          
+   1: p469-A 7tgk-E   120 - 123 <=>  479 - 482   (GLY  120  - ASN  123  <=> VAL  478  - VAL  481 )                          
+   1: p469-A 7tgk-E   166 - 170 <=>  485 - 489   (GLU  166  - THR  170  <=> GLU  484  - ASP  488 )                          
+   1: p469-A 7tgk-E   173 - 183 <=>  490 - 500   (ILE  173  - ILE  183  <=> MET  489  - PHE  499 )                          
+   1: p469-A 7tgk-E   185 - 192 <=>  503 - 510   (THR  185  - MET  192  <=> PHE  502  - GLY  509 )                          
+   1: p469-A 7tgk-E   226 - 229 <=>  513 - 516   (TRP  226  - VAL  229  <=> THR  512  - VAL  515 )                          
+   1: p469-A 7tgk-E   231 - 251 <=>  517 - 537   (THR  231  - PHE  251  <=> LEU  516  - HIS  536 )                          
+   1: p469-A 7tgk-E   252 - 260 <=>  540 - 548   (THR  252  - GLN  260  <=> LEU  539  - ASP  547 )                          
+   1: p469-A 7tgk-E   314 - 317 <=>  556 - 559   (PRO  314  - PHE  317  <=> LEU  555  - LEU  558 )                          
+   1: p469-A 7tgk-E   326 - 330 <=>  562 - 566   (PHE  326  - TYR  330  <=> LEU  561  - ASP  565 )                          
+
+# Translation-rotation matrices
+-matrix  "p469-A 7tgk-E  U(1,.)   0.198390 -0.969145  0.146283            9.014907"
+-matrix  "p469-A 7tgk-E  U(2,.)  -0.734611 -0.245832 -0.632387           71.274239"
+-matrix  "p469-A 7tgk-E  U(3,.)   0.648836  0.017998 -0.760716          -32.050411"
+

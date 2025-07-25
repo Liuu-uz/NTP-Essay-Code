@@ -1,0 +1,25 @@
+# Job: test
+# Query: q8rmA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-A  2.1 15.6   91   705    3  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: q8rm-A 6t0v-A     2 -   7 <=>  291 - 296   (ASN    2  - GLN    7  <=> GLU  300  - LYS  305 )                          
+   1: q8rm-A 6t0v-A    14 -  18 <=>  303 - 307   (THR   14  - VAL   18  <=> ASP  312  - GLY  316 )                          
+   1: q8rm-A 6t0v-A    98 - 107 <=>  310 - 319   (ALA   98  - GLY  107  <=> LYS  319  - LYS  328 )                          
+   1: q8rm-A 6t0v-A   110 - 127 <=>  320 - 337   (ILE  110  - TRP  127  <=> GLY  329  - LYS  346 )                          
+   1: q8rm-A 6t0v-A   145 - 148 <=>  349 - 352   (LEU  145  - ASN  148  <=> THR  358  - LEU  361 )                          
+   1: q8rm-A 6t0v-A   149 - 152 <=>  355 - 358   (VAL  149  - CYS  152  <=> GLY  364  - GLU  367 )                          
+   1: q8rm-A 6t0v-A   154 - 160 <=>  506 - 512   (ILE  154  - ILE  160  <=> PHE  515  - SER  521 )                          
+   1: q8rm-A 6t0v-A   161 - 164 <=>  533 - 536   (PHE  161  - GLY  164  <=> ASP  542  - ILE  545 )                          
+   1: q8rm-A 6t0v-A   167 - 174 <=>  547 - 554   (ILE  167  - THR  174  <=> VAL  556  - ASN  563 )                          
+   1: q8rm-A 6t0v-A   216 - 222 <=>  557 - 563   (TRP  216  - ARG  222  <=> SER  566  - TRP  572 )                          
+   1: q8rm-A 6t0v-A   284 - 287 <=>  676 - 679   (ILE  284  - THR  287  <=> ILE  685  - CYS  688 )                          
+   1: q8rm-A 6t0v-A   416 - 423 <=>  685 - 692   (SER  416  - GLY  423  <=> TRP  694  - TRP  701 )                          
+   1: q8rm-A 6t0v-A   629 - 634 <=>  700 - 705   (GLY  629  - ARG  634  <=> VAL  709  - GLY  714 )                          
+
+# Translation-rotation matrices
+-matrix  "q8rm-A 6t0v-A  U(1,.)  -0.155877  0.613255  0.774351         -166.123779"
+-matrix  "q8rm-A 6t0v-A  U(2,.)   0.466054  0.736851 -0.489739          -69.406059"
+-matrix  "q8rm-A 6t0v-A  U(3,.)  -0.870917  0.284551 -0.400669          143.161224"
+

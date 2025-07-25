@@ -1,0 +1,17 @@
+# Job: test
+# Query: o189A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7y7p-B  2.3  2.8   56   908    9  MOL_ID: 1; MOLECULE: RNA-DEPENDENT RNA POLYMERASE; CHAIN: A, B; EC: 2.
+
+# Structural equivalences
+   1: o189-A 7y7p-B     3 -  16 <=>  634 - 647   (ASP    3  - ASN   16  <=> THR 1064  - LEU 1077 )                          
+   1: o189-A 7y7p-B    19 -  22 <=>  648 - 651   (SER   19  - GLY   22  <=> GLN 1078  - PHE 1081 )                          
+   1: o189-A 7y7p-B    25 -  40 <=>  652 - 667   (CYS   25  - ASN   40  <=> LEU 1082  - ASN 1097 )                          
+   1: o189-A 7y7p-B   480 - 495 <=>  670 - 685   (TYR  480  - ILE  495  <=> SER 1100  - VAL 1115 )                          
+   1: o189-A 7y7p-B   497 - 502 <=>  686 - 691   (VAL  497  - PHE  502  <=> ASP 1116  - GLY 1121 )                          
+
+# Translation-rotation matrices
+-matrix  "o189-A 7y7p-B  U(1,.)  -0.637976  0.513255  0.574070           15.654437"
+-matrix  "o189-A 7y7p-B  U(2,.)   0.115184  0.800708 -0.587876           51.268478"
+-matrix  "o189-A 7y7p-B  U(3,.)  -0.761393 -0.308927 -0.569952          138.632095"
+

@@ -1,0 +1,29 @@
+# Job: test
+# Query: d3z5A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3f2b-A  3.5  9.8  146   994   10  MOL_ID: 1; MOLECULE: DNA-DIRECTED DNA POLYMERASE III ALPHA CHAIN; CHAI
+
+# Structural equivalences
+   1: d3z5-A 3f2b-A    22 -  25 <=>  201 - 204   (GLU   22  - GLY   25  <=> SER  639  - HIS  642 )                          
+   1: d3z5-A 3f2b-A    51 -  54 <=>  393 - 396   (SER   51  - GLY   54  <=> GLU  843  - GLY  846 )                          
+   1: d3z5-A 3f2b-A    55 -  58 <=>  399 - 402   (ASP   55  - SER   58  <=> LEU  849  - LEU  852 )                          
+   1: d3z5-A 3f2b-A    72 -  87 <=>  404 - 419   (ASN   72  - ILE   87  <=> GLU  854  - PHE  869 )                          
+   1: d3z5-A 3f2b-A   100 - 126 <=>  420 - 446   (LEU  100  - ASN  126  <=> ALA  870  - VAL  896 )                          
+   1: d3z5-A 3f2b-A   128 - 131 <=>  512 - 515   (SER  128  - SER  131  <=> THR  962  - GLY  965 )                          
+   1: d3z5-A 3f2b-A   138 - 143 <=>  516 - 521   (SER  138  - LYS  143  <=> PHE  966  - VAL  971 )                          
+   1: d3z5-A 3f2b-A   145 - 154 <=>  522 - 531   (LEU  145  - ARG  154  <=> PRO  972  - GLU  981 )                          
+   1: d3z5-A 3f2b-A   158 - 171 <=>  532 - 545   (GLU  158  - LEU  171  <=> TYR  982  - GLY  995 )                          
+   1: d3z5-A 3f2b-A   190 - 196 <=>  546 - 552   (GLU  190  - MET  196  <=> GLU  996  - ALA 1002 )                          
+   1: d3z5-A 3f2b-A   206 - 213 <=>  601 - 608   (TRP  206  - ASN  213  <=> PRO 1051  - PRO 1058 )                          
+   1: d3z5-A 3f2b-A   214 - 226 <=>  640 - 652   (ASN  214  - SER  226  <=> ILE 1090  - HIS 1102 )                          
+   1: d3z5-A 3f2b-A   271 - 278 <=>  761 - 768   (GLY  271  - ASP  278  <=> GLY 1211  - VAL 1218 )                          
+   1: d3z5-A 3f2b-A   279 - 282 <=>  780 - 783   (HIS  279  - ASN  282  <=> ALA 1230  - ILE 1233 )                          
+   1: d3z5-A 3f2b-A   286 - 290 <=>  814 - 818   (ALA  286  - PRO  290  <=> CYS 1264  - LYS 1268 )                          
+   1: d3z5-A 3f2b-A   375 - 382 <=>  873 - 880   (MET  375  - THR  382  <=> LYS 1323  - ALA 1330 )                          
+   1: d3z5-A 3f2b-A   384 - 387 <=>  881 - 884   (ASN  384  - THR  387  <=> LYS 1331  - GLN 1334 )                          
+
+# Translation-rotation matrices
+-matrix  "d3z5-A 3f2b-A  U(1,.)   0.469007 -0.674915  0.569669           13.235148"
+-matrix  "d3z5-A 3f2b-A  U(2,.)  -0.634942  0.190684  0.748658           40.939499"
+-matrix  "d3z5-A 3f2b-A  U(3,.)  -0.613907 -0.712832 -0.339100           37.898270"
+

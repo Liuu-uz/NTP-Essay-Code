@@ -1,0 +1,18 @@
+# Job: test
+# Query: a0jnA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  3.5  4.6   69  1095    7  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a0jn-A 4ff3-A     1 -  32 <=>  803 - 834   (MET    1  - THR   32  <=> SER  808  - LEU  839 )                          
+   1: a0jn-A 4ff3-A    33 -  36 <=>  837 - 840   (MET   33  - LEU   36  <=> LYS  842  - ASP  845 )                          
+   1: a0jn-A 4ff3-A   457 - 460 <=>  841 - 844   (PRO  457  - GLY  460  <=> PRO  846  - LYS  849 )                          
+   1: a0jn-A 4ff3-A   461 - 476 <=>  847 - 862   (TRP  461  - VAL  476  <=> ASP  852  - ASN  867 )                          
+   1: a0jn-A 4ff3-A   477 - 480 <=>  864 - 867   (LEU  477  - ALA  480  <=> LEU  869  - MET  872 )                          
+   1: a0jn-A 4ff3-A   485 - 493 <=>  912 - 920   (ALA  485  - LEU  493  <=> VAL  917  - ILE  925 )                          
+
+# Translation-rotation matrices
+-matrix  "a0jn-A 4ff3-A  U(1,.)  -0.081150  0.289803  0.953640         -403.000214"
+-matrix  "a0jn-A 4ff3-A  U(2,.)   0.077337 -0.952080  0.295910         -185.401810"
+-matrix  "a0jn-A 4ff3-A  U(3,.)   0.993697  0.097764  0.054849          -33.466892"
+

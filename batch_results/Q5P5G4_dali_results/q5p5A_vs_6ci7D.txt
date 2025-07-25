@@ -1,0 +1,25 @@
+# Job: test
+# Query: q5p5A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ci7-D  3.0 10.7   94   362    3  MOL_ID: 1; MOLECULE: YCAO; CHAIN: A, B, C, D, E, F; ENGINEERED: YES   
+
+# Structural equivalences
+   1: q5p5-A 6ci7-D    11 -  14 <=>   32 -  35   (ASN   11  - ASP   14  <=> VAL   33  - VAL   36 )                          
+   1: q5p5-A 6ci7-D    15 -  19 <=>   37 -  41   (ILE   15  - GLY   19  <=> LYS   38  - ARG   42 )                          
+   1: q5p5-A 6ci7-D    20 -  38 <=>   46 -  64   (THR   20  - PRO   38  <=> PRO   47  - LYS   65 )                          
+   1: q5p5-A 6ci7-D    43 -  60 <=>   67 -  84   (ASP   43  - GLY   60  <=> THR   68  - ALA   85 )                          
+   1: q5p5-A 6ci7-D    61 -  64 <=>  149 - 152   (LEU   61  - GLU   64  <=> SER  150  - ARG  153 )                          
+   1: q5p5-A 6ci7-D   382 - 387 <=>  190 - 195   (ASP  382  - GLU  387  <=> LEU  191  - ARG  196 )                          
+   1: q5p5-A 6ci7-D   388 - 393 <=>  198 - 203   (PRO  388  - ALA  393  <=> GLU  199  - ARG  204 )                          
+   1: q5p5-A 6ci7-D   395 - 399 <=>  224 - 228   (VAL  395  - TYR  399  <=> GLU  225  - VAL  229 )                          
+   1: q5p5-A 6ci7-D   400 - 404 <=>  230 - 234   (ILE  400  - THR  404  <=> GLU  231  - GLY  235 )                          
+   1: q5p5-A 6ci7-D   472 - 476 <=>  258 - 262   (GLY  472  - PRO  476  <=> UNK  259  - GLY  263 )                          
+   1: q5p5-A 6ci7-D   654 - 658 <=>  269 - 273   (ARG  654  - TRP  658  <=> LEU  281  - ARG  285 )                          
+   1: q5p5-A 6ci7-D   674 - 680 <=>  347 - 353   (LEU  674  - VAL  680  <=> VAL  359  - VAL  365 )                          
+   1: q5p5-A 6ci7-D   715 - 719 <=>  358 - 362   (ILE  715  - PRO  719  <=> GLU  370  - GLY  374 )                          
+
+# Translation-rotation matrices
+-matrix  "q5p5-A 6ci7-D  U(1,.)  -0.118076  0.791578  0.599552          -31.595446"
+-matrix  "q5p5-A 6ci7-D  U(2,.)   0.852620 -0.228678  0.469836           65.905685"
+-matrix  "q5p5-A 6ci7-D  U(3,.)   0.509016  0.566666 -0.647914           72.106850"
+

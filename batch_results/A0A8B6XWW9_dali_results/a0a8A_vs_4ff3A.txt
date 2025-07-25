@@ -1,0 +1,26 @@
+# Job: test
+# Query: a0a8A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  3.0  9.7  117  1095    4  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a0a8-A 4ff3-A     1 -   5 <=>  634 - 638   (MET    1  - MET    5  <=> GLN  639  - LEU  643 )                          
+   1: a0a8-A 4ff3-A     6 -  11 <=>  781 - 786   (ASN    6  - LYS   11  <=> GLN  786  - HIS  791 )                          
+   1: a0a8-A 4ff3-A    12 -  25 <=>  788 - 801   (LYS   12  - ALA   25  <=> PHE  793  - GLY  806 )                          
+   1: a0a8-A 4ff3-A    26 -  29 <=>  805 - 808   (ALA   26  - SER   29  <=> VAL  810  - THR  813 )                          
+   1: a0a8-A 4ff3-A    30 -  54 <=>  811 - 835   (ASN   30  - ASN   54  <=> LEU  816  - ALA  840 )                          
+   1: a0a8-A 4ff3-A   107 - 112 <=>  842 - 847   (PRO  107  - PRO  112  <=> THR  847  - ASP  852 )                          
+   1: a0a8-A 4ff3-A   127 - 139 <=>  849 - 861   (PHE  127  - MET  139  <=> LEU  854  - LEU  866 )                          
+   1: a0a8-A 4ff3-A   143 - 146 <=>  862 - 865   (LYS  143  - SER  146  <=> ASN  867  - ALA  870 )                          
+   1: a0a8-A 4ff3-A   160 - 164 <=>  866 - 870   (VAL  160  - LYS  164  <=> PRO  871  - THR  875 )                          
+   1: a0a8-A 4ff3-A   166 - 174 <=>  874 - 882   (ILE  166  - VAL  174  <=> THR  879  - ASN  887 )                          
+   1: a0a8-A 4ff3-A   175 - 178 <=>  886 - 889   (PRO  175  - GLU  178  <=> ALA  891  - VAL  894 )                          
+   1: a0a8-A 4ff3-A   193 - 204 <=>  890 - 901   (PRO  193  - ARG  204  <=> LEU  895  - PRO  906 )                          
+   1: a0a8-A 4ff3-A   237 - 240 <=>  944 - 947   (THR  237  - LEU  240  <=> ILE  949  - GLY  952 )                          
+   1: a0a8-A 4ff3-A   305 - 310 <=>  959 - 964   (SER  305  - ALA  310  <=> SER  964  - GLU  969 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a8-A 4ff3-A  U(1,.)   0.900378 -0.206413  0.383032         -166.383255"
+-matrix  "a0a8-A 4ff3-A  U(2,.)   0.330727  0.896696 -0.294204          126.975121"
+-matrix  "a0a8-A 4ff3-A  U(3,.)  -0.282736  0.391574  0.875631         -324.386993"
+

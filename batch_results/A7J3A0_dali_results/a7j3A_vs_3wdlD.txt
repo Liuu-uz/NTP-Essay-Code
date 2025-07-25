@@ -1,0 +1,18 @@
+# Job: test
+# Query: a7j3A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-D  2.7 11.7   58   249   12  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: a7j3-A 3wdl-D   649 - 652 <=>    4 -   7   (GLU  649  - PRO  652  <=> SER    7  - ARG   10 )                          
+   1: a7j3-A 3wdl-D   654 - 668 <=>    8 -  22   (GLU  654  - LEU  668  <=> TYR   11  - GLU   25 )                          
+   1: a7j3-A 3wdl-D   669 - 689 <=>   25 -  45   (GLN  669  - TYR  689  <=> MET   28  - GLY   48 )                          
+   1: a7j3-A 3wdl-D   704 - 711 <=>  206 - 213   (LYS  704  - GLU  711  <=> GLU  213  - GLU  220 )                          
+   1: a7j3-A 3wdl-D   712 - 715 <=>  216 - 219   (TYR  712  - LYS  715  <=> LEU  223  - VAL  226 )                          
+   1: a7j3-A 3wdl-D   783 - 788 <=>  243 - 248   (LYS  783  - PHE  788  <=> ALA  250  - TRP  255 )                          
+
+# Translation-rotation matrices
+-matrix  "a7j3-A 3wdl-D  U(1,.)   0.403094  0.412429 -0.816956            7.364697"
+-matrix  "a7j3-A 3wdl-D  U(2,.)   0.719724  0.408513  0.561351          -33.066792"
+-matrix  "a7j3-A 3wdl-D  U(3,.)   0.565254 -0.814260 -0.132167           -8.544971"
+

@@ -1,0 +1,19 @@
+# Job: test
+# Query: q8puA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  2xan-B  2.7  8.5   76   417   12  MOL_ID: 1; MOLECULE: INOSITOL-PENTAKISPHOSPHATE 2-KINASE; CHAIN: A, B;
+
+# Structural equivalences
+   1: q8pu-A 2xan-B    30 -  36 <=>  114 - 120   (SER   30  - ALA   36  <=> PRO  127  - ALA  133 )                          
+   1: q8pu-A 2xan-B    43 -  48 <=>  176 - 181   (PHE   43  - GLY   48  <=> ARG  192  - GLN  197 )                          
+   1: q8pu-A 2xan-B    56 -  72 <=>  297 - 313   (LEU   56  - PRO   72  <=> LEU  313  - PRO  329 )                          
+   1: q8pu-A 2xan-B    88 -  91 <=>  318 - 321   (VAL   88  - LEU   91  <=> LYS  334  - PRO  338 )                          
+   1: q8pu-A 2xan-B   206 - 227 <=>  322 - 343   (ALA  206  - TYR  227  <=> LEU  339  - TYR  360 )                          
+   1: q8pu-A 2xan-B   228 - 233 <=>  346 - 351   (ASP  228  - LEU  233  <=> ALA  363  - ASP  368 )                          
+   1: q8pu-A 2xan-B   239 - 252 <=>  404 - 417   (GLU  239  - GLY  252  <=> LYS  425  - ASN  438 )                          
+
+# Translation-rotation matrices
+-matrix  "q8pu-A 2xan-B  U(1,.)   0.915546 -0.331412  0.227905          -53.449780"
+-matrix  "q8pu-A 2xan-B  U(2,.)   0.180792 -0.167066 -0.969228           60.057880"
+-matrix  "q8pu-A 2xan-B  U(3,.)   0.359289  0.928577 -0.093040          -83.707184"
+

@@ -1,0 +1,21 @@
+# Job: test
+# Query: a4zcA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-C  2.9 15.4   77   254   10  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: a4zc-A 3wdl-C   220 - 223 <=>   61 -  64   (LEU  220  - PRO  223  <=> LEU   67  - GLU   70 )                          
+   1: a4zc-A 3wdl-C   282 - 286 <=>   67 -  71   (ILE  282  - GLY  286  <=> VAL   73  - ASN   77 )                          
+   1: a4zc-A 3wdl-C   322 - 333 <=>   73 -  84   (LEU  322  - ASP  333  <=> ASN   79  - GLU   90 )                          
+   1: a4zc-A 3wdl-C   336 - 343 <=>   92 -  99   (ILE  336  - THR  343  <=> LYS   98  - TYR  105 )                          
+   1: a4zc-A 3wdl-C   360 - 384 <=>  101 - 125   (GLN  360  - MET  384  <=> THR  107  - ASN  131 )                          
+   1: a4zc-A 3wdl-C   401 - 408 <=>  129 - 136   (PRO  401  - GLU  408  <=> ARG  135  - GLU  142 )                          
+   1: a4zc-A 3wdl-C   439 - 443 <=>  166 - 170   (THR  439  - PHE  443  <=> ARG  172  - PHE  176 )                          
+   1: a4zc-A 3wdl-C   458 - 461 <=>  221 - 224   (ILE  458  - LEU  461  <=> GLY  227  - ASP  230 )                          
+   1: a4zc-A 3wdl-C   497 - 502 <=>  245 - 250   (GLU  497  - PHE  502  <=> GLU  251  - ARG  256 )                          
+
+# Translation-rotation matrices
+-matrix  "a4zc-A 3wdl-C  U(1,.)  -0.404799  0.371129  0.835704            7.529019"
+-matrix  "a4zc-A 3wdl-C  U(2,.)  -0.502809  0.673016 -0.542432           26.611727"
+-matrix  "a4zc-A 3wdl-C  U(3,.)  -0.763754 -0.639776 -0.085829           -5.782418"
+

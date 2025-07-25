@@ -1,0 +1,15 @@
+# Job: test
+# Query: p746A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  3.0  2.6   43   417    7  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: p746-A 3amt-A   174 - 177 <=>    7 -  10   (VAL  174  - VAL  177  <=> GLY    6  - ASP    9 )                          
+   1: p746-A 3amt-A   187 - 205 <=>   17 -  35   (VAL  187  - SER  205  <=> UNK   16  - GLY   34 )                          
+   1: p746-A 3amt-A   211 - 230 <=>   67 -  86   (ILE  211  - LEU  230  <=> ASP   66  - LEU   85 )                          
+
+# Translation-rotation matrices
+-matrix  "p746-A 3amt-A  U(1,.)  -0.110204  0.225342  0.968027          -95.545441"
+-matrix  "p746-A 3amt-A  U(2,.)  -0.978918  0.143911 -0.144944           -7.062736"
+-matrix  "p746-A 3amt-A  U(3,.)  -0.171972 -0.963593  0.204732           65.589134"
+

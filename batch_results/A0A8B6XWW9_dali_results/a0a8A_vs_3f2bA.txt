@@ -1,0 +1,29 @@
+# Job: test
+# Query: a0a8A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3f2b-A  4.8  4.5  140   994    6  MOL_ID: 1; MOLECULE: DNA-DIRECTED DNA POLYMERASE III ALPHA CHAIN; CHAI
+
+# Structural equivalences
+   1: a0a8-A 3f2b-A    30 -  33 <=>  415 - 418   (ASN   30  - ARG   33  <=> ILE  865  - GLY  868 )                          
+   1: a0a8-A 3f2b-A    35 -  56 <=>  419 - 440   (ARG   35  - CYS   56  <=> PHE  869  - VAL  890 )                          
+   1: a0a8-A 3f2b-A    58 -  63 <=>  441 - 446   (LYS   58  - GLY   63  <=> GLY  891  - VAL  896 )                          
+   1: a0a8-A 3f2b-A    67 -  74 <=>  513 - 520   (GLU   67  - ASP   74  <=> PHE  963  - LYS  970 )                          
+   1: a0a8-A 3f2b-A    76 -  84 <=>  521 - 529   (ILE   76  - ALA   84  <=> VAL  971  - SER  979 )                          
+   1: a0a8-A 3f2b-A   127 - 141 <=>  531 - 545   (PHE  127  - THR  141  <=> GLU  981  - GLY  995 )                          
+   1: a0a8-A 3f2b-A   144 - 151 <=>  546 - 553   (LYS  144  - ASN  151  <=> GLU  996  - GLY 1003 )                          
+   1: a0a8-A 3f2b-A   152 - 155 <=>  599 - 602   (HIS  152  - ALA  155  <=> GLN 1049  - GLY 1052 )                          
+   1: a0a8-A 3f2b-A   157 - 166 <=>  603 - 612   (GLN  157  - ILE  166  <=> GLY 1053  - GLU 1062 )                          
+   1: a0a8-A 3f2b-A   167 - 178 <=>  643 - 654   (LEU  167  - GLU  178  <=> ASN 1093  - ASP 1104 )                          
+   1: a0a8-A 3f2b-A   182 - 189 <=>  700 - 707   (SER  182  - PHE  189  <=> VAL 1150  - GLU 1157 )                          
+   1: a0a8-A 3f2b-A   214 - 217 <=>  762 - 765   (ILE  214  - LYS  217  <=> CYS 1212  - ASP 1215 )                          
+   1: a0a8-A 3f2b-A   219 - 226 <=>  777 - 784   (SER  219  - ILE  226  <=> PRO 1227  - MET 1234 )                          
+   1: a0a8-A 3f2b-A   249 - 252 <=>  787 - 790   (ILE  249  - SER  252  <=> VAL 1237  - GLY 1240 )                          
+   1: a0a8-A 3f2b-A   269 - 277 <=>  794 - 802   (GLY  269  - VAL  277  <=> THR 1244  - ARG 1252 )                          
+   1: a0a8-A 3f2b-A   279 - 282 <=>  810 - 813   (ILE  279  - SER  282  <=> TYR 1260  - SER 1263 )                          
+   1: a0a8-A 3f2b-A   287 - 291 <=>  816 - 820   (GLU  287  - PHE  291  <=> LYS 1266  - MET 1270 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a8-A 3f2b-A  U(1,.)  -0.244049  0.001392  0.969762           37.026459"
+-matrix  "a0a8-A 3f2b-A  U(2,.)   0.959819  0.143188  0.241341          -46.149216"
+-matrix  "a0a8-A 3f2b-A  U(3,.)  -0.138522  0.989695 -0.036281          -19.225073"
+

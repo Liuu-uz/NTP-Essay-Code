@@ -1,0 +1,23 @@
+# Job: test
+# Query: a1k4A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7y7p-A  3.0  8.4   97   933    5  MOL_ID: 1; MOLECULE: RNA-DEPENDENT RNA POLYMERASE; CHAIN: A, B; EC: 2.
+
+# Structural equivalences
+   1: a1k4-A 7y7p-A     3 -   6 <=>  790 - 793   (ALA    3  - GLY    6  <=> THR 1208  - LYS 1211 )                          
+   1: a1k4-A 7y7p-A     7 -  28 <=>  802 - 823   (ASP    7  - ILE   28  <=> SER 1220  - LEU 1241 )                          
+   1: a1k4-A 7y7p-A    53 -  70 <=>  824 - 841   (ARG   53  - LEU   70  <=> ASP 1252  - THR 1269 )                          
+   1: a1k4-A 7y7p-A    78 -  81 <=>  848 - 851   (SER   78  - ASP   81  <=> ARG 1286  - GLU 1289 )                          
+   1: a1k4-A 7y7p-A    82 -  98 <=>  862 - 878   (ALA   82  - HIS   98  <=> THR 1300  - LYS 1316 )                          
+   1: a1k4-A 7y7p-A   100 - 109 <=>  879 - 888   (GLN  100  - ASN  109  <=> SER 1317  - GLY 1326 )                          
+   1: a1k4-A 7y7p-A   126 - 129 <=>  890 - 893   (ILE  126  - ARG  129  <=> GLN 1328  - TYR 1331 )                          
+   1: a1k4-A 7y7p-A   337 - 340 <=>  903 - 906   (SER  337  - TYR  340  <=> GLY 1341  - ALA 1344 )                          
+   1: a1k4-A 7y7p-A   384 - 387 <=>  908 - 911   (TYR  384  - LEU  387  <=> ALA 1346  - THR 1349 )                          
+   1: a1k4-A 7y7p-A   414 - 417 <=>  913 - 916   (ALA  414  - LEU  417  <=> PHE 1351  - ALA 1354 )                          
+   1: a1k4-A 7y7p-A   428 - 433 <=>  928 - 933   (PRO  428  - LEU  433  <=> TYR 1366  - GLU 1371 )                          
+
+# Translation-rotation matrices
+-matrix  "a1k4-A 7y7p-A  U(1,.)   0.546067  0.621918  0.561275         -103.799202"
+-matrix  "a1k4-A 7y7p-A  U(2,.)  -0.348643 -0.440500  0.827290         -103.243980"
+-matrix  "a1k4-A 7y7p-A  U(3,.)   0.761748 -0.647440 -0.023715          -20.927519"
+

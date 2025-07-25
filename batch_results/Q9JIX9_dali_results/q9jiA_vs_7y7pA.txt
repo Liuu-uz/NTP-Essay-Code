@@ -1,0 +1,22 @@
+# Job: test
+# Query: q9jiA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7y7p-A  2.9 15.7   88   933    3  MOL_ID: 1; MOLECULE: RNA-DEPENDENT RNA POLYMERASE; CHAIN: A, B; EC: 2.
+
+# Structural equivalences
+   1: q9ji-A 7y7p-A     6 -  10 <=>  316 - 320   (LEU    6  - THR   10  <=> ASP  724  - LEU  728 )                          
+   1: q9ji-A 7y7p-A    25 -  30 <=>  447 - 452   (GLN   25  - GLY   30  <=> VAL  856  - VAL  861 )                          
+   1: q9ji-A 7y7p-A    46 -  55 <=>  494 - 503   (GLY   46  - ARG   55  <=> CYS  903  - ILE  912 )                          
+   1: q9ji-A 7y7p-A    94 -  97 <=>  613 - 616   (SER   94  - GLU   97  <=> VAL 1022  - PHE 1025 )                          
+   1: q9ji-A 7y7p-A   116 - 149 <=>  672 - 705   (ASP  116  - ARG  149  <=> PHE 1081  - LEU 1114 )                          
+   1: q9ji-A 7y7p-A   150 - 153 <=>  707 - 710   (LEU  150  - LYS  153  <=> ASP 1116  - LYS 1119 )                          
+   1: q9ji-A 7y7p-A   232 - 235 <=>  779 - 782   (ALA  232  - ASN  235  <=> HIS 1197  - ASP 1200 )                          
+   1: q9ji-A 7y7p-A   291 - 299 <=>  815 - 823   (PRO  291  - PHE  299  <=> GLU 1233  - LEU 1241 )                          
+   1: q9ji-A 7y7p-A   321 - 328 <=>  824 - 831   (SER  321  - GLU  328  <=> ASP 1252  - ASN 1259 )                          
+   1: q9ji-A 7y7p-A   332 - 335 <=>  834 - 837   (PRO  332  - GLN  335  <=> TYR 1262  - TRP 1265 )                          
+
+# Translation-rotation matrices
+-matrix  "q9ji-A 7y7p-A  U(1,.)  -0.628299  0.773611  0.082252            5.618793"
+-matrix  "q9ji-A 7y7p-A  U(2,.)   0.765483  0.595880  0.242823          -52.830444"
+-matrix  "q9ji-A 7y7p-A  U(3,.)   0.138839  0.215528 -0.966577          122.077660"
+

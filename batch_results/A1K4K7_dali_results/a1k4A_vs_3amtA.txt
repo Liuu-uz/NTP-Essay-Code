@@ -1,0 +1,25 @@
+# Job: test
+# Query: a1k4A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  2.9 18.8   90   417   13  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: a1k4-A 3amt-A    11 -  30 <=>   16 -  35   (ALA   11  - ARG   30  <=> GLY   15  - GLY   34 )                          
+   1: a1k4-A 3amt-A    54 -  71 <=>   67 -  84   (ASP   54  - LEU   71  <=> ASP   66  - ALA   83 )                          
+   1: a1k4-A 3amt-A    76 -  81 <=>   85 -  90   (ALA   76  - ASP   81  <=> UNK   84  - LYS   89 )                          
+   1: a1k4-A 3amt-A   298 - 301 <=>   97 - 100   (LYS  298  - LYS  301  <=> PHE   96  - GLU   99 )                          
+   1: a1k4-A 3amt-A   303 - 309 <=>  101 - 107   (MET  303  - VAL  309  <=> GLU  100  - LYS  106 )                          
+   1: a1k4-A 3amt-A   415 - 418 <=>  121 - 124   (LEU  415  - LYS  418  <=> ASP  120  - LEU  123 )                          
+   1: a1k4-A 3amt-A   419 - 422 <=>  128 - 131   (HIS  419  - ILE  422  <=> GLY  127  - PHE  130 )                          
+   1: a1k4-A 3amt-A   427 - 431 <=>  254 - 258   (THR  427  - ILE  431  <=> ILE  253  - GLU  257 )                          
+   1: a1k4-A 3amt-A   435 - 439 <=>  293 - 297   (LYS  435  - GLY  439  <=> LYS  292  - VAL  296 )                          
+   1: a1k4-A 3amt-A   445 - 448 <=>  321 - 324   (VAL  445  - TYR  448  <=> VAL  320  - TYR  323 )                          
+   1: a1k4-A 3amt-A   501 - 504 <=>  377 - 380   (PRO  501  - ASP  504  <=> LYS  380  - GLU  383 )                          
+   1: a1k4-A 3amt-A   541 - 544 <=>  388 - 391   (LYS  541  - ARG  544  <=> PRO  391  - TYR  394 )                          
+   1: a1k4-A 3amt-A   545 - 549 <=>  413 - 417   (ASP  545  - PRO  549  <=> ARG  416  - ARG  420 )                          
+
+# Translation-rotation matrices
+-matrix  "a1k4-A 3amt-A  U(1,.)  -0.648504  0.404397 -0.644907           23.181286"
+-matrix  "a1k4-A 3amt-A  U(2,.)   0.733056  0.560064 -0.385950          -39.454201"
+-matrix  "a1k4-A 3amt-A  U(3,.)   0.205112 -0.723044 -0.659649          106.287102"
+

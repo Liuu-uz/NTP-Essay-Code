@@ -1,0 +1,20 @@
+# Job: test
+# Query: a0a3A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  3.7  4.5   93   417    8  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: a0a3-A 3amt-A   437 - 440 <=>   14 -  17   (ILE  437  - ASN  440  <=> SER   13  - UNK   16 )                          
+   1: a0a3-A 3amt-A   444 - 458 <=>   18 -  32   (ASP  444  - ASP  458  <=> CYS   17  - ARG   31 )                          
+   1: a0a3-A 3amt-A   459 - 462 <=>   34 -  37   (GLU  459  - GLU  462  <=> LEU   33  - VAL   36 )                          
+   1: a0a3-A 3amt-A   485 - 488 <=>   63 -  66   (LEU  485  - GLU  488  <=> LEU   62  - VAL   65 )                          
+   1: a0a3-A 3amt-A   489 - 505 <=>   68 -  84   (ALA  489  - PHE  505  <=> ASP   67  - ALA   83 )                          
+   1: a0a3-A 3amt-A   510 - 513 <=>   85 -  88   (TYR  510  - SER  513  <=> UNK   84  - ASP   87 )                          
+   1: a0a3-A 3amt-A   518 - 544 <=>   89 - 115   (ALA  518  - GLY  544  <=> GLU   88  - LYS  114 )                          
+   1: a0a3-A 3amt-A   558 - 575 <=>  119 - 136   (LYS  558  - VAL  575  <=> GLN  118  - ARG  135 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a3-A 3amt-A  U(1,.)  -0.148679 -0.713240  0.684969            6.489070"
+-matrix  "a0a3-A 3amt-A  U(2,.)   0.859033  0.249965  0.446743          -69.328972"
+-matrix  "a0a3-A 3amt-A  U(3,.)  -0.489853  0.654833  0.575532          -82.006073"
+

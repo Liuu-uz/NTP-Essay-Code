@@ -1,0 +1,28 @@
+# Job: test
+# Query: q2n2A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  2.7  6.1  122  1095    6  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: q2n2-A 4ff3-A     9 -  12 <=>    2 -   5   (ILE    9  - GLY   12  <=> GLU    7  - GLU   10 )                          
+   1: q2n2-A 4ff3-A    62 -  65 <=>   25 -  28   (SER   62  - SER   65  <=> ILE   30  - TYR   33 )                          
+   1: q2n2-A 4ff3-A    66 -  75 <=>   30 -  39   (SER   66  - PRO   75  <=> LYS   35  - GLN   44 )                          
+   1: q2n2-A 4ff3-A   133 - 136 <=>   43 -  46   (MET  133  - UNK  136  <=> THR   48  - SER   51 )                          
+   1: q2n2-A 4ff3-A   150 - 158 <=>   51 -  59   (ALA  150  - PHE  158  <=> LYS   56  - SER   64 )                          
+   1: q2n2-A 4ff3-A   171 - 174 <=>   74 -  77   (GLU  171  - VAL  174  <=> PRO   79  - ASN   82 )                          
+   1: q2n2-A 4ff3-A   190 - 197 <=>   84 -  91   (PRO  190  - ILE  197  <=> TYR   89  - GLY   96 )                          
+   1: q2n2-A 4ff3-A   203 - 206 <=>  142 - 145   (ILE  203  - ARG  206  <=> TYR  147  - GLN  150 )                          
+   1: q2n2-A 4ff3-A   209 - 220 <=>  146 - 157   (PRO  209  - ALA  220  <=> LEU  151  - TRP  162 )                          
+   1: q2n2-A 4ff3-A   222 - 231 <=>  158 - 167   (ASP  222  - ARG  231  <=> ARG  163  - ILE  172 )                          
+   1: q2n2-A 4ff3-A   234 - 237 <=>  192 - 195   (GLY  234  - ILE  237  <=> PHE  197  - GLY  200 )                          
+   1: q2n2-A 4ff3-A   246 - 264 <=>  196 - 214   (ALA  246  - TRP  264  <=> MET  201  - GLY  219 )                          
+   1: q2n2-A 4ff3-A   272 - 275 <=>  215 - 218   (ILE  272  - SER  275  <=> LEU  220  - ASN  223 )                          
+   1: q2n2-A 4ff3-A   276 - 293 <=>  224 - 241   (TRP  276  - GLU  293  <=> GLY  229  - PHE  246 )                          
+   1: q2n2-A 4ff3-A   295 - 298 <=>  242 - 245   (LEU  295  - SER  298  <=> VAL  247  - THR  250 )                          
+   1: q2n2-A 4ff3-A   303 - 306 <=>  246 - 249   (ASP  303  - THR  306  <=> ASP  251  - GLU  254 )                          
+
+# Translation-rotation matrices
+-matrix  "q2n2-A 4ff3-A  U(1,.)  -0.015884  0.404377 -0.914454          381.884796"
+-matrix  "q2n2-A 4ff3-A  U(2,.)  -0.467250 -0.811567 -0.350764          103.597572"
+-matrix  "q2n2-A 4ff3-A  U(3,.)  -0.883982  0.421708  0.201836          -42.202278"
+

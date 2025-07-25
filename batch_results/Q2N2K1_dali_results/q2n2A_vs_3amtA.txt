@@ -1,0 +1,17 @@
+# Job: test
+# Query: q2n2A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  2.2  6.2   51   417   10  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: q2n2-A 3amt-A   222 - 225 <=>   14 -  17   (HIS  222  - LEU  225  <=> SER   13  - UNK   16 )                          
+   1: q2n2-A 3amt-A   228 - 244 <=>   18 -  34   (SER  228  - TYR  244  <=> CYS   17  - LEU   33 )                          
+   1: q2n2-A 3amt-A   253 - 272 <=>   65 -  84   (GLN  253  - LEU  272  <=> GLU   64  - ALA   83 )                          
+   1: q2n2-A 3amt-A   274 - 279 <=>   85 -  90   (GLU  274  - THR  279  <=> UNK   84  - LYS   89 )                          
+   1: q2n2-A 3amt-A   299 - 302 <=>   96 -  99   (THR  299  - HIS  302  <=> VAL   95  - ASP   98 )                          
+
+# Translation-rotation matrices
+-matrix  "q2n2-A 3amt-A  U(1,.)  -0.199536 -0.610045  0.766832           -9.998175"
+-matrix  "q2n2-A 3amt-A  U(2,.)  -0.979556  0.103743 -0.172356            5.976140"
+-matrix  "q2n2-A 3amt-A  U(3,.)   0.025591 -0.785546 -0.618273          138.102188"
+

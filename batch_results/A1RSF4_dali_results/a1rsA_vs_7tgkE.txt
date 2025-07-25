@@ -1,0 +1,19 @@
+# Job: test
+# Query: a1rsA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7tgk-E  2.1  6.2   62   593   13  MOL_ID: 1; MOLECULE: DESFERRIOXAMINE SYNTHETASE DESD; CHAIN: D, B, E, 
+
+# Structural equivalences
+   1: a1rs-A 7tgk-E     1 -   4 <=>  407 - 410   (MET    1  - LEU    4  <=> ARG  406  - LEU  409 )                          
+   1: a1rs-A 7tgk-E     7 -  18 <=>  411 - 422   (PHE    7  - GLY   18  <=> ALA  410  - ALA  421 )                          
+   1: a1rs-A 7tgk-E    19 -  22 <=>  424 - 427   (SER   19  - LEU   22  <=> TYR  423  - LEU  426 )                          
+   1: a1rs-A 7tgk-E    24 -  27 <=>  436 - 439   (ASN   24  - LYS   27  <=> LEU  435  - MET  438 )                          
+   1: a1rs-A 7tgk-E    66 -  94 <=>  508 - 536   (TYR   66  - GLY   94  <=> ALA  507  - ALA  535 )                          
+   1: a1rs-A 7tgk-E    96 -  99 <=>  537 - 540   (PHE   96  - ARG   99  <=> HIS  536  - LEU  539 )                          
+   1: a1rs-A 7tgk-E   104 - 108 <=>  542 - 546   (PRO  104  - PRO  108  <=> ASP  541  - GLN  545 )                          
+
+# Translation-rotation matrices
+-matrix  "a1rs-A 7tgk-E  U(1,.)  -0.182553 -0.773229  0.607282           26.170437"
+-matrix  "a1rs-A 7tgk-E  U(2,.)  -0.813282 -0.228328 -0.535200           77.730774"
+-matrix  "a1rs-A 7tgk-E  U(3,.)   0.552491 -0.591594 -0.587171           -0.769838"
+

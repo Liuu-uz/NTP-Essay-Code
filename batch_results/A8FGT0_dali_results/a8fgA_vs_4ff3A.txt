@@ -1,0 +1,15 @@
+# Job: test
+# Query: a8fgA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  2.3  2.8   46  1095    9  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a8fg-A 4ff3-A     9 -  14 <=>  581 - 586   (VAL    9  - LEU   14  <=> ALA  586  - PHE  591 )                          
+   1: a8fg-A 4ff3-A    20 -  32 <=> 1038 -1050   (GLU   20  - ALA   32  <=> VAL 1043  - LEU 1055 )                          
+   1: a8fg-A 4ff3-A    36 -  62 <=> 1069 -1095   (THR   36  - LEU   62  <=> ASP 1074  - GLN 1100 )                          
+
+# Translation-rotation matrices
+-matrix  "a8fg-A 4ff3-A  U(1,.)   0.160904 -0.526496 -0.834812          300.474457"
+-matrix  "a8fg-A 4ff3-A  U(2,.)  -0.187070 -0.846770  0.497981         -191.151794"
+-matrix  "a8fg-A 4ff3-A  U(3,.)  -0.969079  0.076041 -0.234740           60.439068"
+

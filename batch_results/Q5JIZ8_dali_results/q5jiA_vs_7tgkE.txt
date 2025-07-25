@@ -1,0 +1,21 @@
+# Job: test
+# Query: q5jiA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7tgk-E  2.1  6.1   77   593    3  MOL_ID: 1; MOLECULE: DESFERRIOXAMINE SYNTHETASE DESD; CHAIN: D, B, E, 
+
+# Structural equivalences
+   1: q5ji-A 7tgk-E    24 -  28 <=>   25 -  29   (MET   24  - MET   28  <=> ARG   24  - ALA   28 )                          
+   1: q5ji-A 7tgk-E    34 -  37 <=>   65 -  68   (LEU   34  - HIS   37  <=> VAL   64  - ALA   67 )                          
+   1: q5ji-A 7tgk-E    42 -  48 <=>  399 - 405   (ALA   42  - GLY   48  <=> SER  398  - ILE  404 )                          
+   1: q5ji-A 7tgk-E    50 -  70 <=>  415 - 435   (ARG   50  - GLU   70  <=> TRP  414  - ASP  434 )                          
+   1: q5ji-A 7tgk-E   149 - 155 <=>  485 - 491   (ASN  149  - ASP  155  <=> GLU  484  - LYS  490 )                          
+   1: q5ji-A 7tgk-E   156 - 159 <=>  493 - 496   (VAL  156  - VAL  159  <=> LEU  492  - PHE  495 )                          
+   1: q5ji-A 7tgk-E   177 - 180 <=>  497 - 500   (VAL  177  - VAL  180  <=> THR  496  - PHE  499 )                          
+   1: q5ji-A 7tgk-E   181 - 184 <=>  504 - 507   (ASP  181  - PRO  184  <=> PHE  503  - LEU  506 )                          
+   1: q5ji-A 7tgk-E   199 - 219 <=>  522 - 542   (ASN  199  - ARG  219  <=> PHE  521  - ASP  541 )                          
+
+# Translation-rotation matrices
+-matrix  "q5ji-A 7tgk-E  U(1,.)   0.706205  0.414693  0.573850          -72.711311"
+-matrix  "q5ji-A 7tgk-E  U(2,.)  -0.562047  0.821255  0.098199            7.417551"
+-matrix  "q5ji-A 7tgk-E  U(3,.)  -0.430555 -0.391879  0.813052           32.781525"
+

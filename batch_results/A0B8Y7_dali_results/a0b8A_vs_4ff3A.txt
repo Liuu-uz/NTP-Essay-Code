@@ -1,0 +1,19 @@
+# Job: test
+# Query: a0b8A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  2.1  4.3   72  1095    6  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a0b8-A 4ff3-A     2 -   6 <=>   45 -  49   (ASN    2  - HIS    6  <=> GLY   50  - PRO   54 )                          
+   1: a0b8-A 4ff3-A     7 -  12 <=>  144 - 149   (SER    7  - LEU   12  <=> GLU  149  - THR  154 )                          
+   1: a0b8-A 4ff3-A    22 -  26 <=>  162 - 166   (ALA   22  - GLY   26  <=> THR  167  - ALA  171 )                          
+   1: a0b8-A 4ff3-A    27 -  30 <=>  192 - 195   (GLY   27  - LEU   30  <=> PHE  197  - GLY  200 )                          
+   1: a0b8-A 4ff3-A    50 -  70 <=>  196 - 216   (ARG   50  - ALA   70  <=> MET  201  - SER  221 )                          
+   1: a0b8-A 4ff3-A    80 - 103 <=>  222 - 245   (ASP   80  - SER  103  <=> PRO  227  - THR  250 )                          
+   1: a0b8-A 4ff3-A   162 - 168 <=>  277 - 283   (ARG  162  - GLY  168  <=> ASP  282  - PRO  288 )                          
+
+# Translation-rotation matrices
+-matrix  "a0b8-A 4ff3-A  U(1,.)   0.725905 -0.522833  0.446887         -217.862808"
+-matrix  "a0b8-A 4ff3-A  U(2,.)  -0.353818 -0.841034 -0.409236          130.852676"
+-matrix  "a0b8-A 4ff3-A  U(3,.)   0.589810  0.138950 -0.795498          309.241943"
+

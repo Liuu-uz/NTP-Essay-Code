@@ -1,0 +1,27 @@
+# Job: test
+# Query: a0b7A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  2.3  4.8  107   745    5  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a0b7-A 6t0v-B     1 -   5 <=>   77 -  81   (MET    1  - ILE    5  <=> ASN   77  - GLY   81 )                          
+   1: a0b7-A 6t0v-B    23 -  28 <=>  100 - 105   (VAL   23  - LEU   28  <=> PRO  100  - THR  105 )                          
+   1: a0b7-A 6t0v-B    32 -  39 <=>  107 - 114   (ASP   32  - ALA   39  <=> CYS  107  - ILE  114 )                          
+   1: a0b7-A 6t0v-B    87 -  91 <=>  115 - 119   (ILE   87  - GLY   91  <=> GLN  115  - VAL  119 )                          
+   1: a0b7-A 6t0v-B   134 - 137 <=>  120 - 123   (LYS  134  - THR  137  <=> ASP  120  - THR  123 )                          
+   1: a0b7-A 6t0v-B   140 - 144 <=>  244 - 248   (ALA  140  - ASP  144  <=> PRO  244  - ILE  248 )                          
+   1: a0b7-A 6t0v-B   145 - 149 <=>  343 - 347   (ILE  145  - ASP  149  <=> MET  343  - LYS  347 )                          
+   1: a0b7-A 6t0v-B   150 - 157 <=>  403 - 410   (ALA  150  - ASN  157  <=> LEU  403  - GLY  410 )                          
+   1: a0b7-A 6t0v-B   309 - 314 <=>  411 - 416   (ASN  309  - ILE  314  <=> MET  411  - SER  416 )                          
+   1: a0b7-A 6t0v-B   316 - 327 <=>  417 - 428   (ASN  316  - ALA  327  <=> THR  417  - GLN  428 )                          
+   1: a0b7-A 6t0v-B   328 - 333 <=>  431 - 436   (GLU  328  - VAL  333  <=> ILE  431  - TYR  436 )                          
+   1: a0b7-A 6t0v-B   335 - 342 <=>  437 - 444   (GLU  335  - SER  342  <=> TRP  437  - SER  444 )                          
+   1: a0b7-A 6t0v-B   353 - 360 <=>  446 - 453   (ILE  353  - LEU  360  <=> ASP  446  - GLY  453 )                          
+   1: a0b7-A 6t0v-B   362 - 365 <=>  454 - 457   (GLU  362  - ARG  365  <=> HIS  454  - GLU  457 )                          
+   1: a0b7-A 6t0v-B   366 - 382 <=>  459 - 475   (LEU  366  - GLU  382  <=> ILE  459  - ILE  475 )                          
+
+# Translation-rotation matrices
+-matrix  "a0b7-A 6t0v-B  U(1,.)  -0.028950  0.952865 -0.302010         -106.411377"
+-matrix  "a0b7-A 6t0v-B  U(2,.)  -0.343368 -0.293231 -0.892252          205.789444"
+-matrix  "a0b7-A 6t0v-B  U(3,.)  -0.938755  0.077870  0.335672           64.673035"
+

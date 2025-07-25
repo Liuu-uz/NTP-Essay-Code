@@ -1,0 +1,28 @@
+# Job: test
+# Query: q5jiA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3f2b-A  3.3  5.3   99   994    8  MOL_ID: 1; MOLECULE: DNA-DIRECTED DNA POLYMERASE III ALPHA CHAIN; CHAI
+
+# Structural equivalences
+   1: q5ji-A 3f2b-A     3 -   6 <=>   22 -  25   (ASN    3  - LYS    6  <=> ASP  254  - VAL  257 )                          
+   1: q5ji-A 3f2b-A     7 -  10 <=>   35 -  38   (SER    7  - ARG   10  <=> LEU  267  - LYS  270 )                          
+   1: q5ji-A 3f2b-A    49 -  52 <=>   40 -  43   (GLU   49  - ILE   52  <=> THR  272  - THR  275 )                          
+   1: q5ji-A 3f2b-A    59 -  62 <=>   97 - 100   (MET   59  - ALA   62  <=> ALA  329  - ARG  332 )                          
+   1: q5ji-A 3f2b-A    66 -  69 <=>  101 - 104   (PHE   66  - ALA   69  <=> GLN  333  - ALA  336 )                          
+   1: q5ji-A 3f2b-A    70 -  75 <=>  108 - 113   (GLU   70  - SER   75  <=> GLU  340  - LEU  345 )                          
+   1: q5ji-A 3f2b-A    76 -  79 <=>  115 - 118   (VAL   76  - ASN   79  <=> LEU  347  - PRO  350 )                          
+   1: q5ji-A 3f2b-A    83 -  97 <=>  126 - 140   (LEU   83  - ALA   97  <=> THR  358  - HIS  372 )                          
+   1: q5ji-A 3f2b-A    98 - 106 <=>  142 - 150   (LYS   98  - ARG  106  <=> ALA  374  - VAL  382 )                          
+   1: q5ji-A 3f2b-A   112 - 123 <=>  151 - 162   (ARG  112  - PRO  123  <=> VAL  383  - LYS  394 )                          
+   1: q5ji-A 3f2b-A   124 - 130 <=>  165 - 171   (GLU  124  - ILE  130  <=> GLY  397  - GLY  403 )                          
+   1: q5ji-A 3f2b-A   132 - 140 <=>  227 - 235   (PRO  132  - GLU  140  <=> LEU  665  - GLY  673 )                          
+   1: q5ji-A 3f2b-A   169 - 172 <=>  253 - 256   (ALA  169  - ARG  172  <=> VAL  699  - PRO  702 )                          
+   1: q5ji-A 3f2b-A   180 - 183 <=>  301 - 304   (VAL  180  - ASN  183  <=> ASP  751  - TYR  754 )                          
+   1: q5ji-A 3f2b-A   185 - 189 <=>  322 - 326   (LEU  185  - ALA  189  <=> GLU  772  - VAL  776 )                          
+   1: q5ji-A 3f2b-A   243 - 246 <=>  574 - 577   (ARG  243  - LEU  246  <=> HIS 1024  - GLU 1027 )                          
+
+# Translation-rotation matrices
+-matrix  "q5ji-A 3f2b-A  U(1,.)   0.923767 -0.279793 -0.261476          -43.620701"
+-matrix  "q5ji-A 3f2b-A  U(2,.)   0.136296 -0.397870  0.907261           27.677431"
+-matrix  "q5ji-A 3f2b-A  U(3,.)  -0.357879 -0.873737 -0.329404           -2.904282"
+

@@ -1,0 +1,20 @@
+# Job: test
+# Query: a0rhA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7tgk-E  2.3  9.3   67   593    4  MOL_ID: 1; MOLECULE: DESFERRIOXAMINE SYNTHETASE DESD; CHAIN: D, B, E, 
+
+# Structural equivalences
+   1: a0rh-A 7tgk-E    41 -  48 <=>    1 -   8   (ARG   41  - PHE   48  <=> HIS    0  - VAL    7 )                          
+   1: a0rh-A 7tgk-E    50 -  53 <=>    9 -  12   (LEU   50  - ARG   53  <=> ALA    8  - SER   11 )                          
+   1: a0rh-A 7tgk-E    54 -  67 <=>   14 -  27   (VAL   54  - GLY   67  <=> GLU   13  - ALA   26 )                          
+   1: a0rh-A 7tgk-E    74 -  77 <=>  107 - 110   (GLN   74  - PHE   77  <=> ASP  106  - LEU  109 )                          
+   1: a0rh-A 7tgk-E   115 - 136 <=>  112 - 133   (THR  115  - GLU  136  <=> VAL  111  - VAL  132 )                          
+   1: a0rh-A 7tgk-E   140 - 143 <=>  173 - 176   (ARG  140  - ALA  143  <=> ALA  172  - PRO  175 )                          
+   1: a0rh-A 7tgk-E   151 - 154 <=>  297 - 300   (ASP  151  - GLN  154  <=> VAL  296  - MET  299 )                          
+   1: a0rh-A 7tgk-E   176 - 182 <=>  576 - 582   (ASN  176  - ALA  182  <=> PRO  575  - LEU  581 )                          
+
+# Translation-rotation matrices
+-matrix  "a0rh-A 7tgk-E  U(1,.)   0.397027  0.778318  0.486406          -31.332895"
+-matrix  "a0rh-A 7tgk-E  U(2,.)  -0.028341 -0.519316  0.854112           15.528089"
+-matrix  "a0rh-A 7tgk-E  U(3,.)   0.917369 -0.352891 -0.184125          -50.300518"
+

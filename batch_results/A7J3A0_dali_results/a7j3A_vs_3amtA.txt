@@ -1,0 +1,19 @@
+# Job: test
+# Query: a7j3A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  2.5  3.9   66   417    9  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: a7j3-A 3amt-A   697 - 705 <=>    2 -  10   (PRO  697  - PHE  705  <=> UNK    1  - ASP    9 )                          
+   1: a7j3-A 3amt-A   707 - 711 <=>   52 -  56   (ASN  707  - GLU  711  <=> TYR   51  - GLY   55 )                          
+   1: a7j3-A 3amt-A   717 - 720 <=>   58 -  61   (PRO  717  - THR  720  <=> GLY   57  - SER   60 )                          
+   1: a7j3-A 3amt-A   722 - 727 <=>   62 -  67   (GLY  722  - SER  727  <=> PHE   61  - ASP   66 )                          
+   1: a7j3-A 3amt-A   730 - 750 <=>   68 -  88   (MET  730  - VAL  750  <=> ASP   67  - ASP   87 )                          
+   1: a7j3-A 3amt-A   814 - 828 <=>   89 - 103   (ARG  814  - ASP  828  <=> GLU   88  - ALA  102 )                          
+   1: a7j3-A 3amt-A   830 - 835 <=>  132 - 137   (VAL  830  - GLU  835  <=> ILE  131  - HIS  136 )                          
+
+# Translation-rotation matrices
+-matrix  "a7j3-A 3amt-A  U(1,.)  -0.691240 -0.701226  0.174552           56.946835"
+-matrix  "a7j3-A 3amt-A  U(2,.)   0.252452 -0.008003  0.967576         -125.479195"
+-matrix  "a7j3-A 3amt-A  U(3,.)  -0.677093  0.712894  0.182558          -83.788239"
+

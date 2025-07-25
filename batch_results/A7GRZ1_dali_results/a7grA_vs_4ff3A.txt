@@ -1,0 +1,27 @@
+# Job: test
+# Query: a7grA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  2.1  7.2  109  1095    5  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a7gr-A 4ff3-A     3 -   6 <=>   13 -  16   (VAL    3  - ARG    6  <=> SER   18  - GLY   21 )                          
+   1: a7gr-A 4ff3-A    18 -  21 <=>   51 -  54   (GLU   18  - ALA   21  <=> LYS   56  - ALA   59 )                          
+   1: a7gr-A 4ff3-A    22 -  26 <=>   89 -  93   (ALA   22  - GLN   26  <=> GLU   94  - GLY   98 )                          
+   1: a7gr-A 4ff3-A    27 -  32 <=>   95 - 100   (PHE   27  - THR   32  <=> ALA  100  - SER  105 )                          
+   1: a7gr-A 4ff3-A    34 -  37 <=>  103 - 106   (ASN   34  - VAL   37  <=> ALA  108  - LEU  111 )                          
+   1: a7gr-A 4ff3-A    39 -  42 <=>  133 - 136   (SER   39  - THR   42  <=> VAL  138  - ASP  141 )                          
+   1: a7gr-A 4ff3-A    45 -  66 <=>  143 - 164   (GLU   45  - SER   66  <=> ASN  148  - ASN  169 )                          
+   1: a7gr-A 4ff3-A    68 -  76 <=>  165 - 173   (PHE   68  - SER   76  <=> THR  170  - VAL  178 )                          
+   1: a7gr-A 4ff3-A   116 - 134 <=>  197 - 215   (GLU  116  - ASP  134  <=> THR  202  - LEU  220 )                          
+   1: a7gr-A 4ff3-A   141 - 144 <=>  216 - 219   (LEU  141  - ASN  144  <=> SER  221  - PRO  224 )                          
+   1: a7gr-A 4ff3-A   153 - 158 <=>  224 - 229   (ASP  153  - LEU  158  <=> GLY  229  - ILE  234 )                          
+   1: a7gr-A 4ff3-A   193 - 199 <=>  241 - 247   (TYR  193  - TYR  199  <=> PHE  246  - VAL  252 )                          
+   1: a7gr-A 4ff3-A   204 - 207 <=>  268 - 271   (VAL  204  - LYS  207  <=> TYR  273  - THR  276 )                          
+   1: a7gr-A 4ff3-A   220 - 226 <=>  358 - 364   (ARG  220  - ILE  226  <=> GLY  363  - LYS  369 )                          
+   1: a7gr-A 4ff3-A   231 - 234 <=>  895 - 898   (THR  231  - ILE  234  <=> ASP  900  - MET  903 )                          
+
+# Translation-rotation matrices
+-matrix  "a7gr-A 4ff3-A  U(1,.)  -0.917020  0.108180  0.383890         -127.999664"
+-matrix  "a7gr-A 4ff3-A  U(2,.)  -0.365091 -0.615180 -0.698757          256.865570"
+-matrix  "a7gr-A 4ff3-A  U(3,.)   0.160570 -0.780929  0.603628         -278.203674"
+

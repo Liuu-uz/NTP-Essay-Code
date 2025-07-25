@@ -1,0 +1,39 @@
+# Job: test
+# Query: a1jrA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7tgk-D  6.2  4.0  184   593   11  MOL_ID: 1; MOLECULE: DESFERRIOXAMINE SYNTHETASE DESD; CHAIN: D, B, E, 
+
+# Structural equivalences
+   1: a1jr-A 7tgk-D   108 - 113 <=>  189 - 194   (CYS  108  - HIS  113  <=> ALA  188  - ALA  193 )                          
+   1: a1jr-A 7tgk-D   289 - 292 <=>  200 - 203   (CYS  289  - HIS  292  <=> ALA  199  - ASP  202 )                          
+   1: a1jr-A 7tgk-D   294 - 303 <=>  204 - 213   (LYS  294  - THR  303  <=> TYR  203  - GLY  212 )                          
+   1: a1jr-A 7tgk-D   308 - 314 <=>  267 - 273   (SER  308  - ILE  314  <=> SER  266  - ALA  272 )                          
+   1: a1jr-A 7tgk-D   317 - 320 <=>  274 - 277   (GLY  317  - GLY  320  <=> GLN  273  - ILE  276 )                          
+   1: a1jr-A 7tgk-D   324 - 328 <=>  278 - 282   (LEU  324  - LEU  328  <=> ARG  277  - ASN  281 )                          
+   1: a1jr-A 7tgk-D   329 - 332 <=>  284 - 287   (PRO  329  - ASP  332  <=> THR  283  - GLU  286 )                          
+   1: a1jr-A 7tgk-D   333 - 346 <=>  289 - 302   (ARG  333  - LYS  346  <=> HIS  288  - PHE  301 )                          
+   1: a1jr-A 7tgk-D   355 - 362 <=>  313 - 320   (GLU  355  - GLU  362  <=> ALA  312  - TRP  319 )                          
+   1: a1jr-A 7tgk-D   363 - 366 <=>  322 - 325   (HIS  363  - VAL  366  <=> ASP  321  - ILE  324 )                          
+   1: a1jr-A 7tgk-D   368 - 372 <=>  337 - 341   (ARG  368  - THR  372  <=> SER  336  - GLU  340 )                          
+   1: a1jr-A 7tgk-D   373 - 377 <=>  343 - 347   (GLN  373  - ASN  377  <=> ALA  342  - TYR  346 )                          
+   1: a1jr-A 7tgk-D   398 - 401 <=>  362 - 365   (PRO  398  - LEU  401  <=> TYR  361  - MET  364 )                          
+   1: a1jr-A 7tgk-D   411 - 419 <=>  366 - 374   (LYS  411  - MET  419  <=> LEU  365  - PRO  373 )                          
+   1: a1jr-A 7tgk-D   420 - 423 <=>  385 - 388   (THR  420  - ASN  423  <=> THR  384  - ALA  387 )                          
+   1: a1jr-A 7tgk-D   425 - 428 <=>  389 - 392   (TYR  425  - GLN  428  <=> ALA  388  - HIS  391 )                          
+   1: a1jr-A 7tgk-D   430 - 449 <=>  412 - 431   (ASN  430  - ALA  449  <=> PRO  411  - PHE  430 )                          
+   1: a1jr-A 7tgk-D   450 - 455 <=>  433 - 438   (ALA  450  - PRO  455  <=> ALA  432  - PHE  437 )                          
+   1: a1jr-A 7tgk-D   457 - 468 <=>  439 - 450   (ASP  457  - HIS  468  <=> MET  438  - LYS  449 )                          
+   1: a1jr-A 7tgk-D   469 - 476 <=>  455 - 462   (GLY  469  - TYR  476  <=> GLN  454  - ILE  461 )                          
+   1: a1jr-A 7tgk-D   477 - 483 <=>  464 - 470   (ASP  477  - THR  483  <=> GLU  463  - ASP  469 )                          
+   1: a1jr-A 7tgk-D   484 - 488 <=>  485 - 489   (GLU  484  - ARG  488  <=> GLU  484  - ASP  488 )                          
+   1: a1jr-A 7tgk-D   512 - 515 <=>  490 - 493   (ASP  512  - PRO  515  <=> MET  489  - LEU  492 )                          
+   1: a1jr-A 7tgk-D   516 - 519 <=>  496 - 499   (GLU  516  - ARG  519  <=> PHE  495  - VAL  498 )                          
+   1: a1jr-A 7tgk-D   520 - 527 <=>  501 - 508   (HIS  520  - LYS  527  <=> ASP  500  - ALA  507 )                          
+   1: a1jr-A 7tgk-D   529 - 537 <=>  523 - 531   (ARG  529  - SER  537  <=> TRP  522  - ARG  530 )                          
+   1: a1jr-A 7tgk-D   541 - 544 <=>  546 - 549   (HIS  541  - TYR  544  <=> GLN  545  - LEU  548 )                          
+
+# Translation-rotation matrices
+-matrix  "a1jr-A 7tgk-D  U(1,.)   0.205351 -0.942256 -0.264546           48.548828"
+-matrix  "a1jr-A 7tgk-D  U(2,.)   0.429164  0.329628 -0.840930         -124.764130"
+-matrix  "a1jr-A 7tgk-D  U(3,.)   0.879573  0.059152  0.472071          -28.938017"
+

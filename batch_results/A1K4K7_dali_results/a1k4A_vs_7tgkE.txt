@@ -1,0 +1,39 @@
+# Job: test
+# Query: a1k4A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7tgk-E  3.7  3.9  184   593   11  MOL_ID: 1; MOLECULE: DESFERRIOXAMINE SYNTHETASE DESD; CHAIN: D, B, E, 
+
+# Structural equivalences
+   1: a1k4-A 7tgk-E   112 - 115 <=>  190 - 193   (GLY  112  - ILE  115  <=> HIS  189  - ARG  192 )                          
+   1: a1k4-A 7tgk-E   295 - 298 <=>  200 - 203   (GLY  295  - LYS  298  <=> ALA  199  - ASP  202 )                          
+   1: a1k4-A 7tgk-E   301 - 310 <=>  204 - 213   (LYS  301  - ALA  310  <=> TYR  203  - GLY  212 )                          
+   1: a1k4-A 7tgk-E   315 - 321 <=>  267 - 273   (SER  315  - ILE  321  <=> SER  266  - ALA  272 )                          
+   1: a1k4-A 7tgk-E   324 - 327 <=>  274 - 277   (GLY  324  - GLY  327  <=> GLN  273  - ILE  276 )                          
+   1: a1k4-A 7tgk-E   331 - 338 <=>  278 - 285   (LEU  331  - TYR  338  <=> ARG  277  - HIS  284 )                          
+   1: a1k4-A 7tgk-E   339 - 353 <=>  288 - 302   (PRO  339  - LYS  353  <=> LYS  287  - PHE  301 )                          
+   1: a1k4-A 7tgk-E   361 - 370 <=>  312 - 321   (LYS  361  - VAL  370  <=> GLU  311  - LEU  320 )                          
+   1: a1k4-A 7tgk-E   371 - 374 <=>  323 - 326   (ASP  371  - GLY  374  <=> ARG  322  - ASP  325 )                          
+   1: a1k4-A 7tgk-E   375 - 379 <=>  337 - 341   (ARG  375  - THR  379  <=> SER  336  - GLU  340 )                          
+   1: a1k4-A 7tgk-E   380 - 384 <=>  343 - 347   (LEU  380  - TYR  384  <=> ALA  342  - TYR  346 )                          
+   1: a1k4-A 7tgk-E   405 - 408 <=>  362 - 365   (PRO  405  - PHE  408  <=> TYR  361  - MET  364 )                          
+   1: a1k4-A 7tgk-E   418 - 426 <=>  366 - 374   (LYS  418  - MET  426  <=> LEU  365  - PRO  373 )                          
+   1: a1k4-A 7tgk-E   427 - 430 <=>  385 - 388   (THR  427  - ASN  430  <=> THR  384  - ALA  387 )                          
+   1: a1k4-A 7tgk-E   432 - 435 <=>  389 - 392   (HIS  432  - LYS  435  <=> ALA  388  - HIS  391 )                          
+   1: a1k4-A 7tgk-E   437 - 456 <=>  412 - 431   (SER  437  - ALA  456  <=> PRO  411  - PHE  430 )                          
+   1: a1k4-A 7tgk-E   457 - 462 <=>  433 - 438   (ILE  457  - PRO  462  <=> ALA  432  - PHE  437 )                          
+   1: a1k4-A 7tgk-E   464 - 475 <=>  439 - 450   (ASP  464  - TYR  475  <=> MET  438  - LYS  449 )                          
+   1: a1k4-A 7tgk-E   476 - 483 <=>  455 - 462   (GLY  476  - TYR  483  <=> GLN  454  - ILE  461 )                          
+   1: a1k4-A 7tgk-E   484 - 490 <=>  464 - 470   (ASP  484  - THR  490  <=> GLU  463  - ASP  469 )                          
+   1: a1k4-A 7tgk-E   491 - 495 <=>  485 - 489   (SER  491  - ARG  495  <=> GLU  484  - ASP  488 )                          
+   1: a1k4-A 7tgk-E   518 - 521 <=>  490 - 493   (MET  518  - PHE  521  <=> MET  489  - LEU  492 )                          
+   1: a1k4-A 7tgk-E   522 - 525 <=>  495 - 498   (PRO  522  - PHE  525  <=> ILE  494  - ASP  497 )                          
+   1: a1k4-A 7tgk-E   526 - 529 <=>  500 - 503   (ALA  526  - LEU  529  <=> PHE  499  - PHE  502 )                          
+   1: a1k4-A 7tgk-E   530 - 533 <=>  505 - 508   (LEU  530  - PRO  533  <=> ARG  504  - ALA  507 )                          
+   1: a1k4-A 7tgk-E   536 - 544 <=>  523 - 531   (ARG  536  - ARG  544  <=> TRP  522  - ARG  530 )                          
+   1: a1k4-A 7tgk-E   548 - 551 <=>  546 - 549   (GLU  548  - PHE  551  <=> GLN  545  - LEU  548 )                          
+
+# Translation-rotation matrices
+-matrix  "a1k4-A 7tgk-E  U(1,.)  -0.948576 -0.258560 -0.182621           66.238495"
+-matrix  "a1k4-A 7tgk-E  U(2,.)  -0.310193  0.874277  0.373389          -12.251513"
+-matrix  "a1k4-A 7tgk-E  U(3,.)   0.063118  0.410835 -0.909522           19.721863"
+

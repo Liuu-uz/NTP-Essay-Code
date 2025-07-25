@@ -1,0 +1,41 @@
+# Job: test
+# Query: a1jrA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7tgk-A  5.1  4.2  175   592   13  MOL_ID: 1; MOLECULE: DESFERRIOXAMINE SYNTHETASE DESD; CHAIN: D, B, E, 
+
+# Structural equivalences
+   1: a1jr-A 7tgk-A   290 - 293 <=>  200 - 203   (GLN  290  - GLY  293  <=> ALA  199  - ASP  202 )                          
+   1: a1jr-A 7tgk-A   297 - 303 <=>  207 - 213   (SER  297  - THR  303  <=> PHE  206  - GLY  212 )                          
+   1: a1jr-A 7tgk-A   308 - 314 <=>  267 - 273   (SER  308  - ILE  314  <=> SER  266  - ALA  272 )                          
+   1: a1jr-A 7tgk-A   316 - 319 <=>  274 - 277   (PRO  316  - LYS  319  <=> GLN  273  - ILE  276 )                          
+   1: a1jr-A 7tgk-A   324 - 329 <=>  278 - 283   (LEU  324  - PRO  329  <=> ARG  277  - ALA  282 )                          
+   1: a1jr-A 7tgk-A   330 - 333 <=>  285 - 288   (SER  330  - ARG  333  <=> HIS  284  - LYS  287 )                          
+   1: a1jr-A 7tgk-A   334 - 340 <=>  290 - 296   (VAL  334  - ASP  340  <=> TYR  289  - SER  295 )                          
+   1: a1jr-A 7tgk-A   342 - 346 <=>  298 - 302   (PHE  342  - LYS  346  <=> LEU  297  - PHE  301 )                          
+   1: a1jr-A 7tgk-A   349 - 364 <=>  310 - 325   (SER  349  - ASP  364  <=> TYR  309  - ILE  324 )                          
+   1: a1jr-A 7tgk-A   367 - 372 <=>  335 - 340   (GLY  367  - THR  372  <=> GLY  334  - ARG  339 )                          
+   1: a1jr-A 7tgk-A   373 - 376 <=>  342 - 345   (GLN  373  - GLU  376  <=> ARG  341  - VAL  344 )                          
+   1: a1jr-A 7tgk-A   398 - 401 <=>  363 - 366   (PRO  398  - LEU  401  <=> ARG  362  - LEU  365 )                          
+   1: a1jr-A 7tgk-A   412 - 418 <=>  368 - 374   (HIS  412  - ARG  418  <=> ALA  367  - PRO  373 )                          
+   1: a1jr-A 7tgk-A   419 - 422 <=>  384 - 387   (MET  419  - LEU  422  <=> LEU  383  - MET  386 )                          
+   1: a1jr-A 7tgk-A   424 - 427 <=>  388 - 391   (LEU  424  - GLU  427  <=> ALA  387  - VAL  390 )                          
+   1: a1jr-A 7tgk-A   428 - 433 <=>  400 - 405   (GLN  428  - GLN  433  <=> VAL  399  - ILE  404 )                          
+   1: a1jr-A 7tgk-A   435 - 443 <=>  413 - 421   (LYS  435  - ASN  443  <=> THR  412  - ARG  420 )                          
+   1: a1jr-A 7tgk-A   444 - 451 <=>  423 - 430   (ALA  444  - ALA  451  <=> TYR  422  - SER  429 )                          
+   1: a1jr-A 7tgk-A   452 - 455 <=>  435 - 438   (ASN  452  - PRO  455  <=> ASP  434  - PHE  437 )                          
+   1: a1jr-A 7tgk-A   457 - 468 <=>  439 - 450   (ASP  457  - HIS  468  <=> MET  438  - LYS  449 )                          
+   1: a1jr-A 7tgk-A   469 - 476 <=>  455 - 462   (GLY  469  - TYR  476  <=> GLN  454  - ILE  461 )                          
+   1: a1jr-A 7tgk-A   477 - 483 <=>  464 - 470   (ASP  477  - THR  483  <=> GLU  463  - ASP  469 )                          
+   1: a1jr-A 7tgk-A   485 - 488 <=>  486 - 489   (VAL  485  - ARG  488  <=> VAL  485  - ASP  488 )                          
+   1: a1jr-A 7tgk-A   512 - 515 <=>  490 - 493   (ASP  512  - PRO  515  <=> MET  489  - LEU  492 )                          
+   1: a1jr-A 7tgk-A   516 - 519 <=>  496 - 499   (GLU  516  - ARG  519  <=> PHE  495  - VAL  498 )                          
+   1: a1jr-A 7tgk-A   520 - 523 <=>  501 - 504   (HIS  520  - CYS  523  <=> ASP  500  - PHE  503 )                          
+   1: a1jr-A 7tgk-A   524 - 527 <=>  506 - 509   (THR  524  - LYS  527  <=> PHE  505  - ALA  508 )                          
+   1: a1jr-A 7tgk-A   530 - 537 <=>  520 - 527   (HIS  530  - SER  537  <=> ASP  519  - ALA  526 )                          
+   1: a1jr-A 7tgk-A   541 - 544 <=>  546 - 549   (HIS  541  - TYR  544  <=> GLN  545  - LEU  548 )                          
+
+# Translation-rotation matrices
+-matrix  "a1jr-A 7tgk-A  U(1,.)   0.286172 -0.758616  0.585326           34.824181"
+-matrix  "a1jr-A 7tgk-A  U(2,.)  -0.573342 -0.625018 -0.529746           23.029247"
+-matrix  "a1jr-A 7tgk-A  U(3,.)   0.767714 -0.183994 -0.613809          -48.973026"
+

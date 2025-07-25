@@ -1,0 +1,23 @@
+# Job: test
+# Query: a5umA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  2.9  7.8   86  1095    7  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a5um-A 4ff3-A     4 -   7 <=>    4 -   7   (CYS    4  - ASP    7  <=> LYS    9  - ILE   12 )                          
+   1: a5um-A 4ff3-A     8 -  12 <=>    9 -  13   (THR    8  - THR   12  <=> ALA   14  - SER   18 )                          
+   1: a5um-A 4ff3-A    19 -  23 <=>  130 - 134   (LEU   19  - GLY   23  <=> LEU  135  - GLU  139 )                          
+   1: a5um-A 4ff3-A    60 -  81 <=>  145 - 166   (VAL   60  - SER   81  <=> GLN  150  - ALA  171 )                          
+   1: a5um-A 4ff3-A    83 -  86 <=>  196 - 199   (GLU   83  - THR   86  <=> MET  201  - THR  204 )                          
+   1: a5um-A 4ff3-A    87 - 101 <=>  201 - 215   (LEU   87  - TYR  101  <=> ALA  206  - LEU  220 )                          
+   1: a5um-A 4ff3-A   106 - 109 <=>  233 - 236   (GLU  106  - MET  109  <=> MET  238  - GLU  241 )                          
+   1: a5um-A 4ff3-A   110 - 117 <=>  247 - 254   (THR  110  - LYS  117  <=> VAL  252  - MET  259 )                          
+   1: a5um-A 4ff3-A   236 - 244 <=>  773 - 781   (LEU  236  - THR  244  <=> LYS  778  - GLN  786 )                          
+   1: a5um-A 4ff3-A   273 - 278 <=>  883 - 888   (PHE  273  - ILE  278  <=> ALA  888  - GLN  893 )                          
+   1: a5um-A 4ff3-A   308 - 311 <=>  995 - 998   (GLU  308  - ILE  311  <=> SER 1000  - ALA 1003 )                          
+
+# Translation-rotation matrices
+-matrix  "a5um-A 4ff3-A  U(1,.)  -0.481851 -0.008081  0.876216         -336.100464"
+-matrix  "a5um-A 4ff3-A  U(2,.)  -0.545767 -0.779547 -0.307319          116.332397"
+-matrix  "a5um-A 4ff3-A  U(3,.)   0.685535 -0.626292  0.371215         -177.684875"
+

@@ -1,0 +1,18 @@
+# Job: test
+# Query: q2n2A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  4.0  8.6   75   745    3  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: q2n2-A 6t0v-B    16 -  21 <=>  180 - 185   (LEU   16  - THR   21  <=> GLU  180  - PHE  185 )                          
+   1: q2n2-A 6t0v-B    24 -  30 <=>  667 - 673   (PRO   24  - ARG   30  <=> GLN  679  - ASP  685 )                          
+   1: q2n2-A 6t0v-B    31 -  41 <=>  675 - 685   (PRO   31  - VAL   41  <=> ARG  687  - GLU  697 )                          
+   1: q2n2-A 6t0v-B    45 -  49 <=>  691 - 695   (ALA   45  - ALA   49  <=> SER  703  - ARG  707 )                          
+   1: q2n2-A 6t0v-B    67 - 108 <=>  700 - 741   (THR   67  - MET  108  <=> ALA  712  - LEU  753 )                          
+   1: q2n2-A 6t0v-B   172 - 175 <=>  742 - 745   (LEU  172  - ILE  175  <=> LYS  754  - GLY  757 )                          
+
+# Translation-rotation matrices
+-matrix  "q2n2-A 6t0v-B  U(1,.)   0.523398 -0.015388 -0.851949           44.050823"
+-matrix  "q2n2-A 6t0v-B  U(2,.)   0.712753 -0.540005  0.447636          -41.165859"
+-matrix  "q2n2-A 6t0v-B  U(3,.)  -0.466946 -0.841521 -0.271670          181.456009"
+

@@ -1,0 +1,26 @@
+# Job: test
+# Query: a0jwA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  2.1  4.7   92   417    8  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: a0jw-A 3amt-A     2 -  15 <=>  155 - 168   (ASP    2  - SER   15  <=> GLU  154  - GLU  167 )                          
+   1: a0jw-A 3amt-A    26 -  29 <=>  170 - 173   (PRO   26  - VAL   29  <=> PHE  169  - GLU  172 )                          
+   1: a0jw-A 3amt-A    45 -  48 <=>  201 - 204   (ASN   45  - LEU   48  <=> ASP  200  - VAL  203 )                          
+   1: a0jw-A 3amt-A    53 -  56 <=>  205 - 208   (ARG   53  - LEU   56  <=> CYS  204  - ASN  207 )                          
+   1: a0jw-A 3amt-A    58 -  66 <=>  209 - 217   (VAL   58  - THR   66  <=> THR  208  - ILE  216 )                          
+   1: a0jw-A 3amt-A    68 -  81 <=>  218 - 231   (GLU   68  - ALA   81  <=> ARG  217  - SER  230 )                          
+   1: a0jw-A 3amt-A    84 -  87 <=>  232 - 235   (LEU   84  - ASP   87  <=> VAL  231  - GLU  234 )                          
+   1: a0jw-A 3amt-A   109 - 112 <=>  236 - 239   (PHE  109  - ASN  112  <=> PRO  235  - ARG  238 )                          
+   1: a0jw-A 3amt-A   122 - 127 <=>  240 - 245   (SER  122  - LEU  127  <=> ARG  239  - THR  244 )                          
+   1: a0jw-A 3amt-A   197 - 203 <=>  248 - 254   (HIS  197  - TYR  203  <=> ALA  247  - ILE  253 )                          
+   1: a0jw-A 3amt-A   413 - 416 <=>  303 - 306   (GLY  413  - TYR  416  <=> GLU  302  - LYS  305 )                          
+   1: a0jw-A 3amt-A   425 - 430 <=>  307 - 312   (LEU  425  - HIS  430  <=> GLN  306  - ILE  311 )                          
+   1: a0jw-A 3amt-A   435 - 438 <=>  401 - 404   (CYS  435  - PRO  438  <=> LEU  404  - PRO  407 )                          
+   1: a0jw-A 3amt-A   440 - 447 <=>  407 - 414   (ARG  440  - ASP  447  <=> ARG  410  - HIS  417 )                          
+
+# Translation-rotation matrices
+-matrix  "a0jw-A 3amt-A  U(1,.)   0.177966 -0.940194 -0.290453          101.116043"
+-matrix  "a0jw-A 3amt-A  U(2,.)  -0.915490 -0.049957 -0.399228           54.420898"
+-matrix  "a0jw-A 3amt-A  U(3,.)   0.360841  0.336956 -0.869629           45.550091"
+

@@ -1,0 +1,29 @@
+# Job: test
+# Query: q54eA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  3.4  4.6  117   417    7  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: q54e-A 3amt-A    21 -  30 <=>    1 -  10   (ASN   21  - GLY   30  <=> HIS    0  - ASP    9 )                          
+   1: q54e-A 3amt-A    36 -  39 <=>   13 -  16   (PHE   36  - LYS   39  <=> SER   12  - GLY   15 )                          
+   1: q54e-A 3amt-A    53 -  66 <=>   18 -  31   (LEU   53  - PRO   66  <=> CYS   17  - GLU   30 )                          
+   1: q54e-A 3amt-A    67 -  70 <=>   36 -  39   (ASP   67  - ILE   70  <=> LYS   35  - GLY   38 )                          
+   1: q54e-A 3amt-A    71 -  75 <=>   41 -  45   (ALA   71  - SER   75  <=> PRO   40  - ARG   44 )                          
+   1: q54e-A 3amt-A    76 -  83 <=>   58 -  65   (ASP   76  - LYS   83  <=> GLY   57  - GLU   64 )                          
+   1: q54e-A 3amt-A    86 -  89 <=>   66 -  69   (CYS   86  - PHE   89  <=> VAL   65  - VAL   68 )                          
+   1: q54e-A 3amt-A    94 - 109 <=>   70 -  85   (SER   94  - VAL  109  <=> GLY   69  - UNK   84 )                          
+   1: q54e-A 3amt-A   121 - 135 <=>   87 - 101   (LEU  121  - PRO  135  <=> ASP   86  - GLU  100 )                          
+   1: q54e-A 3amt-A   139 - 143 <=>  102 - 106   (ASN  139  - TYR  143  <=> LEU  101  - LEU  105 )                          
+   1: q54e-A 3amt-A   146 - 149 <=>  151 - 154   (TRP  146  - ALA  149  <=> GLY  150  - LEU  153 )                          
+   1: q54e-A 3amt-A   152 - 156 <=>  249 - 253   (HIS  152  - LEU  156  <=> THR  248  - LEU  252 )                          
+   1: q54e-A 3amt-A   158 - 161 <=>  266 - 269   (ASN  158  - TYR  161  <=> ARG  265  - ARG  268 )                          
+   1: q54e-A 3amt-A   175 - 179 <=>  328 - 332   (ALA  175  - LEU  179  <=> LYS  327  - ILE  331 )                          
+   1: q54e-A 3amt-A   190 - 194 <=>  334 - 338   (MET  190  - ARG  194  <=> LEU  333  - GLN  337 )                          
+   1: q54e-A 3amt-A   196 - 200 <=>  391 - 395   (ASN  196  - ASN  200  <=> TYR  394  - PRO  398 )                          
+   1: q54e-A 3amt-A   201 - 204 <=>  397 - 400   (ASN  201  - ALA  204  <=> ALA  400  - HIS  403 )                          
+
+# Translation-rotation matrices
+-matrix  "q54e-A 3amt-A  U(1,.)  -0.491692  0.870768 -0.001613          -68.372002"
+-matrix  "q54e-A 3amt-A  U(2,.)  -0.541633 -0.307291 -0.782436           94.401566"
+-matrix  "q54e-A 3amt-A  U(3,.)  -0.681816 -0.383844  0.622729           -9.173628"
+

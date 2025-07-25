@@ -1,0 +1,27 @@
+# Job: test
+# Query: a0a8A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ig2-B  3.2  7.8  115   272   10  MOL_ID: 1; MOLECULE: PHOSPHATIDATE CYTIDYLYLTRANSFERASE, MITOCHONDRIAL
+
+# Structural equivalences
+   1: a0a8-A 6ig2-B    16 -  20 <=>    2 -   6   (VAL   16  - PHE   20  <=> THR   34  - LEU   38 )                          
+   1: a0a8-A 6ig2-B    31 -  44 <=>   22 -  35   (ALA   31  - PHE   44  <=> GLU   54  - TYR   67 )                          
+   1: a0a8-A 6ig2-B    47 -  50 <=>   36 -  39   (THR   47  - GLU   50  <=> PHE   68  - PRO   71 )                          
+   1: a0a8-A 6ig2-B    56 -  68 <=>   40 -  52   (CYS   56  - ASP   68  <=> ILE   72  - ARG   84 )                          
+   1: a0a8-A 6ig2-B    75 -  85 <=>   53 -  63   (ASN   75  - GLN   85  <=> ASN   93  - GLU  103 )                          
+   1: a0a8-A 6ig2-B   126 - 137 <=>   66 -  77   (SER  126  - ASN  137  <=> VAL  106  - PRO  117 )                          
+   1: a0a8-A 6ig2-B   149 - 152 <=>   79 -  82   (LEU  149  - HIS  152  <=> HIS  119  - PHE  122 )                          
+   1: a0a8-A 6ig2-B   154 - 160 <=>  100 - 106   (VAL  154  - VAL  160  <=> TYR  143  - GLU  149 )                          
+   1: a0a8-A 6ig2-B   168 - 179 <=>  109 - 120   (TRP  168  - ALA  179  <=> GLY  152  - LYS  163 )                          
+   1: a0a8-A 6ig2-B   184 - 187 <=>  127 - 130   (ILE  184  - GLU  187  <=> LYS  170  - ASN  173 )                          
+   1: a0a8-A 6ig2-B   204 - 213 <=>  133 - 142   (ARG  204  - GLN  213  <=> TYR  176  - VAL  185 )                          
+   1: a0a8-A 6ig2-B   245 - 248 <=>  200 - 203   (THR  245  - HIS  248  <=> ASN  243  - LYS  246 )                          
+   1: a0a8-A 6ig2-B   249 - 255 <=>  206 - 212   (ILE  249  - TYR  255  <=> ASN  249  - ILE  255 )                          
+   1: a0a8-A 6ig2-B   262 - 265 <=>  245 - 248   (TRP  262  - GLU  265  <=> ASP  288  - ARG  291 )                          
+   1: a0a8-A 6ig2-B   316 - 319 <=>  251 - 254   (TRP  316  - ASN  319  <=> SER  294  - GLN  297 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a8-A 6ig2-B  U(1,.)   0.240356 -0.909218 -0.339928           59.294979"
+-matrix  "a0a8-A 6ig2-B  U(2,.)   0.774161  0.390815 -0.497934           13.005052"
+-matrix  "a0a8-A 6ig2-B  U(3,.)   0.585580 -0.143478  0.797816          -60.075714"
+

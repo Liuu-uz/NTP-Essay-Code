@@ -1,0 +1,21 @@
+# Job: test
+# Query: a6uqA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-A  3.2  6.5   73   257    7  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: a6uq-A 3wdl-A    71 -  95 <=>    1 -  25   (LEU   71  - PHE   95  <=> ILE    4  - MET   28 )                          
+   1: a6uq-A 3wdl-A   102 - 120 <=>   27 -  45   (PHE  102  - ASN  120  <=> ALA   30  - GLY   48 )                          
+   1: a6uq-A 3wdl-A   139 - 143 <=>   49 -  53   (GLU  139  - ARG  143  <=> ILE   52  - GLU   56 )                          
+   1: a6uq-A 3wdl-A   145 - 148 <=>   58 -  61   (LYS  145  - ASP  148  <=> ALA   61  - ALA   64 )                          
+   1: a6uq-A 3wdl-A   149 - 152 <=>   64 -  67   (THR  149  - GLU  152  <=> LEU   67  - GLU   70 )                          
+   1: a6uq-A 3wdl-A   180 - 183 <=>   71 -  74   (PHE  180  - ILE  183  <=> ILE   74  - ASN   77 )                          
+   1: a6uq-A 3wdl-A   199 - 202 <=>   80 -  83   (VAL  199  - LYS  202  <=> LEU   83  - LYS   86 )                          
+   1: a6uq-A 3wdl-A   219 - 222 <=>  195 - 198   (GLY  219  - PHE  222  <=> ASP  198  - VAL  201 )                          
+   1: a6uq-A 3wdl-A   240 - 243 <=>  209 - 212   (THR  240  - ILE  243  <=> ARG  212  - LYS  215 )                          
+
+# Translation-rotation matrices
+-matrix  "a6uq-A 3wdl-A  U(1,.)   0.124793  0.909613  0.396272           12.680368"
+-matrix  "a6uq-A 3wdl-A  U(2,.)  -0.389472  0.412246 -0.823629           63.592159"
+-matrix  "a6uq-A 3wdl-A  U(3,.)  -0.912545 -0.051554  0.405714           35.213715"
+

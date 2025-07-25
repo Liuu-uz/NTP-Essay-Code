@@ -1,0 +1,19 @@
+# Job: test
+# Query: q67zA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7y7p-B  2.2 12.8   67   908   15  MOL_ID: 1; MOLECULE: RNA-DEPENDENT RNA POLYMERASE; CHAIN: A, B; EC: 2.
+
+# Structural equivalences
+   1: q67z-A 7y7p-B    69 -  75 <=>  131 - 137   (PRO   69  - SER   75  <=> LEU  539  - SER  545 )                          
+   1: q67z-A 7y7p-B    97 - 102 <=>  386 - 391   (ILE   97  - ILE  102  <=> ILE  816  - ILE  821 )                          
+   1: q67z-A 7y7p-B   116 - 122 <=>  605 - 611   (ILE  116  - LEU  122  <=> ASP 1035  - LYS 1041 )                          
+   1: q67z-A 7y7p-B   129 - 133 <=>  645 - 649   (SER  129  - GLY  133  <=> PHE 1075  - PRO 1079 )                          
+   1: q67z-A 7y7p-B   136 - 153 <=>  650 - 667   (PHE  136  - LEU  153  <=> ASN 1080  - ASN 1097 )                          
+   1: q67z-A 7y7p-B   173 - 190 <=>  668 - 685   (GLU  173  - ILE  190  <=> SER 1098  - VAL 1115 )                          
+   1: q67z-A 7y7p-B   192 - 197 <=>  686 - 691   (TYR  192  - PRO  197  <=> ASP 1116  - GLY 1121 )                          
+
+# Translation-rotation matrices
+-matrix  "q67z-A 7y7p-B  U(1,.)  -0.280856  0.758933  0.587487          -43.572826"
+-matrix  "q67z-A 7y7p-B  U(2,.)  -0.669404 -0.593556  0.446755          -10.167500"
+-matrix  "q67z-A 7y7p-B  U(3,.)   0.687763 -0.267792  0.674736         -173.339447"
+

@@ -1,0 +1,23 @@
+# Job: test
+# Query: q753A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3f2b-A  2.9 12.1   76   994    9  MOL_ID: 1; MOLECULE: DNA-DIRECTED DNA POLYMERASE III ALPHA CHAIN; CHAI
+
+# Structural equivalences
+   1: q753-A 3f2b-A    14 -  20 <=>  653 - 659   (PHE   14  - ARG   20  <=> ASP 1103  - ARG 1109 )                          
+   1: q753-A 3f2b-A    35 -  39 <=>  856 - 860   (SER   35  - THR   39  <=> ALA 1306  - ASP 1310 )                          
+   1: q753-A 3f2b-A   126 - 141 <=>  866 - 881   (ASN  126  - LEU  141  <=> LYS 1316  - LYS 1331 )                          
+   1: q753-A 3f2b-A   143 - 146 <=>  882 - 885   (VAL  143  - LEU  146  <=> GLY 1332  - ALA 1335 )                          
+   1: q753-A 3f2b-A   169 - 172 <=>  886 - 889   (HIS  169  - ASN  172  <=> THR 1336  - GLU 1339 )                          
+   1: q753-A 3f2b-A   173 - 190 <=>  891 - 908   (GLY  173  - LYS  190  <=> SER 1341  - SER 1358 )                          
+   1: q753-A 3f2b-A   192 - 195 <=>  927 - 930   (VAL  192  - VAL  195  <=> ASN 1377  - ILE 1380 )                          
+   1: q753-A 3f2b-A   201 - 205 <=>  931 - 935   (SER  201  - THR  205  <=> PRO 1381  - ALA 1385 )                          
+   1: q753-A 3f2b-A   207 - 211 <=>  939 - 943   (ALA  207  - GLY  211  <=> LEU 1389  - VAL 1393 )                          
+   1: q753-A 3f2b-A   228 - 231 <=>  945 - 948   (ALA  228  - LEU  231  <=> GLN 1395  - VAL 1398 )                          
+   1: q753-A 3f2b-A   275 - 278 <=>  980 - 983   (LEU  275  - LEU  278  <=> GLY 1430  - ASP 1433 )                          
+
+# Translation-rotation matrices
+-matrix  "q753-A 3f2b-A  U(1,.)   0.840121 -0.408659  0.356643           -1.746220"
+-matrix  "q753-A 3f2b-A  U(2,.)   0.335919  0.908264  0.249430          -36.843102"
+-matrix  "q753-A 3f2b-A  U(3,.)  -0.425858 -0.089748  0.900328           18.296179"
+

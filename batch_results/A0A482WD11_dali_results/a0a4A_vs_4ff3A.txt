@@ -1,0 +1,25 @@
+# Job: test
+# Query: a0a4A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  2.1 10.0  102  1095    8  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a0a4-A 4ff3-A     1 -   4 <=>  611 - 614   (MET    1  - ILE    4  <=> THR  616  - LEU  619 )                          
+   1: a0a4-A 4ff3-A    10 -  15 <=>  668 - 673   (LYS   10  - LEU   15  <=> LEU  673  - TYR  678 )                          
+   1: a0a4-A 4ff3-A    16 -  44 <=>  808 - 836   (SER   16  - LEU   44  <=> THR  813  - GLU  841 )                          
+   1: a0a4-A 4ff3-A   113 - 118 <=>  839 - 844   (ARG  113  - PHE  118  <=> LYS  844  - LYS  849 )                          
+   1: a0a4-A 4ff3-A   136 - 139 <=>  847 - 850   (TRP  136  - GLY  139  <=> ASP  852  - THR  855 )                          
+   1: a0a4-A 4ff3-A   142 - 148 <=>  852 - 858   (HIS  142  - LEU  148  <=> LYS  857  - GLN  863 )                          
+   1: a0a4-A 4ff3-A   155 - 158 <=>  859 - 862   (ARG  155  - THR  158  <=> ALA  864  - ASN  867 )                          
+   1: a0a4-A 4ff3-A   162 - 165 <=>  863 - 866   (GLY  162  - GLU  165  <=> ASN  868  - PRO  871 )                          
+   1: a0a4-A 4ff3-A   180 - 183 <=>  867 - 870   (CYS  180  - GLU  183  <=> MET  872  - THR  875 )                          
+   1: a0a4-A 4ff3-A   184 - 193 <=>  875 - 884   (ILE  184  - CYS  193  <=> PHE  880  - GLU  889 )                          
+   1: a0a4-A 4ff3-A   227 - 234 <=>  893 - 900   (PRO  227  - ARG  234  <=> ASN  898  - VAL  905 )                          
+   1: a0a4-A 4ff3-A   265 - 269 <=>  944 - 948   (ARG  265  - GLY  269  <=> ILE  949  - MET  953 )                          
+   1: a0a4-A 4ff3-A   332 - 342 <=>  951 - 961   (ILE  332  - ASN  342  <=> GLY  956  - LYS  966 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a4-A 4ff3-A  U(1,.)  -0.346087  0.929836 -0.125016           75.162323"
+-matrix  "a0a4-A 4ff3-A  U(2,.)  -0.008943 -0.136514 -0.990598          376.851898"
+-matrix  "a0a4-A 4ff3-A  U(3,.)  -0.938160 -0.341715  0.055562          -17.351160"
+

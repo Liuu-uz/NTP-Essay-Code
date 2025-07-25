@@ -1,0 +1,23 @@
+# Job: test
+# Query: a0kaA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7tgk-E  4.0  4.9   89   593    7  MOL_ID: 1; MOLECULE: DESFERRIOXAMINE SYNTHETASE DESD; CHAIN: D, B, E, 
+
+# Structural equivalences
+   1: a0ka-A 7tgk-E     5 -   9 <=>  411 - 415   (PRO    5  - SER    9  <=> ALA  410  - TRP  414 )                          
+   1: a0ka-A 7tgk-E    10 -  14 <=>  417 - 421   (SER   10  - PHE   14  <=> ARG  416  - ARG  420 )                          
+   1: a0ka-A 7tgk-E    15 -  27 <=>  423 - 435   (ASP   15  - HIS   27  <=> TYR  422  - ASP  434 )                          
+   1: a0ka-A 7tgk-E    29 -  35 <=>  468 - 474   (ARG   29  - ALA   35  <=> VAL  467  - VAL  473 )                          
+   1: a0ka-A 7tgk-E    38 -  41 <=>  475 - 478   (ALA   38  - LEU   41  <=> LEU  474  - GLU  477 )                          
+   1: a0ka-A 7tgk-E    56 -  60 <=>  484 - 488   (GLU   56  - SER   60  <=> ALA  483  - GLU  487 )                          
+   1: a0ka-A 7tgk-E    62 -  75 <=>  489 - 502   (ASP   62  - GLU   75  <=> ASP  488  - CYS  501 )                          
+   1: a0ka-A 7tgk-E    77 -  80 <=>  503 - 506   (ASP   77  - ASN   80  <=> PHE  502  - PHE  505 )                          
+   1: a0ka-A 7tgk-E    82 - 100 <=>  519 - 537   (ASP   82  - HIS  100  <=> GLU  518  - HIS  536 )                          
+   1: a0ka-A 7tgk-E   101 - 109 <=>  539 - 547   (ARG  101  - PHE  109  <=> GLU  538  - TYR  546 )                          
+   1: a0ka-A 7tgk-E   112 - 115 <=>  548 - 551   (SER  112  - CYS  115  <=> ASP  547  - ALA  550 )                          
+
+# Translation-rotation matrices
+-matrix  "a0ka-A 7tgk-E  U(1,.)  -0.943645 -0.328885  0.037012           97.880081"
+-matrix  "a0ka-A 7tgk-E  U(2,.)  -0.039071  0.221751  0.974320          -29.769279"
+-matrix  "a0ka-A 7tgk-E  U(3,.)  -0.328646  0.917966 -0.222104           13.713275"
+

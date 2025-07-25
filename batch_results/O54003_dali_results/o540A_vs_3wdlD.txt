@@ -1,0 +1,21 @@
+# Job: test
+# Query: o540A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-D  3.0  4.9   76   249    7  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: o540-A 3wdl-D   507 - 510 <=>    3 -   6   (LEU  507  - LYS  510  <=> LYS    6  - PRO    9 )                          
+   1: o540-A 3wdl-D   512 - 530 <=>    7 -  25   (VAL  512  - GLY  530  <=> ARG   10  - MET   28 )                          
+   1: o540-A 3wdl-D   537 - 555 <=>   27 -  45   (LEU  537  - LEU  555  <=> ALA   30  - GLY   48 )                          
+   1: o540-A 3wdl-D   565 - 576 <=>   48 -  59   (GLU  565  - SER  576  <=> THR   51  - ALA   62 )                          
+   1: o540-A 3wdl-D   579 - 584 <=>   60 -  65   (ASN  579  - ARG  584  <=> VAL   63  - LEU   68 )                          
+   1: o540-A 3wdl-D   587 - 590 <=>   66 -  69   (HIS  587  - GLU  590  <=> ALA   69  - PRO   72 )                          
+   1: o540-A 3wdl-D   598 - 601 <=>  142 - 145   (LYS  598  - VAL  601  <=> ASN  149  - TRP  152 )                          
+   1: o540-A 3wdl-D   604 - 607 <=>  163 - 166   (ASN  604  - VAL  607  <=> LEU  170  - MET  173 )                          
+   1: o540-A 3wdl-D   633 - 636 <=>  210 - 213   (SER  633  - HIS  636  <=> TYR  217  - GLU  220 )                          
+
+# Translation-rotation matrices
+-matrix  "o540-A 3wdl-D  U(1,.)   0.687527  0.474897 -0.549345           22.879036"
+-matrix  "o540-A 3wdl-D  U(2,.)  -0.484758 -0.263100 -0.834139          -13.995150"
+-matrix  "o540-A 3wdl-D  U(3,.)  -0.540663  0.839792  0.049322          -10.558453"
+

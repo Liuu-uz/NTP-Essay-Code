@@ -1,0 +1,15 @@
+# Job: test
+# Query: a5ulA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ci7-F  3.2  5.4   47   362   13  MOL_ID: 1; MOLECULE: YCAO; CHAIN: A, B, C, D, E, F; ENGINEERED: YES   
+
+# Structural equivalences
+   1: a5ul-A 6ci7-F    40 -  43 <=>    4 -   7   (ARG   40  - ALA   43  <=> ILE    5  - ASP    8 )                          
+   1: a5ul-A 6ci7-F   131 - 143 <=>   43 -  55   (ASN  131  - SER  143  <=> GLY   44  - GLN   56 )                          
+   1: a5ul-A 6ci7-F   213 - 242 <=>   57 -  86   (GLY  213  - ASP  242  <=> GLY   58  - GLU   87 )                          
+
+# Translation-rotation matrices
+-matrix  "a5ul-A 6ci7-F  U(1,.)   0.576650 -0.807543 -0.123894           -6.748517"
+-matrix  "a5ul-A 6ci7-F  U(2,.)   0.782055  0.589479 -0.202247           42.889370"
+-matrix  "a5ul-A 6ci7-F  U(3,.)   0.236356  0.019734  0.971466           -7.266933"
+

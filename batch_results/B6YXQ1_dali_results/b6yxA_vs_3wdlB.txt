@@ -1,0 +1,14 @@
+# Job: test
+# Query: b6yxA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-B 40.9  1.2  253   253   91  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: b6yx-A 3wdl-B     4 - 252 <=>    1 - 249   (ILE    4  - GLY  252  <=> ILE    4  - GLU  252 )                          
+   1: b6yx-A 3wdl-B   254 - 257 <=>  250 - 253   (ILE  254  - LYS  257  <=> GLY  253  - ARG  256 )                          
+
+# Translation-rotation matrices
+-matrix  "b6yx-A 3wdl-B  U(1,.)  -0.641613  0.747119  0.173628           36.072765"
+-matrix  "b6yx-A 3wdl-B  U(2,.)   0.267343  0.005656  0.963585          -30.548717"
+-matrix  "b6yx-A 3wdl-B  U(3,.)   0.718930  0.664666 -0.203366           13.859735"
+

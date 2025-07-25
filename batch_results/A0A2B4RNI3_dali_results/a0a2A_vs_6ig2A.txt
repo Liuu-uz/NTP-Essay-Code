@@ -1,0 +1,27 @@
+# Job: test
+# Query: a0a2A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ig2-A  4.4  5.4  109   272    6  MOL_ID: 1; MOLECULE: PHOSPHATIDATE CYTIDYLYLTRANSFERASE, MITOCHONDRIAL
+
+# Structural equivalences
+   1: a0a2-A 6ig2-A     1 -  11 <=>   25 -  35   (MET    1  - ASP   11  <=> LEU   57  - TYR   67 )                          
+   1: a0a2-A 6ig2-A    13 -  16 <=>   36 -  39   (GLU   13  - CYS   16  <=> PHE   68  - PRO   71 )                          
+   1: a0a2-A 6ig2-A    24 -  29 <=>   41 -  46   (VAL   24  - SER   29  <=> ASP   73  - TYR   78 )                          
+   1: a0a2-A 6ig2-A    32 -  37 <=>   47 -  52   (GLU   32  - PRO   37  <=> GLY   79  - ARG   84 )                          
+   1: a0a2-A 6ig2-A    44 -  54 <=>   53 -  63   (THR   44  - ILE   54  <=> ASN   93  - GLU  103 )                          
+   1: a0a2-A 6ig2-A   141 - 149 <=>   64 -  72   (SER  141  - HIS  149  <=> ASP  104  - ASN  112 )                          
+   1: a0a2-A 6ig2-A   151 - 156 <=>   76 -  81   (TYR  151  - GLU  156  <=> ASN  116  - SER  121 )                          
+   1: a0a2-A 6ig2-A   161 - 167 <=>   97 - 103   (GLY  161  - GLN  167  <=> THR  140  - THR  146 )                          
+   1: a0a2-A 6ig2-A   168 - 183 <=>  105 - 120   (TYR  168  - LEU  183  <=> VAL  148  - LYS  163 )                          
+   1: a0a2-A 6ig2-A   220 - 223 <=>  121 - 124   (VAL  220  - VAL  223  <=> ASP  164  - GLU  167 )                          
+   1: a0a2-A 6ig2-A   234 - 237 <=>  130 - 133   (GLU  234  - PHE  237  <=> ASN  173  - TYR  176 )                          
+   1: a0a2-A 6ig2-A   238 - 241 <=>  135 - 138   (SER  238  - ALA  241  <=> ALA  178  - PHE  181 )                          
+   1: a0a2-A 6ig2-A   251 - 255 <=>  207 - 211   (ALA  251  - LYS  255  <=> ILE  250  - GLN  254 )                          
+   1: a0a2-A 6ig2-A   283 - 293 <=>  214 - 224   (LYS  283  - ARG  293  <=> PHE  257  - TYR  267 )                          
+   1: a0a2-A 6ig2-A   304 - 308 <=>  241 - 245   (GLY  304  - LEU  308  <=> MET  284  - ASP  288 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a2-A 6ig2-A  U(1,.)  -0.988612  0.051946 -0.141240            5.914935"
+-matrix  "a0a2-A 6ig2-A  U(2,.)   0.130781  0.760894 -0.635560           -1.907477"
+-matrix  "a0a2-A 6ig2-A  U(3,.)   0.074454 -0.646793 -0.759022           49.380859"
+

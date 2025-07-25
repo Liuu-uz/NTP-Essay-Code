@@ -1,0 +1,19 @@
+# Job: test
+# Query: a4zcA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  3.4  3.7   64   417    8  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: a4zc-A 3amt-A   698 - 705 <=>    3 -  10   (ASN  698  - PHE  705  <=> ARG    2  - ASP    9 )                          
+   1: a4zc-A 3amt-A   707 - 710 <=>   53 -  56   (HIS  707  - TYR  710  <=> LYS   52  - GLY   55 )                          
+   1: a4zc-A 3amt-A   717 - 720 <=>   58 -  61   (PRO  717  - THR  720  <=> GLY   57  - SER   60 )                          
+   1: a4zc-A 3amt-A   722 - 727 <=>   62 -  67   (GLY  722  - SER  727  <=> PHE   61  - ASP   66 )                          
+   1: a4zc-A 3amt-A   730 - 750 <=>   68 -  88   (MET  730  - VAL  750  <=> ASP   67  - ASP   87 )                          
+   1: a4zc-A 3amt-A   814 - 828 <=>   89 - 103   (LYS  814  - ASP  828  <=> GLU   88  - ALA  102 )                          
+   1: a4zc-A 3amt-A   830 - 835 <=>  132 - 137   (VAL  830  - GLU  835  <=> ILE  131  - HIS  136 )                          
+
+# Translation-rotation matrices
+-matrix  "a4zc-A 3amt-A  U(1,.)   0.228806  0.955051  0.188482         -120.566223"
+-matrix  "a4zc-A 3amt-A  U(2,.)   0.853288 -0.289957  0.433388          -40.424698"
+-matrix  "a4zc-A 3amt-A  U(3,.)   0.468560  0.061668 -0.881277           96.103340"
+

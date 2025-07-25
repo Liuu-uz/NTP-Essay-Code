@@ -1,0 +1,24 @@
+# Job: test
+# Query: a4g0A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-B  3.3 11.0   94  1095    3  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: a4g0-A 4ff3-B     1 -   4 <=>    2 -   5   (MET    1  - ASN    4  <=> GLU    7  - GLU   10 )                          
+   1: a4g0-A 4ff3-B     5 -  10 <=>    8 -  13   (ASP    5  - GLU   10  <=> ASP   13  - SER   18 )                          
+   1: a4g0-A 4ff3-B    13 -  18 <=>   24 -  29   (ILE   13  - THR   18  <=> GLY   29  - PHE   34 )                          
+   1: a4g0-A 4ff3-B    22 -  25 <=>   95 -  98   (VAL   22  - LEU   25  <=> ALA  100  - LEU  103 )                          
+   1: a4g0-A 4ff3-B    58 -  79 <=>  145 - 166   (ILE   58  - GLU   79  <=> GLN  150  - ALA  171 )                          
+   1: a4g0-A 4ff3-B    81 - 100 <=>  196 - 215   (TYR   81  - TYR  100  <=> MET  201  - LEU  220 )                          
+   1: a4g0-A 4ff3-B   103 - 106 <=>  229 - 232   (ARG  103  - ILE  106  <=> ILE  234  - ALA  237 )                          
+   1: a4g0-A 4ff3-B   109 - 112 <=>  248 - 251   (TYR  109  - TYR  112  <=> VAL  253  - ILE  256 )                          
+   1: a4g0-A 4ff3-B   222 - 227 <=>  253 - 258   (ILE  222  - ASN  227  <=> ASP  258  - ASP  263 )                          
+   1: a4g0-A 4ff3-B   289 - 292 <=>  363 - 366   (SER  289  - ARG  292  <=> ASN  368  - LEU  371 )                          
+   1: a4g0-A 4ff3-B   294 - 297 <=>  768 - 771   (ASP  294  - ALA  297  <=> LYS  773  - THR  776 )                          
+   1: a4g0-A 4ff3-B   306 - 315 <=>  775 - 784   (LEU  306  - ASN  315  <=> GLU  780  - MET  789 )                          
+
+# Translation-rotation matrices
+-matrix  "a4g0-A 4ff3-B  U(1,.)   0.091422  0.707346  0.700931         -222.888962"
+-matrix  "a4g0-A 4ff3-B  U(2,.)   0.497688  0.577211 -0.647406          269.887573"
+-matrix  "a4g0-A 4ff3-B  U(3,.)  -0.862525  0.408032 -0.299268          177.614105"
+

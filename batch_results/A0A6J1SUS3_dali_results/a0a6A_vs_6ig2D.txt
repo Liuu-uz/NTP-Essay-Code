@@ -1,0 +1,27 @@
+# Job: test
+# Query: a0a6A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ig2-D  3.0  6.2  114   278   14  MOL_ID: 1; MOLECULE: PHOSPHATIDATE CYTIDYLYLTRANSFERASE, MITOCHONDRIAL
+
+# Structural equivalences
+   1: a0a6-A 6ig2-D    36 -  51 <=>   22 -  37   (VAL   36  - ILE   51  <=> GLU   54  - GLN   69 )                          
+   1: a0a6-A 6ig2-D    65 -  78 <=>   40 -  53   (PHE   65  - LEU   78  <=> ILE   72  - GLN   85 )                          
+   1: a0a6-A 6ig2-D    83 -  93 <=>   54 -  64   (PRO   83  - THR   93  <=> ASN   93  - GLU  103 )                          
+   1: a0a6-A 6ig2-D   147 - 160 <=>   65 -  78   (LEU  147  - ALA  160  <=> ASP  104  - PRO  117 )                          
+   1: a0a6-A 6ig2-D   182 - 186 <=>   79 -  83   (GLY  182  - SER  186  <=> SER  118  - PHE  122 )                          
+   1: a0a6-A 6ig2-D   188 - 191 <=>  104 - 107   (PRO  188  - THR  191  <=> TYR  143  - THR  146 )                          
+   1: a0a6-A 6ig2-D   192 - 195 <=>  109 - 112   (VAL  192  - ASN  195  <=> VAL  148  - GLU  151 )                          
+   1: a0a6-A 6ig2-D   208 - 216 <=>  113 - 121   (GLN  208  - ALA  216  <=> GLY  152  - THR  160 )                          
+   1: a0a6-A 6ig2-D   217 - 220 <=>  125 - 128   (PHE  217  - GLN  220  <=> ASP  164  - GLU  167 )                          
+   1: a0a6-A 6ig2-D   221 - 225 <=>  130 - 134   (THR  221  - PRO  225  <=> LEU  169  - ASN  173 )                          
+   1: a0a6-A 6ig2-D   266 - 269 <=>  137 - 140   (LEU  266  - HIS  269  <=> TYR  176  - GLY  179 )                          
+   1: a0a6-A 6ig2-D   270 - 273 <=>  142 - 145   (ASN  270  - SER  273  <=> PHE  181  - PRO  184 )                          
+   1: a0a6-A 6ig2-D   279 - 286 <=>  207 - 214   (LEU  279  - LEU  286  <=> LYS  246  - LYS  253 )                          
+   1: a0a6-A 6ig2-D   308 - 314 <=>  215 - 221   (LYS  308  - GLU  314  <=> GLN  254  - LYS  260 )                          
+   1: a0a6-A 6ig2-D   315 - 319 <=>  223 - 227   (LYS  315  - ASN  319  <=> TYR  262  - LEU  266 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a6-A 6ig2-D  U(1,.)   0.978421  0.017414 -0.205885           -8.496638"
+-matrix  "a0a6-A 6ig2-D  U(2,.)  -0.199043 -0.187927 -0.961803           30.497330"
+-matrix  "a0a6-A 6ig2-D  U(3,.)  -0.055441  0.982029 -0.180406          -49.873970"
+

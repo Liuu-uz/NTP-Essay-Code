@@ -1,0 +1,28 @@
+# Job: test
+# Query: a4zcA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  4.0  5.6  107   745    4  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a4zc-A 6t0v-B     6 -   9 <=>   42 -  45   (LEU    6  - SER    9  <=> THR   42  - ARG   45 )                          
+   1: a4zc-A 6t0v-B    11 -  14 <=>   78 -  81   (ALA   11  - TYR   14  <=> GLU   78  - GLY   81 )                          
+   1: a4zc-A 6t0v-B    24 -  27 <=>  125 - 128   (ASP   24  - ASP   27  <=> GLY  125  - THR  128 )                          
+   1: a4zc-A 6t0v-B    49 -  52 <=>  226 - 229   (SER   49  - THR   52  <=> THR  226  - LYS  229 )                          
+   1: a4zc-A 6t0v-B    58 -  65 <=>  232 - 239   (LYS   58  - GLU   65  <=> GLU  232  - ARG  239 )                          
+   1: a4zc-A 6t0v-B   578 - 583 <=>  275 - 280   (PHE  578  - THR  583  <=> GLY  275  - ALA  280 )                          
+   1: a4zc-A 6t0v-B   621 - 624 <=>  505 - 508   (ARG  621  - TYR  624  <=> PHE  505  - GLU  508 )                          
+   1: a4zc-A 6t0v-B   626 - 629 <=>  510 - 513   (PHE  626  - LYS  629  <=> PRO  510  - GLY  513 )                          
+   1: a4zc-A 6t0v-B   650 - 668 <=>  517 - 535   (HIS  650  - LEU  668  <=> ASN  517  - ILE  535 )                          
+   1: a4zc-A 6t0v-B   669 - 672 <=>  538 - 541   (GLN  669  - LEU  672  <=> ASP  538  - PRO  541 )                          
+   1: a4zc-A 6t0v-B   673 - 691 <=>  543 - 561   (THR  673  - ILE  691  <=> THR  543  - CYS  561 )                          
+   1: a4zc-A 6t0v-B   695 - 699 <=>  624 - 628   (ASP  695  - TYR  699  <=> LEU  624  - ASN  628 )                          
+   1: a4zc-A 6t0v-B   701 - 706 <=>  634 - 639   (ILE  701  - ARG  706  <=> HIS  634  - SER  639 )                          
+   1: a4zc-A 6t0v-B   716 - 720 <=>  641 - 645   (VAL  716  - THR  720  <=> LYS  653  - TYR  657 )                          
+   1: a4zc-A 6t0v-B   742 - 748 <=>  679 - 685   (ARG  742  - MET  748  <=> LYS  691  - GLU  697 )                          
+   1: a4zc-A 6t0v-B   749 - 752 <=>  691 - 694   (ASP  749  - THR  752  <=> SER  703  - ARG  706 )                          
+
+# Translation-rotation matrices
+-matrix  "a4zc-A 6t0v-B  U(1,.)  -0.558343  0.416022  0.717759          -79.194756"
+-matrix  "a4zc-A 6t0v-B  U(2,.)   0.780872  0.555715  0.285340         -215.210281"
+-matrix  "a4zc-A 6t0v-B  U(3,.)  -0.280162  0.719796 -0.635140           48.737923"
+

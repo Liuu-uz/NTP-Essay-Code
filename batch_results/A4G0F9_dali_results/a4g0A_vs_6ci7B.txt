@@ -1,0 +1,20 @@
+# Job: test
+# Query: a4g0A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ci7-B  2.3  4.1   65   364    3  MOL_ID: 1; MOLECULE: YCAO; CHAIN: A, B, C, D, E, F; ENGINEERED: YES   
+
+# Structural equivalences
+   1: a4g0-A 6ci7-B   116 - 119 <=>   24 -  27   (GLU  116  - PRO  119  <=> ARG   25  - GLU   28 )                          
+   1: a4g0-A 6ci7-B   127 - 135 <=>   35 -  43   (GLU  127  - ALA  135  <=> VAL   36  - GLY   44 )                          
+   1: a4g0-A 6ci7-B   149 - 161 <=>   44 -  56   (LYS  149  - CYS  161  <=> PRO   45  - TYR   57 )                          
+   1: a4g0-A 6ci7-B   200 - 209 <=>   57 -  66   (GLN  200  - GLU  209  <=> GLY   58  - THR   67 )                          
+   1: a4g0-A 6ci7-B   216 - 230 <=>   69 -  83   (VAL  216  - SER  230  <=> ILE   70  - ALA   84 )                          
+   1: a4g0-A 6ci7-B   275 - 279 <=>  243 - 247   (PRO  275  - GLN  279  <=> UNK  244  - ARG  248 )                          
+   1: a4g0-A 6ci7-B   280 - 283 <=>  250 - 253   (VAL  280  - ARG  283  <=> LEU  251  - ALA  254 )                          
+   1: a4g0-A 6ci7-B   311 - 315 <=>  309 - 313   (LYS  311  - ASN  315  <=> GLU  319  - GLU  323 )                          
+
+# Translation-rotation matrices
+-matrix  "a4g0-A 6ci7-B  U(1,.)  -0.618533  0.495529  0.609809          -52.592484"
+-matrix  "a4g0-A 6ci7-B  U(2,.)  -0.678851  0.053824 -0.732300           45.655548"
+-matrix  "a4g0-A 6ci7-B  U(3,.)  -0.395698 -0.866922  0.303099           -3.601985"
+

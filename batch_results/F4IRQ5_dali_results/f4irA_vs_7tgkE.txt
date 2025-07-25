@@ -1,0 +1,26 @@
+# Job: test
+# Query: f4irA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7tgk-E  2.3  6.0  104   593    6  MOL_ID: 1; MOLECULE: DESFERRIOXAMINE SYNTHETASE DESD; CHAIN: D, B, E, 
+
+# Structural equivalences
+   1: f4ir-A 7tgk-E    79 -  84 <=>    3 -   8   (ASP   79  - SER   84  <=> SER    2  - VAL    7 )                          
+   1: f4ir-A 7tgk-E    97 - 113 <=>   12 -  28   (ALA   97  - PRO  113  <=> SER   11  - LEU   27 )                          
+   1: f4ir-A 7tgk-E   126 - 129 <=>   93 -  96   (SER  126  - PHE  129  <=> LEU   92  - PHE   95 )                          
+   1: f4ir-A 7tgk-E   131 - 160 <=>  101 - 130   (LYS  131  - LYS  160  <=> HIS  100  - LYS  129 )                          
+   1: f4ir-A 7tgk-E   163 - 166 <=>  131 - 134   (PHE  163  - ARG  166  <=> PRO  130  - THR  133 )                          
+   1: f4ir-A 7tgk-E   372 - 375 <=>  240 - 243   (VAL  372  - LEU  375  <=> HIS  239  - GLN  242 )                          
+   1: f4ir-A 7tgk-E   380 - 383 <=>  245 - 248   (ASP  380  - PHE  383  <=> TRP  244  - LEU  247 )                          
+   1: f4ir-A 7tgk-E   389 - 392 <=>  302 - 305   (ASP  389  - SER  392  <=> PHE  301  - GLY  304 )                          
+   1: f4ir-A 7tgk-E   460 - 463 <=>  307 - 310   (ARG  460  - ASP  463  <=> SER  306  - TYR  309 )                          
+   1: f4ir-A 7tgk-E   465 - 468 <=>  311 - 314   (HIS  465  - ASN  468  <=> MET  310  - THR  313 )                          
+   1: f4ir-A 7tgk-E   470 - 473 <=>  315 - 318   (TYR  470  - CYS  473  <=> PRO  314  - ASN  317 )                          
+   1: f4ir-A 7tgk-E   502 - 507 <=>  321 - 326   (LEU  502  - PHE  507  <=> LEU  320  - ASP  325 )                          
+   1: f4ir-A 7tgk-E   517 - 520 <=>  342 - 345   (ILE  517  - MET  520  <=> ARG  341  - VAL  344 )                          
+   1: f4ir-A 7tgk-E   551 - 559 <=>  347 - 355   (ILE  551  - GLU  559  <=> TYR  346  - ALA  354 )                          
+
+# Translation-rotation matrices
+-matrix  "f4ir-A 7tgk-E  U(1,.)   0.342573  0.937414 -0.062441          -30.901003"
+-matrix  "f4ir-A 7tgk-E  U(2,.)   0.830046 -0.270864  0.487500          -48.289162"
+-matrix  "f4ir-A 7tgk-E  U(3,.)   0.440077 -0.218833 -0.870887          -24.204185"
+

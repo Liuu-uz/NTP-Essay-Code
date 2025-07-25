@@ -1,0 +1,31 @@
+# Job: test
+# Query: q5p5A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3f2b-A  3.0 21.1  119   994    9  MOL_ID: 1; MOLECULE: DNA-DIRECTED DNA POLYMERASE III ALPHA CHAIN; CHAI
+
+# Structural equivalences
+   1: q5p5-A 3f2b-A    25 -  30 <=>    7 -  12   (VAL   25  - GLY   30  <=> ILE  239  - ARG  244 )                          
+   1: q5p5-A 3f2b-A    62 -  65 <=>   80 -  83   (SER   62  - GLU   65  <=> THR  312  - ARG  315 )                          
+   1: q5p5-A 3f2b-A    68 -  71 <=>   84 -  87   (PRO   68  - ASP   71  <=> ASP  316  - ILE  319 )                          
+   1: q5p5-A 3f2b-A    89 -  94 <=>  108 - 113   (GLY   89  - LEU   94  <=> GLU  340  - LEU  345 )                          
+   1: q5p5-A 3f2b-A   143 - 146 <=>  118 - 121   (ARG  143  - ILE  146  <=> PRO  350  - GLN  353 )                          
+   1: q5p5-A 3f2b-A   154 - 157 <=>  122 - 125   (ARG  154  - ASP  157  <=> MET  354  - VAL  357 )                          
+   1: q5p5-A 3f2b-A   159 - 183 <=>  126 - 150   (GLU  159  - SER  183  <=> THR  358  - VAL  382 )                          
+   1: q5p5-A 3f2b-A   187 - 201 <=>  151 - 165   (PRO  187  - TYR  201  <=> VAL  383  - GLY  397 )                          
+   1: q5p5-A 3f2b-A   209 - 215 <=>  166 - 172   (VAL  209  - HIS  215  <=> MET  398  - LEU  404 )                          
+   1: q5p5-A 3f2b-A   224 - 227 <=>  182 - 185   (TYR  224  - THR  227  <=> HIS  620  - LEU  623 )                          
+   1: q5p5-A 3f2b-A   276 - 279 <=>  188 - 191   (PRO  276  - ARG  279  <=> GLN  626  - THR  629 )                          
+   1: q5p5-A 3f2b-A   514 - 518 <=>  202 - 206   (GLN  514  - MET  518  <=> LEU  640  - GLN  644 )                          
+   1: q5p5-A 3f2b-A   621 - 624 <=>  215 - 218   (ASP  621  - VAL  624  <=> PRO  653  - VAL  656 )                          
+   1: q5p5-A 3f2b-A   630 - 635 <=>  373 - 378   (PRO  630  - PRO  635  <=> THR  823  - GLY  828 )                          
+   1: q5p5-A 3f2b-A   672 - 675 <=>  387 - 390   (PHE  672  - LEU  675  <=> SER  837  - ARG  840 )                          
+   1: q5p5-A 3f2b-A   676 - 679 <=>  393 - 396   (GLN  676  - ASN  679  <=> GLU  843  - GLY  846 )                          
+   1: q5p5-A 3f2b-A   680 - 683 <=>  399 - 402   (VAL  680  - GLY  683  <=> LEU  849  - LEU  852 )                          
+   1: q5p5-A 3f2b-A   685 - 688 <=>  405 - 408   (ALA  685  - GLU  688  <=> GLU  855  - GLU  858 )                          
+   1: q5p5-A 3f2b-A   714 - 718 <=>  476 - 480   (ALA  714  - ALA  718  <=> GLU  926  - ASP  930 )                          
+
+# Translation-rotation matrices
+-matrix  "q5p5-A 3f2b-A  U(1,.)   0.053974 -0.852787  0.519462           38.931328"
+-matrix  "q5p5-A 3f2b-A  U(2,.)   0.891263  0.275720  0.360039          -36.673988"
+-matrix  "q5p5-A 3f2b-A  U(3,.)  -0.450263  0.443545  0.774940           40.706890"
+

@@ -1,0 +1,28 @@
+# Job: test
+# Query: a1k4A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  2xan-B  4.5  3.9  133   417   15  MOL_ID: 1; MOLECULE: INOSITOL-PENTAKISPHOSPHATE 2-KINASE; CHAIN: A, B;
+
+# Structural equivalences
+   1: a1k4-A 2xan-B   317 - 323 <=>    9 -  15   (ASP  317  - PRO  323  <=> SER   11  - GLY   17 )                          
+   1: a1k4-A 2xan-B   326 - 337 <=>   16 -  27   (ARG  326  - SER  337  <=> GLU   18  - GLY   29 )                          
+   1: a1k4-A 2xan-B   338 - 348 <=>   33 -  43   (TYR  338  - VAL  348  <=> VAL   35  - ARG   45 )                          
+   1: a1k4-A 2xan-B   358 - 369 <=>   67 -  78   (ALA  358  - GLN  369  <=> ASN   80  - ASN   91 )                          
+   1: a1k4-A 2xan-B   370 - 373 <=>   82 -  85   (VAL  370  - VAL  373  <=> PRO   95  - GLY   98 )                          
+   1: a1k4-A 2xan-B   374 - 387 <=>   87 - 100   (GLY  374  - LEU  387  <=> LYS  100  - GLU  113 )                          
+   1: a1k4-A 2xan-B   394 - 398 <=>  107 - 111   (PRO  394  - GLU  398  <=> LYS  120  - LYS  124 )                          
+   1: a1k4-A 2xan-B   402 - 408 <=>  121 - 127   (THR  402  - PHE  408  <=> ALA  134  - HIS  140 )                          
+   1: a1k4-A 2xan-B   418 - 427 <=>  128 - 137   (LYS  418  - THR  427  <=> ASP  141  - SER  150 )                          
+   1: a1k4-A 2xan-B   430 - 433 <=>  224 - 227   (ASN  430  - LEU  433  <=> PHE  240  - PHE  243 )                          
+   1: a1k4-A 2xan-B   437 - 449 <=>  271 - 283   (SER  437  - GLY  449  <=> PHE  287  - GLY  299 )                          
+   1: a1k4-A 2xan-B   451 - 459 <=>  284 - 292   (ALA  451  - ASN  459  <=> VAL  300  - GLN  308 )                          
+   1: a1k4-A 2xan-B   461 - 464 <=>  348 - 351   (PHE  461  - ASP  464  <=> THR  365  - ASP  368 )                          
+   1: a1k4-A 2xan-B   469 - 475 <=>  353 - 359   (ASN  469  - TYR  475  <=> SER  370  - GLN  376 )                          
+   1: a1k4-A 2xan-B   476 - 485 <=>  380 - 389   (GLY  476  - GLU  485  <=> TYR  401  - LEU  410 )                          
+   1: a1k4-A 2xan-B   516 - 519 <=>  393 - 396   (GLY  516  - ASP  519  <=> LYS  414  - GLU  417 )                          
+
+# Translation-rotation matrices
+-matrix  "a1k4-A 2xan-B  U(1,.)   0.468408 -0.708893  0.527319          -32.339497"
+-matrix  "a1k4-A 2xan-B  U(2,.)  -0.773039 -0.617825 -0.143885           82.204941"
+-matrix  "a1k4-A 2xan-B  U(3,.)   0.427790 -0.340241 -0.837396           66.604874"
+

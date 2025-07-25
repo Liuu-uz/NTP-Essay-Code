@@ -1,0 +1,22 @@
+# Job: test
+# Query: q9skA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  3.4  4.6   89   417    4  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: q9sk-A 3amt-A   433 - 436 <=>   14 -  17   (ILE  433  - ASN  436  <=> SER   13  - UNK   16 )                          
+   1: q9sk-A 3amt-A   440 - 454 <=>   18 -  32   (ASP  440  - GLU  454  <=> CYS   17  - ARG   31 )                          
+   1: q9sk-A 3amt-A   455 - 458 <=>   34 -  37   (GLU  455  - GLU  458  <=> LEU   33  - VAL   36 )                          
+   1: q9sk-A 3amt-A   468 - 471 <=>   50 -  53   (VAL  468  - ASP  471  <=> ILE   49  - LYS   52 )                          
+   1: q9sk-A 3amt-A   481 - 501 <=>   64 -  84   (ILE  481  - PHE  501  <=> VAL   63  - ALA   83 )                          
+   1: q9sk-A 3amt-A   506 - 509 <=>   85 -  88   (TYR  506  - SER  509  <=> UNK   84  - ASP   87 )                          
+   1: q9sk-A 3amt-A   513 - 516 <=>   89 -  92   (LYS  513  - GLY  516  <=> GLU   88  - ASN   91 )                          
+   1: q9sk-A 3amt-A   518 - 534 <=>   93 - 109   (LEU  518  - HIS  534  <=> PRO   92  - PHE  108 )                          
+   1: q9sk-A 3amt-A   552 - 555 <=>  113 - 116   (LYS  552  - ASN  555  <=> ALA  112  - ASP  115 )                          
+   1: q9sk-A 3amt-A   561 - 572 <=>  126 - 137   (ILE  561  - SER  572  <=> VAL  125  - HIS  136 )                          
+
+# Translation-rotation matrices
+-matrix  "q9sk-A 3amt-A  U(1,.)   0.823716  0.503066 -0.261563          -30.845419"
+-matrix  "q9sk-A 3amt-A  U(2,.)  -0.071814  0.550158  0.831967         -106.032822"
+-matrix  "q9sk-A 3amt-A  U(3,.)   0.562436 -0.666521  0.489302           -1.099368"
+

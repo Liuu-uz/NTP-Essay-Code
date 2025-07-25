@@ -1,0 +1,25 @@
+# Job: test
+# Query: a0qfA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3f2b-A  2.2 19.5   98   994    5  MOL_ID: 1; MOLECULE: DNA-DIRECTED DNA POLYMERASE III ALPHA CHAIN; CHAI
+
+# Structural equivalences
+   1: a0qf-A 3f2b-A   132 - 154 <=>  375 - 397   (GLY  132  - ALA  154  <=> ARG  825  - ASP  847 )                          
+   1: a0qf-A 3f2b-A   219 - 238 <=>  400 - 419   (THR  219  - VAL  238  <=> PRO  850  - PHE  869 )                          
+   1: a0qf-A 3f2b-A   239 - 242 <=>  422 - 425   (PRO  239  - ASP  242  <=> ILE  872  - ILE  875 )                          
+   1: a0qf-A 3f2b-A   267 - 271 <=>  430 - 434   (LEU  267  - ARG  271  <=> VAL  880  - LEU  884 )                          
+   1: a0qf-A 3f2b-A   278 - 281 <=>  453 - 456   (ILE  278  - GLU  281  <=> THR  903  - GLU  906 )                          
+   1: a0qf-A 3f2b-A   305 - 308 <=>  461 - 464   (LEU  305  - ARG  308  <=> ASN  911  - PRO  914 )                          
+   1: a0qf-A 3f2b-A   320 - 323 <=>  465 - 468   (LYS  320  - THR  323  <=> PRO  915  - VAL  918 )                          
+   1: a0qf-A 3f2b-A   326 - 329 <=>  473 - 476   (ASP  326  - ILE  329  <=> LYS  923  - GLU  926 )                          
+   1: a0qf-A 3f2b-A   332 - 336 <=>  494 - 498   (LYS  332  - ARG  336  <=> CYS  944  - GLY  948 )                          
+   1: a0qf-A 3f2b-A   388 - 396 <=>  771 - 779   (ALA  388  - THR  396  <=> ILE 1221  - LEU 1229 )                          
+   1: a0qf-A 3f2b-A   400 - 403 <=>  799 - 802   (LEU  400  - GLU  403  <=> ALA 1249  - ARG 1252 )                          
+   1: a0qf-A 3f2b-A   405 - 412 <=>  805 - 812   (ILE  405  - GLY  412  <=> ASP 1255  - ASP 1262 )                          
+   1: a0qf-A 3f2b-A   426 - 429 <=>  951 - 954   (ASP  426  - GLN  429  <=> ARG 1401  - GLY 1404 )                          
+
+# Translation-rotation matrices
+-matrix  "a0qf-A 3f2b-A  U(1,.)  -0.638144  0.568619  0.519081           32.815327"
+-matrix  "a0qf-A 3f2b-A  U(2,.)  -0.284438 -0.800623  0.527351           61.803196"
+-matrix  "a0qf-A 3f2b-A  U(3,.)   0.715450  0.188879  0.672649          -38.462513"
+

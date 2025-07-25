@@ -1,0 +1,22 @@
+# Job: test
+# Query: p532A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  3.1  3.6   92  1095   12  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: p532-A 4ff3-A    13 -  18 <=>  451 - 456   (GLU   13  - ILE   18  <=> ASN  456  - SER  461 )                          
+   1: p532-A 4ff3-A    20 -  40 <=>  545 - 565   (PRO   20  - TYR   40  <=> PHE  550  - MET  570 )                          
+   1: p532-A 4ff3-A    44 -  47 <=>  915 - 918   (LYS   44  - ASP   47  <=> ILE  920  - MET  923 )                          
+   1: p532-A 4ff3-A    48 -  60 <=>  921 - 933   (GLU   48  - ASN   60  <=> GLY  926  - THR  938 )                          
+   1: p532-A 4ff3-A    63 -  66 <=>  936 - 939   (LEU   63  - LYS   66  <=> GLY  941  - LYS  944 )                          
+   1: p532-A 4ff3-A    71 -  82 <=>  940 - 951   (LEU   71  - ILE   82  <=> ASN  945  - GLY  956 )                          
+   1: p532-A 4ff3-A    97 - 114 <=>  954 - 971   (LEU   97  - ALA  114  <=> ASP  959  - GLN  976 )                          
+   1: p532-A 4ff3-A   116 - 119 <=>  972 - 975   (PHE  116  - GLU  119  <=> GLY  977  - ILE  980 )                          
+   1: p532-A 4ff3-A   122 - 125 <=> 1042 -1045   (LEU  122  - LYS  125  <=> HIS 1047  - LEU 1050 )                          
+   1: p532-A 4ff3-A   129 - 134 <=> 1054 -1059   (TYR  129  - CYS  134  <=> GLN 1059  - GLY 1064 )                          
+
+# Translation-rotation matrices
+-matrix  "p532-A 4ff3-A  U(1,.)  -0.135694 -0.971878  0.192456         -101.111908"
+-matrix  "p532-A 4ff3-A  U(2,.)  -0.393196 -0.125474 -0.910853          332.202820"
+-matrix  "p532-A 4ff3-A  U(3,.)   0.909387 -0.199270 -0.365112          121.635986"
+

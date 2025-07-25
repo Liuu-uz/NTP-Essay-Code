@@ -1,0 +1,27 @@
+# Job: test
+# Query: a0a4A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ig2-C  4.6  4.0  109   278   11  MOL_ID: 1; MOLECULE: PHOSPHATIDATE CYTIDYLYLTRANSFERASE, MITOCHONDRIAL
+
+# Structural equivalences
+   1: a0a4-A 6ig2-C    20 -  33 <=>   22 -  35   (ILE   20  - THR   33  <=> GLU   54  - TYR   67 )                          
+   1: a0a4-A 6ig2-C    36 -  39 <=>   36 -  39   (GLY   36  - LYS   39  <=> PHE   68  - PRO   71 )                          
+   1: a0a4-A 6ig2-C    49 -  62 <=>   40 -  53   (TYR   49  - LEU   62  <=> ILE   72  - GLN   85 )                          
+   1: a0a4-A 6ig2-C    67 -  76 <=>   54 -  63   (PRO   67  - LEU   76  <=> ASN   93  - VAL  102 )                          
+   1: a0a4-A 6ig2-C   133 - 146 <=>   65 -  78   (VAL  133  - ASN  146  <=> ASP  104  - PRO  117 )                          
+   1: a0a4-A 6ig2-C   173 - 176 <=>  104 - 107   (PRO  173  - THR  176  <=> TYR  143  - THR  146 )                          
+   1: a0a4-A 6ig2-C   177 - 180 <=>  109 - 112   (LEU  177  - CYS  180  <=> VAL  148  - GLU  151 )                          
+   1: a0a4-A 6ig2-C   185 - 193 <=>  113 - 121   (GLU  185  - CYS  193  <=> GLY  152  - THR  160 )                          
+   1: a0a4-A 6ig2-C   194 - 197 <=>  125 - 128   (PHE  194  - GLY  197  <=> ASP  164  - GLU  167 )                          
+   1: a0a4-A 6ig2-C   198 - 202 <=>  131 - 135   (SER  198  - PRO  202  <=> LYS  170  - THR  174 )                          
+   1: a0a4-A 6ig2-C   237 - 245 <=>  137 - 145   (ARG  237  - ARG  245  <=> TYR  176  - PRO  184 )                          
+   1: a0a4-A 6ig2-C   274 - 277 <=>  204 - 207   (ALA  274  - TYR  277  <=> ASN  243  - LYS  246 )                          
+   1: a0a4-A 6ig2-C   278 - 282 <=>  210 - 214   (ILE  278  - ILE  282  <=> ASN  249  - LYS  253 )                          
+   1: a0a4-A 6ig2-C   292 - 295 <=>  245 - 248   (SER  292  - ARG  295  <=> MET  284  - SER  287 )                          
+   1: a0a4-A 6ig2-C   301 - 305 <=>  249 - 253   (VAL  301  - ILE  305  <=> ASP  288  - TYR  292 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a4-A 6ig2-C  U(1,.)  -0.711782  0.163206  0.683177          -39.163452"
+-matrix  "a0a4-A 6ig2-C  U(2,.)   0.408457 -0.695095  0.591613           30.037287"
+-matrix  "a0a4-A 6ig2-C  U(3,.)   0.571427  0.700148  0.428094          -71.516258"
+

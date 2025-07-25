@@ -1,0 +1,22 @@
+# Job: test
+# Query: q753A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  2.8 11.4   84   745    6  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: q753-A 6t0v-B    17 -  20 <=>  125 - 128   (GLY   17  - ARG   20  <=> GLY  125  - THR  128 )                          
+   1: q753-A 6t0v-B    25 -  32 <=>  227 - 234   (TYR   25  - SER   32  <=> MET  227  - GLY  234 )                          
+   1: q753-A 6t0v-B    67 -  70 <=>  271 - 274   (ARG   67  - LEU   70  <=> LEU  271  - GLY  274 )                          
+   1: q753-A 6t0v-B    73 -  78 <=>  278 - 283   (ARG   73  - HIS   78  <=> LYS  278  - ALA  283 )                          
+   1: q753-A 6t0v-B    83 -  87 <=>  491 - 495   (GLU   83  - LYS   87  <=> GLU  491  - PHE  495 )                          
+   1: q753-A 6t0v-B   126 - 147 <=>  517 - 538   (ASN  126  - HIS  147  <=> ASN  517  - ASP  538 )                          
+   1: q753-A 6t0v-B   171 - 188 <=>  544 - 561   (TYR  171  - PHE  188  <=> ALA  544  - CYS  561 )                          
+   1: q753-A 6t0v-B   239 - 246 <=>  578 - 585   (ILE  239  - GLY  246  <=> ARG  578  - SER  585 )                          
+   1: q753-A 6t0v-B   249 - 252 <=>  616 - 619   (VAL  249  - TYR  252  <=> MET  616  - ASP  619 )                          
+   1: q753-A 6t0v-B   253 - 257 <=>  621 - 625   (SER  253  - HIS  257  <=> ARG  621  - CYS  625 )                          
+
+# Translation-rotation matrices
+-matrix  "q753-A 6t0v-B  U(1,.)   0.983098  0.138632  0.119578         -161.786072"
+-matrix  "q753-A 6t0v-B  U(2,.)   0.143348 -0.989163 -0.031741           98.585068"
+-matrix  "q753-A 6t0v-B  U(3,.)   0.113882  0.048346 -0.992317          104.329895"
+

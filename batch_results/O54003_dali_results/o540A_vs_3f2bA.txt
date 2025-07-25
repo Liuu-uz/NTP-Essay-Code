@@ -1,0 +1,20 @@
+# Job: test
+# Query: o540A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3f2b-A  3.0 10.7   61   994   13  MOL_ID: 1; MOLECULE: DNA-DIRECTED DNA POLYMERASE III ALPHA CHAIN; CHAI
+
+# Structural equivalences
+   1: o540-A 3f2b-A   138 - 141 <=>    1 -   4   (ILE  138  - GLN  141  <=> VAL  233  - LEU  236 )                          
+   1: o540-A 3f2b-A   143 - 146 <=>    6 -   9   (SER  143  - PHE  146  <=> THR  238  - GLU  241 )                          
+   1: o540-A 3f2b-A   149 - 152 <=>   11 -  14   (ASP  149  - ARG  152  <=> GLU  243  - VAL  246 )                          
+   1: o540-A 3f2b-A   157 - 161 <=>   89 -  93   (SER  157  - LYS  161  <=> ALA  321  - ASN  325 )                          
+   1: o540-A 3f2b-A   414 - 417 <=>  113 - 116   (LEU  414  - GLU  417  <=> LEU  345  - HIS  348 )                          
+   1: o540-A 3f2b-A   419 - 424 <=>  146 - 151   (THR  419  - PHE  424  <=> THR  378  - VAL  383 )                          
+   1: o540-A 3f2b-A   513 - 526 <=>  869 - 882   (GLN  513  - LEU  526  <=> ALA 1319  - GLY 1332 )                          
+   1: o540-A 3f2b-A   540 - 559 <=>  888 - 907   (ALA  540  - GLY  559  <=> LYS 1338  - PHE 1357 )                          
+
+# Translation-rotation matrices
+-matrix  "o540-A 3f2b-A  U(1,.)  -0.892311  0.422635  0.158622           40.494045"
+-matrix  "o540-A 3f2b-A  U(2,.)  -0.110812  0.135561 -0.984553          -21.979490"
+-matrix  "o540-A 3f2b-A  U(3,.)  -0.437609 -0.896104 -0.074130           31.240904"
+

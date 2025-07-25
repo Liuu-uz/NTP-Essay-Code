@@ -1,0 +1,24 @@
+# Job: test
+# Query: a6uqA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  8dcd-B  2.5  3.9   80   481   10  MOL_ID: 1; MOLECULE: TRNA-SPLICING LIGASE RTCB; CHAIN: A, B; SYNONYM: 
+
+# Structural equivalences
+   1: a6uq-A 8dcd-B     1 -  12 <=>   96 - 107   (MET    1  - GLY   12  <=> ILE   96  - LEU  107 )                          
+   1: a6uq-A 8dcd-B    13 -  23 <=>  228 - 238   (VAL   13  - THR   23  <=> GLN  228  - ARG  238 )                          
+   1: a6uq-A 8dcd-B    24 -  42 <=>  289 - 307   (GLU   24  - GLU   42  <=> ALA  289  - PHE  307 )                          
+   1: a6uq-A 8dcd-B    47 -  50 <=>  321 - 324   (ASP   47  - ASN   50  <=> MET  321  - VAL  324 )                          
+   1: a6uq-A 8dcd-B    51 -  56 <=>  326 - 331   (LEU   51  - ILE   56  <=> ASP  326  - ILE  331 )                          
+   1: a6uq-A 8dcd-B    57 -  60 <=>  349 - 352   (THR   57  - ILE   60  <=> HIS  349  - GLY  352 )                          
+   1: a6uq-A 8dcd-B   141 - 144 <=>  382 - 385   (GLY  141  - VAL  144  <=> GLY  382  - SER  385 )                          
+   1: a6uq-A 8dcd-B   176 - 179 <=>  408 - 411   (LYS  176  - ASN  179  <=> ARG  408  - SER  411 )                          
+   1: a6uq-A 8dcd-B   183 - 186 <=>  418 - 421   (ILE  183  - ILE  186  <=> GLN  418  - GLY  421 )                          
+   1: a6uq-A 8dcd-B   187 - 190 <=>  433 - 436   (CYS  187  - ASP  190  <=> ILE  433  - ARG  436 )                          
+   1: a6uq-A 8dcd-B   196 - 199 <=>  438 - 441   (ILE  196  - VAL  199  <=> ALA  438  - ARG  441 )                          
+   1: a6uq-A 8dcd-B   233 - 236 <=>  452 - 455   (ILE  233  - LYS  236  <=> LYS  452  - ASP  455 )                          
+
+# Translation-rotation matrices
+-matrix  "a6uq-A 8dcd-B  U(1,.)  -0.079101  0.362615 -0.928576           52.824848"
+-matrix  "a6uq-A 8dcd-B  U(2,.)  -0.180441 -0.921316 -0.344410           16.618475"
+-matrix  "a6uq-A 8dcd-B  U(3,.)  -0.980400  0.140310  0.138307           20.795193"
+

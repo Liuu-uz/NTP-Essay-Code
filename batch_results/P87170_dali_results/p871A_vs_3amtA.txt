@@ -1,0 +1,18 @@
+# Job: test
+# Query: p871A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  2.7  4.4   56   417    4  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: p871-A 3amt-A   105 - 123 <=>   17 -  35   (GLU  105  - SER  123  <=> UNK   16  - GLY   34 )                          
+   1: p871-A 3amt-A   140 - 143 <=>   65 -  68   (LYS  140  - ALA  143  <=> GLU   64  - ASP   67 )                          
+   1: p871-A 3amt-A   145 - 160 <=>   69 -  84   (SER  145  - TRP  160  <=> VAL   68  - ALA   83 )                          
+   1: p871-A 3amt-A   164 - 170 <=>   86 -  92   (ARG  164  - LEU  170  <=> LEU   85  - ASN   91 )                          
+   1: p871-A 3amt-A   195 - 200 <=>   99 - 104   (MET  195  - LEU  200  <=> ASP   98  - VAL  103 )                          
+   1: p871-A 3amt-A   215 - 218 <=>  143 - 146   (TYR  215  - MET  218  <=> LEU  142  - ALA  145 )                          
+
+# Translation-rotation matrices
+-matrix  "p871-A 3amt-A  U(1,.)   0.290816 -0.127898  0.948192          -73.908279"
+-matrix  "p871-A 3amt-A  U(2,.)  -0.205573  0.959527  0.192477          -96.972000"
+-matrix  "p871-A 3amt-A  U(3,.)  -0.934434 -0.250898  0.252753            2.222109"
+

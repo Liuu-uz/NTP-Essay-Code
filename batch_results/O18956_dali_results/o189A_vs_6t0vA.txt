@@ -1,0 +1,19 @@
+# Job: test
+# Query: o189A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-A  2.2  3.9   56   705   13  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: o189-A 6t0v-A     1 -   4 <=>  354 - 357   (MET    1  - ARG    4  <=> TRP  363  - GLY  366 )                          
+   1: o189-A 6t0v-A     6 -   9 <=>  553 - 556   (GLU    6  - LEU    9  <=> THR  562  - THR  565 )                          
+   1: o189-A 6t0v-A    14 -  17 <=>  634 - 637   (SER   14  - ILE   17  <=> SER  643  - ALA  646 )                          
+   1: o189-A 6t0v-A    19 -  42 <=>  638 - 661   (SER   19  - ALA   42  <=> SER  647  - ASN  670 )                          
+   1: o189-A 6t0v-A   479 - 483 <=>  665 - 669   (THR  479  - LEU  483  <=> GLY  674  - LEU  678 )                          
+   1: o189-A 6t0v-A   485 - 495 <=>  670 - 680   (VAL  485  - ILE  495  <=> LYS  679  - ILE  689 )                          
+   1: o189-A 6t0v-A   498 - 501 <=>  681 - 684   (GLY  498  - VAL  501  <=> ILE  690  - PRO  693 )                          
+
+# Translation-rotation matrices
+-matrix  "o189-A 6t0v-A  U(1,.)   0.079657 -0.995084 -0.058846          155.794952"
+-matrix  "o189-A 6t0v-A  U(2,.)   0.830537  0.098898 -0.548113          -81.766273"
+-matrix  "o189-A 6t0v-A  U(3,.)   0.551238 -0.005213  0.834332         -218.554199"
+

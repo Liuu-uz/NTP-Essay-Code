@@ -1,0 +1,16 @@
+# Job: test
+# Query: a0jnA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7y7p-A  2.4  3.2   48   933    4  MOL_ID: 1; MOLECULE: RNA-DEPENDENT RNA POLYMERASE; CHAIN: A, B; EC: 2.
+
+# Structural equivalences
+   1: a0jn-A 7y7p-A     2 -   9 <=>  662 - 669   (GLY    2  - VAL    9  <=> LYS 1071  - GLN 1078 )                          
+   1: a0jn-A 7y7p-A    15 -  32 <=>  671 - 688   (GLY   15  - THR   32  <=> ASN 1080  - ASN 1097 )                          
+   1: a0jn-A 7y7p-A   467 - 482 <=>  691 - 706   (VAL  467  - THR  482  <=> SER 1100  - VAL 1115 )                          
+   1: a0jn-A 7y7p-A   484 - 489 <=>  707 - 712   (GLY  484  - GLN  489  <=> ASP 1116  - GLY 1121 )                          
+
+# Translation-rotation matrices
+-matrix  "a0jn-A 7y7p-A  U(1,.)  -0.650258  0.200490  0.732781         -110.401161"
+-matrix  "a0jn-A 7y7p-A  U(2,.)   0.447488 -0.678390  0.582702         -144.075851"
+-matrix  "a0jn-A 7y7p-A  U(3,.)   0.613937  0.706817  0.351412          -48.775494"
+

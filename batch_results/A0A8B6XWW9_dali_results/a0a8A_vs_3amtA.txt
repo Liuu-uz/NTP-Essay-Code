@@ -1,0 +1,18 @@
+# Job: test
+# Query: a0a8A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3amt-A  2.4  4.2   54   417   13  MOL_ID: 1; MOLECULE: PUTATIVE UNCHARACTERIZED PROTEIN; CHAIN: A; SYNON
+
+# Structural equivalences
+   1: a0a8-A 3amt-A   219 - 222 <=>    3 -   6   (SER  219  - ALA  222  <=> ARG    2  - VAL    5 )                          
+   1: a0a8-A 3amt-A   228 - 231 <=>    7 -  10   (ILE  228  - ALA  231  <=> GLY    6  - ASP    9 )                          
+   1: a0a8-A 3amt-A   243 - 261 <=>   16 -  34   (LYS  243  - ASN  261  <=> GLY   15  - LEU   33 )                          
+   1: a0a8-A 3amt-A   265 - 283 <=>   66 -  84   (GLU  265  - LEU  283  <=> VAL   65  - ALA   83 )                          
+   1: a0a8-A 3amt-A   293 - 296 <=>  166 - 169   (ASP  293  - ILE  296  <=> TYR  165  - ARG  168 )                          
+   1: a0a8-A 3amt-A   298 - 301 <=>  212 - 215   (LEU  298  - LYS  301  <=> PRO  211  - TYR  214 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a8-A 3amt-A  U(1,.)   0.181531  0.319716  0.929962         -106.028069"
+-matrix  "a0a8-A 3amt-A  U(2,.)  -0.953138 -0.175538  0.246404            8.776334"
+-matrix  "a0a8-A 3amt-A  U(3,.)   0.242023 -0.931111  0.272868           51.576534"
+

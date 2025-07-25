@@ -1,0 +1,19 @@
+# Job: test
+# Query: q2n2A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-B  2.9  6.6   81  1095   10  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: q2n2-A 4ff3-B   117 - 121 <=>   22 -  26   (SER  117  - ARG  121  <=> ALA   27  - LYS   31 )                          
+   1: q2n2-A 4ff3-B   165 - 168 <=>   27 -  30   (VAL  165  - PHE  168  <=> ASN   32  - LYS   35 )                          
+   1: q2n2-A 4ff3-B   205 - 233 <=>   80 - 108   (ARG  205  - LEU  233  <=> VAL   85  - THR  113 )                          
+   1: q2n2-A 4ff3-B   237 - 240 <=>  139 - 142   (ASP  237  - TRP  240  <=> THR  144  - TYR  147 )                          
+   1: q2n2-A 4ff3-B   243 - 260 <=>  143 - 160   (ALA  243  - VAL  260  <=> ASN  148  - THR  165 )                          
+   1: q2n2-A 4ff3-B   262 - 266 <=>  161 - 165   (VAL  262  - VAL  266  <=> ALA  166  - THR  170 )                          
+   1: q2n2-A 4ff3-B   267 - 282 <=>  200 - 215   (ASP  267  - LEU  282  <=> GLU  205  - LEU  220 )                          
+
+# Translation-rotation matrices
+-matrix  "q2n2-A 4ff3-B  U(1,.)  -0.163194  0.906463 -0.389477          222.938034"
+-matrix  "q2n2-A 4ff3-B  U(2,.)   0.962730  0.060011 -0.263723           69.740028"
+-matrix  "q2n2-A 4ff3-B  U(3,.)  -0.215682 -0.418000 -0.882472          333.770294"
+

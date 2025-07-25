@@ -1,0 +1,28 @@
+# Job: test
+# Query: f4irA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  8dcd-B  3.9  8.3  118   481    8  MOL_ID: 1; MOLECULE: TRNA-SPLICING LIGASE RTCB; CHAIN: A, B; SYNONYM: 
+
+# Structural equivalences
+   1: f4ir-A 8dcd-B    13 -  16 <=>   31 -  34   (GLU   13  - ASN   16  <=> ASP   31  - LEU   34 )                          
+   1: f4ir-A 8dcd-B   333 - 343 <=>   95 - 105   (PRO  333  - GLY  343  <=> ASP   95  - THR  105 )                          
+   1: f4ir-A 8dcd-B   345 - 348 <=>  106 - 109   (HIS  345  - ARG  348  <=> ASN  106  - GLU  109 )                          
+   1: f4ir-A 8dcd-B   361 - 374 <=>  113 - 126   (GLU  361  - VAL  374  <=> ARG  113  - ASN  126 )                          
+   1: f4ir-A 8dcd-B   376 - 379 <=>  127 - 130   (GLU  376  - GLU  379  <=> VAL  127  - GLY  130 )                          
+   1: f4ir-A 8dcd-B   382 - 388 <=>  203 - 209   (HIS  382  - SER  388  <=> HIS  203  - VAL  209 )                          
+   1: f4ir-A 8dcd-B   389 - 396 <=>  229 - 236   (ASP  389  - LYS  396  <=> VAL  229  - GLY  236 )                          
+   1: f4ir-A 8dcd-B   400 - 403 <=>  237 - 240   (GLU  400  - LYS  403  <=> SER  237  - LEU  240 )                          
+   1: f4ir-A 8dcd-B   404 - 426 <=>  290 - 312   (ARG  404  - GLY  426  <=> ASN  290  - LYS  312 )                          
+   1: f4ir-A 8dcd-B   436 - 442 <=>  317 - 323   (TYR  436  - GLY  442  <=> GLY  317  - ILE  323 )                          
+   1: f4ir-A 8dcd-B   443 - 448 <=>  325 - 330   (ARG  443  - PRO  448  <=> TYR  325  - ASN  330 )                          
+   1: f4ir-A 8dcd-B   449 - 452 <=>  351 - 354   (THR  449  - ILE  452  <=> LYS  351  - THR  354 )                          
+   1: f4ir-A 8dcd-B   456 - 463 <=>  377 - 384   (TYR  456  - ASP  463  <=> ILE  377  - ALA  384 )                          
+   1: f4ir-A 8dcd-B   494 - 497 <=>  417 - 420   (THR  494  - ARG  497  <=> ARG  417  - ARG  420 )                          
+   1: f4ir-A 8dcd-B   514 - 517 <=>  430 - 433   (LEU  514  - ILE  517  <=> ASN  430  - ILE  433 )                          
+   1: f4ir-A 8dcd-B   521 - 526 <=>  476 - 481   (GLY  521  - ARG  526  <=> ILE  476  - GLY  481 )                          
+
+# Translation-rotation matrices
+-matrix  "f4ir-A 8dcd-B  U(1,.)  -0.147920 -0.216043  0.965114          -60.007278"
+-matrix  "f4ir-A 8dcd-B  U(2,.)   0.432295 -0.891814 -0.133378           -1.578248"
+-matrix  "f4ir-A 8dcd-B  U(3,.)   0.889517  0.397484  0.225311          -49.970634"
+

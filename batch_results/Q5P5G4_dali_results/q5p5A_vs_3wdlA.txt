@@ -1,0 +1,23 @@
+# Job: test
+# Query: q5p5A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-A  4.5 14.4   91   257    5  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: q5p5-A 3wdl-A    90 -  97 <=>   68 -  75   (PRO   90  - THR   97  <=> HIS   71  - GLY   78 )                          
+   1: q5p5-A 3wdl-A   140 - 143 <=>   76 -  79   (LEU  140  - ARG  143  <=> ASN   79  - ALA   82 )                          
+   1: q5p5-A 3wdl-A   159 - 173 <=>   80 -  94   (GLU  159  - ALA  173  <=> LEU   83  - ALA   97 )                          
+   1: q5p5-A 3wdl-A   175 - 183 <=>   95 - 103   (ALA  175  - SER  183  <=> LYS   98  - ARG  106 )                          
+   1: q5p5-A 3wdl-A   186 - 202 <=>  104 - 120   (ASN  186  - LYS  202  <=> THR  107  - PRO  123 )                          
+   1: q5p5-A 3wdl-A   208 - 214 <=>  121 - 127   (PHE  208  - SER  214  <=> GLU  124  - ILE  130 )                          
+   1: q5p5-A 3wdl-A   216 - 219 <=>  128 - 131   (SER  216  - SER  219  <=> ASN  131  - LYS  134 )                          
+   1: q5p5-A 3wdl-A   221 - 226 <=>  137 - 142   (ILE  221  - ARG  226  <=> GLU  140  - LYS  145 )                          
+   1: q5p5-A 3wdl-A   230 - 237 <=>  143 - 150   (ALA  230  - GLN  237  <=> VAL  146  - LYS  153 )                          
+   1: q5p5-A 3wdl-A   332 - 336 <=>  166 - 170   (VAL  332  - TRP  336  <=> ALA  169  - MET  173 )                          
+   1: q5p5-A 3wdl-A   406 - 413 <=>  245 - 252   (TYR  406  - ASN  413  <=> ARG  248  - TRP  255 )                          
+
+# Translation-rotation matrices
+-matrix  "q5p5-A 3wdl-A  U(1,.)   0.539858 -0.251570  0.803285          -45.402020"
+-matrix  "q5p5-A 3wdl-A  U(2,.)  -0.602289 -0.782112  0.159837           -3.000817"
+-matrix  "q5p5-A 3wdl-A  U(3,.)   0.588048 -0.570099 -0.573747          -45.193710"
+

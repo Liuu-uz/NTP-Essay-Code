@@ -1,0 +1,29 @@
+# Job: test
+# Query: a0a3A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ig2-A  4.7  9.1  117   272    7  MOL_ID: 1; MOLECULE: PHOSPHATIDATE CYTIDYLYLTRANSFERASE, MITOCHONDRIAL
+
+# Structural equivalences
+   1: a0a3-A 6ig2-A    25 -  38 <=>   22 -  35   (VAL   25  - GLN   38  <=> GLU   54  - TYR   67 )                          
+   1: a0a3-A 6ig2-A    41 -  44 <=>   36 -  39   (ASN   41  - GLY   44  <=> PHE   68  - PRO   71 )                          
+   1: a0a3-A 6ig2-A    52 -  63 <=>   41 -  52   (ASN   52  - ASN   63  <=> ASP   73  - ARG   84 )                          
+   1: a0a3-A 6ig2-A    69 -  79 <=>   53 -  63   (PRO   69  - ASN   79  <=> ASN   93  - GLU  103 )                          
+   1: a0a3-A 6ig2-A   135 - 148 <=>   64 -  77   (ILE  135  - ALA  148  <=> ASP  104  - PRO  117 )                          
+   1: a0a3-A 6ig2-A   174 - 177 <=>   80 -  83   (GLU  174  - ALA  177  <=> TYR  120  - VAL  123 )                          
+   1: a0a3-A 6ig2-A   183 - 187 <=>   99 - 103   (GLY  183  - THR  187  <=> VAL  142  - THR  146 )                          
+   1: a0a3-A 6ig2-A   188 - 191 <=>  105 - 108   (LEU  188  - ASN  191  <=> VAL  148  - GLU  151 )                          
+   1: a0a3-A 6ig2-A   201 - 209 <=>  109 - 117   (ASN  201  - VAL  209  <=> GLY  152  - THR  160 )                          
+   1: a0a3-A 6ig2-A   210 - 213 <=>  121 - 124   (ILE  210  - ARG  213  <=> ASP  164  - GLU  167 )                          
+   1: a0a3-A 6ig2-A   214 - 218 <=>  127 - 131   (GLY  214  - PHE  218  <=> LYS  170  - THR  174 )                          
+   1: a0a3-A 6ig2-A   255 - 263 <=>  133 - 141   (LYS  255  - ASN  263  <=> TYR  176  - PRO  184 )                          
+   1: a0a3-A 6ig2-A   303 - 306 <=>  201 - 204   (THR  303  - LEU  306  <=> PRO  244  - VAL  247 )                          
+   1: a0a3-A 6ig2-A   308 - 312 <=>  205 - 209   (THR  308  - TYR  312  <=> GLU  248  - SER  252 )                          
+   1: a0a3-A 6ig2-A   316 - 319 <=>  244 - 247   (GLN  316  - ASP  319  <=> SER  287  - SER  290 )                          
+   1: a0a3-A 6ig2-A   322 - 325 <=>  248 - 251   (PHE  322  - THR  325  <=> ARG  291  - SER  294 )                          
+   1: a0a3-A 6ig2-A   365 - 369 <=>  256 - 260   (SER  365  - ASP  369  <=> ILE  299  - SER  303 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a3-A 6ig2-A  U(1,.)  -0.437208 -0.898740  0.033400           16.445438"
+-matrix  "a0a3-A 6ig2-A  U(2,.)   0.898542 -0.434925  0.058838            1.123921"
+-matrix  "a0a3-A 6ig2-A  U(3,.)  -0.038354  0.055736  0.997709          -56.049339"
+

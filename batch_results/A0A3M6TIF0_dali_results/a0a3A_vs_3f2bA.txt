@@ -1,0 +1,32 @@
+# Job: test
+# Query: a0a3A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3f2b-A  3.5  4.4  154   994    8  MOL_ID: 1; MOLECULE: DNA-DIRECTED DNA POLYMERASE III ALPHA CHAIN; CHAI
+
+# Structural equivalences
+   1: a0a3-A 3f2b-A    21 -  26 <=>  410 - 415   (LYS   21  - GLN   26  <=> GLU  860  - ILE  865 )                          
+   1: a0a3-A 3f2b-A    27 -  47 <=>  417 - 437   (LEU   27  - ASN   47  <=> HIS  867  - GLY  887 )                          
+   1: a0a3-A 3f2b-A    51 -  55 <=>  438 - 442   (SER   51  - VAL   55  <=> TYR  888  - SER  892 )                          
+   1: a0a3-A 3f2b-A    57 -  62 <=>  443 - 448   (CYS   57  - HIS   62  <=> ARG  893  - SER  898 )                          
+   1: a0a3-A 3f2b-A    63 -  66 <=>  511 - 514   (ASN   63  - ILE   66  <=> GLU  961  - LEU  964 )                          
+   1: a0a3-A 3f2b-A    67 -  77 <=>  519 - 529   (ASN   67  - VAL   77  <=> ASP  969  - SER  979 )                          
+   1: a0a3-A 3f2b-A   138 - 147 <=>  531 - 540   (GLU  138  - LEU  147  <=> GLU  981  - THR  990 )                          
+   1: a0a3-A 3f2b-A   149 - 152 <=>  541 - 544   (THR  149  - LEU  152  <=> LYS  991  - PHE  994 )                          
+   1: a0a3-A 3f2b-A   157 - 160 <=>  548 - 551   (SER  157  - THR  160  <=> ASN  998  - ARG 1001 )                          
+   1: a0a3-A 3f2b-A   167 - 170 <=>  553 - 556   (ARG  167  - GLU  170  <=> GLY 1003  - GLY 1006 )                          
+   1: a0a3-A 3f2b-A   171 - 174 <=>  597 - 600   (GLY  171  - GLU  174  <=> THR 1047  - HIS 1050 )                          
+   1: a0a3-A 3f2b-A   185 - 193 <=>  601 - 609   (ALA  185  - LYS  193  <=> PRO 1051  - ASP 1059 )                          
+   1: a0a3-A 3f2b-A   200 - 211 <=>  643 - 654   (LEU  200  - ALA  211  <=> ASN 1093  - ASP 1104 )                          
+   1: a0a3-A 3f2b-A   212 - 218 <=>  705 - 711   (MET  212  - PHE  218  <=> ILE 1155  - ARG 1161 )                          
+   1: a0a3-A 3f2b-A   219 - 222 <=>  713 - 716   (CYS  219  - ASP  222  <=> VAL 1163  - MET 1166 )                          
+   1: a0a3-A 3f2b-A   223 - 226 <=>  718 - 721   (LYS  223  - PRO  226  <=> GLU 1168  - ARG 1171 )                          
+   1: a0a3-A 3f2b-A   232 - 239 <=>  722 - 729   (VAL  232  - ASP  239  <=> PRO 1172  - VAL 1179 )                          
+   1: a0a3-A 3f2b-A   268 - 274 <=>  762 - 768   (PHE  268  - ASP  274  <=> CYS 1212  - VAL 1218 )                          
+   1: a0a3-A 3f2b-A   276 - 287 <=>  780 - 791   (SER  276  - ARG  287  <=> ALA 1230  - LYS 1241 )                          
+   1: a0a3-A 3f2b-A   324 - 335 <=>  806 - 817   (ARG  324  - ILE  335  <=> VAL 1256  - ILE 1267 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a3-A 3f2b-A  U(1,.)  -0.172347  0.958325 -0.227838          -23.249102"
+-matrix  "a0a3-A 3f2b-A  U(2,.)  -0.424223 -0.280961 -0.860869            6.377611"
+-matrix  "a0a3-A 3f2b-A  U(3,.)  -0.889006 -0.051714  0.454966           52.169754"
+

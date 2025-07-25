@@ -1,0 +1,18 @@
+# Job: test
+# Query: p746A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7y7p-A  2.1 10.3   64   933    9  MOL_ID: 1; MOLECULE: RNA-DEPENDENT RNA POLYMERASE; CHAIN: A, B; EC: 2.
+
+# Structural equivalences
+   1: p746-A 7y7p-A     1 -   4 <=>  254 - 257   (MET    1  - GLU    4  <=> TRP  662  - HIS  665 )                          
+   1: p746-A 7y7p-A     8 -  14 <=>  664 - 670   (PRO    8  - TRP   14  <=> PHE 1073  - PRO 1079 )                          
+   1: p746-A 7y7p-A    18 -  35 <=>  671 - 688   (GLY   18  - ASN   35  <=> ASN 1080  - ASN 1097 )                          
+   1: p746-A 7y7p-A    45 -  63 <=>  691 - 709   (THR   45  - LEU   63  <=> SER 1100  - SER 1118 )                          
+   1: p746-A 7y7p-A    64 -  67 <=>  712 - 715   (SER   64  - GLY   67  <=> GLY 1121  - PHE 1124 )                          
+   1: p746-A 7y7p-A    69 -  80 <=>  716 - 727   (VAL   69  - ILE   80  <=> ASN 1125  - LEU 1136 )                          
+
+# Translation-rotation matrices
+-matrix  "p746-A 7y7p-A  U(1,.)   0.783133  0.321338  0.532395          -78.576645"
+-matrix  "p746-A 7y7p-A  U(2,.)  -0.530480  0.791958  0.302313           -7.178107"
+-matrix  "p746-A 7y7p-A  U(3,.)  -0.324490 -0.519177  0.790672         -106.286018"
+

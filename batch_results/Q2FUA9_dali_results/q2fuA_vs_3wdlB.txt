@@ -1,0 +1,16 @@
+# Job: test
+# Query: q2fuA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3wdl-B 34.8  1.5  242   253   46  MOL_ID: 1; MOLECULE: 4-PHOSPHOPANTOATE--BETA-ALANINE LIGASE; CHAIN: A,
+
+# Structural equivalences
+   1: q2fu-A 3wdl-B     2 - 120 <=>    1 - 119   (ILE    2  - GLY  120  <=> ILE    4  - ASP  122 )                          
+   1: q2fu-A 3wdl-B   121 - 133 <=>  122 - 134   (ILE  121  - PRO  133  <=> ILE  125  - PRO  137 )                          
+   1: q2fu-A 3wdl-B   134 - 209 <=>  136 - 211   (LEU  134  - LEU  209  <=> LEU  139  - MET  214 )                          
+   1: q2fu-A 3wdl-B   210 - 243 <=>  215 - 248   (ASP  210  - ASP  243  <=> SER  218  - GLU  251 )                          
+
+# Translation-rotation matrices
+-matrix  "q2fu-A 3wdl-B  U(1,.)   0.686663 -0.587405 -0.428310          -26.455025"
+-matrix  "q2fu-A 3wdl-B  U(2,.)   0.176118  0.706030 -0.685933           39.632416"
+-matrix  "q2fu-A 3wdl-B  U(3,.)   0.705320  0.395572  0.588257          -17.059292"
+

@@ -1,0 +1,16 @@
+# Job: test
+# Query: a0a8A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  2.7  4.9   62   745    5  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a0a8-A 6t0v-B     3 -  23 <=>  669 - 689   (ASP    3  - GLU   23  <=> GLY  681  - PRO  701 )                          
+   1: a0a8-A 6t0v-B   219 - 236 <=>  700 - 717   (SER  219  - GLU  236  <=> ALA  712  - ASP  729 )                          
+   1: a0a8-A 6t0v-B   237 - 240 <=>  721 - 724   (THR  237  - LEU  240  <=> GLY  733  - SER  736 )                          
+   1: a0a8-A 6t0v-B   241 - 259 <=>  727 - 745   (PHE  241  - ARG  259  <=> ASP  739  - GLY  757 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a8-A 6t0v-B  U(1,.)  -0.992716 -0.112818 -0.042271          115.203362"
+-matrix  "a0a8-A 6t0v-B  U(2,.)  -0.040325 -0.019473  0.998997          -85.078369"
+-matrix  "a0a8-A 6t0v-B  U(3,.)  -0.113528  0.993425  0.014782         -130.715027"
+

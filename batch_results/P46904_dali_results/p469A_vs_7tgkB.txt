@@ -1,0 +1,28 @@
+# Job: test
+# Query: p469A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  7tgk-B  2.3  9.3  108   593   12  MOL_ID: 1; MOLECULE: DESFERRIOXAMINE SYNTHETASE DESD; CHAIN: D, B, E, 
+
+# Structural equivalences
+   1: p469-A 7tgk-B     1 -   6 <=>  127 - 132   (MET    1  - TYR    6  <=> LYS  126  - GLN  131 )                          
+   1: p469-A 7tgk-B    12 -  15 <=>  134 - 137   (ASP   12  - ARG   15  <=> THR  133  - GLY  136 )                          
+   1: p469-A 7tgk-B    18 -  21 <=>  403 - 406   (LYS   18  - LEU   21  <=> GLU  402  - ALA  405 )                          
+   1: p469-A 7tgk-B    25 -  44 <=>  411 - 430   (LEU   25  - ASP   44  <=> ALA  410  - SER  429 )                          
+   1: p469-A 7tgk-B    45 -  48 <=>  434 - 437   (LYS   45  - GLN   48  <=> TYR  433  - ALA  436 )                          
+   1: p469-A 7tgk-B    68 -  72 <=>  472 - 476   (ILE   68  - SER   72  <=> ASP  471  - PRO  475 )                          
+   1: p469-A 7tgk-B   124 - 127 <=>  480 - 483   (ALA  124  - LEU  127  <=> ARG  479  - ARG  482 )                          
+   1: p469-A 7tgk-B   163 - 166 <=>  488 - 491   (GLU  163  - GLU  166  <=> GLU  487  - LYS  490 )                          
+   1: p469-A 7tgk-B   168 - 175 <=>  492 - 499   (LYS  168  - LEU  175  <=> LEU  491  - VAL  498 )                          
+   1: p469-A 7tgk-B   176 - 190 <=>  501 - 515   (SER  176  - GLY  190  <=> ASP  500  - GLU  514 )                          
+   1: p469-A 7tgk-B   236 - 248 <=>  518 - 530   (SER  236  - THR  248  <=> ALA  517  - THR  529 )                          
+   1: p469-A 7tgk-B   250 - 253 <=>  531 - 534   (LEU  250  - GLU  253  <=> ARG  530  - GLN  533 )                          
+   1: p469-A 7tgk-B   257 - 261 <=>  548 - 552   (THR  257  - LEU  261  <=> ASP  547  - PRO  551 )                          
+   1: p469-A 7tgk-B   319 - 322 <=>  556 - 559   (PHE  319  - ALA  322  <=> LEU  555  - LEU  558 )                          
+   1: p469-A 7tgk-B   324 - 327 <=>  560 - 563   (ASN  324  - ASP  327  <=> ASN  559  - GLN  562 )                          
+   1: p469-A 7tgk-B   344 - 347 <=>  585 - 588   (GLN  344  - PHE  347  <=> THR  584  - ASN  587 )                          
+
+# Translation-rotation matrices
+-matrix  "p469-A 7tgk-B  U(1,.)  -0.122971  0.969684 -0.211164           -5.005794"
+-matrix  "p469-A 7tgk-B  U(2,.)  -0.984079 -0.146659 -0.100395           95.834892"
+-matrix  "p469-A 7tgk-B  U(3,.)  -0.128320  0.195456  0.972281           67.471329"
+

@@ -1,0 +1,29 @@
+# Job: test
+# Query: a1jrA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  2xan-A  5.0  3.7  134   414    9  MOL_ID: 1; MOLECULE: INOSITOL-PENTAKISPHOSPHATE 2-KINASE; CHAIN: A, B;
+
+# Structural equivalences
+   1: a1jr-A 2xan-A   310 - 316 <=>    9 -  15   (GLU  310  - PRO  316  <=> SER   11  - GLY   17 )                          
+   1: a1jr-A 2xan-A   319 - 330 <=>   16 -  27   (LYS  319  - SER  330  <=> GLU   18  - GLY   29 )                          
+   1: a1jr-A 2xan-A   331 - 341 <=>   33 -  43   (PHE  331  - GLN  341  <=> VAL   35  - ARG   45 )                          
+   1: a1jr-A 2xan-A   351 - 362 <=>   65 -  76   (THR  351  - GLU  362  <=> ASN   80  - ASN   91 )                          
+   1: a1jr-A 2xan-A   363 - 366 <=>   80 -  83   (HIS  363  - VAL  366  <=> PRO   95  - GLY   98 )                          
+   1: a1jr-A 2xan-A   367 - 376 <=>   85 -  94   (GLY  367  - GLU  376  <=> LYS  100  - SER  109 )                          
+   1: a1jr-A 2xan-A   378 - 381 <=>   95 -  98   (PHE  378  - ASP  381  <=> VAL  110  - GLU  113 )                          
+   1: a1jr-A 2xan-A   387 - 391 <=>  105 - 109   (ALA  387  - THR  391  <=> LYS  120  - LYS  124 )                          
+   1: a1jr-A 2xan-A   395 - 400 <=>  120 - 125   (ARG  395  - LYS  400  <=> ASN  135  - HIS  140 )                          
+   1: a1jr-A 2xan-A   411 - 420 <=>  126 - 135   (LYS  411  - THR  420  <=> ASP  141  - SER  150 )                          
+   1: a1jr-A 2xan-A   423 - 426 <=>  223 - 226   (ASN  423  - ILE  426  <=> PHE  240  - PHE  243 )                          
+   1: a1jr-A 2xan-A   429 - 440 <=>  270 - 281   (ALA  429  - GLU  440  <=> PHE  287  - SER  298 )                          
+   1: a1jr-A 2xan-A   443 - 452 <=>  282 - 291   (ASN  443  - ASN  452  <=> GLY  299  - GLN  308 )                          
+   1: a1jr-A 2xan-A   454 - 458 <=>  342 - 346   (PHE  454  - MET  458  <=> THR  365  - CYS  369 )                          
+   1: a1jr-A 2xan-A   462 - 468 <=>  347 - 353   (ASN  462  - HIS  468  <=> SER  370  - GLN  376 )                          
+   1: a1jr-A 2xan-A   469 - 478 <=>  378 - 387   (GLY  469  - GLU  478  <=> TYR  401  - LEU  410 )                          
+   1: a1jr-A 2xan-A   508 - 512 <=>  393 - 397   (VAL  508  - ASP  512  <=> MET  416  - TYR  420 )                          
+
+# Translation-rotation matrices
+-matrix  "a1jr-A 2xan-A  U(1,.)   0.390323 -0.693306 -0.605785           57.888969"
+-matrix  "a1jr-A 2xan-A  U(2,.)   0.129519  0.692783 -0.709420          -35.154320"
+-matrix  "a1jr-A 2xan-A  U(3,.)   0.911522  0.198442  0.360205          -46.524837"
+

@@ -1,0 +1,18 @@
+# Job: test
+# Query: a4fzA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ci7-A  2.2  6.8   59   365   10  MOL_ID: 1; MOLECULE: YCAO; CHAIN: A, B, C, D, E, F; ENGINEERED: YES   
+
+# Structural equivalences
+   1: a4fz-A 6ci7-A    36 -  39 <=>    3 -   6   (CYS   36  - ASN   39  <=> ASP    4  - TYR    7 )                          
+   1: a4fz-A 6ci7-A    40 -  43 <=>   12 -  15   (LEU   40  - GLY   43  <=> ARG   13  - LEU   16 )                          
+   1: a4fz-A 6ci7-A   129 - 141 <=>   43 -  55   (ASN  129  - ASP  141  <=> GLY   44  - GLN   56 )                          
+   1: a4fz-A 6ci7-A   211 - 239 <=>   57 -  85   (GLU  211  - GLY  239  <=> GLY   58  - ALA   86 )                          
+   1: a4fz-A 6ci7-A   251 - 255 <=>  246 - 250   (ASP  251  - ARG  255  <=> LEU  247  - LEU  251 )                          
+   1: a4fz-A 6ci7-A   263 - 266 <=>  304 - 307   (MET  263  - ILE  266  <=> SER  313  - LYS  316 )                          
+
+# Translation-rotation matrices
+-matrix  "a4fz-A 6ci7-A  U(1,.)  -0.190237  0.140623 -0.971615          -26.616920"
+-matrix  "a4fz-A 6ci7-A  U(2,.)  -0.428655  0.878467  0.211070          -32.585243"
+-matrix  "a4fz-A 6ci7-A  U(3,.)   0.883213  0.456641 -0.106838           33.582043"
+

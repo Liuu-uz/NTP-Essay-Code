@@ -1,0 +1,27 @@
+# Job: test
+# Query: f4isA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  4ff3-A  2.5  4.5  109  1095    7  MOL_ID: 1; MOLECULE: VIRION RNA POLYMERASE; CHAIN: A, B; ENGINEERED: Y
+
+# Structural equivalences
+   1: f4is-A 4ff3-A    11 -  17 <=>  448 - 454   (SER   11  - GLU   17  <=> SER  453  - ASP  459 )                          
+   1: f4is-A 4ff3-A    20 -  39 <=>  545 - 564   (PHE   20  - VAL   39  <=> PHE  550  - MET  569 )                          
+   1: f4is-A 4ff3-A    43 -  46 <=>  670 - 673   (GLU   43  - ASN   46  <=> ILE  675  - TYR  678 )                          
+   1: f4is-A 4ff3-A    47 -  52 <=>  916 - 921   (ASP   47  - ASN   52  <=> PRO  921  - GLY  926 )                          
+   1: f4is-A 4ff3-A    53 -  63 <=>  923 - 933   (LEU   53  - VAL   63  <=> GLY  928  - THR  938 )                          
+   1: f4is-A 4ff3-A    64 -  68 <=>  937 - 941   (GLU   64  - ILE   68  <=> ALA  942  - THR  946 )                          
+   1: f4is-A 4ff3-A    70 -  73 <=>  942 - 945   (PHE   70  - GLY   73  <=> LEU  947  - PHE  950 )                          
+   1: f4is-A 4ff3-A    76 -  79 <=>  946 - 949   (ASP   76  - SER   79  <=> ASP  951  - ASN  954 )                          
+   1: f4is-A 4ff3-A    95 - 115 <=>  953 - 973   (LYS   95  - PHE  115  <=> ASN  958  - ASN  978 )                          
+   1: f4is-A 4ff3-A   117 - 120 <=> 1039 -1042   (PRO  117  - LYS  120  <=> ASP 1044  - HIS 1047 )                          
+   1: f4is-A 4ff3-A   123 - 126 <=> 1050 -1053   (TYR  123  - SER  126  <=> LEU 1055  - ASP 1058 )                          
+   1: f4is-A 4ff3-A   127 - 130 <=> 1055 -1058   (PHE  127  - LYS  130  <=> MET 1060  - VAL 1063 )                          
+   1: f4is-A 4ff3-A   378 - 381 <=> 1059 -1062   (VAL  378  - PHE  381  <=> GLY 1064  - TYR 1067 )                          
+   1: f4is-A 4ff3-A   387 - 393 <=> 1063 -1069   (MET  387  - PHE  393  <=> GLN 1068  - ASP 1074 )                          
+   1: f4is-A 4ff3-A   513 - 516 <=> 1072 -1075   (GLU  513  - VAL  516  <=> ASN 1077  - PRO 1080 )                          
+
+# Translation-rotation matrices
+-matrix  "f4is-A 4ff3-A  U(1,.)   0.199312 -0.269214  0.942231         -343.329987"
+-matrix  "f4is-A 4ff3-A  U(2,.)   0.772948 -0.547842 -0.320032           96.410110"
+-matrix  "f4is-A 4ff3-A  U(3,.)   0.602351  0.792081  0.098897           -9.379189"
+

@@ -1,0 +1,28 @@
+# Job: test
+# Query: q8rmA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ci7-A  2.9  5.6  112   365    6  MOL_ID: 1; MOLECULE: YCAO; CHAIN: A, B, C, D, E, F; ENGINEERED: YES   
+
+# Structural equivalences
+   1: q8rm-A 6ci7-A    77 -  80 <=>   15 -  18   (LYS   77  - ALA   80  <=> LEU   16  - GLU   19 )                          
+   1: q8rm-A 6ci7-A   135 - 143 <=>   34 -  42   (ASP  135  - ASP  143  <=> VAL   35  - VAL   43 )                          
+   1: q8rm-A 6ci7-A   151 - 166 <=>   43 -  58   (PRO  151  - LEU  166  <=> GLY   44  - GLU   59 )                          
+   1: q8rm-A 6ci7-A   168 - 175 <=>   59 -  66   (GLY  168  - HIS  175  <=> PHE   60  - THR   67 )                          
+   1: q8rm-A 6ci7-A   233 - 254 <=>   67 -  88   (ASP  233  - GLU  254  <=> THR   68  - ARG   89 )                          
+   1: q8rm-A 6ci7-A   255 - 258 <=>  133 - 136   (GLU  255  - GLU  258  <=> PHE  134  - TRP  137 )                          
+   1: q8rm-A 6ci7-A   262 - 265 <=>  143 - 146   (LYS  262  - TYR  265  <=> SER  144  - ASN  147 )                          
+   1: q8rm-A 6ci7-A   269 - 279 <=>  168 - 178   (GLU  269  - ILE  279  <=> ARG  169  - ARG  179 )                          
+   1: q8rm-A 6ci7-A   347 - 350 <=>  201 - 204   (ALA  347  - VAL  350  <=> VAL  202  - VAL  205 )                          
+   1: q8rm-A 6ci7-A   355 - 358 <=>  205 - 208   (GLY  355  - VAL  358  <=> GLU  206  - LEU  209 )                          
+   1: q8rm-A 6ci7-A   364 - 367 <=>  209 - 212   (LEU  364  - SER  367  <=> LEU  210  - ARG  213 )                          
+   1: q8rm-A 6ci7-A   388 - 391 <=>  224 - 227   (MET  388  - ASP  391  <=> GLU  225  - ARG  228 )                          
+   1: q8rm-A 6ci7-A   410 - 413 <=>  288 - 291   (ALA  410  - ARG  413  <=> GLU  297  - VAL  300 )                          
+   1: q8rm-A 6ci7-A   431 - 434 <=>  292 - 295   (GLY  431  - ASN  434  <=> GLU  301  - ASP  304 )                          
+   1: q8rm-A 6ci7-A   472 - 475 <=>  297 - 300   (LEU  472  - ALA  475  <=> ASP  306  - ILE  309 )                          
+   1: q8rm-A 6ci7-A   484 - 489 <=>  301 - 306   (ASP  484  - GLU  489  <=> THR  310  - GLU  315 )                          
+
+# Translation-rotation matrices
+-matrix  "q8rm-A 6ci7-A  U(1,.)   0.738885  0.510229  0.440131            9.639462"
+-matrix  "q8rm-A 6ci7-A  U(2,.)   0.287477  0.352056 -0.890738           -6.997277"
+-matrix  "q8rm-A 6ci7-A  U(3,.)  -0.609431  0.784680  0.113449          -46.291691"
+

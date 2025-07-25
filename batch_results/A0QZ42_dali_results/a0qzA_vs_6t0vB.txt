@@ -1,0 +1,22 @@
+# Job: test
+# Query: a0qzA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6t0v-B  2.5 10.6   82   745    1  MOL_ID: 1; MOLECULE: POLYMERASE ACIDIC PROTEIN; CHAIN: A; ENGINEERED: 
+
+# Structural equivalences
+   1: a0qz-A 6t0v-B     4 -  12 <=>   25 -  33   (ARG    4  - PHE   12  <=> THR   25  - GLY   33 )                          
+   1: a0qz-A 6t0v-B    50 -  53 <=>  234 - 237   (ASN   50  - ARG   53  <=> GLY  234  - LYS  237 )                          
+   1: a0qz-A 6t0v-B    96 - 100 <=>  359 - 363   (ARG   96  - GLU  100  <=> SER  359  - HIS  363 )                          
+   1: a0qz-A 6t0v-B   199 - 202 <=>  410 - 413   (ASP  199  - LYS  202  <=> GLY  410  - ASN  413 )                          
+   1: a0qz-A 6t0v-B   227 - 230 <=>  509 - 512   (ALA  227  - VAL  230  <=> LEU  509  - PHE  512 )                          
+   1: a0qz-A 6t0v-B   274 - 290 <=>  517 - 533   (SER  274  - LEU  290  <=> ASN  517  - ASN  533 )                          
+   1: a0qz-A 6t0v-B   291 - 294 <=>  535 - 538   (GLN  291  - GLU  294  <=> ILE  535  - ASP  538 )                          
+   1: a0qz-A 6t0v-B   295 - 318 <=>  540 - 563   (PRO  295  - PHE  318  <=> GLY  540  - ARG  563 )                          
+   1: a0qz-A 6t0v-B   330 - 336 <=>  578 - 584   (LYS  330  - ARG  336  <=> ARG  578  - ILE  584 )                          
+   1: a0qz-A 6t0v-B   361 - 364 <=>  662 - 665   (LYS  361  - ARG  364  <=> ILE  674  - THR  677 )                          
+
+# Translation-rotation matrices
+-matrix  "a0qz-A 6t0v-B  U(1,.)   0.495317 -0.460373  0.736693         -107.273636"
+-matrix  "a0qz-A 6t0v-B  U(2,.)   0.576593  0.808525  0.117589         -182.670380"
+-matrix  "a0qz-A 6t0v-B  U(3,.)  -0.649770  0.366529  0.665925          -53.991951"
+

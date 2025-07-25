@@ -1,0 +1,22 @@
+# Job: test
+# Query: a0a1A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ig2-D  2.6  4.4   86   278    6  MOL_ID: 1; MOLECULE: PHOSPHATIDATE CYTIDYLYLTRANSFERASE, MITOCHONDRIAL
+
+# Structural equivalences
+   1: a0a1-A 6ig2-D    71 -  78 <=>    1 -   8   (HIS   71  - ILE   78  <=> CYS   33  - LYS   40 )                          
+   1: a0a1-A 6ig2-D   424 - 428 <=>   20 -  24   (CYS  424  - LEU  428  <=> GLN   52  - GLU   56 )                          
+   1: a0a1-A 6ig2-D   438 - 450 <=>   25 -  37   (THR  438  - ALA  450  <=> LEU   57  - GLN   69 )                          
+   1: a0a1-A 6ig2-D   459 - 468 <=>   39 -  48   (GLU  459  - ASN  468  <=> PRO   71  - SER   80 )                          
+   1: a0a1-A 6ig2-D   473 - 484 <=>   54 -  65   (PRO  473  - GLY  484  <=> ASN   93  - ASP  104 )                          
+   1: a0a1-A 6ig2-D   485 - 488 <=>   69 -  72   (GLU  485  - GLU  488  <=> TRP  108  - ILE  111 )                          
+   1: a0a1-A 6ig2-D   490 - 493 <=>   74 -  77   (ILE  490  - GLU  493  <=> LEU  113  - ASN  116 )                          
+   1: a0a1-A 6ig2-D   499 - 503 <=>  109 - 113   (ASP  499  - VAL  503  <=> VAL  148  - GLY  152 )                          
+   1: a0a1-A 6ig2-D   518 - 533 <=>  115 - 130   (ALA  518  - LEU  533  <=> ILE  154  - LEU  169 )                          
+   1: a0a1-A 6ig2-D   534 - 542 <=>  158 - 166   (ASP  534  - ALA  542  <=> GLU  197  - ALA  205 )                          
+
+# Translation-rotation matrices
+-matrix  "a0a1-A 6ig2-D  U(1,.)   0.597678 -0.517601 -0.612266           18.830816"
+-matrix  "a0a1-A 6ig2-D  U(2,.)  -0.187379  0.652343 -0.734396          -16.979568"
+-matrix  "a0a1-A 6ig2-D  U(3,.)   0.779532  0.553659  0.292903          -64.536415"
+

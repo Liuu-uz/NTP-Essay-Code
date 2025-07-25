@@ -1,0 +1,21 @@
+# Job: test
+# Query: o540A
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  6ci7-E  2.0  4.7   74   364    4  MOL_ID: 1; MOLECULE: YCAO; CHAIN: A, B, C, D, E, F; ENGINEERED: YES   
+
+# Structural equivalences
+   1: o540-A 6ci7-E    30 -  35 <=>   52 -  57   (CYS   30  - PRO   35  <=> ARG   53  - GLY   58 )                          
+   1: o540-A 6ci7-E   251 - 257 <=>   88 -  94   (GLY  251  - ARG  257  <=> ARG   89  - ARG   95 )                          
+   1: o540-A 6ci7-E   263 - 266 <=>   99 - 102   (LEU  263  - SER  266  <=> ASP  100  - THR  103 )                          
+   1: o540-A 6ci7-E   269 - 272 <=>  103 - 106   (LEU  269  - SER  272  <=> PRO  104  - TYR  107 )                          
+   1: o540-A 6ci7-E   319 - 340 <=>  152 - 173   (ALA  319  - HIS  340  <=> ARG  153  - ILE  174 )                          
+   1: o540-A 6ci7-E   341 - 345 <=>  212 - 216   (ILE  341  - LEU  345  <=> ARG  213  - VAL  217 )                          
+   1: o540-A 6ci7-E   347 - 356 <=>  323 - 332   (PHE  347  - THR  356  <=> VAL  333  - ASN  342 )                          
+   1: o540-A 6ci7-E   365 - 375 <=>  333 - 343   (HIS  365  - ILE  375  <=> LEU  343  - THR  353 )                          
+   1: o540-A 6ci7-E   386 - 390 <=>  344 - 348   (ARG  386  - LEU  390  <=> GLY  354  - TYR  358 )                          
+
+# Translation-rotation matrices
+-matrix  "o540-A 6ci7-E  U(1,.)   0.842110 -0.169609 -0.511941           73.975548"
+-matrix  "o540-A 6ci7-E  U(2,.)  -0.351724 -0.892322 -0.282933           48.221901"
+-matrix  "o540-A 6ci7-E  U(3,.)  -0.408829  0.418323 -0.811089           26.280676"
+

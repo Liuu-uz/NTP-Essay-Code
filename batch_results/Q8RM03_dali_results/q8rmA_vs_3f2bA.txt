@@ -1,0 +1,23 @@
+# Job: test
+# Query: q8rmA
+# No:  Chain   Z    rmsd lali nres  %id PDB  Description
+   1:  3f2b-A  2.7 17.0   91   994    9  MOL_ID: 1; MOLECULE: DNA-DIRECTED DNA POLYMERASE III ALPHA CHAIN; CHAI
+
+# Structural equivalences
+   1: q8rm-A 3f2b-A     3 -   6 <=>  424 - 427   (VAL    3  - ASP    6  <=> LEU  874  - HIS  877 )                          
+   1: q8rm-A 3f2b-A     7 -  11 <=>  430 - 434   (GLN    7  - ALA   11  <=> VAL  880  - LEU  884 )                          
+   1: q8rm-A 3f2b-A    14 -  17 <=>  527 - 530   (THR   14  - ILE   17  <=> ASN  977  - GLY  980 )                          
+   1: q8rm-A 3f2b-A    22 -  34 <=>  655 - 667   (GLU   22  - ALA   34  <=> PRO 1105  - ILE 1117 )                          
+   1: q8rm-A 3f2b-A    61 -  80 <=>  865 - 884   (PHE   61  - ALA   80  <=> ILE 1315  - GLN 1334 )                          
+   1: q8rm-A 3f2b-A   233 - 253 <=>  886 - 906   (ASP  233  - ALA  253  <=> THR 1336  - GLY 1356 )                          
+   1: q8rm-A 3f2b-A   258 - 261 <=>  926 - 929   (GLU  258  - TRP  261  <=> GLY 1376  - LEU 1379 )                          
+   1: q8rm-A 3f2b-A   353 - 356 <=>  939 - 942   (THR  353  - ILE  356  <=> LEU 1389  - ASN 1392 )                          
+   1: q8rm-A 3f2b-A   408 - 415 <=>  946 - 953   (TRP  408  - LEU  415  <=> ALA 1396  - GLU 1403 )                          
+   1: q8rm-A 3f2b-A   417 - 420 <=>  954 - 957   (ARG  417  - PHE  420  <=> GLY 1404  - LEU 1407 )                          
+   1: q8rm-A 3f2b-A   424 - 427 <=>  958 - 961   (TYR  424  - GLU  427  <=> SER 1408  - ASP 1411 )                          
+
+# Translation-rotation matrices
+-matrix  "q8rm-A 3f2b-A  U(1,.)  -0.745014  0.583020 -0.324102          -16.774057"
+-matrix  "q8rm-A 3f2b-A  U(2,.)  -0.459018 -0.095545  0.883274           10.876085"
+-matrix  "q8rm-A 3f2b-A  U(3,.)   0.484000  0.806820  0.338799          -49.960907"
+
