@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-AlphaFold 批处理脚本 - 强制CPU版本，解决CUDA内存不足问题
+AlphaFold 批处理脚本 - 序列长度过滤: 200-1000 AA
 """
 
 import os
@@ -9,39 +9,6 @@ import subprocess
 import time
 from pathlib import Path
 import argparse
-
-def setup_cpu_environment():
-    """强制设置CPU环境，禁用CUDA"""
-    print("💻 强制设置CPU环境...")
-    
-    # 强制禁用CUDA
-    os.environ['CUDA_VISIBLE_DEVICES'] = ''  # 空字符串表示不使用任何GPU
-    os.environ['CUDA_DEVICE_ORDER'] = 'PCI_BUS_ID'
-    
-    # 设置PyTorch使用CPU
-    os.environ['TORCH_CUDA_ENABLE'] = '0'
-    os.environ['FORCE_CPU'] = '1'
-    
-    # 禁用DeepSpeed的CUDA检测
-    os.environ['DS_SKIP_CUDA_CHECK'] = '1'
-    
-    print("✅ CPU环境配置完成:")
-    print(f"   CUDA_VISIBLE_DEVICES = '{os.environ['CUDA_VISIBLE_DEVICES']}'")
-    print(f"   TORCH_CUDA_ENABLE = {os.environ.get('TORCH_CUDA_ENABLE', 'unset')}")
-    print(f"   FORCE_CPU = {os.environ.get('FORCE_CPU', 'unset')}")
-    print(f"   DS_SKIP_CUDA_CHECK = {os.environ.get('DS_SKIP_CUDA_CHECK', 'unset')}")
-    
-    # 验证PyTorch是否会使用CPU
-    try:
-        import torch
-        print(f"   PyTorch CUDA可用性: {torch.cuda.is_available()}")
-        print(f"   PyTorch默认设备: {torch.tensor([1.0]).device}")
-        if torch.cuda.is_available():
-            print("⚠️  警告: PyTorch仍然检测到CUDA，但已设置环境变量强制使用CPU")
-        else:
-            print("✅ PyTorch将使用CPU")
-    except ImportError:
-        print("⚠️  PyTorch未安装或无法导入")
 
 def check_system_environment():
     """检查系统环境"""
@@ -188,36 +155,10 @@ def get_sequence_length(json_file):
     except:
         return 0
 
-def test_protenix_cpu():
-    """测试protenix是否能在纯CPU环境下工作"""
-    print("\n🧪 测试protenix CPU兼容性...")
-    
-    try:
-        # 创建测试环境变量
-        test_env = os.environ.copy()
-        test_env['CUDA_VISIBLE_DEVICES'] = ''
-        test_env['TORCH_CUDA_ENABLE'] = '0'
-        test_env['FORCE_CPU'] = '1'
-        test_env['DS_SKIP_CUDA_CHECK'] = '1'
-        
-        # 测试protenix help
-        result = subprocess.run(['protenix', 'predict', '--help'], 
-                              capture_output=True, text=True, timeout=15, env=test_env)
-        
-        if result.returncode == 0:
-            print("✅ protenix在CPU环境下可以运行help命令")
-            return True
-        else:
-            print("❌ protenix在CPU环境下运行help失败")
-            print(f"错误: {result.stderr}")
-            return False
-            
-    except Exception as e:
-        print(f"💥 测试protenix CPU兼容性时出错: {e}")
-        return False
+
 
 def run_alphafold_prediction(json_file, output_base_dir="./predictions", cleanup_intermediate=True, global_pdb_dir="./all_pdb_files"):
-    """运行单个AlphaFold预测 - 强制CPU版本"""
+    """运行单个AlphaFold预测"""
     sequence_name = json_file.stem
     output_dir = Path(output_base_dir) / f"{sequence_name}_output"
     
@@ -226,14 +167,14 @@ def run_alphafold_prediction(json_file, output_base_dir="./predictions", cleanup
     
     print(f"\n🔬 预测: {json_file.name}")
     print(f"📏 序列长度: {seq_length} AA")
-    print(f"💻 运行模式: 强制CPU模式")
     
-    # 构建命令 - 不使用MSA服务器以避免网络问题
+    # 构建命令 - 使用MSA服务器
     cmd = [
         'protenix', 'predict',
         '--input', str(json_file),
         '--out_dir', str(output_dir),
-        '--seeds', '101'
+        '--seeds', '101',
+        '--use_msa_server'
     ]
     
     print(f"🚀 命令: {' '.join(cmd)}")
@@ -241,21 +182,9 @@ def run_alphafold_prediction(json_file, output_base_dir="./predictions", cleanup
     start_time = time.time()
     
     try:
-        # 设置强制CPU环境变量
-        env = os.environ.copy()
-        env['CUDA_VISIBLE_DEVICES'] = ''
-        env['TORCH_CUDA_ENABLE'] = '0'
-        env['FORCE_CPU'] = '1'
-        env['DS_SKIP_CUDA_CHECK'] = '1'
-        
-        # 额外的CPU强制设置
-        env['OMP_NUM_THREADS'] = '4'  # 限制OpenMP线程数
-        env['MKL_NUM_THREADS'] = '4'  # 限制MKL线程数
-        
-        print("🛡️ 使用强制CPU环境变量运行...")
-        
-        # 运行预测 - CPU模式给更长的超时时间
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=7200, env=env)  # 2小时超时
+        # 运行预测
+        #result = subprocess.run(cmd, capture_output=True, text=True, timeout=7200)  # 2小时超时
+        result = subprocess.run(cmd, text=True)
         
         duration = time.time() - start_time
         
@@ -299,14 +228,13 @@ def run_alphafold_prediction(json_file, output_base_dir="./predictions", cleanup
                 'model_count': len(model_files),
                 'converted_count': converted_count,
                 'total_files': len([f for f in all_files if f.is_file()]),
-                'mode': '强制CPU模式',
                 'sequence_length': seq_length,
                 'cleaned_up': cleanup_intermediate and total_structure_files > 0
             }
         else:
             print(f"❌ 失败! 耗时: {duration/60:.1f}分钟")
             
-            # 显示更详细的错误信息
+            # 显示错误信息
             stderr_output = result.stderr.strip()
             stdout_output = result.stdout.strip()
             
@@ -320,19 +248,11 @@ def run_alphafold_prediction(json_file, output_base_dir="./predictions", cleanup
                 print(f"⚠️  标准错误:")
                 print(stderr_output[:500] + "..." if len(stderr_output) > 500 else stderr_output)
             
-            # 检查是否仍然有CUDA错误
-            if "CUDA" in stderr_output or "cuda" in stderr_output:
-                print("🚨 仍然检测到CUDA相关错误，可能需要:")
-                print("   1. 重新安装CPU版本的PyTorch")
-                print("   2. 检查protenix是否支持纯CPU运行")
-                print("   3. 使用不同的环境或容器")
-            
             return {
                 'status': 'failed',
                 'duration': duration,
                 'error': stderr_output,
                 'stdout': stdout_output,
-                'mode': '强制CPU模式',
                 'sequence_length': seq_length
             }
     
@@ -341,7 +261,6 @@ def run_alphafold_prediction(json_file, output_base_dir="./predictions", cleanup
         return {
             'status': 'timeout',
             'duration': 7200,
-            'mode': '强制CPU模式',
             'sequence_length': seq_length
         }
     
@@ -350,12 +269,11 @@ def run_alphafold_prediction(json_file, output_base_dir="./predictions", cleanup
         return {
             'status': 'error',
             'error': str(e),
-            'mode': '强制CPU模式',
             'sequence_length': seq_length
         }
 
 def process_batch(input_dir, start_from=0, limit=None, output_dir="./predictions", cleanup_intermediate=True, global_pdb_dir="./all_pdb_files"):
-    """批处理所有JSON文件 - 强制CPU版本"""
+    """批处理所有JSON文件 - 序列长度200-1000 AA"""
     input_path = Path(input_dir)
     json_files = sorted(list(input_path.glob("*.json")))
     
@@ -365,28 +283,37 @@ def process_batch(input_dir, start_from=0, limit=None, output_dir="./predictions
     
     print(f"📁 找到 {len(json_files)} 个JSON文件")
     
-    # 按序列长度过滤和排序
-    print("📏 按序列长度排序并过滤（只处理<1000 AA）...")
+    # 按序列长度过滤和排序 (200-1000 AA)
+    print("📏 按序列长度排序并过滤（只处理200-1000 AA）...")
     files_with_length = []
-    filtered_count = 0
+    too_short_count = 0
+    too_long_count = 0
     
     for json_file in json_files:
         seq_length = get_sequence_length(json_file)
         if seq_length > 0:
-            if seq_length < 1000:
+            if 258 <= seq_length <= 1000:
                 files_with_length.append((json_file, seq_length))
-            else:
-                filtered_count += 1
-                if filtered_count <= 5:
+            elif seq_length < 258:
+                too_short_count += 1
+                if too_short_count <= 3:
+                    print(f"⏩ 跳过过短序列: {json_file.name} ({seq_length} AA)")
+            else:  # seq_length > 1000
+                too_long_count += 1
+                if too_long_count <= 3:
                     print(f"⏩ 跳过超长序列: {json_file.name} ({seq_length} AA)")
         else:
             print(f"⚠️  无法获取序列长度: {json_file.name}")
     
-    if filtered_count > 5:
-        print(f"⏩ ... 还有 {filtered_count - 5} 个超长序列被跳过")
+    if too_short_count > 3:
+        print(f"⏩ ... 还有 {too_short_count - 3} 个过短序列被跳过")
+    if too_long_count > 3:
+        print(f"⏩ ... 还有 {too_long_count - 3} 个超长序列被跳过")
     
-    print(f"🔍 过滤结果: 跳过 {filtered_count} 个超长序列（≥1000 AA）")
-    print(f"📋 处理队列: {len(files_with_length)} 个序列（<1000 AA）")
+    print(f"🔍 过滤结果:")
+    print(f"  - 跳过过短序列: {too_short_count} 个 (<200 AA)")
+    print(f"  - 跳过超长序列: {too_long_count} 个 (>1000 AA)")
+    print(f"  - 处理队列: {len(files_with_length)} 个序列 (200-1000 AA)")
     
     if not files_with_length:
         print("❌ 没有找到符合条件的序列")
@@ -463,18 +390,17 @@ def process_batch(input_dir, start_from=0, limit=None, output_dir="./predictions
 def save_results(results, output_dir):
     """保存结果报告"""
     timestamp = time.strftime('%Y%m%d_%H%M%S')
-    report_file = Path(output_dir) / f"cpu_force_batch_results_{timestamp}.json"
+    report_file = Path(output_dir) / f"batch_results_{timestamp}.json"
     
     success_results = [r for r in results if r['status'] == 'success']
     
     report = {
         'metadata': {
             'timestamp': time.strftime('%Y-%m-%d %H:%M:%S'),
-            'execution_mode': '强制CPU模式',
             'total_files': len(results),
             'success_count': len(success_results),
             'failed_count': len(results) - len(success_results),
-            'length_filter': '<1000 AA only'
+            'length_filter': '200-1000 AA only'
         },
         'statistics': {
             'avg_duration': sum(r.get('duration', 0) for r in success_results) / len(success_results) if success_results else 0,
@@ -494,34 +420,23 @@ def save_results(results, output_dir):
     print(f"📄 详细报告已保存: {report_file}")
 
 def main():
-    parser = argparse.ArgumentParser(description='AlphaFold批处理脚本 - 强制CPU版本')
+    parser = argparse.ArgumentParser(description='AlphaFold批处理脚本 (200-1000 AA)')
     parser.add_argument('--input_dir', '-i', default='/home/webserver/student/students_webserver/zhijing/input_jsons', help='JSON文件输入目录')
     parser.add_argument('--output_dir', '-o', default='./alphafold_predictions', help='输出目录')
     parser.add_argument('--start_from', '-f', type=int, default=0, help='从第几个文件开始')
     parser.add_argument('--limit', '-l', type=int, help='处理文件数量限制')
     parser.add_argument('--no_cleanup', action='store_true', help='不清理中间文件')
-    parser.add_argument('--test_only', action='store_true', help='只运行测试，不进行批处理')
     
     args = parser.parse_args()
     
-    print("💻 AlphaFold批处理器 - 强制CPU版本")
-    print("🛡️ 专门解决CUDA内存不足问题")
+    print("💻 AlphaFold批处理器 (200-1000 AA)")
+    print("📏 序列长度过滤: 200-1000 氨基酸")
     print("=" * 60)
-    
-    # 设置强制CPU环境
-    setup_cpu_environment()
     
     # 检查系统环境
     check_system_environment()
     
-    # 测试protenix CPU兼容性
-    if not test_protenix_cpu():
-        print("❌ protenix CPU兼容性测试失败，可能无法正常运行")
-        return
-    
-    if args.test_only:
-        print("\n🧪 仅运行测试模式，不进行批处理")
-        return
+    print("🚀 准备开始批量处理...")
     
     if not os.path.exists(args.input_dir):
         print(f"❌ 输入目录不存在: {args.input_dir}")
