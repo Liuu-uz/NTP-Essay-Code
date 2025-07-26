@@ -1,0 +1,167 @@
+CSV文件处理报告
+================================================================================
+
+总文件数: 79
+成功过滤且有数据: 72
+过滤后变空: 7
+原本就是空: 0
+没有filename列: 0
+处理出错: 0
+
+⚠️ 过滤后变空的文件:
+----------------------------------------
+  A2T3S5_zscores.csv (原有 2 行)
+  A9VUC4_zscores.csv (原有 1 行)
+  Q14296_zscores.csv (原有 4 行)
+  Q5P5G3_zscores.csv (原有 1 行)
+  A0RHX9_zscores.csv (原有 2 行)
+  Q5NAZ7_zscores.csv (原有 1 行)
+  Q8RM02_zscores.csv (原有 1 行)
+
+✅ 成功过滤的文件:
+----------------------------------------
+  Q67ZM7_zscores.csv: 7 -> 4 行
+     匹配ID: 6t0vB, 4ff3A, 3f2bA, 7y7pA
+  A1RSF4_zscores.csv: 5 -> 2 行
+     匹配ID: 3wdlB, 4ff3A
+  O54003_zscores.csv: 10 -> 4 行
+     匹配ID: 6t0vB, 3amtA, 3f2bA, 4ff3A
+  A0JND9_zscores.csv: 10 -> 5 行
+     匹配ID: 3f2bA, 4ff3A, 6t0vB, 3wdlB, 7y7pA
+  A0A8B6XWW9_zscores.csv: 12 -> 5 行
+     匹配ID: 3f2bA, 6ig2D, 4ff3A, 6t0vB, 3amtA
+  P87170_zscores.csv: 8 -> 6 行
+     匹配ID: 4ff3A, 6t0vB, 3amtA, 3f2bA, 7y7pA, 7tgkD
+  A1RXB2_zscores.csv: 8 -> 4 行
+     匹配ID: 6t0vB, 3f2bA, 3amtA, 4ff3A
+  A5IVK3_zscores.csv: 3 -> 2 行
+     匹配ID: 3amtA, 4ff3A
+  A2BN92_zscores.csv: 4 -> 1 行
+     匹配ID: 6t0vB
+  A7J392_zscores.csv: 7 -> 5 行
+     匹配ID: 6t0vB, 3amtA, 3f2bA, 3wdlB, 7tgkD
+  Q2FUA9_zscores.csv: 5 -> 1 行
+     匹配ID: 3wdlB
+  A0A482WD11_zscores.csv: 8 -> 4 行
+     匹配ID: 6ig2D, 3f2bA, 6t0vB, 4ff3A
+  F4IRQ5_zscores.csv: 7 -> 4 行
+     匹配ID: 3amtA, 8dcdA, 4ff3A, 6t0vB
+  A6UQM0_zscores.csv: 7 -> 2 行
+     匹配ID: 3amtA, 6t0vB
+  A0KMM4_zscores.csv: 8 -> 2 行
+     匹配ID: 7tgkD, 2xanA
+  A0L1Z0_zscores.csv: 11 -> 4 行
+     匹配ID: 7tgkD, 4ff3A, 6t0vB, 3amtA
+  F4JSH1_zscores.csv: 2 -> 2 行
+     匹配ID: 3wdlB, 3f2bA
+  A7J3A0_zscores.csv: 7 -> 3 行
+     匹配ID: 6t0vB, 3f2bA, 3amtA
+  Q2N2K0_zscores.csv: 12 -> 5 行
+     匹配ID: 3amtA, 3f2bA, 6t0vB, 4ff3A, 7y7pA
+  Q2N2K3_zscores.csv: 11 -> 5 行
+     匹配ID: 4ff3A, 6t0vB, 3f2bA, 3amtA, 7y7pA
+  O18956_zscores.csv: 9 -> 5 行
+     匹配ID: 3f2bA, 4ff3A, 6t0vB, 3wdlB, 7y7pA
+  A3CXJ6_zscores.csv: 3 -> 3 行
+     匹配ID: 4ff3A, 6t0vB, 3amtA
+  Q8RM03_zscores.csv: 9 -> 3 行
+     匹配ID: 6ci7C, 3f2bA, 6t0vB
+  Q753I3_zscores.csv: 6 -> 5 行
+     匹配ID: 4ff3A, 3f2bA, 6t0vB, 7y7pA, 3amtA
+  A0A314KSQ4_zscores.csv: 8 -> 2 行
+     匹配ID: 3amtA, 6ig2D
+  A0B742_zscores.csv: 3 -> 3 行
+     匹配ID: 4ff3A, 6t0vB, 6ig2D
+  Q05B50_zscores.csv: 6 -> 4 行
+     匹配ID: 8dcdA, 3amtA, 4ff3A, 6t0vB
+  D3Z5S8_zscores.csv: 10 -> 5 行
+     匹配ID: 6ig2D, 3f2bA, 6t0vB, 3amtA, 7tgkD
+  A4ZCW6_zscores.csv: 6 -> 3 行
+     匹配ID: 6t0vB, 3amtA, 3wdlB
+  A0A6J1SUS3_zscores.csv: 6 -> 2 行
+     匹配ID: 6ig2D, 7y7pA
+  Q8PUQ1_zscores.csv: 7 -> 1 行
+     匹配ID: 3wdlB
+  Q5P5G4_zscores.csv: 11 -> 3 行
+     匹配ID: 3wdlB, 6ci7C, 3f2bA
+  A0KAZ7_zscores.csv: 7 -> 2 行
+     匹配ID: 2xanA, 7tgkD
+  Q5JIZ8_zscores.csv: 8 -> 3 行
+     匹配ID: 3wdlB, 6t0vB, 3f2bA
+  A0B8Y7_zscores.csv: 3 -> 2 行
+     匹配ID: 6t0vB, 4ff3A
+  Q2N2K1_zscores.csv: 7 -> 3 行
+     匹配ID: 4ff3A, 6t0vB, 3amtA
+  Q54E29_zscores.csv: 5 -> 4 行
+     匹配ID: 8dcdA, 4ff3A, 3amtA, 6t0vB
+  A0QFB7_zscores.csv: 5 -> 3 行
+     匹配ID: 4ff3A, 8dcdA, 3f2bA
+  Q6I581_zscores.csv: 4 -> 1 行
+     匹配ID: 3amtA
+  B6YXQ1_zscores.csv: 10 -> 4 行
+     匹配ID: 3wdlB, 2xanA, 6t0vB, 3f2bA
+  Q9JIX9_zscores.csv: 5 -> 3 行
+     匹配ID: 3f2bA, 7y7pA, 6t0vB
+  A7GRZ1_zscores.csv: 1 -> 1 行
+     匹配ID: 4ff3A
+  A0PQT1_zscores.csv: 7 -> 4 行
+     匹配ID: 8dcdA, 4ff3A, 6t0vB, 3f2bA
+  A2SQ88_zscores.csv: 2 -> 2 行
+     匹配ID: 6t0vB, 8dcdA
+  A6U4F3_zscores.csv: 2 -> 1 行
+     匹配ID: 4ff3A
+  A8FGT0_zscores.csv: 4 -> 1 行
+     匹配ID: 4ff3A
+  P46904_zscores.csv: 6 -> 3 行
+     匹配ID: 8dcdA, 4ff3A, 6t0vB
+  F4ISV6_zscores.csv: 5 -> 4 行
+     匹配ID: 8dcdA, 3amtA, 4ff3A, 6t0vB
+  P53215_zscores.csv: 6 -> 4 行
+     匹配ID: 6t0vB, 8dcdA, 3amtA, 4ff3A
+  E1BPN0_zscores.csv: 4 -> 1 行
+     匹配ID: 6t0vB
+  A0QZ42_zscores.csv: 3 -> 2 行
+     匹配ID: 6t0vB, 8dcdA
+  A6QJR2_zscores.csv: 3 -> 2 行
+     匹配ID: 3amtA, 4ff3A
+  A0A2B4RNI3_zscores.csv: 7 -> 4 行
+     匹配ID: 6ig2D, 3f2bA, 6t0vB, 7y7pA
+  A0B624_zscores.csv: 2 -> 2 行
+     匹配ID: 3amtA, 6t0vB
+  Q5P5G5_zscores.csv: 6 -> 1 行
+     匹配ID: 6ci7C
+  A0A1J6KGJ9_zscores.csv: 6 -> 2 行
+     匹配ID: 3amtA, 6ig2D
+  A4G0F9_zscores.csv: 7 -> 3 行
+     匹配ID: 3amtA, 4ff3A, 6t0vB
+  A0KQK0_zscores.csv: 10 -> 3 行
+     匹配ID: 7tgkD, 2xanA, 6t0vB
+  A4FZ97_zscores.csv: 8 -> 4 行
+     匹配ID: 3amtA, 6t0vB, 4ff3A, 6ci7C
+  P74653_zscores.csv: 10 -> 5 行
+     匹配ID: 6t0vB, 3amtA, 4ff3A, 3wdlB, 7y7pA
+  A2SPE0_zscores.csv: 2 -> 2 行
+     匹配ID: 3amtA, 6t0vB
+  A1K4K7_zscores.csv: 12 -> 5 行
+     匹配ID: 2xanA, 7tgkD, 7y7pA, 3amtA, 6t0vB
+  A5ULV0_zscores.csv: 9 -> 5 行
+     匹配ID: 3amtA, 6t0vB, 6ci7C, 8dcdA, 4ff3A
+  A5UM10_zscores.csv: 5 -> 3 行
+     匹配ID: 3amtA, 4ff3A, 6t0vB
+  B0BNK8_zscores.csv: 7 -> 3 行
+     匹配ID: 6ig2D, 3f2bA, 3amtA
+  A0JWY8_zscores.csv: 4 -> 3 行
+     匹配ID: 8dcdA, 3amtA, 6t0vB
+  Q9SKE2_zscores.csv: 6 -> 2 行
+     匹配ID: 3amtA, 6ig2D
+  A1JRX0_zscores.csv: 12 -> 5 行
+     匹配ID: 7tgkD, 2xanA, 6t0vB, 3amtA, 4ff3A
+  A0K832_zscores.csv: 9 -> 3 行
+     匹配ID: 7tgkD, 6t0vB, 4ff3A
+  Q2N2K2_zscores.csv: 14 -> 5 行
+     匹配ID: 6t0vB, 3amtA, 7tgkD, 4ff3A, 3f2bA
+  Q12382_zscores.csv: 4 -> 2 行
+     匹配ID: 4ff3A, 3amtA
+  A0A3M6TIF0_zscores.csv: 17 -> 8 行
+     匹配ID: 3wdlB, 8dcdA, 6ig2D, 3f2bA, 6t0vB, 4ff3A, 2xanA, 6t0vB
+

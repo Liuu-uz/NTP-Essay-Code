@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-DALI序列提取器 - 从Excel文件提取DALI选中的序列并转换为JSON
-固定路径版本 - 直接运行即可
+NTP Processing序列提取器 - 修复版本
+解决不同文件夹中相同sequence_id的覆盖问题
 """
 
 import json
@@ -10,25 +10,35 @@ import os
 import pandas as pd
 from typing import Dict, List, Optional
 from pathlib import Path
+import re
 
-class DALISequenceExtractor:
+class NTPProcessingSequenceExtractor:
     def __init__(self):
         # 固定的绝对路径
-        self.excel_path = "/Users/napkin/NTP-Essay-Code-1/NTP-Essay-Code/seq-supfam/NTP_Analysis_Report_20250723_133848.xlsx"
+        self.excel_path = "/Users/napkin/NTP-Essay-Code-1/NTP-Essay-Code/seq-supfam/NTP_Analysis_Report.xlsx"
         self.fasta_base_path = Path("/Users/napkin/NTP-Essay-Code-1/NTP-Essay-Code/fasta_files")
+        
+    def sanitize_filename(self, filename: str) -> str:
+        """清理文件名中的特殊字符"""
+        # 替换文件系统不允许的字符为下划线
+        sanitized = re.sub(r'[<>:"/\\|?*\x00-\x1f]', '_', filename)
+        
+        # 移除开头和结尾的点和空格
+        sanitized = sanitized.strip('. ')
+        
+        # 确保不为空
+        if not sanitized:
+            sanitized = "unnamed"
+        
+        # 限制长度
+        if len(sanitized) > 200:
+            sanitized = sanitized[:200]
+        
+        return sanitized
         
     def validate_sequence(self, sequence: str) -> bool:
         """验证氨基酸序列是否有效 - 包含扩展IUPAC代码"""
-        # 标准20种氨基酸 + 扩展IUPAC代码
         valid_amino_acids = set('ACDEFGHIKLMNPQRSTVWYXBZJUO*')
-        # A,C,D,E,F,G,H,I,K,L,M,N,P,Q,R,S,T,V,W,Y - 标准20种
-        # X - 未知氨基酸
-        # B - Asn或Asp
-        # Z - Gln或Glu  
-        # J - Leu或Ile
-        # U - 硒代半胱氨酸
-        # O - 吡咯赖氨酸
-        # * - 终止密码子
         cleaned_sequence = sequence.replace(' ', '').replace('\n', '').upper()
         return all(aa in valid_amino_acids for aa in cleaned_sequence)
     
@@ -36,23 +46,69 @@ class DALISequenceExtractor:
         """清理序列字符串"""
         return sequence.replace(' ', '').replace('\n', '').replace('\r', '').upper().strip()
     
-    def read_dali_records(self) -> List[Dict]:
-        """从Excel文件读取DALI记录"""
+    def read_ntp_processing_records(self) -> List[Dict]:
+        """从Excel文件读取NTP processing SF found记录"""
         try:
             print(f"读取Excel文件: {self.excel_path}")
-            df = pd.read_excel(self.excel_path, sheet_name='Detailed_Results')
             
-            # 筛选Result_Category为DALI的记录
-            dali_records = df[df['Result_Category'] == 'DALI']
-            print(f"找到 {len(dali_records)} 条DALI记录")
+            try:
+                df = pd.read_excel(self.excel_path, sheet_name='Detailed_Results')
+            except ValueError:
+                df = pd.read_excel(self.excel_path, sheet_name=0)
+                print("使用第一个工作表")
+            
+            print(f"Excel文件总共有 {len(df)} 行数据")
+            print(f"列名: {list(df.columns)}")
+            
+            # 筛选Result_Category为'NTP processing SF found'的记录
+            ntp_records = df[df['Result_Category'] == 'NTP processing SF found']
+            print(f"找到 {len(ntp_records)} 条'NTP processing SF found'记录")
+            
+            if len(ntp_records) == 0:
+                unique_categories = df['Result_Category'].unique()
+                print("可用的Result_Category值:")
+                for cat in unique_categories:
+                    count = len(df[df['Result_Category'] == cat])
+                    print(f"  - '{cat}': {count} 条记录")
+                
+                print("\n尝试模糊匹配包含'NTP'的记录...")
+                ntp_like_records = df[df['Result_Category'].str.contains('NTP', case=False, na=False)]
+                print(f"找到 {len(ntp_like_records)} 条包含'NTP'的记录")
+                
+                if len(ntp_like_records) > 0:
+                    ntp_records = ntp_like_records
+                    print("使用包含'NTP'的记录")
+            
+            # 检查重复的sequence_id
+            sequence_ids = ntp_records['Sequence_ID'].astype(str).tolist()
+            folders = ntp_records['Folder'].astype(str).tolist()
+            
+            print(f"唯一sequence_id数: {len(set(sequence_ids))}")
+            print(f"总记录数: {len(sequence_ids)}")
+            
+            # 统计重复情况
+            from collections import Counter
+            id_counts = Counter(sequence_ids)
+            duplicates = {seq_id: count for seq_id, count in id_counts.items() if count > 1}
+            
+            if duplicates:
+                print(f"发现 {len(duplicates)} 个重复的sequence_id:")
+                for seq_id, count in list(duplicates.items())[:5]:  # 只显示前5个
+                    print(f"  - {seq_id}: {count} 次")
+                    # 显示这些重复ID来自哪些文件夹
+                    related_folders = [folders[i] for i, sid in enumerate(sequence_ids) if sid == seq_id]
+                    print(f"    来自文件夹: {set(related_folders)}")
+                if len(duplicates) > 5:
+                    print(f"  ... 还有 {len(duplicates) - 5} 个重复ID")
             
             records = []
-            for _, row in dali_records.iterrows():
+            for _, row in ntp_records.iterrows():
                 records.append({
                     'folder': str(row['Folder']),
                     'sequence_id': str(row['Sequence_ID']),
                     'html_file': str(row['HTML_File']),
-                    'found_superfamily': str(row['Found_Superfamily']) if pd.notna(row['Found_Superfamily']) else 'N/A'
+                    'found_superfamily': str(row['Found_Superfamily']) if pd.notna(row['Found_Superfamily']) else 'N/A',
+                    'result_category': str(row['Result_Category'])
                 })
             
             return records
@@ -110,25 +166,49 @@ class DALISequenceExtractor:
             print(f"读取FASTA文件出错 {fasta_file}: {e}")
             return None
     
-    def extract_dali_sequences(self) -> List[Dict]:
-        """提取所有DALI选中的序列"""
-        dali_records = self.read_dali_records()
+    def create_unique_name(self, folder: str, sequence_id: str) -> str:
+        """创建唯一的序列名称，结合序列ID和文件夹"""
+        # 方案: sequenceID_folder
+        unique_name = f"{sequence_id}_{folder}"
         
-        if not dali_records:
-            print("没有找到DALI记录")
+        # 清理特殊字符
+        unique_name = self.sanitize_filename(unique_name)
+        
+        return unique_name
+    
+    def extract_ntp_processing_sequences(self) -> List[Dict]:
+        """提取所有NTP processing SF found的序列"""
+        ntp_records = self.read_ntp_processing_records()
+        
+        if not ntp_records:
+            print("没有找到NTP processing SF found记录")
             return []
         
         results = []
         success_count = 0
+        seen_combinations = set()  # 跟踪已处理的 (folder, sequence_id) 组合
+        duplicate_combinations = 0
         
-        print(f"\n开始处理 {len(dali_records)} 个DALI记录...")
+        print(f"\n开始处理 {len(ntp_records)} 个NTP processing记录...")
         
-        for i, record in enumerate(dali_records, 1):
+        for i, record in enumerate(ntp_records, 1):
             folder = record['folder']
             sequence_id = record['sequence_id']
             found_superfamily = record['found_superfamily']
+            result_category = record['result_category']
             
-            print(f"[{i}/{len(dali_records)}] 处理: {sequence_id} (文件夹: {folder})")
+            # 创建唯一标识符
+            combination_key = (folder, sequence_id)
+            
+            print(f"[{i}/{len(ntp_records)}] 处理: {sequence_id} (文件夹: {folder}, 类别: {result_category})")
+            
+            # 检查是否已经处理过这个组合
+            if combination_key in seen_combinations:
+                duplicate_combinations += 1
+                print(f"  -> 跳过重复组合: {folder}/{sequence_id}")
+                continue
+            
+            seen_combinations.add(combination_key)
             
             # 查找FASTA文件
             fasta_file = self.find_fasta_file(folder, sequence_id)
@@ -146,7 +226,10 @@ class DALISequenceExtractor:
                 print(f"  -> 序列包含无效字符，跳过")
                 continue
             
-            # 创建JSON条目 - 简单格式
+            # 创建唯一名称
+            unique_name = self.create_unique_name(folder, sequence_id)
+            
+            # 创建JSON条目
             json_entry = {
                 "sequences": [
                     {
@@ -156,18 +239,23 @@ class DALISequenceExtractor:
                         }
                     }
                 ],
-                "name": sequence_id  # 直接使用序列ID作为名称
+                "name": unique_name,  # 使用唯一名称
             }
             
             results.append(json_entry)
             success_count += 1
-            print(f"  -> 成功 (长度: {len(sequence)})")
+            print(f"  -> 成功 (唯一名称: {unique_name}, 长度: {len(sequence)}, 超家族: {found_superfamily})")
         
-        print(f"\n处理完成: {success_count}/{len(dali_records)} 个序列成功")
+        print(f"\n处理完成:")
+        print(f"- 总记录数: {len(ntp_records)}")
+        print(f"- 成功处理: {success_count}")
+        print(f"- 跳过的重复组合: {duplicate_combinations}")
+        print(f"- 唯一的 (folder, sequence_id) 组合: {len(seen_combinations)}")
+        
         return results
     
     def save_sequences(self, sequences: List[Dict], output_path: str, single_file: bool = False):
-        """保存序列到JSON文件"""
+        """保存序列到JSON文件 - 带详细跟踪"""
         if not sequences:
             print("没有序列需要保存")
             return
@@ -190,24 +278,77 @@ class DALISequenceExtractor:
             output_dir.mkdir(exist_ok=True)
             
             saved_count = 0
-            for sequence in sequences:
-                filename = f"{sequence['name']}.json"  # 使用序列名作为文件名
+            failed_count = 0
+            failed_files = []
+            seen_filenames = set()
+            
+            print(f"开始保存 {len(sequences)} 个序列到 {output_dir}")
+            
+            for i, sequence in enumerate(sequences):
+                unique_name = sequence['name']
+                original_id = sequence.get('original_sequence_id', 'unknown')
+                folder = sequence.get('folder', 'unknown')
+                
+                # 确保文件名唯一
+                base_filename = self.sanitize_filename(unique_name)
+                filename = f"{base_filename}.json"
+                
+                # 如果文件名重复，添加序号
+                counter = 1
+                while filename in seen_filenames:
+                    filename = f"{base_filename}_{counter}.json"
+                    counter += 1
+                
+                seen_filenames.add(filename)
                 filepath = output_dir / filename
                 
                 try:
                     with open(filepath, 'w', encoding='utf-8') as f:
-                        json.dump([sequence], f, indent=2, ensure_ascii=False)  # 保持数组格式
+                        json.dump([sequence], f, indent=2, ensure_ascii=False)
                     saved_count += 1
+                    
+                    # 每100个文件报告进度
+                    if (i + 1) % 100 == 0:
+                        print(f"进度: {i + 1}/{len(sequences)} 已保存")
+                        
                 except Exception as e:
-                    print(f"保存文件出错 {filepath}: {e}")
+                    failed_count += 1
+                    failed_files.append({
+                        'unique_name': unique_name, 
+                        'original_id': original_id,
+                        'folder': folder,
+                        'error': str(e)
+                    })
+                    print(f"保存文件出错 {filename}: {e}")
             
-            print(f"保存到文件夹: {output_dir} ({saved_count} 个文件)")
+            # 最终报告
+            print(f"\n保存完成统计:")
+            print(f"- 成功保存: {saved_count} 个文件")
+            print(f"- 保存失败: {failed_count} 个文件")
+            print(f"- 保存位置: {output_dir}")
+            
+            # 显示失败的文件
+            if failed_files:
+                print(f"\n失败的文件详情:")
+                for fail_info in failed_files[:5]:  # 只显示前5个
+                    print(f"  - {fail_info['folder']}/{fail_info['original_id']}: {fail_info['error']}")
+                if len(failed_files) > 5:
+                    print(f"  ... 还有 {len(failed_files) - 5} 个失败")
+            
+            # 验证实际文件数
+            actual_files = list(output_dir.glob("*.json"))
+            print(f"\n验证: 目录中实际有 {len(actual_files)} 个JSON文件")
+            
+            if len(actual_files) != saved_count:
+                print(f"警告: 报告的成功数量({saved_count})与实际文件数({len(actual_files)})不符!")
+            else:
+                print("✅ 文件保存验证通过!")
 
 def main():
     # 固定的文件路径
-    excel_path = "/Users/napkin/NTP-Essay-Code-1/NTP-Essay-Code/seq-supfam/NTP_Analysis_Report_20250723_133848.xlsx"
+    excel_path = "/Users/napkin/NTP-Essay-Code-1/NTP-Essay-Code/seq-supfam/NTP_Analysis_Report.xlsx"
     fasta_path = "/Users/napkin/NTP-Essay-Code-1/NTP-Essay-Code/fasta_files"
-    output_path = "/Users/napkin/NTP-Essay-Code-1/NTP-Essay-Code/dali_sequences"
+    output_path = "/Users/napkin/NTP-Essay-Code-1/NTP-Essay-Code/ntp_processing_sequences_fixed"
     
     # 检查文件是否存在
     if not os.path.exists(excel_path):
@@ -219,7 +360,7 @@ def main():
         sys.exit(1)
     
     print("=" * 60)
-    print("DALI序列提取器")
+    print("NTP Processing 序列提取器 - 修复版本")
     print("=" * 60)
     print(f"Excel文件: {excel_path}")
     print(f"FASTA路径: {fasta_path}")
@@ -227,13 +368,14 @@ def main():
     print("=" * 60)
     
     # 创建提取器并处理
-    extractor = DALISequenceExtractor()
-    sequences = extractor.extract_dali_sequences()
+    extractor = NTPProcessingSequenceExtractor()
+    sequences = extractor.extract_ntp_processing_sequences()
     
     if sequences:
         extractor.save_sequences(sequences, output_path, single_file=False)
-        print(f"\n✅ 处理完成! 成功提取 {len(sequences)} 个DALI序列")
+        print(f"\n✅ 处理完成! 成功提取 {len(sequences)} 个NTP processing序列")
         print(f"JSON文件已保存到: {output_path}")
+        print(f"文件命名格式: sequenceID_folder.json")
     else:
         print("\n❌ 没有成功提取任何序列")
 
