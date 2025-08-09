@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MKKAVVVFSGGQDSTTCLVQALSRYDEVHAITFDYGQRHREEIETARRLASQLGIAAHKVMDVTMLGELAISALTRDEIPVSFELQDNGLPNTFVPGRNILFLTLAAIYAYQVGAEAVITGVCETDFSGYPDCRDEFVKALNQAVSLGLDRAIRFETPLMWLDKAETWALADHYGHLDTVRQQTLTCYNGIAGDGCGACPACDLRSRGLQQYLADKAGVAARLHQKTGLGEKSGC",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "A0KJA0_6.3.4.20"
+  }
+]

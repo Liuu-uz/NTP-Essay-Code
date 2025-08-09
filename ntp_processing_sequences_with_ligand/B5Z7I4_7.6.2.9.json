@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MKEIVTIENVSFNYRNRAVFKDFNLSIEKGDFLCVLGESGSGKSTLLGLILGLLKPSLGSVKIFNETLSNNAFLRQKIGYIAQGNSLFSHLNALQNMTFCLNLQGINKQAAQKEAKALALKMGLDESLMDKFPNELSGGQAQRVGIIRGIIHKPELILLDEPFSALDSFNRKNLQDLIKEIHQNSCATFIMVTHDEEEAQKLATKTLEIKALK",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "B5Z7I4_7.6.2.9"
+  }
+]

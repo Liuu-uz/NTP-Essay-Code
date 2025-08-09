@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MSKDYEVFPLLLEMAKRGCLVAPRRLSRIEILKTLGLTPWRFKKLVEAAEEEGYIERRVHGRMVFYVVTERGRALLRRVYDDLKRTIDSSTFLTLRGYVVPGLGEGAIYMGIPRYVEAFKEVLGYEPYPGTLNIKLVDEDVYLRRALREKRVGFRIEGFRLDEGRESCGVTVYKAMIMANGVTVSGAALDIDKTKHGDEILELIAPVRLRDELRLKDGDKVEVVIPV",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "A1RWC8_2.7.1.161"
+  }
+]

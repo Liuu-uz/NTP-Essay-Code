@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MAIVYLSLGSNLGDRHSLLSAALEMLQTRVGRLLTLSRFYETEPWGFESPHPFLNAVVALRSELKPQDILHITQAIERELGRTQKSNGGVYHDRPIDIDILLHSVYPKVQSPELELPHPQMWQRDFVRMPLSDVAPWLHPEAPTPNL",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "B2RI92_2.7.6.3"
+  }
+]

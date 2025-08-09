@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MITERVKMEVIGLEIPLISGNEDYTLAELISKYPLKDKDIIVIAETVVSKSEKNVILKDTIKPSNEAIELSKKLGKEPEVVQVILDESNETVRLGPNFIVTETKHGFVCANSGVDESNTSKGIKPLPKNPDKSANEIRKGIEEITGKNVGVIINDSMGRPFRKGSCGVAIGVSGVCGLWDRKGEKDLFGRELKTTEVGIADELAATASVVMGQSNEGIPLVIIRNAPVPFNDGTGKELIRKKEEDVFR",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "A6VFM8_6.3.2.31"
+  }
+]

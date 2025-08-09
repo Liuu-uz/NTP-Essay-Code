@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MISVEHVSKRYLTRQGWRTVLHDISFKMEKGEKIGILGRNGAGKSTLIRLISGVEPPTTGEIKRTMSISWPLAFSGAFQGSLTGMDNLRFICRIYNVDIDYVKNFTEEFSELGQYLYEPVKRYSSGMKARLAFALSLAVEFDCYLIDEVIAVGDSRFADKCKYELFEKRKDRSIILVSHSHSAMKQYCDNAMVLEKGHMYQFEDMDKAYEYYNSLP",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "P57013_7.6.2.12"
+  }
+]

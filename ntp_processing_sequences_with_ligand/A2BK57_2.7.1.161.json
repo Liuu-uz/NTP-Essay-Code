@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MENGAVQQLQLLGKRVKGFGVGGRYVAHPYYSGRFRELLGCTPFPGTLNFDANLDWRELASMCEPQVIPGTVWDGVRLGAVYVWKAKIMTRHGYVDCAVIRPLLSGHPPTVLEIVACEKLEPILENNPDKTVIVTIACKRGDALRWRRY",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "A2BK57_2.7.1.161"
+  }
+]

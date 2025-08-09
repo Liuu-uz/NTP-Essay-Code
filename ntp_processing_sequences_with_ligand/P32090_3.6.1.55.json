@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MMDKKKLHIAAGVICDKHNNVFIAQRPLKSHMGGFWEFPGGKLEDNETPEQALLRELQEEIGIDVTQCTLLDTVAHDFPDRHITLSFFLVTEWKNELTEKKGSCRVGHLLCL",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "P32090_3.6.1.55"
+  }
+]

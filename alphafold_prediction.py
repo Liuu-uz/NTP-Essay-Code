@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """
 AlphaFold 批处理脚本 - 序列长度过滤: 200-1000 AA
+新增MSA限流处理和智能休息策略
 """
 
 import os
 import json
 import subprocess
 import time
+import random
+import re
 from pathlib import Path
 import argparse
 
@@ -155,10 +158,73 @@ def get_sequence_length(json_file):
     except:
         return 0
 
+def parse_msa_status_from_output(output_text):
+    """从输出中解析MSA状态"""
+    msa_info = {
+        'pending_detected': False,
+        'sleep_time': 0,
+        'msa_success': False,
+        'error_detected': False
+    }
+    
+    lines = output_text.split('\n')
+    
+    for line in lines:
+        # 检查PENDING状态
+        if 'Sleeping for' in line and 'PENDING' in line:
+            match = re.search(r'Sleeping for (\d+)s', line)
+            if match:
+                msa_info['pending_detected'] = True
+                msa_info['sleep_time'] = int(match.group(1))
+        
+        # 检查MSA成功
+        elif 'update msa result success' in line:
+            msa_info['msa_success'] = True
+        
+        # 检查其他错误
+        elif any(error_keyword in line.lower() for error_keyword in ['error', 'failed', 'timeout']):
+            msa_info['error_detected'] = True
+    
+    return msa_info
 
+def calculate_smart_delay(consecutive_pendings, seq_length, is_first_request=False):
+    """计算智能延迟时间"""
+    
+    if is_first_request:
+        # 第一个请求不延迟
+        return 0
+    
+    # 根据连续PENDING次数调整基础延迟和倍数
+    if consecutive_pendings == 0:
+        # 正常情况，基础延迟60秒
+        base_delay = 60
+        pending_factor = 1.0
+    elif consecutive_pendings == 1:
+        # 第一次PENDING，休息约3分钟
+        base_delay = 180
+        pending_factor = 1.0
+    elif consecutive_pendings == 2:
+        # 连续PENDING，休息约5分钟
+        base_delay = 300
+        pending_factor = 1.0
+    else:
+        # 严重限流，休息约8分钟
+        base_delay = 480
+        pending_factor = 1.0
+    
+    # 根据序列长度微调（长序列MSA更耗时）
+    length_factor = min(seq_length / 300, 1.5)
+    
+    # 随机化避免同步请求
+    random_factor = random.uniform(0.8, 1.2)
+    
+    total_delay = base_delay * pending_factor * length_factor * random_factor
+    
+    # 限制延迟范围：最少15秒，最多600秒（10分钟）
+    return max(15, min(total_delay, 600))
 
-def run_alphafold_prediction(json_file, output_base_dir="./predictions", cleanup_intermediate=True, global_pdb_dir="./all_pdb_files"):
-    """运行单个AlphaFold预测"""
+def run_alphafold_prediction_optimized(json_file, output_base_dir="./predictions", cleanup_intermediate=True, global_pdb_dir="./all_pdb_files", previous_msa_info=None):
+    """优化版AlphaFold预测（带MSA状态处理）"""
     sequence_name = json_file.stem
     output_dir = Path(output_base_dir) / f"{sequence_name}_output"
     
@@ -182,13 +248,59 @@ def run_alphafold_prediction(json_file, output_base_dir="./predictions", cleanup
     start_time = time.time()
     
     try:
-        # 运行预测
-        #result = subprocess.run(cmd, capture_output=True, text=True, timeout=7200)  # 2小时超时
-        result = subprocess.run(cmd, text=True)
+        # 运行预测，实时监控输出
+        process = subprocess.Popen(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            bufsize=1,
+            universal_newlines=True
+        )
         
+        output_lines = []
+        msa_start_time = None
+        pending_detected = False
+        
+        # 实时读取输出
+        while True:
+            output = process.stdout.readline()
+            if output == '' and process.poll() is not None:
+                break
+            if output:
+                output_lines.append(output.strip())
+                
+                # 实时检测关键状态
+                if 'starting to update msa result' in output:
+                    msa_start_time = time.time()
+                    print(f"   🔍 开始MSA搜索...")
+                
+                elif 'Sleeping for' in output and 'PENDING' in output:
+                    match = re.search(r'Sleeping for (\d+)s', output)
+                    if match:
+                        sleep_time = int(match.group(1))
+                        print(f"   🚦 MSA服务器PENDING，需等待{sleep_time}秒...")
+                        pending_detected = True
+                
+                elif 'Files downloaded and extracted successfully' in output:
+                    if msa_start_time:
+                        msa_duration = time.time() - msa_start_time
+                        print(f"   ✅ MSA下载完成，耗时{msa_duration:.1f}秒")
+                
+                elif 'update msa result success' in output:
+                    if msa_start_time:
+                        total_msa_time = time.time() - msa_start_time
+                        print(f"   🎯 MSA处理完成，总耗时{total_msa_time:.1f}秒")
+        
+        # 等待进程完成
+        return_code = process.wait()
         duration = time.time() - start_time
         
-        if result.returncode == 0:
+        # 解析输出
+        full_output = '\n'.join(output_lines)
+        msa_info = parse_msa_status_from_output(full_output)
+        
+        if return_code == 0:
             # 检查输出文件
             pdb_files = list(output_dir.glob("**/*.pdb"))
             cif_files = list(output_dir.glob("**/*.cif"))
@@ -229,40 +341,27 @@ def run_alphafold_prediction(json_file, output_base_dir="./predictions", cleanup
                 'converted_count': converted_count,
                 'total_files': len([f for f in all_files if f.is_file()]),
                 'sequence_length': seq_length,
-                'cleaned_up': cleanup_intermediate and total_structure_files > 0
+                'cleaned_up': cleanup_intermediate and total_structure_files > 0,
+                'msa_info': msa_info,
+                'pending_detected': pending_detected
             }
         else:
             print(f"❌ 失败! 耗时: {duration/60:.1f}分钟")
+            print(f"📤 返回码: {return_code}")
             
-            # 显示错误信息
-            stderr_output = result.stderr.strip()
-            stdout_output = result.stdout.strip()
-            
-            print(f"📤 返回码: {result.returncode}")
-            
-            if stdout_output:
-                print(f"📋 标准输出:")
-                print(stdout_output[:500] + "..." if len(stdout_output) > 500 else stdout_output)
-            
-            if stderr_output:
-                print(f"⚠️  标准错误:")
-                print(stderr_output[:500] + "..." if len(stderr_output) > 500 else stderr_output)
+            # 显示部分输出用于调试
+            if full_output:
+                print(f"📋 输出摘要:")
+                print(full_output[-300:])  # 显示最后300字符
             
             return {
                 'status': 'failed',
                 'duration': duration,
-                'error': stderr_output,
-                'stdout': stdout_output,
-                'sequence_length': seq_length
+                'error': full_output[-500:] if full_output else '',
+                'sequence_length': seq_length,
+                'msa_info': msa_info,
+                'pending_detected': pending_detected
             }
-    
-    except subprocess.TimeoutExpired:
-        print(f"⏰ 超时! (2小时)")
-        return {
-            'status': 'timeout',
-            'duration': 7200,
-            'sequence_length': seq_length
-        }
     
     except Exception as e:
         print(f"💥 异常: {e}")
@@ -272,8 +371,8 @@ def run_alphafold_prediction(json_file, output_base_dir="./predictions", cleanup
             'sequence_length': seq_length
         }
 
-def process_batch(input_dir, start_from=0, limit=None, output_dir="./predictions", cleanup_intermediate=True, global_pdb_dir="./all_pdb_files"):
-    """批处理所有JSON文件 - 序列长度200-1000 AA"""
+def process_batch_optimized(input_dir, start_from=0, limit=None, output_dir="./predictions", cleanup_intermediate=True, global_pdb_dir="./all_pdb_files"):
+    """优化版批处理（带智能休息策略）"""
     input_path = Path(input_dir)
     json_files = sorted(list(input_path.glob("*.json")))
     
@@ -283,8 +382,8 @@ def process_batch(input_dir, start_from=0, limit=None, output_dir="./predictions
     
     print(f"📁 找到 {len(json_files)} 个JSON文件")
     
-    # 按序列长度过滤和排序 (200-1000 AA)
-    print("📏 按序列长度排序并过滤（只处理200-1000 AA）...")
+    # 按序列长度过滤和排序 (258-1000 AA)
+    print("📏 按序列长度排序并过滤（只处理258-1000 AA）...")
     files_with_length = []
     too_short_count = 0
     too_long_count = 0
@@ -292,9 +391,9 @@ def process_batch(input_dir, start_from=0, limit=None, output_dir="./predictions
     for json_file in json_files:
         seq_length = get_sequence_length(json_file)
         if seq_length > 0:
-            if 258 <= seq_length <= 1000:
+            if 0 <= seq_length <= 1000:
                 files_with_length.append((json_file, seq_length))
-            elif seq_length < 258:
+            elif seq_length < 0:
                 too_short_count += 1
                 if too_short_count <= 3:
                     print(f"⏩ 跳过过短序列: {json_file.name} ({seq_length} AA)")
@@ -311,9 +410,9 @@ def process_batch(input_dir, start_from=0, limit=None, output_dir="./predictions
         print(f"⏩ ... 还有 {too_long_count - 3} 个超长序列被跳过")
     
     print(f"🔍 过滤结果:")
-    print(f"  - 跳过过短序列: {too_short_count} 个 (<200 AA)")
+    print(f"  - 跳过过短序列: {too_short_count} 个 (<258 AA)")
     print(f"  - 跳过超长序列: {too_long_count} 个 (>1000 AA)")
-    print(f"  - 处理队列: {len(files_with_length)} 个序列 (200-1000 AA)")
+    print(f"  - 处理队列: {len(files_with_length)} 个序列 (258-1000 AA)")
     
     if not files_with_length:
         print("❌ 没有找到符合条件的序列")
@@ -337,26 +436,53 @@ def process_batch(input_dir, start_from=0, limit=None, output_dir="./predictions
         print("❌ 没有文件需要处理")
         return
     
+    # 检查当前时间，给出建议
+    current_hour = time.localtime().tm_hour
+    if current_hour in [9, 10, 14, 15, 20, 21, 22]:
+        print(f"\n⏰ 当前时段({current_hour}:00)可能是MSA服务器使用高峰期")
+        print("   建议在深夜(2-6点)或上午(11-13点)运行以获得最佳性能")
+        proceed = input("   是否继续？(y/n): ")
+        if proceed.lower() != 'y':
+            print("已取消批处理")
+            return
+    
     # 创建输出目录
     Path(output_dir).mkdir(exist_ok=True)
     
-    print(f"\n🚀 开始批处理 {total_files} 个序列...")
+    print(f"\n🚀 开始MSA优化批处理 {total_files} 个序列...")
     print("=" * 80)
     
     results = []
     success_count = 0
     total_duration = 0
     start_time = time.time()
+    consecutive_pendings = 0  # 连续PENDING计数
+    previous_msa_info = None
     
     for i, json_file in enumerate(sorted_files, 1):
         current_length = get_sequence_length(json_file)
         
         print(f"\n📊 进度: [{i}/{total_files}] - {json_file.name} ({current_length} AA)")
         
-        result = run_alphafold_prediction(json_file, output_dir, cleanup_intermediate, global_pdb_dir)
+        # 智能延迟策略
+        if i > 1:  # 第一个序列不延迟
+            delay_time = calculate_smart_delay(consecutive_pendings, current_length, is_first_request=False)
+            
+            if delay_time > 60:  # 超过1分钟显示详细信息
+                print(f"   ⏱️  智能休息: {delay_time/60:.1f}分钟 (连续PENDING: {consecutive_pendings}次)")
+            else:
+                print(f"   ⏱️  预防延迟: {delay_time:.0f}秒")
+            
+            time.sleep(delay_time)
+        
+        # 执行预测
+        result = run_alphafold_prediction_optimized(
+            json_file, output_dir, cleanup_intermediate, global_pdb_dir, previous_msa_info
+        )
         result['file'] = json_file.name
         results.append(result)
         
+        # 更新统计
         if result['status'] == 'success':
             success_count += 1
             total_duration += result['duration']
@@ -368,13 +494,31 @@ def process_batch(input_dir, start_from=0, limit=None, output_dir="./predictions
             print(f"📈 统计: 成功 {success_count}/{i}, 平均 {avg_duration/60:.1f}分钟/个")
             print(f"⏱️  预计剩余: {estimated_remaining_time:.1f}小时")
         
+        # 更新PENDING状态追踪
+        if result.get('pending_detected'):
+            consecutive_pendings += 1
+            print(f"   🚦 检测到PENDING (连续第{consecutive_pendings}次)")
+        else:
+            consecutive_pendings = 0  # 重置计数
+        
+        # 连续PENDING过多时强制长休息
+        if consecutive_pendings >= 3:
+            long_rest = 360 + random.uniform(60, 180)  # 6-9分钟
+            print(f"   🛑 连续PENDING过多，强制长休息{long_rest/60:.1f}分钟...")
+            time.sleep(long_rest)
+            consecutive_pendings = 0  # 重置计数
+        
+        # 保存MSA信息供下次使用
+        if 'msa_info' in result:
+            previous_msa_info = result['msa_info']
+        
         print("-" * 50)
     
     # 最终统计
     batch_duration = time.time() - start_time
     failed_count = total_files - success_count
     
-    print(f"\n🏁 批处理完成!")
+    print(f"\n🏁 MSA优化批处理完成!")
     print("=" * 80)
     print(f"📊 总结:")
     print(f"  - 总文件数: {total_files}")
@@ -383,16 +527,18 @@ def process_batch(input_dir, start_from=0, limit=None, output_dir="./predictions
     print(f"  - 总耗时: {batch_duration/3600:.1f} 小时")
     if success_count > 0:
         print(f"  - 平均预测时间: {total_duration/success_count/60:.1f} 分钟")
+        print(f"  - 实际平均(含休息): {batch_duration/total_files/60:.1f} 分钟/个")
     
     # 保存结果
-    save_results(results, output_dir)
+    save_results_optimized(results, output_dir)
 
-def save_results(results, output_dir):
-    """保存结果报告"""
+def save_results_optimized(results, output_dir):
+    """保存优化版结果报告"""
     timestamp = time.strftime('%Y%m%d_%H%M%S')
-    report_file = Path(output_dir) / f"batch_results_{timestamp}.json"
+    report_file = Path(output_dir) / f"batch_results_optimized_{timestamp}.json"
     
     success_results = [r for r in results if r['status'] == 'success']
+    pending_count = sum(1 for r in results if r.get('pending_detected', False))
     
     report = {
         'metadata': {
@@ -400,11 +546,14 @@ def save_results(results, output_dir):
             'total_files': len(results),
             'success_count': len(success_results),
             'failed_count': len(results) - len(success_results),
-            'length_filter': '200-1000 AA only'
+            'pending_encounters': pending_count,
+            'length_filter': '258-1000 AA only',
+            'optimization': 'MSA smart delay enabled'
         },
         'statistics': {
             'avg_duration': sum(r.get('duration', 0) for r in success_results) / len(success_results) if success_results else 0,
             'total_prediction_time': sum(r.get('duration', 0) for r in success_results),
+            'pending_rate': pending_count / len(results) if results else 0,
             'sequence_length_stats': {
                 'min': min(r.get('sequence_length', 0) for r in results if r.get('sequence_length', 0) > 0) if results else 0,
                 'max': max(r.get('sequence_length', 0) for r in results),
@@ -418,9 +567,10 @@ def save_results(results, output_dir):
         json.dump(report, f, indent=2, ensure_ascii=False)
     
     print(f"📄 详细报告已保存: {report_file}")
+    print(f"🚦 PENDING遭遇率: {pending_count}/{len(results)} ({pending_count/len(results)*100:.1f}%)")
 
 def main():
-    parser = argparse.ArgumentParser(description='AlphaFold批处理脚本 (200-1000 AA)')
+    parser = argparse.ArgumentParser(description='AlphaFold批处理脚本 (MSA优化版)')
     parser.add_argument('--input_dir', '-i', default='/home/webserver/student/students_webserver/zhijing/input_jsons', help='JSON文件输入目录')
     parser.add_argument('--output_dir', '-o', default='./alphafold_predictions', help='输出目录')
     parser.add_argument('--start_from', '-f', type=int, default=0, help='从第几个文件开始')
@@ -429,8 +579,9 @@ def main():
     
     args = parser.parse_args()
     
-    print("💻 AlphaFold批处理器 (200-1000 AA)")
-    print("📏 序列长度过滤: 200-1000 氨基酸")
+    print("💻 AlphaFold批处理器 (MSA优化版)")
+    print("📏 序列长度过滤: 258-1000 氨基酸")
+    print("🧠 智能特性: MSA限流检测 + 自适应休息策略")
     print("=" * 60)
     
     # 检查系统环境
@@ -448,8 +599,8 @@ def main():
     print(f"🧹 自动清理: {'禁用' if args.no_cleanup else '启用'}")
     print("=" * 60)
     
-    # 开始批处理
-    process_batch(
+    # 开始优化批处理
+    process_batch_optimized(
         input_dir=args.input_dir,
         start_from=args.start_from,
         limit=args.limit,

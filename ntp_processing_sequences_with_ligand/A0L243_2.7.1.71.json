@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MAEKRNIFLVGPMGAGKSTIGRHLAQMLHLEFHDSDQEIEQRTGADIAWVFDVEGEEGFRRREAQVIADLSEKQGIVLATGGGSVQSKDIRNHLSARGIVVYLETTIDKQVARTQRDKRRPLLQVDDPREVLENLAEIRNPLYEEIADVIVKTDDQSAKVVANQIIEQLGF",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "A0L243_2.7.1.71"
+  }
+]

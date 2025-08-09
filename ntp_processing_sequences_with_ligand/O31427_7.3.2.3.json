@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MQLMQVQNLSKCYRNGDGVEHLSFSIQRGEIVALLGPNGAGKTTTIRCLTGLYKPDKGDILIEGSPPGDINVQKKVALIPDQPYLYPALTAAEHIQFRARGYHPGKKDVKERVYHALKEVHLEEKANQLCGQLSRGQKQRVVLAGAIVQDALLYILDEPTVGLDIPSKQWLSNWLKTKTDQGCSAFVSTHSLEFVIETADRVILIRDGKLMQDLYVPQFEEQAEWRKEVIRLLGEWSDE",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "O31427_7.3.2.3"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MEGAMTEPGKEMTHLDARGRLRMVDVSGKERTAREARAEATVEVSPETLTRISEGTIAKGNVYEAARIAGIMAAKRTWELIPLCHPLQVTGVEIEFSADPARNEIRILSRVKTLDRTGVEMEALVAAAHAGLTIYDMCKAVDRGIVIRDIRLLYKSGGKSGTFERA",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "A0LLI8_4.6.1.17"
+  }
+]

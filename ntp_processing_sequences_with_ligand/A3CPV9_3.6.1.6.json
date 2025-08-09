@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MKLPKEGDFITIQSYKHDGNLHRTWRDTMVLKTTENAIIGVNDHTLVTESDGRRWVTREPAIVYFHKKYWFNIIAMIRDNGTSYYCNLASPYYLDNEALKYIDYDLDVKVFADGEKRLLDVEEYERHKKQMHYSDDLDFILKENVKILVDWINNGRGPFSDAYVNIWYKRYVELKNR",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "A3CPV9_3.6.1.6"
+  }
+]

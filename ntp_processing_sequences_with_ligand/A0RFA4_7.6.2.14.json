@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MTVLINEVSKYFSKQTGTVQVLENINFQLEKGDFVTVIGPSGCGKSTLLKIVAGLDNDFEGEIIIDGERITKPSKKQGFIFQEHRLFPWLTVEENIAADLSLKDKYVKDKVKEWVEIVRLDGFEKSYPKEISGGMSQRVAIARALLRDPSVLLLDEPFGALDAFTRSHLQEVLLNIWEQKKTTMIFVTHDIDEAIYLSNRIVIMSAKPGKIHKVIENNLPYPRSKTSESFQEIRKKVLQQFEHGGLIQTSI",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "A0RFA4_7.6.2.14"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MNKPIYFSKFLVTEQVFYKSKYTYALVNLKPIVPGHVLIVPLRTTVLNLSDLTMPESQDYFKTLQLIHRFIKWQYKADSINVAIQDGPEAGQSVPHLHTHIIPRYKINNVGDLIYDKLDHWDGNGTLTDWQGRRDEYLGVGGRQARKNNSTSATVDGDELSQGPNVLKPDSQRKVRALTEMKKEAEDLQARLEEFVSSDPGLTQWL",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "B5VGI4_3.6.1.29"
+  }
+]

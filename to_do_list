@@ -15,3 +15,12 @@ done
 ssh连接
 conda activate protoneix
 python remote_pipeline.py sequence_1.json
+
+
+Q2FUA9_zscores.csv,34.8,q2fuA_vs_3wdlB.txt
+A0L1Z0_zscores.csv,9.9,a0l1A_vs_7tgkD.txt
+Q8PUQ1_zscores.csv,38.6,q8puA_vs_3wdlB.txt
+Q5JIZ8_zscores.csv,41.0,q5jiA_vs_3wdlB.txt
+B6YXQ1_zscores.csv,40.9,b6yxA_vs_3wdlB.txt
+A0KQK0_zscores.csv,10.1,a0kqA_vs_7tgkD.txt
+A0K832_zscores.csv,10.3,a0k8A_vs_7tgkD.txt

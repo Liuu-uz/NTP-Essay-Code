@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MATVYLGLGSNVGDRISYILKAIEKLEEFLEIEKISTVYESKAWGFENQGNFLNFVLKAKTSLLPQELLLKIKKVEKEVGRKERFKWGPREIDIDILLYKDEVIRTKLLKVPHPFLEKRDFFVYPLLEIEPNVIHPIYRKPLKEFKPENTLKPFCCILKV",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "O66550_2.7.6.3"
+  }
+]

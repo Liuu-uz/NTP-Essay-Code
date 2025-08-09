@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MSSKGEQPLVLWYNQLGMHDVDRVGGKNPSLGEMITNLSSLGVSVPNGFATTSYAFNLFLD",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "O54457_2.7.9.2"
+  }
+]

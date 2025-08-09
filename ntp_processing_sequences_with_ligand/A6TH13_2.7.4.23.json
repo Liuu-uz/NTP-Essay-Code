@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MPGKLIWLVGPSGSGKDSLLAALRQREHPQLLVAHRYITRPFNAGSENHIALSEHEFFTRAEQHLFALSWHANNTYYGIGVEIDLWLHAGFDVVANGSRAHLALARERYGEVLVPICLAVSPPVLRQRLEQRGRENALEIAQRLDRAARYKPDNCLTLNNDGSLRQSVDEFFRLLRSHAAREADQLV",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "A6TH13_2.7.4.23"
+  }
+]

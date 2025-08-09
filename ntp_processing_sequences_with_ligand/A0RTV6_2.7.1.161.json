@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MGISQQAASQHLRELEDEGLITRNAEGKGISVMVTDKGRHELLRVYNILHDSLHSRPDHVEITGTLVSGMNEGAYYMSREGYTGQFQERLGYVPFPGTLNVDTDRKHGPEIARLDGMNGTIIDGFTDGKRSYGWVKCFAGTLNGTIPCHLIRLERTHHGSSTVELISKLDIRKETGLDDGGKITIRIPLEQED",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "A0RTV6_2.7.1.161"
+  }
+]

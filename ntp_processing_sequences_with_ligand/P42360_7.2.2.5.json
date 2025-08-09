@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MLRYINTVGVIYMIEIQNLSVSYQGQLALDKANVTIKGPTITGIIGPNGAGKSTLIKGLLGIVDHQGQALLDGQPLDKELKRIAYVEQKINIDYNFPIKVKECVSLGLYPKIKLFQRLKTSDWDKVNQALKIVGLEDFAERQISQLSGGQFQRVLIARCLVQEADYIFLDEPFVGIDSVSEEIIMKTLRQLRKDGKTILIVHHDLSKVVAYFDQVLLLNKKVVAFGSTESTFTKENMQQTYGSQLFMNGGA",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "P42360_7.2.2.5"
+  }
+]

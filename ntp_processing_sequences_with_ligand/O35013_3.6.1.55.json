@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MYEFKDYYQNTVQLSFDDQPFSDSPKHVWVICRFGGKWLLTEHEDRGYEFPGGKVEPMECAEEAALREVKEETGARVKSLKYLGQYKVLGKEKVIVKNIYFADIEKLEKQADYFETKGPVLFHELPENLSRNKKFSFIMKDSVLPISLKKLKESGWIE",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "O35013_3.6.1.55"
+  }
+]

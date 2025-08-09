@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MIEYKNVALRYTEKDVLRDVNLQIEDGEFMVLVGPSGSGKTTMLKMINRLLEPTDGNIYMDGKRIKDYDERELRLSTGYVLQAIALFPNLTVEENIALIPEMKGWTKEEIAQKTEELLAKVGLPVAEYGHRLPSELSGGEQQRVGIVRAMIGQPKILLMDEPFSALDAISRKQLQVLTKELHKEFGMTTIFVTHDTDEALKLADRIAVLQDGEIRQVSNPETILKAPATDFVADLFGGSIHD",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "A0A0H2ZLL3_7.6.2.9"
+  }
+]

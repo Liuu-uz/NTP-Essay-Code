@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MDKKIIQVAAGIIRNEFGQIYLTQRLEGQDFAQSLEFPGGKVDAGETPEQALKRELEEEIGIVALNAELYERFQFEYPTKIISFFFYLVNEWIGEPFGREGQEGFWVEQHALDAGQFPPANAKLIHRLLNETHNFI",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "P44932_3.6.1.55"
+  }
+]

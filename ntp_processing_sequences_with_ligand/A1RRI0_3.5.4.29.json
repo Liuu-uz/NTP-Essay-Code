@@ -1,0 +1,19 @@
+[
+  {
+    "sequences": [
+      {
+        "proteinChain": {
+          "sequence": "MHGIAVIELKGYREWTESLGPRREHIIQQIQAKLHATLWKSFTTVGALPHHFRYDFFIALVNNISSAAVESAVAKIARHSPVPIDFCIGTGDTPYSAYLNCRGKEVEATSFSIVAHMDIVNSTKTTKLNGPLDVYSHIVRLIDTLLDVCKEYGCLVFYLGGDNTALFLPTPDVINEIVRNIDTRVRVGVGVAKKPYNAFVKATRGLDYLRSTNREGIKIVK",
+          "count": 1
+        }
+      },
+      {
+        "ligand": {
+          "ligand": "CCD_ATP",
+          "count": 1
+        }
+      }
+    ],
+    "name": "A1RRI0_3.5.4.29"
+  }
+]
