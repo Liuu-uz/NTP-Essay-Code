@@ -6,29 +6,29 @@ import glob
 import pandas as pd
 
 def parse_xlsx_file(xlsx_file_path):
-    """解析xlsx文件，提取EC number、sequenceID和PDBID+链信息"""
+    """Parse xlsx file to extract EC number, sequenceID and PDBID+chain information"""
     results = []
     try:
-        # 读取xlsx文件
+        # Read xlsx file
         df = pd.read_excel(xlsx_file_path)
         
-        print(f"读取到 {len(df)} 行数据")
-        print(f"列名: {list(df.columns)}")
+        print(f"Read {len(df)} rows of data")
+        print(f"Column names: {list(df.columns)}")
         
         for index, row in df.iterrows():
             try:
-                # 第一列：EC number
+                # Column 1: EC number
                 ec_number = str(row.iloc[0]).strip()
                 
-                # 第三列：sequenceID  
+                # Column 3: sequenceID  
                 sequence_id = str(row.iloc[2]).strip()
                 
-                # 第七列：匹配的PDBID+链
+                # Column 7: Matched PDBID+chain
                 pdb_chain = str(row.iloc[6]).strip()
                 
-                # 验证数据有效性
+                # Validate data
                 if ec_number and sequence_id and pdb_chain and pdb_chain != 'nan':
-                    # 提取PDB ID（前4个字符）和链ID
+                    # Extract PDB ID (first 4 characters) and chain ID
                     if len(pdb_chain) >= 4:
                         pdb_id = pdb_chain[:4].lower()
                         chain_id = pdb_chain[4:] if len(pdb_chain) > 4 else 'A'
@@ -41,29 +41,29 @@ def parse_xlsx_file(xlsx_file_path):
                             'chain_id': chain_id
                         })
                         
-                        print(f"  解析: EC={ec_number}, SeqID={sequence_id}, PDB={pdb_id}, Chain={chain_id}")
+                        print(f"  Parsed: EC={ec_number}, SeqID={sequence_id}, PDB={pdb_id}, Chain={chain_id}")
                 
             except Exception as e:
-                print(f"  跳过第 {index+1} 行，解析错误: {e}")
+                print(f"  Skipping row {index+1}, parsing error: {e}")
                 continue
                 
         return results
         
     except Exception as e:
-        print(f"解析xlsx文件时出错: {e}")
+        print(f"Error parsing xlsx file: {e}")
         return []
 
 def find_prediction_pdb(predicted_dir, sequence_id, ec_number):
-    """在supfam_pdb_files目录中查找预测结构PDB文件"""
-    # 文件命名规则：sequenceID_ECnumber.pdb
+    """Find predicted structure PDB file in supfam_pdb_files directory"""
+    # File naming convention: sequenceID_ECnumber.pdb
     expected_filename = f"{sequence_id}_{ec_number}.pdb"
     expected_path = os.path.join(predicted_dir, expected_filename)
     
     if os.path.exists(expected_path):
-        print(f"    找到预测文件: {expected_filename}")
+        print(f"    Found prediction file: {expected_filename}")
         return expected_path
     
-    # 尝试其他可能的格式
+    # Try other possible formats
     possible_patterns = [
         f"{sequence_id}_{ec_number}*.pdb",
         f"{sequence_id}_*.pdb",
@@ -74,19 +74,19 @@ def find_prediction_pdb(predicted_dir, sequence_id, ec_number):
         search_pattern = os.path.join(predicted_dir, pattern)
         files = glob.glob(search_pattern)
         if files:
-            print(f"    找到预测文件: {os.path.basename(files[0])} (使用模式: {pattern})")
+            print(f"    Found prediction file: {os.path.basename(files[0])} (using pattern: {pattern})")
             return files[0]
     
-    print(f"    未找到预测文件，期望: {expected_filename}")
+    print(f"    Prediction file not found, expected: {expected_filename}")
     return None
 
 def find_template_pdb(template_dir, pdb_id, chain_id):
-    """在pdb_files目录中查找模板PDB文件"""
+    """Find template PDB file in pdb_files directory"""
     if not os.path.exists(template_dir):
-        print(f"    模板目录不存在: {template_dir}")
+        print(f"    Template directory does not exist: {template_dir}")
         return None
     
-    # 尝试多种文件名格式
+    # Try multiple filename formats
     possible_patterns = [
         f"{pdb_id}.pdb",
         f"{pdb_id.upper()}.pdb",
@@ -98,59 +98,59 @@ def find_template_pdb(template_dir, pdb_id, chain_id):
         template_pattern = os.path.join(template_dir, pattern)
         template_files = glob.glob(template_pattern)
         if template_files:
-            print(f"    找到模板文件: {template_files[0]} (使用模式: {pattern})")
+            print(f"    Found template file: {template_files[0]} (using pattern: {pattern})")
             return template_files[0]
     
-    print(f"    未找到模板文件，尝试的PDB ID: {pdb_id}")
+    print(f"    Template file not found, tried PDB ID: {pdb_id}")
     return None
 
 def setup_pymol_session():
-    """初始化PyMOL会话"""
+    """Initialize PyMOL session"""
     pymol.finish_launching(['pymol', '-qc'])
     cmd.reinitialize()
 
 def extract_chain_from_pdb(pdb_file, chain_id, output_path):
-    """从PDB文件中提取指定链并保存"""
+    """Extract specified chain from PDB file and save"""
     try:
-        # 加载PDB文件
+        # Load PDB file
         temp_name = 'temp_structure'
         cmd.load(pdb_file, temp_name)
         
-        # 检查指定链是否存在
+        # Check if specified chain exists
         chains = cmd.get_chains(temp_name)
-        print(f"    模板文件中的链: {chains}")
+        print(f"    Chains in template file: {chains}")
         
         if chain_id.upper() in [c.upper() for c in chains]:
-            # 选择指定链
+            # Select specified chain
             chain_selection = f'{temp_name} and chain {chain_id.upper()}'
             cmd.create('extracted_chain', chain_selection)
             
-            # 保存提取的链
+            # Save extracted chain
             cmd.save(output_path, 'extracted_chain')
             
-            # 清理
+            # Cleanup
             cmd.delete(temp_name)
             cmd.delete('extracted_chain')
             
-            print(f"    成功提取链 {chain_id.upper()} 到: {output_path}")
+            print(f"    Successfully extracted chain {chain_id.upper()} to: {output_path}")
             return True
         else:
-            print(f"    警告: 链 {chain_id.upper()} 不存在，使用完整结构")
+            print(f"    Warning: Chain {chain_id.upper()} does not exist, using complete structure")
             cmd.save(output_path, temp_name)
             cmd.delete(temp_name)
             return True
             
     except Exception as e:
-        print(f"    提取链失败: {e}")
+        print(f"    Chain extraction failed: {e}")
         return False
 
 def visualize_structures_with_atp(query_pdb, template_pdb, output_prefix, sequence_id, pdb_id, chain_id, ec_number):
-    """使用PyMOL可视化结构，包括ATP和活性位点"""
+    """Visualize structures using PyMOL, including ATP and active sites"""
     
-    # 清除当前会话
+    # Clear current session
     cmd.delete('all')
     
-    # 加载结构文件
+    # Load structure files
     query_name = 'query_structure'
     template_name = 'template_structure'
     
@@ -158,36 +158,36 @@ def visualize_structures_with_atp(query_pdb, template_pdb, output_prefix, sequen
         cmd.load(query_pdb, query_name)
         cmd.load(template_pdb, template_name)
     except Exception as e:
-        print(f"    加载PDB文件失败: {e}")
+        print(f"    Failed to load PDB files: {e}")
         return None
     
-    # 结构叠合 - 使用CA原子进行对齐
+    # Structure alignment - use CA atoms for alignment
     try:
         alignment_result = cmd.align(query_name, template_name)
-        print(f"    结构对齐结果: RMSD = {alignment_result[0]:.3f} Å, 对齐原子数 = {alignment_result[1]}")
+        print(f"    Structure alignment result: RMSD = {alignment_result[0]:.3f} Å, Aligned atoms = {alignment_result[1]}")
     except Exception as e:
-        print(f"    结构对齐失败: {e}")
+        print(f"    Structure alignment failed: {e}")
         return None
     
-    # 设置结构显示样式
+    # Set structure display style
     cmd.hide('everything')
     cmd.show('cartoon', 'all')
     cmd.color('cyan', query_name)
     cmd.color('orange', template_name)
     
-    # 关闭cartoon的箭头/方向性显示
-    cmd.set('cartoon_fancy_helices', 0)  # 关闭螺旋的花式显示
-    cmd.set('cartoon_fancy_sheets', 0)   # 关闭片层的花式显示
-    cmd.set('cartoon_flat_sheets', 1)    # 使用平坦的片层
-    cmd.set('cartoon_smooth_loops', 1)   # 平滑的loop区域
-    cmd.set('cartoon_highlight_color', 'grey50')  # 设置高亮颜色
-    cmd.set('cartoon_putty_transform', 0)  # 关闭putty变换
-    cmd.set('cartoon_ring_mode', 0)      # 关闭环形模式
-    cmd.set('cartoon_tube_radius', 0.4)  # 设置管状半径
-    cmd.set('cartoon_oval_length', 1.2)  # 设置椭圆长度
-    cmd.set('cartoon_oval_width', 0.3)   # 设置椭圆宽度
+    # Disable cartoon arrows/directional display
+    cmd.set('cartoon_fancy_helices', 0)  # Disable fancy helix display
+    cmd.set('cartoon_fancy_sheets', 0)   # Disable fancy sheet display
+    cmd.set('cartoon_flat_sheets', 1)    # Use flat sheets
+    cmd.set('cartoon_smooth_loops', 1)   # Smooth loop regions
+    cmd.set('cartoon_highlight_color', 'grey50')  # Set highlight color
+    cmd.set('cartoon_putty_transform', 0)  # Disable putty transformation
+    cmd.set('cartoon_ring_mode', 0)      # Disable ring mode
+    cmd.set('cartoon_tube_radius', 0.4)  # Set tube radius
+    cmd.set('cartoon_oval_length', 1.2)  # Set oval length
+    cmd.set('cartoon_oval_width', 0.3)   # Set oval width
     
-    # 查找并显示ATP分子
+    # Find and display ATP molecules
     atp_selection = 'resn ATP or resn ADP or resn AMP'
     nucleotide_found = False
     
@@ -196,16 +196,16 @@ def visualize_structures_with_atp(query_pdb, template_pdb, output_prefix, sequen
         cmd.color('red', atp_selection)
         cmd.show('spheres', f'{atp_selection} and name P*')
         cmd.set('sphere_scale', 0.3, f'{atp_selection} and name P*')
-        print("    发现ATP/ADP/AMP分子")
+        print("    Found ATP/ADP/AMP molecules")
         nucleotide_found = True
         
-        # 显示ATP周围的活性位点残基（4Å范围内）
+        # Show active site residues around ATP (within 4Å range)
         active_site = f'byres ({atp_selection} around 4)'
         cmd.show('sticks', f'{active_site} and sidechain')
         cmd.color('yellow', f'{active_site} and sidechain and not {atp_selection}')
-        print("    显示活性位点残基")
+        print("    Showing active site residues")
     else:
-        # 如果没有ATP，尝试显示其他核苷酸
+        # If no ATP, try to display other nucleotides
         other_nucleotides = 'resn GTP or resn GDP or resn GMP or resn CTP or resn CDP or resn CMP or resn UTP or resn UDP or resn UMP'
         if cmd.count_atoms(other_nucleotides) > 0:
             cmd.show('sticks', other_nucleotides)
@@ -215,24 +215,24 @@ def visualize_structures_with_atp(query_pdb, template_pdb, output_prefix, sequen
             active_site = f'byres ({other_nucleotides} around 4)'
             cmd.show('sticks', f'{active_site} and sidechain')
             cmd.color('yellow', f'{active_site} and sidechain and not {other_nucleotides}')
-            print("    发现其他核苷酸分子")
+            print("    Found other nucleotide molecules")
             nucleotide_found = True
         else:
-            print("    未发现核苷酸分子")
+            print("    No nucleotide molecules found")
     
-    # 设置视图
+    # Set view
     cmd.zoom('all')
     cmd.orient()
     
-    # 关闭所有可能产生箭头的设置
+    # Disable all settings that might produce arrows
     cmd.set('cgo_line_width', 1.0)
     cmd.set('dash_gap', 0.0)
     cmd.set('dash_length', 0.25)
     cmd.set('dash_round_ends', 1)
-    cmd.hide('labels')  # 隐藏所有标签
-    cmd.hide('nonbonded')  # 隐藏非键合原子
+    cmd.hide('labels')  # Hide all labels
+    cmd.hide('nonbonded')  # Hide non-bonded atoms
     
-    # 设置高质量渲染参数，避免箭头显示
+    # Set high quality rendering parameters, avoid arrow display
     cmd.set('ray_trace_mode', 1)
     cmd.set('ray_shadows', 1)
     cmd.set('ambient', 0.2)
@@ -240,18 +240,18 @@ def visualize_structures_with_atp(query_pdb, template_pdb, output_prefix, sequen
     cmd.set('reflect', 0.5)
     cmd.set('shininess', 50)
     cmd.set('spec_reflect', 0.8)
-    cmd.set('ray_opaque_background', 1)  # 确保背景不透明
+    cmd.set('ray_opaque_background', 1)  # Ensure opaque background
     
-    # 保存图像
+    # Save image
     cmd.bg_color('white')
     png_file = f'{output_prefix}_visualization.png'
     cmd.png(png_file, width=1800, height=1400, dpi=300, ray=1)
     
-    # 保存叠合后的结构
+    # Save aligned structures
     pdb_file = f'{output_prefix}_aligned.pdb'
     cmd.save(pdb_file, 'all')
     
-    # 输出信息
+    # Output information
     title_text = f"Query: {sequence_id} (EC: {ec_number}) vs Template: {pdb_id}_{chain_id}"
     print(f"    {title_text}")
     
@@ -264,26 +264,26 @@ def visualize_structures_with_atp(query_pdb, template_pdb, output_prefix, sequen
     }
 
 def process_xlsx_data(xlsx_file_path, predicted_dir, template_dir, output_dir, max_structures=None):
-    """基于xlsx数据处理结构可视化"""
+    """Process structure visualization based on xlsx data"""
     
-    # 确保输出目录存在
+    # Ensure output directory exists
     os.makedirs(output_dir, exist_ok=True)
     
-    # 初始化PyMOL
+    # Initialize PyMOL
     setup_pymol_session()
     
-    # 解析xlsx文件
+    # Parse xlsx file
     xlsx_data = parse_xlsx_file(xlsx_file_path)
     if not xlsx_data:
-        print("无法解析xlsx文件或文件为空")
+        print("Cannot parse xlsx file or file is empty")
         return []
     
-    print(f"从xlsx文件中解析到 {len(xlsx_data)} 条记录")
+    print(f"Parsed {len(xlsx_data)} records from xlsx file")
     
-    # 如果设置了最大处理数量，则只处理前N个
+    # If maximum processing number is set, only process first N
     if max_structures:
         xlsx_data = xlsx_data[:max_structures]
-        print(f"限制处理前 {max_structures} 个结构")
+        print(f"Limited to processing first {max_structures} structures")
     
     results = []
     successful_count = 0
@@ -295,41 +295,41 @@ def process_xlsx_data(xlsx_file_path, predicted_dir, template_dir, output_dir, m
         chain_id = data['chain_id']
         pdb_chain = data['pdb_chain']
         
-        print(f"\n[{i}/{len(xlsx_data)}] 处理: {sequence_id} (EC: {ec_number}) vs {pdb_id}_{chain_id}")
+        print(f"\n[{i}/{len(xlsx_data)}] Processing: {sequence_id} (EC: {ec_number}) vs {pdb_id}_{chain_id}")
         
-        # 查找预测结构PDB文件
+        # Find predicted structure PDB file
         query_pdb = find_prediction_pdb(predicted_dir, sequence_id, ec_number)
         if not query_pdb:
-            print(f"    未找到预测结构: {sequence_id}_{ec_number}")
+            print(f"    Predicted structure not found: {sequence_id}_{ec_number}")
             continue
         
-        # 查找模板结构PDB文件
+        # Find template structure PDB file
         template_pdb_raw = find_template_pdb(template_dir, pdb_id, chain_id)
         if not template_pdb_raw:
-            print(f"    未找到模板结构: {pdb_id}")
+            print(f"    Template structure not found: {pdb_id}")
             continue
         
-        # 从模板PDB中提取指定链
+        # Extract specified chain from template PDB
         template_pdb = os.path.join(output_dir, f"temp_{pdb_id}_{chain_id}.pdb")
         if not extract_chain_from_pdb(template_pdb_raw, chain_id, template_pdb):
-            print(f"    提取模板链失败: {pdb_id}_{chain_id}")
+            print(f"    Template chain extraction failed: {pdb_id}_{chain_id}")
             continue
         
-        print(f"    预测结构: {query_pdb}")
-        print(f"    模板结构: {template_pdb}")
+        print(f"    Predicted structure: {query_pdb}")
+        print(f"    Template structure: {template_pdb}")
         
-        # 创建输出文件前缀
+        # Create output file prefix
         output_prefix = os.path.join(output_dir, f"{sequence_id}_{ec_number}_vs_{pdb_id}_{chain_id}")
         
         try:
-            # 进行结构可视化
+            # Perform structure visualization
             vis_result = visualize_structures_with_atp(
                 query_pdb, template_pdb, output_prefix, 
                 sequence_id, pdb_id, chain_id, ec_number
             )
             
             if vis_result:
-                # 记录结果
+                # Record results
                 result = {
                     'sequence_id': sequence_id,
                     'ec_number': ec_number,
@@ -346,21 +346,21 @@ def process_xlsx_data(xlsx_file_path, predicted_dir, template_dir, output_dir, m
                 }
                 results.append(result)
                 successful_count += 1
-                print(f"    ✓ 成功处理 ({successful_count}/{i})")
+                print(f"    Success ({successful_count}/{i})")
             
         except Exception as e:
-            print(f"    ✗ 处理失败: {e}")
+            print(f"    Processing failed: {e}")
             continue
         
         finally:
-            # 清理临时文件
+            # Clean up temporary files
             if os.path.exists(template_pdb):
                 try:
                     os.remove(template_pdb)
                 except:
                     pass
     
-    # 保存处理结果摘要
+    # Save processing results summary
     summary_file = os.path.join(output_dir, 'visualization_summary.csv')
     with open(summary_file, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
@@ -385,17 +385,17 @@ def process_xlsx_data(xlsx_file_path, predicted_dir, template_dir, output_dir, m
                 os.path.basename(result['pdb_file'])
             ])
     
-    print(f"\n🎉 处理完成！")
-    print(f"总记录数: {len(xlsx_data)}")
-    print(f"成功处理: {successful_count}")
-    print(f"失败数量: {len(xlsx_data) - successful_count}")
-    print(f"结果摘要保存在: {summary_file}")
+    print(f"\nProcessing complete!")
+    print(f"Total records: {len(xlsx_data)}")
+    print(f"Successfully processed: {successful_count}")
+    print(f"Failed count: {len(xlsx_data) - successful_count}")
+    print(f"Results summary saved to: {summary_file}")
     
     return results
 
 def main():
-    """主函数"""
-    # 设置路径
+    """Main function"""
+    # Set paths
     base_dir = "/Users/napkin/NTP-Essay-Code-1/NTP-Essay-Code"
     
     xlsx_file_path = os.path.join(base_dir, "seq-supfam", "NTP_Analysis_Report.xlsx")
@@ -403,46 +403,46 @@ def main():
     template_dir = os.path.join(base_dir, "pdb_files")
     output_dir = os.path.join(base_dir, "structure_visualization_output")
     
-    # 检查文件和目录是否存在
+    # Check if files and directories exist
     if not os.path.exists(xlsx_file_path):
-        print(f"错误: xlsx文件不存在: {xlsx_file_path}")
+        print(f"Error: xlsx file does not exist: {xlsx_file_path}")
         return
     
     if not os.path.exists(predicted_dir):
-        print(f"错误: 预测结构目录不存在: {predicted_dir}")
+        print(f"Error: Predicted structures directory does not exist: {predicted_dir}")
         return
     
     if not os.path.exists(template_dir):
-        print(f"错误: 模板目录不存在: {template_dir}")
+        print(f"Error: Template directory does not exist: {template_dir}")
         return
     
-    print("基于xlsx文件进行PyMOL结构可视化")
-    print(f"xlsx文件: {xlsx_file_path}")
-    print(f"预测结构目录: {predicted_dir}")
-    print(f"模板目录: {template_dir}")
-    print(f"输出目录: {output_dir}")
+    print("PyMOL structure visualization based on xlsx file")
+    print(f"xlsx file: {xlsx_file_path}")
+    print(f"Predicted structures directory: {predicted_dir}")
+    print(f"Template directory: {template_dir}")
+    print(f"Output directory: {output_dir}")
     
-    # 询问是否限制处理数量（用于测试）
-    response = input("\n是否限制处理数量？(输入数字限制，回车处理所有): ").strip()
+    # Ask whether to limit processing count (for testing)
+    response = input("\nLimit processing count? (Enter number to limit, press Enter to process all): ").strip()
     max_structures = None
     if response.isdigit():
         max_structures = int(response)
-        print(f"将只处理前 {max_structures} 个结构")
+        print(f"Will only process first {max_structures} structures")
     
-    # 处理文件
+    # Process files
     results = process_xlsx_data(xlsx_file_path, predicted_dir, template_dir, output_dir, max_structures)
     
-    # 显示统计信息
+    # Display statistics
     if results:
         rmsds = [r['rmsd'] for r in results]
         nucleotide_count = sum(1 for r in results if r['nucleotide_found'])
         
-        print(f"\n📊 统计信息:")
-        print(f"RMSD范围: {min(rmsds):.3f} - {max(rmsds):.3f} Å")
-        print(f"平均RMSD: {sum(rmsds)/len(rmsds):.3f} Å")
-        print(f"包含核苷酸的结构: {nucleotide_count}/{len(results)} ({nucleotide_count/len(results)*100:.1f}%)")
+        print(f"\nStatistics:")
+        print(f"RMSD range: {min(rmsds):.3f} - {max(rmsds):.3f} Å")
+        print(f"Average RMSD: {sum(rmsds)/len(rmsds):.3f} Å")
+        print(f"Structures containing nucleotides: {nucleotide_count}/{len(results)} ({nucleotide_count/len(results)*100:.1f}%)")
     
-    # 退出PyMOL
+    # Quit PyMOL
     cmd.quit()
 
 if __name__ == "__main__":

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-FASTA文件生成器
-功能：将蛋白质序列转换为标准FASTA格式文件
+FASTA File Generator
+Function: Convert protein sequences to standard FASTA format files
 """
 
 import os
@@ -11,87 +11,87 @@ from datetime import datetime
 
 def create_fasta_file(sequence, sequence_id=None, description="", output_dir="fasta_files"):
     """
-    创建FASTA格式文件
+    Create FASTA format file
     
-    参数:
-    - sequence: 蛋白质序列
-    - sequence_id: 序列ID（可选）
-    - description: 序列描述（可选）
-    - output_dir: 输出目录
+    Parameters:
+    - sequence: protein sequence
+    - sequence_id: sequence ID (optional)
+    - description: sequence description (optional)
+    - output_dir: output directory
     
-    返回:
-    - fasta_path: 生成的FASTA文件路径
-    - clean_seq_id: 清理后的序列ID
+    Returns:
+    - fasta_path: path of generated FASTA file
+    - clean_seq_id: cleaned sequence ID
     """
     
-    print("📄 开始生成FASTA文件...")
+    print("Starting FASTA file generation...")
     
-    # 1. 清理序列（移除空格、换行符、非氨基酸字符）
-    print("🧹 清理序列...")
+    # 1. Clean sequence (remove spaces, newlines, non-amino acid characters)
+    print("Cleaning sequence...")
     clean_sequence = re.sub(r'[^ACDEFGHIKLMNPQRSTVWY]', '', sequence.upper())
     
     if len(clean_sequence) == 0:
-        raise ValueError("❌ 序列为空或不包含有效的氨基酸")
+        raise ValueError("Error: Sequence is empty or contains no valid amino acids")
     
-    print(f"   原始序列长度: {len(sequence)} 字符")
-    print(f"   清理后序列长度: {len(clean_sequence)} 氨基酸")
+    print(f"   Original sequence length: {len(sequence)} characters")
+    print(f"   Cleaned sequence length: {len(clean_sequence)} amino acids")
     
-    # 2. 生成序列ID
+    # 2. Generate sequence ID
     if sequence_id is None:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         sequence_id = f"seq_{timestamp}"
-        print(f"🏷️  自动生成序列ID: {sequence_id}")
+        print(f"Auto-generated sequence ID: {sequence_id}")
     else:
-        print(f"🏷️  使用提供的序列ID: {sequence_id}")
+        print(f"Using provided sequence ID: {sequence_id}")
     
-    # 3. 清理序列ID（只保留字母数字和下划线，符合superfamily.pl要求）
+    # 3. Clean sequence ID (keep only alphanumeric and underscores, superfamily.pl compliant)
     clean_seq_id = re.sub(r'[^a-zA-Z0-9_]', '_', sequence_id)
     if clean_seq_id != sequence_id:
-        print(f"🔧 序列ID已清理: {sequence_id} → {clean_seq_id}")
+        print(f"Sequence ID cleaned: {sequence_id} -> {clean_seq_id}")
     
-    # 4. 创建输出目录
+    # 4. Create output directory
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-        print(f"📁 创建输出目录: {output_dir}")
+        print(f"Created output directory: {output_dir}")
     
-    # 5. 创建FASTA内容
+    # 5. Create FASTA content
     fasta_content = f">{clean_seq_id}"
     if description:
         fasta_content += f" {description}"
     fasta_content += f"\n{clean_sequence}\n"
     
-    # 6. 保存到文件（使用.fa扩展名，符合superfamily.pl要求）
+    # 6. Save to file (use .fa extension, superfamily.pl compliant)
     fasta_filename = f"{clean_seq_id}.fa"
     fasta_path = os.path.join(output_dir, fasta_filename)
     
     with open(fasta_path, 'w') as f:
         f.write(fasta_content)
     
-    print(f"✅ FASTA文件已创建: {fasta_path}")
-    print(f"   序列ID: {clean_seq_id}")
-    print(f"   序列长度: {len(clean_sequence)} 氨基酸")
-    print(f"   文件大小: {os.path.getsize(fasta_path)} 字节")
+    print(f"FASTA file created: {fasta_path}")
+    print(f"   Sequence ID: {clean_seq_id}")
+    print(f"   Sequence length: {len(clean_sequence)} amino acids")
+    print(f"   File size: {os.path.getsize(fasta_path)} bytes")
     
     return fasta_path, clean_seq_id
 
 def batch_create_fasta(sequences_list, output_dir="fasta_files"):
     """
-    批量创建FASTA文件
+    Batch create FASTA files
     
-    参数:
-    - sequences_list: 序列信息列表，每个元素包含 sequence, sequence_id, description
-    - output_dir: 输出目录
+    Parameters:
+    - sequences_list: list of sequence info, each element contains sequence, sequence_id, description
+    - output_dir: output directory
     
-    返回:
-    - created_files: 创建的文件列表
+    Returns:
+    - created_files: list of created files
     """
     
-    print(f"🚀 开始批量生成 {len(sequences_list)} 个FASTA文件...")
+    print(f"Starting batch generation of {len(sequences_list)} FASTA files...")
     
     created_files = []
     
     for i, seq_info in enumerate(sequences_list, 1):
-        print(f"\n📄 [{i}/{len(sequences_list)}] 处理序列: {seq_info.get('sequence_id', 'unknown')}")
+        print(f"\n[{i}/{len(sequences_list)}] Processing sequence: {seq_info.get('sequence_id', 'unknown')}")
         
         try:
             fasta_path, clean_seq_id = create_fasta_file(
@@ -108,20 +108,20 @@ def batch_create_fasta(sequences_list, output_dir="fasta_files"):
             })
             
         except Exception as e:
-            print(f"❌ 处理序列失败: {e}")
+            print(f"Error processing sequence: {e}")
             continue
     
-    print(f"\n✅ 批量生成完成! 成功创建 {len(created_files)} 个文件")
+    print(f"\nBatch generation complete! Successfully created {len(created_files)} files")
     return created_files
 
 def validate_fasta_file(fasta_path):
     """
-    验证FASTA文件格式
+    Validate FASTA file format
     """
-    print(f"🔍 验证FASTA文件: {fasta_path}")
+    print(f"Validating FASTA file: {fasta_path}")
     
     if not os.path.exists(fasta_path):
-        print("❌ 文件不存在")
+        print("Error: File does not exist")
         return False
     
     try:
@@ -130,43 +130,43 @@ def validate_fasta_file(fasta_path):
         
         lines = content.strip().split('\n')
         
-        # 检查第一行是否以>开头
+        # Check if first line starts with >
         if not lines[0].startswith('>'):
-            print("❌ 第一行不是有效的FASTA标题行")
+            print("Error: First line is not a valid FASTA header")
             return False
         
-        # 检查序列行
+        # Check sequence lines
         sequence_lines = lines[1:]
         sequence = ''.join(sequence_lines)
         
-        # 检查是否包含有效氨基酸
+        # Check if contains valid amino acids
         valid_aa = re.match(r'^[ACDEFGHIKLMNPQRSTVWY]+$', sequence)
         if not valid_aa:
-            print("❌ 序列包含无效字符")
+            print("Error: Sequence contains invalid characters")
             return False
         
-        print(f"✅ FASTA文件验证通过")
-        print(f"   标题: {lines[0]}")
-        print(f"   序列长度: {len(sequence)} 氨基酸")
+        print(f"FASTA file validation passed")
+        print(f"   Header: {lines[0]}")
+        print(f"   Sequence length: {len(sequence)} amino acids")
         return True
         
     except Exception as e:
-        print(f"❌ 验证失败: {e}")
+        print(f"Validation failed: {e}")
         return False
 
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-FASTA文件生成器 - 自动运行版本
-在下面的SEQUENCES_TO_PROCESS列表中添加你的序列，直接运行即可
+FASTA File Generator - Auto-run Version
+Add your sequences to the SEQUENCES_TO_PROCESS list below and run directly
 """
 
 import os
 import re
 from datetime import datetime
 
-# ==================== 序列配置区域 ====================
-# 在这里添加你要生成FASTA的序列
+# ==================== Sequence Configuration Area ====================
+# Add sequences you want to generate FASTA for here
 SEQUENCES_TO_PROCESS = [
     {
         "sequence": """
@@ -178,54 +178,54 @@ SEQUENCES_TO_PROCESS = [
         "description": "test"
     },
     
-    # 在这里添加你的序列 - 复制上面的格式
+    # Add your sequences here - copy the format above
     {
         "sequence": """
-        把你的蛋白质序列粘贴到这里
-        可以包含换行符和空格，程序会自动清理
+        Paste your protein sequence here
+        Can include newlines and spaces, program will clean automatically
         """,
         "sequence_id": "my_protein_001",
-        "description": "我的测试蛋白质"
+        "description": "My test protein"
     }
     
-    # 继续添加更多序列...
+    # Continue adding more sequences...
 ]
 
-# 输出目录设置
+# Output directory setting
 OUTPUT_DIR = "fasta_files"
 
-# ==================== 处理函数 ====================
+# ==================== Processing Functions ====================
 
 def create_fasta_file(sequence, sequence_id=None, description="", output_dir=OUTPUT_DIR):
     """
-    创建FASTA格式文件
+    Create FASTA format file
     """
     
-    # 1. 清理序列（移除空格、换行符、非氨基酸字符）
+    # 1. Clean sequence (remove spaces, newlines, non-amino acid characters)
     clean_sequence = re.sub(r'[^ACDEFGHIKLMNPQRSTVWY]', '', sequence.upper())
     
     if len(clean_sequence) == 0:
-        raise ValueError("❌ 序列为空或不包含有效的氨基酸")
+        raise ValueError("Error: Sequence is empty or contains no valid amino acids")
     
-    # 2. 生成序列ID
+    # 2. Generate sequence ID
     if sequence_id is None:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         sequence_id = f"seq_{timestamp}"
     
-    # 3. 清理序列ID（只保留字母数字和下划线，符合superfamily.pl要求）
+    # 3. Clean sequence ID (keep only alphanumeric and underscores, superfamily.pl compliant)
     clean_seq_id = re.sub(r'[^a-zA-Z0-9_]', '_', sequence_id)
     
-    # 4. 创建输出目录
+    # 4. Create output directory
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     
-    # 5. 创建FASTA内容
+    # 5. Create FASTA content
     fasta_content = f">{clean_seq_id}"
     if description:
         fasta_content += f" {description}"
     fasta_content += f"\n{clean_sequence}\n"
     
-    # 6. 保存到文件（使用.fa扩展名，符合superfamily.pl要求）
+    # 6. Save to file (use .fa extension, superfamily.pl compliant)
     fasta_filename = f"{clean_seq_id}.fa"
     fasta_path = os.path.join(output_dir, fasta_filename)
     
@@ -236,30 +236,30 @@ def create_fasta_file(sequence, sequence_id=None, description="", output_dir=OUT
 
 def auto_generate_fasta_files():
     """
-    自动生成所有配置的FASTA文件
+    Auto-generate all configured FASTA files
     """
-    print("🧬 FASTA文件自动生成器")
+    print("FASTA File Auto-Generator")
     print("=" * 50)
     
-    # 过滤有效序列
+    # Filter valid sequences
     valid_sequences = []
     for seq_info in SEQUENCES_TO_PROCESS:
-        if seq_info['sequence'].strip() and "把你的" not in seq_info['sequence']:
+        if seq_info['sequence'].strip() and "Paste your" not in seq_info['sequence']:
             valid_sequences.append(seq_info)
         else:
-            print(f"⚠️  跳过空序列或模板: {seq_info.get('sequence_id', 'unknown')}")
+            print(f"Warning: Skipping empty sequence or template: {seq_info.get('sequence_id', 'unknown')}")
     
     if not valid_sequences:
-        print("❌ 没有找到有效的序列")
-        print("💡 请在脚本顶部的SEQUENCES_TO_PROCESS中添加你的序列")
+        print("Error: No valid sequences found")
+        print("Tip: Please add your sequences to SEQUENCES_TO_PROCESS at the top of the script")
         return []
     
-    print(f"📄 开始生成 {len(valid_sequences)} 个FASTA文件...")
+    print(f"Starting generation of {len(valid_sequences)} FASTA files...")
     
     created_files = []
     
     for i, seq_info in enumerate(valid_sequences, 1):
-        print(f"\n[{i}/{len(valid_sequences)}] 处理序列: {seq_info['sequence_id']}")
+        print(f"\n[{i}/{len(valid_sequences)}] Processing sequence: {seq_info['sequence_id']}")
         
         try:
             fasta_path, clean_seq_id, seq_length = create_fasta_file(
@@ -268,9 +268,9 @@ def auto_generate_fasta_files():
                 description=seq_info.get('description', '')
             )
             
-            print(f"✅ 生成成功: {fasta_path}")
-            print(f"   序列ID: {clean_seq_id}")
-            print(f"   序列长度: {seq_length} 氨基酸")
+            print(f"Generation successful: {fasta_path}")
+            print(f"   Sequence ID: {clean_seq_id}")
+            print(f"   Sequence length: {seq_length} amino acids")
             
             created_files.append({
                 'sequence_id': clean_seq_id,
@@ -279,45 +279,45 @@ def auto_generate_fasta_files():
             })
             
         except Exception as e:
-            print(f"❌ 生成失败: {e}")
+            print(f"Generation failed: {e}")
             continue
     
-    # 总结报告
+    # Summary report
     print(f"\n{'='*50}")
-    print("📊 生成完成统计")
+    print("Generation Complete Statistics")
     print(f"{'='*50}")
-    print(f"配置序列数: {len(SEQUENCES_TO_PROCESS)}")
-    print(f"有效序列数: {len(valid_sequences)}")
-    print(f"成功生成数: {len(created_files)}")
-    print(f"输出目录: {OUTPUT_DIR}")
+    print(f"Configured sequences: {len(SEQUENCES_TO_PROCESS)}")
+    print(f"Valid sequences: {len(valid_sequences)}")
+    print(f"Successfully generated: {len(created_files)}")
+    print(f"Output directory: {OUTPUT_DIR}")
     
     if created_files:
-        print(f"\n📋 生成的文件列表:")
+        print(f"\nGenerated file list:")
         for file_info in created_files:
             print(f"  - {file_info['fasta_path']} ({file_info['length']} aa)")
         
-        print(f"\n🚀 下一步:")
-        print(f"   使用 remote_superfamily_runner.py 上传并分析这些文件")
+        print(f"\nNext step:")
+        print(f"   Use remote_superfamily_runner.py to upload and analyze these files")
     
     return created_files
 
 def validate_all_files():
     """
-    验证生成的所有FASTA文件
+    Validate all generated FASTA files
     """
-    print(f"\n🔍 验证 {OUTPUT_DIR} 目录中的FASTA文件...")
+    print(f"\nValidating FASTA files in {OUTPUT_DIR} directory...")
     
     if not os.path.exists(OUTPUT_DIR):
-        print(f"❌ 目录不存在: {OUTPUT_DIR}")
+        print(f"Error: Directory does not exist: {OUTPUT_DIR}")
         return
     
     fasta_files = [f for f in os.listdir(OUTPUT_DIR) if f.endswith('.fa')]
     
     if not fasta_files:
-        print(f"❌ 目录中没有找到.fa文件")
+        print(f"Error: No .fa files found in directory")
         return
     
-    print(f"找到 {len(fasta_files)} 个FASTA文件:")
+    print(f"Found {len(fasta_files)} FASTA files:")
     
     for fasta_file in fasta_files:
         fasta_path = os.path.join(OUTPUT_DIR, fasta_file)
@@ -333,18 +333,18 @@ def validate_all_files():
             if header.startswith('>') and sequence:
                 valid_aa = re.match(r'^[ACDEFGHIKLMNPQRSTVWY]+$', sequence)
                 if valid_aa:
-                    print(f"  ✅ {fasta_file} - {len(sequence)} aa")
+                    print(f"  Valid: {fasta_file} - {len(sequence)} aa")
                 else:
-                    print(f"  ⚠️  {fasta_file} - 包含无效字符")
+                    print(f"  Warning: {fasta_file} - contains invalid characters")
             else:
-                print(f"  ❌ {fasta_file} - 格式错误")
+                print(f"  Error: {fasta_file} - format error")
                 
         except Exception as e:
-            print(f"  ❌ {fasta_file} - 读取失败: {e}")
+            print(f"  Error: {fasta_file} - read failed: {e}")
 
 def list_generated_files():
     """
-    列出已生成的文件，供其他脚本调用
+    List generated files for other scripts to call
     """
     if not os.path.exists(OUTPUT_DIR):
         return []
@@ -364,17 +364,17 @@ def list_generated_files():
 
 def main():
     """
-    主函数 - 自动运行
+    Main function - auto-run
     """
-    # 自动生成FASTA文件
+    # Auto-generate FASTA files
     created_files = auto_generate_fasta_files()
     
-    # 验证生成的文件
+    # Validate generated files
     if created_files:
         validate_all_files()
     
     return created_files
 
 if __name__ == "__main__":
-    # 直接运行，不需要用户交互
+    # Run directly, no user interaction needed
     main()
