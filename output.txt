@@ -1,4 +1,0 @@
-
-======= processing file：sequence_1_sample_0.pdb =======
-./alphafold_results/sequence_1_sample_0.pdb has no residue we care about
-------------------------------------------------------------

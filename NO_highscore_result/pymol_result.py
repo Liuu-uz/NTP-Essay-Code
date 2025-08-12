@@ -5,26 +5,26 @@ from pymol import cmd
 import glob
 
 def parse_extracted_csv(csv_file_path):
-    """解析extracted_first_rows.csv文件"""
+    """Parse extracted_first_rows.csv file"""
     results = []
     try:
         with open(csv_file_path, 'r', encoding='utf-8') as file:
             reader = csv.DictReader(file)
             for row in reader:
-                # 从Source_File提取查询ID (例如: Q67ZM7_zscores.csv -> Q67ZM7)
+                # Extract query ID from Source_File (e.g.: Q67ZM7_zscores.csv -> Q67ZM7)
                 query_id = row['Source_File'].replace('_zscores.csv', '')
                 
-                # 从filename的最后5个字母取前4个作为模板ID
+                # Extract template ID from the last 5 characters of filename, take first 4
                 filename = row['filename']
-                # 去掉.txt后缀
+                # Remove .txt suffix
                 filename_no_ext = filename.replace('.txt', '')
                 
                 if len(filename_no_ext) >= 5:
-                    # 取最后5个字符，然后取前4个
+                    # Take last 5 characters, then take first 4
                     last_5_chars = filename_no_ext[-5:]
                     template_id = last_5_chars[:4]
                     
-                    print(f"  文件名: {filename} -> 最后5个字符: {last_5_chars} -> 模板ID: {template_id}")
+                    print(f"  Filename: {filename} -> Last 5 chars: {last_5_chars} -> Template ID: {template_id}")
                     
                     results.append({
                         'query_id': query_id,
@@ -33,16 +33,16 @@ def parse_extracted_csv(csv_file_path):
                         'filename': filename
                     })
                 else:
-                    print(f"  警告: 文件名 {filename} 长度不足5个字符")
+                    print(f"  Warning: Filename {filename} has less than 5 characters")
                     
         return results
     except Exception as e:
-        print(f"解析CSV文件时出错: {e}")
+        print(f"Error parsing CSV file: {e}")
         return []
 
 def find_query_pdb(predicted_dir, query_id):
-    """在predicted_structures目录中查找查询结构PDB文件"""
-    # 尝试多种可能的文件名格式
+    """Find query structure PDB file in predicted_structures directory"""
+    # Try multiple possible filename formats
     possible_patterns = [
         f"{query_id.lower()}*.pdb",
         f"{query_id[:4].lower()}*.pdb",
@@ -58,12 +58,12 @@ def find_query_pdb(predicted_dir, query_id):
     return None
 
 def find_template_pdb(template_dir, template_id):
-    """在template目录中查找模板PDB文件"""
+    """Find template PDB file in template directory"""
     if not os.path.exists(template_dir):
-        print(f"    模板目录不存在: {template_dir}")
+        print(f"    Template directory does not exist: {template_dir}")
         return None
     
-    # 尝试多种文件名格式
+    # Try multiple filename formats
     possible_patterns = [
         f"{template_id.lower()}*.pdb",
         f"{template_id.upper()}*.pdb", 
@@ -74,19 +74,19 @@ def find_template_pdb(template_dir, template_id):
         template_pattern = os.path.join(template_dir, pattern)
         template_files = glob.glob(template_pattern)
         if template_files:
-            print(f"    找到模板文件: {template_files[0]} (使用模式: {pattern})")
+            print(f"    Found template file: {template_files[0]} (using pattern: {pattern})")
             return template_files[0]
     
-    print(f"    未找到模板文件，尝试的模式: {possible_patterns}")
+    print(f"    Template file not found, tried patterns: {possible_patterns}")
     return None
 
 def setup_pymol_session():
-    """初始化PyMOL会话"""
+    """Initialize PyMOL session"""
     pymol.finish_launching(['pymol', '-qc'])
     cmd.reinitialize()
 
 def set_high_quality_render():
-    """设置高质量渲染参数"""
+    """Set high quality rendering parameters"""
     cmd.set('ray_trace_mode', 1)
     cmd.set('ray_shadows', 1)
     cmd.set('ambient', 0.2)
@@ -98,62 +98,62 @@ def set_high_quality_render():
     cmd.set('ray_opaque_background', 1)
 
 def create_view1_protein_chains(query_name, template_name, output_prefix):
-    """视图1: 两条蛋白质链的对比"""
-    print("    生成视图1: 蛋白质链对比")
+    """View 1: Comparison of two protein chains"""
+    print("    Generating View 1: Protein chain comparison")
     
-    # 清除所有显示
+    # Hide all displays
     cmd.hide('everything')
     
-    # 显示蛋白质主链
+    # Show protein backbone
     cmd.show('cartoon', 'all')
     cmd.color('cyan', query_name)
     cmd.color('orange', template_name)
     
-    # 设置视图
+    # Set view
     cmd.zoom('all')
     cmd.orient()
     
-    # 设置渲染质量
+    # Set rendering quality
     set_high_quality_render()
     cmd.bg_color('white')
     
-    # 保存图像
+    # Save image
     png_file = f'{output_prefix}_view1_chains.png'
     cmd.png(png_file, width=1800, height=1400, dpi=300, ray=1)
-    print(f"    保存: {png_file}")
+    print(f"    Saved: {png_file}")
     
     return png_file
 
 def create_view2_with_atp(query_name, template_name, output_prefix):
-    """视图2: 只显示两条链重合部分 + 重合区域中的ATP分子"""
-    print("    生成视图2: 重合区域蛋白质链 + 重合区域ATP")
+    """View 2: Show only overlapping regions of two chains + ATP molecules in overlapping region"""
+    print("    Generating View 2: Overlapping region protein chains + ATP")
     
-    # 清除所有显示
+    # Hide all displays
     cmd.hide('everything')
     
-    # 找到两条链的重合区域 (使用8Å距离定义重合)
+    # Find overlapping region of two chains (using 8Å distance to define overlap)
     overlap_query = f'{query_name} and (byres ({template_name} around 8.0))'
     overlap_template = f'{template_name} and (byres ({query_name} around 8.0))'
     overlap_region = f'({overlap_query}) or ({overlap_template})'
     
-    print(f"    Query链重合区域残基数: {cmd.count_atoms(f'{overlap_query} and name CA')}")
-    print(f"    Template链重合区域残基数: {cmd.count_atoms(f'{overlap_template} and name CA')}")
+    print(f"    Query chain overlapping residues: {cmd.count_atoms(f'{overlap_query} and name CA')}")
+    print(f"    Template chain overlapping residues: {cmd.count_atoms(f'{overlap_template} and name CA')}")
     
-    # 显示重合区域的蛋白质链
+    # Show overlapping region protein chains
     if cmd.count_atoms(overlap_region) > 0:
         cmd.show('cartoon', overlap_region)
         cmd.color('cyan', overlap_query)
         cmd.color('orange', overlap_template)
-        print("    显示重合区域蛋白质链")
+        print("    Showing overlapping region protein chains")
     else:
-        print("    警告: 未找到重合区域，显示完整蛋白质链")
-        # 如果没有重合区域，显示完整链
+        print("    Warning: No overlapping region found, showing complete protein chains")
+        # If no overlapping region, show complete chains
         cmd.show('cartoon', 'all')
         cmd.color('cyan', query_name)
         cmd.color('orange', template_name)
         overlap_region = 'all'
     
-    # 查找所有ATP分子
+    # Find all ATP molecules
     all_atp_selection = 'resn ATP or resn ADP or resn AMP'
     if cmd.count_atoms(all_atp_selection) == 0:
         all_atp_selection = 'resn GTP or resn GDP or resn GMP or resn CTP or resn CDP or resn CMP or resn UTP or resn UDP or resn UMP'
@@ -161,20 +161,20 @@ def create_view2_with_atp(query_name, template_name, output_prefix):
     nucleotide_found = False
     
     if cmd.count_atoms(all_atp_selection) > 0:
-        # 只显示重合区域中的ATP (在重合区域6Å范围内的ATP)
+        # Only show ATP in overlapping region (ATP within 6Å of overlapping region)
         overlap_atp = f'{all_atp_selection} and (({overlap_region}) around 6.0)'
         
         if cmd.count_atoms(overlap_atp) > 0:
-            # 进一步筛选：选择距离重合区域最近的1-2个ATP分子
+            # Further filter: select 1-2 ATP molecules closest to overlapping region
             cmd.select('temp_overlap_atp', overlap_atp)
             atp_list = []
             cmd.iterate('temp_overlap_atp and name C1\'', 'atp_list.append((chain, resi))', space={'atp_list': atp_list})
             
             if atp_list:
-                # 限制显示ATP数量，只保留前2个（如果有多个的话）
-                selected_atp_residues = atp_list[:2]  # 最多2个ATP分子
+                # Limit ATP display, keep only first 2 (if multiple exist)
+                selected_atp_residues = atp_list[:2]  # Maximum 2 ATP molecules
                 
-                # 构建精确的ATP选择
+                # Build precise ATP selection
                 atp_parts = []
                 for chain, resi in selected_atp_residues:
                     atp_parts.append(f'(chain {chain} and resi {resi})')
@@ -189,18 +189,18 @@ def create_view2_with_atp(query_name, template_name, output_prefix):
                     nucleotide_found = True
                     atp_selection = final_atp
                     
-                    print(f"    显示筛选后的ATP: {len(selected_atp_residues)} 个分子，{cmd.count_atoms(final_atp)} 个原子")
+                    print(f"    Showing filtered ATP: {len(selected_atp_residues)} molecules, {cmd.count_atoms(final_atp)} atoms")
                     
-                    # 统计信息
+                    # Statistics
                     total_atp_molecules = len(atp_list)
                     displayed_molecules = len(selected_atp_residues)
                     hidden_molecules = total_atp_molecules - displayed_molecules
-                    print(f"    ATP分子统计: 重合区域总数 {total_atp_molecules}, 显示 {displayed_molecules}, 隐藏 {hidden_molecules}")
+                    print(f"    ATP molecule statistics: Total in overlap region {total_atp_molecules}, Displayed {displayed_molecules}, Hidden {hidden_molecules}")
             
             cmd.delete('temp_overlap_atp')
         else:
-            print("    重合区域6Å范围内未发现ATP分子")
-            # 如果6Å内没有ATP，尝试更大范围但限制数量
+            print("    No ATP molecules found within 6Å of overlapping region")
+            # If no ATP within 6Å, try larger range but limit quantity
             extended_atp = f'{all_atp_selection} and (({overlap_region}) around 12.0)'
             if cmd.count_atoms(extended_atp) > 0:
                 cmd.select('temp_extended_atp', extended_atp)
@@ -208,7 +208,7 @@ def create_view2_with_atp(query_name, template_name, output_prefix):
                 cmd.iterate('temp_extended_atp and name C1\'', 'atp_list.append((chain, resi))', space={'atp_list': atp_list})
                 
                 if atp_list:
-                    # 只显示最近的1个ATP
+                    # Show only closest 1 ATP
                     selected_atp = atp_list[:1]
                     chain, resi = selected_atp[0]
                     final_atp = f'chain {chain} and resi {resi} and resn ATP+ADP+AMP+GTP+GDP+GMP+CTP+CDP+CMP+UTP+UDP+UMP'
@@ -219,16 +219,16 @@ def create_view2_with_atp(query_name, template_name, output_prefix):
                     cmd.set('sphere_scale', 0.3, f'{final_atp} and name P*')
                     nucleotide_found = True
                     atp_selection = final_atp
-                    print(f"    显示扩展范围最近ATP: 1 个分子")
+                    print(f"    Showing extended range closest ATP: 1 molecule")
                 
                 cmd.delete('temp_extended_atp')
             else:
                 atp_selection = ""
     else:
-        print("    警告: 未发现任何核苷酸分子")
+        print("    Warning: No nucleotide molecules found")
         atp_selection = ""
     
-    # 设置视图 - 聚焦重合区域
+    # Set view - focus on overlapping region
     if nucleotide_found:
         focus_selection = f'{overlap_region} or {atp_selection}'
     else:
@@ -241,35 +241,35 @@ def create_view2_with_atp(query_name, template_name, output_prefix):
         cmd.zoom('all')
         cmd.orient()
     
-    # 设置渲染质量
+    # Set rendering quality
     set_high_quality_render()
     cmd.bg_color('white')
     
-    # 保存图像
+    # Save image
     png_file = f'{output_prefix}_view2_overlap_with_atp.png'
     cmd.png(png_file, width=1800, height=1400, dpi=300, ray=1)
-    print(f"    保存: {png_file}")
+    print(f"    Saved: {png_file}")
     
     return png_file, nucleotide_found
 
 def create_view3_atp_closeup(query_name, template_name, output_prefix):
-    """视图3: 基于视图2的ATP区域直接放大 - 保持相同颜色和风格"""
-    print("    生成视图3: 基于视图2的ATP区域放大")
+    """View 3: Direct magnification of ATP region based on View 2 - maintain same colors and style"""
+    print("    Generating View 3: ATP region magnification based on View 2")
     
-    # 不要清除显示！保持视图2的所有内容和颜色
-    # cmd.hide('everything') - 注释掉
+    # Don't clear display! Keep all content and colors from View 2
+    # cmd.hide('everything') - commented out
     
-    # 查找ATP（使用与视图2相同的逻辑）
+    # Find ATP (using same logic as View 2)
     all_atp_selection = 'resn ATP or resn ADP or resn AMP'
     if cmd.count_atoms(all_atp_selection) == 0:
         all_atp_selection = 'resn GTP or resn GDP or resn GMP+CTP+CDP+CMP+UTP+UDP+UMP'
     
-    # 找到重合区域（与视图2完全相同）
+    # Find overlapping region (exactly same as View 2)
     overlap_query = f'{query_name} and (byres ({template_name} around 8.0))'
     overlap_template = f'{template_name} and (byres ({query_name} around 8.0))'
     overlap_region = f'({overlap_query}) or ({overlap_template})'
     
-    # 找到重合区域的ATP，但只选择一个
+    # Find ATP in overlapping region, but select only one
     overlap_atp = f'{all_atp_selection} and (({overlap_region}) around 6.0)'
     target_atp = ""
     
@@ -279,155 +279,155 @@ def create_view3_atp_closeup(query_name, template_name, output_prefix):
         cmd.iterate('temp_overlap_atp and name C1\'', 'atp_list.append((chain, resi))', space={'atp_list': atp_list})
         
         if atp_list:
-            # 只选择第一个ATP分子
+            # Select only first ATP molecule
             chain, resi = atp_list[0]
             target_atp = f'chain {chain} and resi {resi} and resn ATP+ADP+AMP+GTP+GDP+GMP+CTP+CDP+CMP+UTP+UDP+UMP'
-            print(f"    选择单个ATP分子: 链{chain} 残基{resi}")
+            print(f"    Selected single ATP molecule: chain {chain} residue {resi}")
             
-            # 如果有多个ATP，隐藏其他的
+            # If multiple ATPs exist, hide others
             if len(atp_list) > 1:
                 for other_chain, other_resi in atp_list[1:]:
                     other_atp = f'chain {other_chain} and resi {other_resi} and resn ATP+ADP+AMP+GTP+GDP+GMP+CTP+CDP+CMP+UTP+UDP+UMP'
                     cmd.hide('everything', other_atp)
-                print(f"    隐藏了其他 {len(atp_list)-1} 个ATP分子")
+                print(f"    Hidden other {len(atp_list)-1} ATP molecules")
         
         cmd.delete('temp_overlap_atp')
     
     if not target_atp:
-        print("    无法找到目标ATP，无法生成视图3")
+        print("    Cannot find target ATP, unable to generate View 3")
         return None
     
-    # 定义ATP周围4Å的氨基酸（添加侧链显示，但不改变主体颜色）
+    # Define amino acids within 4Å of ATP (add sidechain display, but don't change main colors)
     active_site_4a = f'byres ({target_atp} around 4.0) and polymer.protein'
     
-    # 在现有显示基础上，添加4Å范围内的氨基酸侧链
+    # Add sidechains of amino acids within 4Å range based on existing display
     if cmd.count_atoms(active_site_4a) > 0:
-        # 显示4Å范围内的侧链
+        # Show sidechains within 4Å range
         cmd.show('sticks', f'{active_site_4a} and sidechain')
         
-        # 侧链颜色稍微深一些，但与主链保持协调
+        # Sidechain colors slightly deeper but coordinated with backbone
         query_sidechains = f'{active_site_4a} and sidechain and {query_name}'
         template_sidechains = f'{active_site_4a} and sidechain and {template_name}'
         
-        # 使用与主链协调的颜色
-        cmd.color('forest', query_sidechains)      # 深青色（与青色主链协调）
-        cmd.color('gray50', template_sidechains)   # 深橙色（与橙色主链协调）
+        # Use colors coordinated with backbone
+        cmd.color('forest', query_sidechains)      # Deep cyan (coordinated with cyan backbone)
+        cmd.color('gray50', template_sidechains)   # Deep orange (coordinated with orange backbone)
         
-        # 设置侧链stick大小
+        # Set sidechain stick size
         cmd.set('stick_radius', 0.15, f'{active_site_4a} and sidechain')
         
-        print(f"    添加4Å氨基酸侧链: {cmd.count_atoms(f'{active_site_4a} and name CA')} 个残基")
+        print(f"    Added 4Å amino acid sidechains: {cmd.count_atoms(f'{active_site_4a} and name CA')} residues")
     
-    # 添加氢键显示（保持与视图2的连续性）
+    # Add hydrogen bond display (maintain continuity with View 2)
     try:
         cmd.distance('atp_closeup_hbonds', f'{target_atp}', f'{active_site_4a}', mode=2, cutoff=3.2)
         cmd.hide('labels', 'atp_closeup_hbonds')
         cmd.color('yellow', 'atp_closeup_hbonds')
         cmd.set('dash_width', 2, 'atp_closeup_hbonds')
-        print("    添加ATP相互作用氢键")
+        print("    Added ATP interaction hydrogen bonds")
     except:
-        print("    氢键显示失败")
+        print("    Hydrogen bond display failed")
     
-    # 关键：超级放大，让ATP+氨基酸占据画面1/2大小
+    # Key: Super magnification, let ATP+amino acids occupy 1/2 of the screen
     focus_selection = f'{target_atp} or {active_site_4a}'
     
     try:
-        # 超级极度聚焦 - ATP+氨基酸占据画面1/2
-        cmd.zoom(target_atp, buffer=0.1)  # 极度放大ATP本身
+        # Super extreme focus - ATP+amino acids occupy 1/2 of screen
+        cmd.zoom(target_atp, buffer=0.1)  # Extreme magnification of ATP itself
         
-        # 然后包含氨基酸，但整体仍然很大（占画面1/2）
-        cmd.zoom(focus_selection, buffer=0.3)  # 超小buffer，ATP+氨基酸占画面1/2
+        # Then include amino acids, but still very large overall (occupy 1/2 of screen)
+        cmd.zoom(focus_selection, buffer=0.3)  # Very small buffer, ATP+amino acids occupy 1/2 of screen
         
-        # 调整视角，确保ATP和氨基酸都清晰可见
-        cmd.turn('x', 10)   # 向下倾斜，看到ATP结构
-        cmd.turn('y', 20)   # 侧面角度，显示相互作用
-        cmd.turn('z', -10)  # 微调旋转，优化朝向
+        # Adjust viewing angle to ensure ATP and amino acids are clearly visible
+        cmd.turn('x', 10)   # Tilt down to see ATP structure
+        cmd.turn('y', 20)   # Side angle to show interactions
+        cmd.turn('z', -10)  # Fine-tune rotation for optimal orientation
         
-        print("    超级放大：ATP+氨基酸占据画面1/2大小")
+        print("    Super magnification: ATP+amino acids occupy 1/2 of screen size")
         
     except Exception as view_error:
-        print(f"    视图聚焦失败: {view_error}")
-        # 最极端的备用方案
-        cmd.zoom(target_atp, buffer=0.05)  # 最大放大
+        print(f"    View focusing failed: {view_error}")
+        # Most extreme backup plan
+        cmd.zoom(target_atp, buffer=0.05)  # Maximum magnification
         cmd.zoom(focus_selection, buffer=0.2)
     
-    # 进一步优化显示，突出ATP和关键氨基酸
+    # Further optimize display, highlight ATP and key amino acids
     try:
-        # 让ATP更加突出
-        cmd.set('stick_radius', 0.3, target_atp)  # ATP stick更粗
-        cmd.set('sphere_scale', 0.6, f'{target_atp} and name P*')  # 磷酸基团更大
+        # Make ATP more prominent
+        cmd.set('stick_radius', 0.3, target_atp)  # Thicker ATP sticks
+        cmd.set('sphere_scale', 0.6, f'{target_atp} and name P*')  # Larger phosphate groups
         
-        # 氨基酸侧链也要清晰
-        cmd.set('stick_radius', 0.25, f'{active_site_4a} and sidechain')  # 侧链stick更粗
+        # Amino acid sidechains should also be clear
+        cmd.set('stick_radius', 0.25, f'{active_site_4a} and sidechain')  # Thicker sidechain sticks
         
-        # 隐藏可能挡住ATP的前景蛋白质链
-        # 定义ATP前方的区域（通过距离和位置判断）
+        # Hide protein chains that might block ATP view
+        # Define region in front of ATP (judged by distance and position)
         foreground_region = f'byres ({target_atp} around 8.0) and polymer.protein'
         
-        # 选择性隐藏部分可能遮挡ATP的链段
-        # 方法1: 隐藏ATP上方和前方的部分链段
+        # Selectively hide parts of chains that might block ATP
+        # Method 1: Hide chain segments above and in front of ATP
         blocking_chains = f'{foreground_region} and not ({active_site_4a})'
         
         if cmd.count_atoms(blocking_chains) > 0:
-            # 先尝试让这些链段透明
+            # First try making these chain segments transparent
             cmd.set('cartoon_transparency', 0.8, blocking_chains)
-            print(f"    设置前景链段为高透明度")
+            print(f"    Set foreground chain segments to high transparency")
             
-            # 如果仍然遮挡，可以完全隐藏一些链段
-            # 选择距离ATP较远但仍在视野中的部分
+            # If still blocking, can completely hide some chain segments
+            # Select parts far from ATP but still in view
             distant_blocking = f'byres ({target_atp} around 10.0) and polymer.protein and not (byres ({target_atp} around 6.0))'
             if cmd.count_atoms(distant_blocking) > 0:
                 cmd.hide('cartoon', distant_blocking)
-                print(f"    隐藏部分遮挡ATP的链段")
+                print(f"    Hidden some chain segments blocking ATP")
         
-        print("    增强ATP和氨基酸的可视化效果，减少遮挡")
+        print("    Enhanced ATP and amino acid visualization, reduced blocking")
     except Exception as e:
-        print(f"    优化显示时出错: {e}")
+        print(f"    Error during display optimization: {e}")
         pass
     
-    # 设置渲染质量
+    # Set rendering quality
     set_high_quality_render()
     cmd.bg_color('white')
     
-    # 保存巨型放大图 - ATP为画面主导
+    # Save giant magnification image - ATP dominates the screen
     png_file = f'{output_prefix}_view3_atp_closeup.png'
     try:
-        # 超高分辨率显示巨大的ATP细节
-        cmd.png(png_file, width=4000, height=3000, dpi=300, ray=1)  # 4K分辨率
-        print(f"    保存ATP巨型特写图（占画面1/2）: {png_file}")
+        # Ultra-high resolution display of giant ATP details
+        cmd.png(png_file, width=4000, height=3000, dpi=300, ray=1)  # 4K resolution
+        print(f"    Saved ATP giant close-up image (occupying 1/2 of screen): {png_file}")
     except Exception as save_error:
-        print(f"    图像保存失败: {save_error}")
+        print(f"    Image save failed: {save_error}")
         return None
     
-    # 保存PyMOL会话文件 - 可旋转查看
+    # Save PyMOL session file - rotatable view
     session_file = f'{output_prefix}_view3_interactive.pse'
     try:
         cmd.save(session_file)
-        print(f"    保存PyMOL交互式会话: {session_file}")
-        print(f"    💡 提示: 在PyMOL中打开 {os.path.basename(session_file)} 可以自由旋转查看ATP结构")
+        print(f"    Saved PyMOL interactive session: {session_file}")
+        print(f"    Tip: Open {os.path.basename(session_file)} in PyMOL to freely rotate and view ATP structure")
     except Exception as session_error:
-        print(f"    会话文件保存失败: {session_error}")
+        print(f"    Session file save failed: {session_error}")
     
-    # 可选：也保存其他3D格式
+    # Optional: Also save other 3D formats
     try:
-        # 保存VRML格式（某些3D查看器支持）
+        # Save VRML format (supported by some 3D viewers)
         vrml_file = f'{output_prefix}_view3_3d.wrl'
         cmd.save(vrml_file)
-        print(f"    保存3D VRML文件: {vrml_file}")
+        print(f"    Saved 3D VRML file: {vrml_file}")
     except:
-        pass  # VRML保存失败不影响主要功能
+        pass  # VRML save failure doesn't affect main functionality
     
-    # 统计信息
+    # Statistics
     try:
         active_site_count = cmd.count_atoms(active_site_4a)
         atp_count = cmd.count_atoms(target_atp)
         query_active_residues = cmd.count_atoms(f'{active_site_4a} and {query_name} and name CA')
         template_active_residues = cmd.count_atoms(f'{active_site_4a} and {template_name} and name CA')
         
-        print(f"    ATP放大图统计:")
-        print(f"      ATP原子数: {atp_count}")
-        print(f"      Query链活性位点残基 (4Å): {query_active_residues}")
-        print(f"      Template链活性位点残基 (4Å): {template_active_residues}")
+        print(f"    ATP magnification statistics:")
+        print(f"      ATP atoms: {atp_count}")
+        print(f"      Query chain active site residues (4Å): {query_active_residues}")
+        print(f"      Template chain active site residues (4Å): {template_active_residues}")
         
         return {
             'png_file': png_file,
@@ -439,7 +439,7 @@ def create_view3_atp_closeup(query_name, template_name, output_prefix):
             'overlap_atp_atoms': atp_count
         }
     except Exception as stat_error:
-        print(f"    统计计算失败: {stat_error}")
+        print(f"    Statistics calculation failed: {stat_error}")
         return {
             'png_file': png_file,
             'session_file': session_file,
@@ -451,12 +451,12 @@ def create_view3_atp_closeup(query_name, template_name, output_prefix):
         }
 
 def visualize_structures_three_views(query_pdb, template_pdb, output_prefix, query_id, template_id, z_score):
-    """使用PyMOL生成三个视图的结构可视化"""
+    """Generate three-view structure visualization using PyMOL"""
     
-    # 清除当前会话
+    # Clear current session
     cmd.delete('all')
     
-    # 加载结构文件
+    # Load structure files
     query_name = 'query_structure'
     template_name = 'template_structure'
     
@@ -464,30 +464,30 @@ def visualize_structures_three_views(query_pdb, template_pdb, output_prefix, que
         cmd.load(query_pdb, query_name)
         cmd.load(template_pdb, template_name)
     except Exception as e:
-        print(f"    加载PDB文件失败: {e}")
+        print(f"    Failed to load PDB files: {e}")
         return None
     
-    # 结构叠合 - 使用CA原子进行对齐
+    # Structure alignment - use CA atoms for alignment
     try:
         alignment_result = cmd.align(query_name, template_name)
-        print(f"    结构对齐结果: RMSD = {alignment_result[0]:.3f} Å, 对齐原子数 = {alignment_result[1]}")
+        print(f"    Structure alignment result: RMSD = {alignment_result[0]:.3f} Å, Aligned atoms = {alignment_result[1]}")
     except Exception as e:
-        print(f"    结构对齐失败: {e}")
+        print(f"    Structure alignment failed: {e}")
         return None
     
-    # 生成三个视图
+    # Generate three views
     results = {}
     
-    # 视图1: 蛋白质链对比
+    # View 1: Protein chain comparison
     view1_file = create_view1_protein_chains(query_name, template_name, output_prefix)
     results['view1_chains'] = view1_file
     
-    # 视图2: 蛋白质链 + ATP
+    # View 2: Protein chains + ATP
     view2_file, nucleotide_found = create_view2_with_atp(query_name, template_name, output_prefix)
     results['view2_with_atp'] = view2_file
     results['nucleotide_found'] = nucleotide_found
     
-    # 视图3: ATP活性位点放大
+    # View 3: ATP active site magnification
     if nucleotide_found:
         view3_result = create_view3_atp_closeup(query_name, template_name, output_prefix)
         if view3_result:
@@ -501,50 +501,50 @@ def visualize_structures_three_views(query_pdb, template_pdb, output_prefix, que
             results['view3_atp_closeup'] = None
     else:
         results['view3_atp_closeup'] = None
-        print("    跳过视图3: 未发现核苷酸分子")
+        print("    Skipping View 3: No nucleotide molecules found")
     
-    # 保存叠合后的结构
+    # Save aligned structures
     pdb_file = f'{output_prefix}_aligned.pdb'
     cmd.save(pdb_file, 'all')
     results['pdb_file'] = pdb_file
     
-    # 添加对齐信息
+    # Add alignment information
     results['rmsd'] = alignment_result[0]
     results['aligned_atoms'] = alignment_result[1]
     
-    # 输出总结信息
+    # Output summary information
     title_text = f"Query: {query_id} vs Template: {template_id} (Z-score: {z_score:.2f})"
     print(f"    {title_text}")
-    print(f"    生成的文件:")
-    print(f"      视图1 (蛋白质链): {os.path.basename(results['view1_chains'])}")
-    print(f"      视图2 (含ATP): {os.path.basename(results['view2_with_atp'])}")
+    print(f"    Generated files:")
+    print(f"      View 1 (protein chains): {os.path.basename(results['view1_chains'])}")
+    print(f"      View 2 (with ATP): {os.path.basename(results['view2_with_atp'])}")
     if results['view3_atp_closeup']:
-        print(f"      视图3 (ATP放大): {os.path.basename(results['view3_atp_closeup'])}")
-        print(f"      活性位点原子数: {results.get('active_site_atoms', 'N/A')}")
+        print(f"      View 3 (ATP magnification): {os.path.basename(results['view3_atp_closeup'])}")
+        print(f"      Active site atoms: {results.get('active_site_atoms', 'N/A')}")
     
     return results
 
 def process_csv_data(csv_file_path, predicted_dir, template_dir, output_dir, max_structures=None):
-    """基于CSV数据处理结构可视化 - 三视图版本"""
+    """Process structure visualization based on CSV data - three views version"""
     
-    # 确保输出目录存在
+    # Ensure output directory exists
     os.makedirs(output_dir, exist_ok=True)
     
-    # 初始化PyMOL
+    # Initialize PyMOL
     setup_pymol_session()
     
-    # 解析CSV文件
+    # Parse CSV file
     csv_data = parse_extracted_csv(csv_file_path)
     if not csv_data:
-        print("无法解析CSV文件或文件为空")
+        print("Cannot parse CSV file or file is empty")
         return []
     
-    print(f"从CSV文件中解析到 {len(csv_data)} 条记录")
+    print(f"Parsed {len(csv_data)} records from CSV file")
     
-    # 如果设置了最大处理数量，则只处理前N个
+    # If maximum processing number is set, only process first N
     if max_structures:
         csv_data = csv_data[:max_structures]
-        print(f"限制处理前 {max_structures} 个结构")
+        print(f"Limited to processing first {max_structures} structures")
     
     results = []
     successful_count = 0
@@ -555,36 +555,36 @@ def process_csv_data(csv_file_path, predicted_dir, template_dir, output_dir, max
         z_score = data['z_score']
         filename = data['filename']
         
-        print(f"\n[{i}/{len(csv_data)}] 处理: {query_id} vs {template_id} (Z-score: {z_score:.2f})")
-        print(f"  原始文件名: {filename}")
+        print(f"\n[{i}/{len(csv_data)}] Processing: {query_id} vs {template_id} (Z-score: {z_score:.2f})")
+        print(f"  Original filename: {filename}")
         
-        # 查找查询结构PDB文件
+        # Find query structure PDB file
         query_pdb = find_query_pdb(predicted_dir, query_id)
         if not query_pdb:
-            print(f"    未找到查询结构: {query_id}")
+            print(f"    Query structure not found: {query_id}")
             continue
         
-        # 查找模板结构PDB文件
+        # Find template structure PDB file
         template_pdb = find_template_pdb(template_dir, template_id)
         if not template_pdb:
-            print(f"    未找到模板结构: {template_id}")
+            print(f"    Template structure not found: {template_id}")
             continue
         
-        print(f"    查询结构: {query_pdb}")
-        print(f"    模板结构: {template_pdb}")
+        print(f"    Query structure: {query_pdb}")
+        print(f"    Template structure: {template_pdb}")
         
-        # 创建输出文件前缀
+        # Create output file prefix
         output_prefix = os.path.join(output_dir, f"{query_id}_vs_{template_id}_zscore{z_score:.1f}")
         
         try:
-            # 进行三视图结构可视化
+            # Perform three-view structure visualization
             vis_result = visualize_structures_three_views(
                 query_pdb, template_pdb, output_prefix, 
                 query_id, template_id, z_score
             )
             
             if vis_result:
-                # 记录结果
+                # Record results
                 result = {
                     'query_id': query_id,
                     'template_id': template_id,
@@ -607,13 +607,13 @@ def process_csv_data(csv_file_path, predicted_dir, template_dir, output_dir, max
                 }
                 results.append(result)
                 successful_count += 1
-                print(f"    ✓ 成功处理 ({successful_count}/{i})")
+                print(f"    Success ({successful_count}/{i})")
             
         except Exception as e:
-            print(f"    ✗ 处理失败: {e}")
+            print(f"    Processing failed: {e}")
             continue
     
-    # 保存处理结果摘要
+    # Save processing results summary
     summary_file = os.path.join(output_dir, 'visualization_summary_three_views.csv')
     with open(summary_file, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
@@ -646,29 +646,29 @@ def process_csv_data(csv_file_path, predicted_dir, template_dir, output_dir, max
                 os.path.basename(result['pdb_file']) if result['pdb_file'] else ''
             ])
     
-    print(f"\n🎉 三视图可视化处理完成！")
-    print(f"总记录数: {len(csv_data)}")
-    print(f"成功处理: {successful_count}")
-    print(f"失败数量: {len(csv_data) - successful_count}")
-    print(f"结果摘要保存在: {summary_file}")
+    print(f"\nThree-view visualization processing complete!")
+    print(f"Total records: {len(csv_data)}")
+    print(f"Successfully processed: {successful_count}")
+    print(f"Failed count: {len(csv_data) - successful_count}")
+    print(f"Results summary saved to: {summary_file}")
     
-    # 统计视图生成情况
+    # Statistics on view generation
     view1_count = sum(1 for r in results if r['view1_chains'])
     view2_count = sum(1 for r in results if r['view2_with_atp'])
     view3_count = sum(1 for r in results if r['view3_atp_closeup'])
     nucleotide_count = sum(1 for r in results if r['nucleotide_found'])
     
-    print(f"\n📊 视图生成统计:")
-    print(f"视图1 (蛋白质链): {view1_count}/{successful_count}")
-    print(f"视图2 (含ATP): {view2_count}/{successful_count}")
-    print(f"视图3 (ATP放大): {view3_count}/{successful_count}")
-    print(f"包含核苷酸的结构: {nucleotide_count}/{successful_count}")
+    print(f"\nView generation statistics:")
+    print(f"View 1 (protein chains): {view1_count}/{successful_count}")
+    print(f"View 2 (with ATP): {view2_count}/{successful_count}")
+    print(f"View 3 (ATP magnification): {view3_count}/{successful_count}")
+    print(f"Structures containing nucleotides: {nucleotide_count}/{successful_count}")
     
     return results
 
 def main():
-    """主函数"""
-    # 设置路径
+    """Main function"""
+    # Set paths
     base_dir = "/Users/napkin/NTP-Essay-Code-1/NTP-Essay-Code"
     pipeline_dir = os.path.join(base_dir, "NO_highscore_result")
     
@@ -677,59 +677,59 @@ def main():
     template_dir = os.path.join(pipeline_dir, "template")
     output_dir = os.path.join(pipeline_dir, "pymol_three_views_output")
     
-    # 检查文件和目录是否存在
+    # Check if files and directories exist
     if not os.path.exists(csv_file_path):
-        print(f"错误: CSV文件不存在: {csv_file_path}")
+        print(f"Error: CSV file does not exist: {csv_file_path}")
         return
     
     if not os.path.exists(predicted_dir):
-        print(f"错误: 预测结构目录不存在: {predicted_dir}")
+        print(f"Error: Predicted structures directory does not exist: {predicted_dir}")
         return
     
     if not os.path.exists(template_dir):
-        print(f"错误: 模板目录不存在: {template_dir}")
+        print(f"Error: Template directory does not exist: {template_dir}")
         return
     
-    print("基于CSV文件进行PyMOL三视图结构可视化")
-    print("生成三个视图:")
-    print("  1. 蛋白质链对比")
-    print("  2. 蛋白质链 + ATP")
-    print("  3. ATP活性位点放大 (4Å范围)")
-    print(f"CSV文件: {csv_file_path}")
-    print(f"预测结构目录: {predicted_dir}")
-    print(f"模板目录: {template_dir}")
-    print(f"输出目录: {output_dir}")
+    print("PyMOL three-view structure visualization based on CSV file")
+    print("Generate three views:")
+    print("  1. Protein chain comparison")
+    print("  2. Protein chains + ATP")
+    print("  3. ATP active site magnification (4Å range)")
+    print(f"CSV file: {csv_file_path}")
+    print(f"Predicted structures directory: {predicted_dir}")
+    print(f"Template directory: {template_dir}")
+    print(f"Output directory: {output_dir}")
     
-    # 询问是否限制处理数量（用于测试）
-    response = input("\n是否限制处理数量？(输入数字限制，回车处理所有): ").strip()
+    # Ask whether to limit processing count (for testing)
+    response = input("\nLimit processing count? (Enter number to limit, press Enter to process all): ").strip()
     max_structures = None
     if response.isdigit():
         max_structures = int(response)
-        print(f"将只处理前 {max_structures} 个结构")
+        print(f"Will only process first {max_structures} structures")
     
-    # 处理文件
+    # Process files
     results = process_csv_data(csv_file_path, predicted_dir, template_dir, output_dir, max_structures)
     
-    # 显示统计信息
+    # Display statistics
     if results:
         z_scores = [r['z_score'] for r in results]
         rmsds = [r['rmsd'] for r in results]
         nucleotide_count = sum(1 for r in results if r['nucleotide_found'])
         
-        print(f"\n📊 最终统计信息:")
-        print(f"Z-score范围: {min(z_scores):.2f} - {max(z_scores):.2f}")
-        print(f"平均Z-score: {sum(z_scores)/len(z_scores):.2f}")
-        print(f"RMSD范围: {min(rmsds):.3f} - {max(rmsds):.3f} Å")
-        print(f"平均RMSD: {sum(rmsds)/len(rmsds):.3f} Å")
-        print(f"包含核苷酸的结构: {nucleotide_count}/{len(results)} ({nucleotide_count/len(results)*100:.1f}%)")
+        print(f"\nFinal statistics:")
+        print(f"Z-score range: {min(z_scores):.2f} - {max(z_scores):.2f}")
+        print(f"Average Z-score: {sum(z_scores)/len(z_scores):.2f}")
+        print(f"RMSD range: {min(rmsds):.3f} - {max(rmsds):.3f} Å")
+        print(f"Average RMSD: {sum(rmsds)/len(rmsds):.3f} Å")
+        print(f"Structures containing nucleotides: {nucleotide_count}/{len(results)} ({nucleotide_count/len(results)*100:.1f}%)")
         
-        # 活性位点统计
+        # Active site statistics
         active_sites = [r['active_site_atoms'] for r in results if r['active_site_atoms']]
         if active_sites:
-            print(f"活性位点原子数范围: {min(active_sites)} - {max(active_sites)}")
-            print(f"平均活性位点原子数: {sum(active_sites)/len(active_sites):.1f}")
+            print(f"Active site atom count range: {min(active_sites)} - {max(active_sites)}")
+            print(f"Average active site atom count: {sum(active_sites)/len(active_sites):.1f}")
     
-    # 退出PyMOL
+    # Quit PyMOL
     cmd.quit()
 
 if __name__ == "__main__":
