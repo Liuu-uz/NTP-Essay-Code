@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-批量上传脚本 - 上传DALI生成的所有JSON文件到远程服务器
+Batch upload script - Upload all DALI generated JSON files to remote server
 """
 
 import os
@@ -12,114 +12,114 @@ import glob
 
 class BatchFileUploader:
     def __init__(self):
-        # 固定路径 - DALI生成的JSON文件夹
+        # Fixed path - DALI generated JSON folder
         self.json_folder = "/Users/napkin/NTP-Essay-Code-1/NTP-Essay-Code/dali_sequences"
         
-        # 远程服务器配置
+        # Remote server configuration
         self.remote_server = "webserver@coulomb.phys.ucl.ac.uk"
         self.remote_input_dir = "~/student/students_webserver/zhijing/input_jsons"
     
     def get_json_files(self):
-        """获取所有JSON文件"""
+        """Get all JSON files"""
         if not os.path.exists(self.json_folder):
-            print(f"❌ JSON文件夹不存在: {self.json_folder}")
+            print(f"Error: JSON folder does not exist: {self.json_folder}")
             return []
         
         json_files = glob.glob(os.path.join(self.json_folder, "*.json"))
         
         if not json_files:
-            print(f"❌ 在文件夹中没有找到JSON文件: {self.json_folder}")
+            print(f"Error: No JSON files found in folder: {self.json_folder}")
             return []
         
-        print(f"📁 找到 {len(json_files)} 个JSON文件")
+        print(f"Found {len(json_files)} JSON files")
         return json_files
     
     def verify_json_file(self, json_file):
-        """验证单个JSON文件"""
+        """Verify single JSON file"""
         if not os.path.exists(json_file):
-            print(f"❌ 文件不存在: {json_file}")
+            print(f"Error: File does not exist: {json_file}")
             return False
         
         if os.path.getsize(json_file) == 0:
-            print(f"❌ 文件为空: {json_file}")
+            print(f"Error: File is empty: {json_file}")
             return False
         
         return True
     
     def upload_single_file(self, json_file):
-        """上传单个JSON文件"""
+        """Upload single JSON file"""
         filename = os.path.basename(json_file)
         
-        print(f"📤 上传: {filename}")
+        print(f"Uploading: {filename}")
         
         cmd = f"scp '{json_file}' {self.remote_server}:{self.remote_input_dir}/"
         result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
         
         if result.returncode != 0:
-            print(f"❌ 上传失败 {filename}: {result.stderr}")
+            print(f"Upload failed for {filename}: {result.stderr}")
             return False
         
-        print(f"✅ 上传成功: {filename}")
+        print(f"Upload successful: {filename}")
         return True
     
     def upload_all_files(self):
-        """批量上传所有JSON文件"""
-        print("🚀 开始批量上传DALI JSON文件...")
-        print(f"📂 源文件夹: {self.json_folder}")
-        print(f"🖥️  目标服务器: {self.remote_server}")
-        print(f"📁 目标路径: {self.remote_input_dir}")
+        """Batch upload all JSON files"""
+        print("Starting batch upload of DALI JSON files...")
+        print(f"Source folder: {self.json_folder}")
+        print(f"Target server: {self.remote_server}")
+        print(f"Target path: {self.remote_input_dir}")
         print("="*60)
         
-        # 获取所有JSON文件
+        # Get all JSON files
         json_files = self.get_json_files()
         if not json_files:
             return False
         
-        # 统计变量
+        # Statistics variables
         total_files = len(json_files)
         successful_uploads = 0
         failed_uploads = 0
         
-        # 逐个上传文件
+        # Upload files one by one
         for i, json_file in enumerate(json_files, 1):
             filename = os.path.basename(json_file)
-            print(f"[{i}/{total_files}] 处理: {filename}")
+            print(f"[{i}/{total_files}] Processing: {filename}")
             
-            # 验证文件
+            # Verify file
             if not self.verify_json_file(json_file):
                 failed_uploads += 1
                 continue
             
-            # 上传文件
+            # Upload file
             if self.upload_single_file(json_file):
                 successful_uploads += 1
             else:
                 failed_uploads += 1
             
-            print()  # 空行分隔
+            print()  # Empty line separator
         
-        # 输出统计结果
+        # Output statistics
         print("="*60)
-        print("📊 上传统计:")
-        print(f"   总文件数: {total_files}")
-        print(f"   成功上传: {successful_uploads}")
-        print(f"   失败数量: {failed_uploads}")
+        print("Upload statistics:")
+        print(f"   Total files: {total_files}")
+        print(f"   Successful uploads: {successful_uploads}")
+        print(f"   Failed uploads: {failed_uploads}")
         print("="*60)
         
         if successful_uploads > 0:
-            print("🎉 批量上传完成!")
-            print(f"📝 后续步骤:")
-            print(f"   1. SSH登录远程服务器: ssh {self.remote_server}")
-            print(f"   2. 切换到工作目录: cd ~/student/students_webserver/zhijing")
-            print(f"   3. 批量运行远程脚本 (示例):")
+            print("Batch upload completed!")
+            print(f"Next steps:")
+            print(f"   1. SSH login to remote server: ssh {self.remote_server}")
+            print(f"   2. Change to working directory: cd ~/student/students_webserver/zhijing")
+            print(f"   3. Run remote scripts in batch (example):")
             
-            # 显示几个示例命令
+            # Show some example commands
             example_files = [os.path.basename(f) for f in json_files[:3]]
             for filename in example_files:
                 print(f"      python remote_pipeline.py {filename}")
             
             if len(json_files) > 3:
-                print(f"      ... (还有 {len(json_files)-3} 个文件)")
+                print(f"      ... (and {len(json_files)-3} more files)")
         
         return successful_uploads > 0
 
@@ -132,84 +132,84 @@ class SingleFileUploader:
         self.remote_input_dir = "~/student/students_webserver/zhijing/input_jsons"
     
     def verify_json_file(self):
-        """验证JSON文件是否存在"""
+        """Verify if JSON file exists"""
         if not os.path.exists(self.json_file_path):
-            print(f"❌ JSON文件不存在: {self.json_file_path}")
+            print(f"Error: JSON file does not exist: {self.json_file_path}")
             return False
         
-        print(f"✅ JSON文件验证成功: {self.json_file_path}")
+        print(f"JSON file verification successful: {self.json_file_path}")
         return True
     
     def upload_json_to_remote(self):
-        """上传JSON文件到远程服务器"""
-        print(f"📤 上传JSON文件到远程服务器...")
+        """Upload JSON file to remote server"""
+        print(f"Uploading JSON file to remote server...")
         
         cmd = f"scp '{self.json_file_path}' {self.remote_server}:{self.remote_input_dir}/"
         result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
         
         if result.returncode != 0:
-            print(f"❌ 上传失败: {result.stderr}")
+            print(f"Upload failed: {result.stderr}")
             return False
         
-        print(f"✅ 文件上传成功: {self.json_filename}")
+        print(f"File upload successful: {self.json_filename}")
         return True
     
     def upload_file(self):
-        """上传单个文件的主函数"""
-        print(f"🚀 开始文件上传...")
-        print(f"📋 JSON文件: {self.json_file_path}")
-        print(f"📋 文件名: {self.json_filename}")
-        print(f"📋 输出名: {self.output_name}")
+        """Main function for uploading single file"""
+        print(f"Starting file upload...")
+        print(f"JSON file: {self.json_file_path}")
+        print(f"Filename: {self.json_filename}")
+        print(f"Output name: {self.output_name}")
         print("="*50)
         
-        # 验证文件
+        # Verify file
         if not self.verify_json_file():
             return False
         
-        # 上传文件
+        # Upload file
         if not self.upload_json_to_remote():
             return False
         
         print("="*50)
-        print("🎉 文件上传完成!")
-        print(f"📝 后续步骤:")
-        print(f"   1. SSH登录远程服务器: ssh {self.remote_server}")
-        print(f"   2. 切换到工作目录: cd ~/student/students_webserver/zhijing")
-        print(f"   3. 运行远程脚本: python remote_pipeline.py {self.json_filename}")
+        print("File upload completed!")
+        print(f"Next steps:")
+        print(f"   1. SSH login to remote server: ssh {self.remote_server}")
+        print(f"   2. Change to working directory: cd ~/student/students_webserver/zhijing")
+        print(f"   3. Run remote script: python remote_pipeline.py {self.json_filename}")
         print("="*50)
         
         return True
 
 def main():
     parser = argparse.ArgumentParser(
-        description='上传JSON文件到远程服务器',
+        description='Upload JSON files to remote server',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
-使用示例:
-  python upload_json.py --batch                    # 批量上传所有DALI JSON文件
-  python upload_json.py single_file.json          # 上传单个文件
-  python upload_json.py --file single_file.json   # 上传单个文件(参数形式)
+Usage examples:
+  python upload_json.py --batch                    # Batch upload all DALI JSON files
+  python upload_json.py single_file.json          # Upload single file
+  python upload_json.py --file single_file.json   # Upload single file (parameter form)
         """
     )
     
-    parser.add_argument('json_file', nargs='?', help='单个JSON文件路径')
-    parser.add_argument('--file', help='单个JSON文件路径(参数形式)')
+    parser.add_argument('json_file', nargs='?', help='Single JSON file path')
+    parser.add_argument('--file', help='Single JSON file path (parameter form)')
     parser.add_argument('--batch', action='store_true', 
-                       help='批量上传所有DALI生成的JSON文件')
+                       help='Batch upload all DALI generated JSON files')
     
     args = parser.parse_args()
     
     if args.batch:
-        # 批量上传模式
+        # Batch upload mode
         uploader = BatchFileUploader()
         success = uploader.upload_all_files()
     else:
-        # 单文件上传模式
+        # Single file upload mode
         json_file = args.json_file or args.file
         if not json_file:
-            print("❌ 错误: 请指定JSON文件路径或使用 --batch 进行批量上传")
-            print("使用方法: python upload_json.py --batch")
-            print("或者:     python upload_json.py your_file.json")
+            print("Error: Please specify JSON file path or use --batch for batch upload")
+            print("Usage: python upload_json.py --batch")
+            print("Or:    python upload_json.py your_file.json")
             sys.exit(1)
         
         uploader = SingleFileUploader(json_file)
@@ -218,7 +218,7 @@ def main():
     if success:
         sys.exit(0)
     else:
-        print("💥 上传失败!")
+        print("Upload failed!")
         sys.exit(1)
 
 if __name__ == "__main__":
