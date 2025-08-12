@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-AlphaFold batch processing script - Sequence length filter: 200-1000 AA
+AlphaFold batch processing script - Sequence length filter: 0-1000 AA
 Added MSA rate limiting handling and intelligent rest strategy
 """
 

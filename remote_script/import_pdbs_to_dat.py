@@ -18,11 +18,11 @@ def import_one(pdb_path, pdb_id, dat_dir):
     ]
     subprocess.run(cmd, check=True)
 
-# 遍历所有 .pdb 文件
+# Iterate through all .pdb files
 for fname in os.listdir(PDB_DIR):
     if fname.endswith(".pdb"):
         basename = os.path.splitext(fname)[0]
-        # 取前 4 个字符作为 pdbid，转小写，补足为合法 ID
-        pdb_id = (basename[:4].lower() + "xxx")[:4]  # 确保长度4
+         # Take first 4 characters as pdbid, convert to lowercase, pad to valid ID
+        pdb_id = (basename[:4].lower() + "xxx")[:4]  # Ensure length 4
         full_path = os.path.join(PDB_DIR, fname)
         import_one(full_path, pdb_id, DAT_DIR)
