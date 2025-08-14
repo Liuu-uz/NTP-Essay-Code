@@ -24,4 +24,7 @@ repo/
 ├─seq-supfam 
 │  ├─ README.md     
 │  └─ <source codes> 
-├─ <download_fasta.py>/           # 
+├─ <download_fasta.py>/           # download fasta files from remote server
+├─ <fetch_pdb.py>/                # download pdb files from website
+├─ <process_fasta.py>/            # process fasta files, generating fasta_sequence folder
+
