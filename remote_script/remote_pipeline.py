@@ -25,7 +25,7 @@ class RemotePipeline:
         
     def run_alphafold_prediction(self):
         """Run AlphaFold prediction"""
-        print(f"🔬 Starting AlphaFold prediction...")
+        print(f"Starting AlphaFold prediction...")
         
         # Ensure we're in the correct directory
         os.chdir(self.base_dir)
@@ -43,17 +43,17 @@ class RemotePipeline:
         result = subprocess.run(cmd, capture_output=True, text=True)
         
         if result.returncode != 0:
-            print(f"❌ AlphaFold prediction failed:")
+            print(f"ERROR: AlphaFold prediction failed:")
             print(f"stdout: {result.stdout}")
             print(f"stderr: {result.stderr}")
             return False
         
-        print(f"✅ AlphaFold prediction completed")
+        print(f"SUCCESS: AlphaFold prediction completed")
         return True
     
     def convert_cif_to_pdb(self):
         """Convert CIF file to PDB file"""
-        print(f"🔄 Converting CIF file to PDB file...")
+        print(f"Converting CIF file to PDB file...")
         
         # The actual output path is sequence_1_output instead of predicted_structures
         actual_output_dir = f"{self.base_dir}/{self.output_name}_output"
@@ -62,7 +62,7 @@ class RemotePipeline:
         print(f"Looking for CIF file: {cif_pattern}")
         
         if not os.path.exists(cif_pattern):
-            print(f"❌ CIF file not found: {cif_pattern}")
+            print(f"ERROR: CIF file not found: {cif_pattern}")
             # Try to find with wildcard
             cif_files = glob.glob(f"{actual_output_dir}/{self.output_name}/seed_101/predictions/*sample_0.cif")
             if cif_files:
@@ -81,24 +81,24 @@ class RemotePipeline:
         result = subprocess.run(cmd, capture_output=True, text=True)
         
         if result.returncode != 0:
-            print(f"❌ CIF to PDB conversion failed:")
+            print(f"ERROR: CIF to PDB conversion failed:")
             print(f"stdout: {result.stdout}")
             print(f"stderr: {result.stderr}")
             return False
         
-        print(f"✅ CIF to PDB conversion completed")
+        print(f"SUCCESS: CIF to PDB conversion completed")
         print(result.stdout)
         return True
     
     def convert_pdb_to_dat(self):
         """Convert PDB file to DAT file"""
-        print(f"🔄 Converting PDB file to DAT file...")
+        print(f"Converting PDB file to DAT file...")
         
         # Look for the converted PDB file
         pdb_file = f"{self.output_dir}/{self.output_name}_sample_0.pdb"
         
         if not os.path.exists(pdb_file):
-            print(f"❌ PDB file does not exist: {pdb_file}")
+            print(f"ERROR: PDB file does not exist: {pdb_file}")
             return False
         
         print(f"Found PDB file: {pdb_file}")
@@ -109,25 +109,25 @@ class RemotePipeline:
         result = subprocess.run(cmd, capture_output=True, text=True)
         
         if result.returncode != 0:
-            print(f"❌ PDB to DAT conversion failed:")
+            print(f"ERROR: PDB to DAT conversion failed:")
             print(f"stdout: {result.stdout}")
             print(f"stderr: {result.stderr}")
             return False
         
-        print(f"✅ PDB to DAT conversion completed")
+        print(f"SUCCESS: PDB to DAT conversion completed")
         print(result.stdout)
         return True
     
     def run_dali_comparison(self):
         """Run DALI structure comparison and generate both Z-scores and aligned PDB files"""
-        print(f"🔍 Starting DALI structure comparison...")
+        print(f"Starting DALI structure comparison...")
         
         # Ensure we're in the correct directory
         os.chdir(self.base_dir)
         
         # Create output directories
         os.makedirs("dali_results", exist_ok=True)
-        os.makedirs("dali_alignments", exist_ok=True)  # 新增：存储对齐后的PDB文件
+        os.makedirs("dali_alignments", exist_ok=True)  # New: store aligned PDB files
         
         # Get query structure name
         query_name = (self.output_name[:4].lower() + "xxx")[:4]
@@ -142,20 +142,20 @@ class RemotePipeline:
             print(f"Query structure name found in query_structures_DAT: {actual_query_name}")
             query_name = actual_query_name
         else:
-            print(f"⚠️ No DAT files found in query_structures_DAT directory, using default name: {query_name}")
+            print(f"WARNING: No DAT files found in query_structures_DAT directory, using default name: {query_name}")
         
         print(f"Using query structure name: {query_name}")
         
         # Check DAT directory
         dat_dir = "DAT"
         if not os.path.exists(dat_dir):
-            print(f"❌ DAT directory does not exist: {dat_dir}")
+            print(f"ERROR: DAT directory does not exist: {dat_dir}")
             return False
         
         # Get all DAT files
         dat_files = [f for f in os.listdir(dat_dir) if f.endswith('.dat')]
         if not dat_files:
-            print(f"❌ No .dat files found in DAT directory")
+            print(f"ERROR: No .dat files found in DAT directory")
             return False
         
         print(f"Found {len(dat_files)} reference structures")
@@ -165,30 +165,30 @@ class RemotePipeline:
         
         for dat_file in dat_files:
             ref_id = os.path.splitext(dat_file)[0]
-            print(f"🔗 Comparing {query_name} vs {ref_id}")
+            print(f"Comparing {query_name} vs {ref_id}")
             
-            # 修改DALI命令以生成更详细的输出
+            # Modified DALI command to generate more detailed output
             cmd = [
                 "/home/wenhao/6tx0/software/dali/DaliLite.v5/bin/dali.pl",
                 "--cd1", query_name,
                 "--cd2", ref_id,
                 "--dat1", "query_structures_DAT",
                 "--dat2", "DAT",
-                "--outfmt", "full",  # 改为full格式以获得更多信息
-                "--pairwise"  # 生成成对对齐
+                "--outfmt", "full",  # Changed to full format for more information
+                "--pairwise"  # Generate pairwise alignment
             ]
             
-            # 为每个比较创建单独的工作目录
+            # Create separate working directory for each comparison
             comparison_dir = f"dali_temp_{query_name}_vs_{ref_id}"
             os.makedirs(comparison_dir, exist_ok=True)
             
-            # 在临时目录中运行DALI
+            # Run DALI in temporary directory
             original_dir = os.getcwd()
             
             try:
                 os.chdir(comparison_dir)
                 
-                # 复制必要的文件到临时目录
+                # Copy necessary files to temporary directory
                 shutil.copy(f"../query_structures_DAT/{query_name}.dat", f"{query_name}.dat")
                 shutil.copy(f"../DAT/{ref_id}.dat", f"{ref_id}.dat")
                 
@@ -197,51 +197,51 @@ class RemotePipeline:
                 os.chdir(original_dir)
                 
                 if result.returncode != 0:
-                    print(f"⚠️ DALI comparison failed for {ref_id}: {result.stderr}")
+                    print(f"WARNING: DALI comparison failed for {ref_id}: {result.stderr}")
                     continue
                 
-                # 处理DALI输出文件
+                # Process DALI output files
                 self.process_dali_output(comparison_dir, query_name, ref_id)
                 
                 successful_comparisons += 1
-                print(f"✅ Successfully compared {ref_id}")
+                print(f"SUCCESS: Successfully compared {ref_id}")
                 
             except Exception as e:
                 os.chdir(original_dir)
-                print(f"⚠️ Error processing {ref_id}: {str(e)}")
+                print(f"WARNING: Error processing {ref_id}: {str(e)}")
                 continue
             finally:
-                # 清理临时目录
+                # Clean up temporary directory
                 if os.path.exists(comparison_dir):
                     try:
                         shutil.rmtree(comparison_dir)
                     except:
-                        pass  # 忽略清理错误
+                        pass  # Ignore cleanup errors
         
-        print(f"✅ DALI comparison completed, successfully compared {successful_comparisons} structures")
+        print(f"SUCCESS: DALI comparison completed, successfully compared {successful_comparisons} structures")
         
-        # 生成汇总报告
+        # Generate summary report
         if successful_comparisons > 0:
             self.generate_dali_summary()
         
         return successful_comparisons > 0
     
     def process_dali_output(self, temp_dir, query_name, ref_id):
-        """处理单个DALI比较的输出文件"""
+        """Process output files from single DALI comparison"""
         
-        # DALI生成的主要输出文件
+        # Main DALI output files
         summary_file = f"{temp_dir}/{query_name}.txt"
         
-        # 目标路径
+        # Target paths
         target_summary = f"dali_results/{query_name}_vs_{ref_id}.txt"
         target_alignment = f"dali_alignments/{query_name}_vs_{ref_id}_aligned.pdb"
         
-        # 移动摘要文件
+        # Move summary file
         if os.path.exists(summary_file):
             shutil.move(summary_file, target_summary)
-            print(f"📄 Summary saved to: {target_summary}")
+            print(f"Summary saved to: {target_summary}")
         
-        # 查找并移动对齐文件 - DALI可能生成多种命名格式的对齐文件
+        # Find and move alignment files - DALI may generate multiple naming formats for alignment files
         possible_alignment_files = [
             f"{temp_dir}/{query_name}-{ref_id}.pdb",
             f"{temp_dir}/{query_name}_{ref_id}.pdb",
@@ -253,40 +253,40 @@ class RemotePipeline:
         
         alignment_found = False
         
-        # 首先尝试找到明确的对齐文件
+        # First try to find explicit alignment file
         for align_file in possible_alignment_files:
             if os.path.exists(align_file):
-                shutil.copy(align_file, target_alignment)  # 使用copy而不是move，避免丢失原文件
-                print(f"🧬 Aligned structure saved to: {target_alignment}")
+                shutil.copy(align_file, target_alignment)  # Use copy instead of move to avoid losing original file
+                print(f"Aligned structure saved to: {target_alignment}")
                 alignment_found = True
                 break
         
-        # 如果没有找到，列出所有PDB文件并尝试识别
+        # If not found, list all PDB files and try to identify
         if not alignment_found:
             if os.path.exists(temp_dir):
                 all_files = os.listdir(temp_dir)
                 pdb_files = [f for f in all_files if f.endswith('.pdb')]
                 
                 if pdb_files:
-                    # 取第一个PDB文件作为对齐结果
+                    # Take first PDB file as alignment result
                     source_pdb = f"{temp_dir}/{pdb_files[0]}"
                     shutil.copy(source_pdb, target_alignment)
-                    print(f"🧬 Aligned structure (auto-detected) saved to: {target_alignment}")
+                    print(f"Aligned structure (auto-detected) saved to: {target_alignment}")
                     alignment_found = True
                 else:
-                    print(f"⚠️ No PDB alignment file found for {ref_id}")
+                    print(f"WARNING: No PDB alignment file found for {ref_id}")
                     print(f"Files in temp directory: {all_files}")
         
         return alignment_found
     
     def generate_dali_summary(self):
-        """生成DALI结果汇总"""
-        print(f"📊 Generating DALI summary...")
+        """Generate DALI results summary"""
+        print(f"Generating DALI summary...")
         
         summary_data = []
         query_name_short = self.output_name[:4].lower()
         
-        # 读取所有结果文件
+        # Read all result files
         if os.path.exists("dali_results"):
             for result_file in os.listdir("dali_results"):
                 if result_file.endswith(".txt") and not result_file.endswith("_summary.tsv"):
@@ -294,12 +294,12 @@ class RemotePipeline:
                     try:
                         zscore, rmsd, align_len, lali, identity = self.parse_dali_result(file_path)
                         
-                        # 从文件名提取参考结构ID
+                        # Extract reference structure ID from filename
                         ref_id = result_file.replace(f"{query_name_short}xxx_vs_", "").replace(".txt", "")
-                        if ref_id == result_file:  # 如果替换失败，尝试其他模式
+                        if ref_id == result_file:  # If replacement failed, try other pattern
                             ref_id = result_file.replace(".txt", "").split("_vs_")[-1]
                         
-                        # 检查对应的对齐文件是否存在
+                        # Check if corresponding alignment file exists
                         alignment_file = f"dali_alignments/{query_name_short}xxx_vs_{ref_id}_aligned.pdb"
                         has_alignment = os.path.exists(alignment_file)
                         
@@ -315,39 +315,39 @@ class RemotePipeline:
                             'has_alignment': has_alignment
                         })
                     except Exception as e:
-                        print(f"⚠️ Error parsing {result_file}: {str(e)}")
+                        print(f"WARNING: Error parsing {result_file}: {str(e)}")
         
         if not summary_data:
-            print(f"⚠️ No valid DALI results found to summarize")
+            print(f"WARNING: No valid DALI results found to summarize")
             return
         
-        # 按Z-score排序
+        # Sort by Z-score
         summary_data.sort(key=lambda x: float(x['zscore']) if x['zscore'] != 'N/A' and x['zscore'].replace('.','').replace('-','').isdigit() else -999, reverse=True)
         
-        # 写入汇总文件
+        # Write summary file
         summary_file = f"dali_results/{self.output_name}_summary.tsv"
         with open(summary_file, 'w') as f:
             f.write("Reference_ID\tZ-score\tRMSD\tAlignment_Length\tLali\tIdentity\tResult_File\tAlignment_PDB\tHas_Alignment\n")
             for item in summary_data:
                 f.write(f"{item['reference_id']}\t{item['zscore']}\t{item['rmsd']}\t{item['alignment_length']}\t{item['lali']}\t{item['identity']}\t{item['result_file']}\t{item['alignment_pdb']}\t{item['has_alignment']}\n")
         
-        print(f"📋 Summary saved to: {summary_file}")
+        print(f"Summary saved to: {summary_file}")
         
-        # 显示前10个最佳匹配
-        print(f"\n🏆 Top 10 matches:")
+        # Display top 10 best matches
+        print(f"\nTop 10 matches:")
         print(f"{'Rank':<4} {'Reference':<12} {'Z-score':<8} {'RMSD':<8} {'Lali':<6} {'Identity':<10} {'Alignment'}")
         print("-" * 70)
         
         for i, item in enumerate(summary_data[:10]):
-            alignment_status = "✓" if item['has_alignment'] else "✗"
+            alignment_status = "Y" if item['has_alignment'] else "N"
             print(f"{i+1:2d}.  {item['reference_id']:<12} {item['zscore']:<8} {item['rmsd']:<8} {item['lali']:<6} {item['identity']:<10} {alignment_status}")
         
-        # 统计信息
+        # Statistics
         total_comparisons = len(summary_data)
         with_alignments = len([x for x in summary_data if x['has_alignment']])
         significant_matches = len([x for x in summary_data if x['zscore'] != 'N/A' and float(x['zscore']) > 2.0])
         
-        print(f"\n📈 Statistics:")
+        print(f"\nStatistics:")
         print(f"Total comparisons: {total_comparisons}")
         print(f"With alignment files: {with_alignments}")
         print(f"Significant matches (Z-score > 2.0): {significant_matches}")
@@ -355,7 +355,7 @@ class RemotePipeline:
         return summary_file
     
     def parse_dali_result(self, result_file):
-        """解析DALI结果文件，提取Z-score、RMSD等信息"""
+        """Parse DALI result file to extract Z-score, RMSD and other information"""
         zscore = "N/A"
         rmsd = "N/A"
         align_len = "N/A"
@@ -366,7 +366,7 @@ class RemotePipeline:
             with open(result_file, 'r') as f:
                 content = f.read()
                 
-                # 查找Z-score (通常在"Z-score"或"Z="后面)
+                # Find Z-score (usually after "Z-score" or "Z=")
                 zscore_patterns = [
                     r'Z[=-]?\s*([0-9]+\.?[0-9]*)',
                     r'Z-score[:\s]*([0-9]+\.?[0-9]*)',
@@ -379,7 +379,7 @@ class RemotePipeline:
                         zscore = zscore_match.group(1)
                         break
                 
-                # 查找RMSD
+                # Find RMSD
                 rmsd_patterns = [
                     r'RMSD[=:\s]*([0-9]+\.?[0-9]*)',
                     r'rmsd[=:\s]*([0-9]+\.?[0-9]*)',
@@ -392,7 +392,7 @@ class RemotePipeline:
                         rmsd = rmsd_match.group(1)
                         break
                 
-                # 查找对齐长度 (Lali)
+                # Find alignment length (Lali)
                 lali_patterns = [
                     r'Lali[=:\s]*([0-9]+)',
                     r'lali[=:\s]*([0-9]+)',
@@ -404,10 +404,10 @@ class RemotePipeline:
                     lali_match = re.search(pattern, content, re.IGNORECASE)
                     if lali_match:
                         lali = lali_match.group(1)
-                        align_len = lali  # 使用lali作为对齐长度
+                        align_len = lali  # Use lali as alignment length
                         break
                 
-                # 查找序列一致性
+                # Find sequence identity
                 identity_patterns = [
                     r'Identity[=:\s]*([0-9]+\.?[0-9]*%?)',
                     r'identity[=:\s]*([0-9]+\.?[0-9]*%?)',
@@ -427,11 +427,11 @@ class RemotePipeline:
     
     def extract_results(self):
         """Extract Z-score results using existing script"""
-        print(f"📊 Extracting results using existing script...")
+        print(f"Extracting results using existing script...")
         
         # Check if dali_results directory exists
         if not os.path.exists("dali_results"):
-            print(f"❌ dali_results directory does not exist, please run DALI comparison first")
+            print(f"ERROR: dali_results directory does not exist, please run DALI comparison first")
             return False
         
         cmd = ["python", "extract_zscores.py"]
@@ -439,24 +439,24 @@ class RemotePipeline:
         result = subprocess.run(cmd, capture_output=True, text=True)
         
         if result.returncode != 0:
-            print(f"⚠️ Original result extraction script failed (this is expected with new format):")
+            print(f"WARNING: Original result extraction script failed (this is expected with new format):")
             print(f"stdout: {result.stdout}")
             print(f"stderr: {result.stderr}")
-            print(f"✅ Using built-in summary generation instead")
-            return True  # 不视为失败，因为我们已经有了自己的汇总功能
+            print(f"SUCCESS: Using built-in summary generation instead")
+            return True  # Not considered a failure since we have our own summary function
         
-        print(f"✅ Original result extraction completed")
+        print(f"SUCCESS: Original result extraction completed")
         print(result.stdout)
         return True
     
     def check_prerequisites(self):
         """Check required files and directories"""
-        print(f"🔍 Checking environment...")
+        print(f"Checking environment...")
         
         # Check input file
         input_file = f"{self.input_dir}/{self.json_filename}"
         if not os.path.exists(input_file):
-            print(f"❌ Input file does not exist: {input_file}")
+            print(f"ERROR: Input file does not exist: {input_file}")
             return False
         
         # Check script files
@@ -467,7 +467,7 @@ class RemotePipeline:
         
         for script in required_scripts:
             if not os.path.exists(script):
-                print(f"❌ Missing required script: {script}")
+                print(f"ERROR: Missing required script: {script}")
                 return False
         
         # Check directories
@@ -478,7 +478,7 @@ class RemotePipeline:
         
         for dir_name in required_dirs:
             if not os.path.exists(dir_name):
-                print(f"❌ Missing required directory: {dir_name}")
+                print(f"ERROR: Missing required directory: {dir_name}")
                 return False
         
         # Create output directories if they don't exist
@@ -486,12 +486,12 @@ class RemotePipeline:
         os.makedirs("dali_results", exist_ok=True)
         os.makedirs("dali_alignments", exist_ok=True)
         
-        print(f"✅ Environment check passed")
+        print(f"SUCCESS: Environment check passed")
         return True
     
     def debug_find_output_files(self):
         """Debug: Find prediction output files"""
-        print(f"🔍 Finding prediction output files...")
+        print(f"Finding prediction output files...")
         
         base_dir = os.path.expanduser("~/student/students_webserver/zhijing")
         
@@ -514,10 +514,10 @@ class RemotePipeline:
     
     def run_pipeline(self):
         """Run complete remote processing pipeline"""
-        print(f"🚀 Starting remote processing pipeline...")
-        print(f"📋 JSON file: {self.json_filename}")
-        print(f"📋 Output name: {self.output_name}")
-        print(f"📋 Working directory: {self.base_dir}")
+        print(f"Starting remote processing pipeline...")
+        print(f"JSON file: {self.json_filename}")
+        print(f"Output name: {self.output_name}")
+        print(f"Working directory: {self.base_dir}")
         print("="*50)
         
         try:
@@ -545,14 +545,14 @@ class RemotePipeline:
             self.extract_results()  # Don't fail if this doesn't work
             
             print("="*50)
-            print("🎉 All steps completed!")
-            print(f"📁 Results saved in:")
+            print("SUCCESS: All steps completed!")
+            print(f"Results saved in:")
             print(f"   - dali_results/{self.output_name}_summary.tsv (summary)")
             print(f"   - dali_results/ (detailed comparison results)")
             print(f"   - dali_alignments/ (aligned PDB structures)")
             
         except Exception as e:
-            print(f"❌ Pipeline execution failed: {str(e)}")
+            print(f"ERROR: Pipeline execution failed: {str(e)}")
             return False
         
         return True
@@ -571,53 +571,53 @@ def main():
     pipeline = RemotePipeline(args.json_filename)
     
     if args.check:
-        print("🔍 Check mode")
+        print("Check mode")
         success = pipeline.check_prerequisites()
         if success:
-            print("✅ Environment check passed, pipeline can be run")
+            print("SUCCESS: Environment check passed, pipeline can be run")
         return
     
     if args.find_files:
-        print("🔍 Find files mode")
+        print("Find files mode")
         pipeline.debug_find_output_files()
         return
     
     if args.dali_only:
-        print("🔍 DALI comparison only mode")
+        print("DALI comparison only mode")
         try:
             if not pipeline.run_dali_comparison():
-                print("💥 DALI comparison failed!")
+                print("ERROR: DALI comparison failed!")
                 sys.exit(1)
             
             pipeline.extract_results()  # Optional
-            print("🎉 DALI processing completed!")
+            print("SUCCESS: DALI processing completed!")
             
         except Exception as e:
-            print(f"❌ DALI processing failed: {str(e)}")
+            print(f"ERROR: DALI processing failed: {str(e)}")
             sys.exit(1)
         return
     
     if args.skip_prediction:
-        print("⏭️ Skipping prediction step")
+        print("Skipping prediction step")
         try:
             # Skip prediction, start directly from conversion
             if not pipeline.convert_cif_to_pdb():
-                print("💥 CIF to PDB conversion failed!")
+                print("ERROR: CIF to PDB conversion failed!")
                 sys.exit(1)
             
             if not pipeline.convert_pdb_to_dat():
-                print("💥 PDB to DAT conversion failed!")
+                print("ERROR: PDB to DAT conversion failed!")
                 sys.exit(1)
             
             if not pipeline.run_dali_comparison():
-                print("💥 DALI comparison failed!")
+                print("ERROR: DALI comparison failed!")
                 sys.exit(1)
             
             pipeline.extract_results()  # Optional
-            print("🎉 Processing completed!")
+            print("SUCCESS: Processing completed!")
             
         except Exception as e:
-            print(f"❌ Processing failed: {str(e)}")
+            print(f"ERROR: Processing failed: {str(e)}")
             sys.exit(1)
         return
     
@@ -625,10 +625,10 @@ def main():
     success = pipeline.run_pipeline()
     
     if success:
-        print("\n🎊 Pipeline executed successfully!")
+        print("\nSUCCESS: Pipeline executed successfully!")
         sys.exit(0)
     else:
-        print("\n💥 Pipeline execution failed!")
+        print("\nERROR: Pipeline execution failed!")
         sys.exit(1)
 
 

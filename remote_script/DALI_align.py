@@ -19,90 +19,90 @@ class DaliMatrixApplier:
         if output_pdb:
             self.output_pdb = output_pdb
         else:
-            # 自动生成输出文件名
+            # Auto-generate output filename
             base_name = os.path.splitext(os.path.basename(original_pdb))[0]
             txt_base = os.path.splitext(os.path.basename(dali_txt_file))[0]
             self.output_pdb = f"{base_name}_transformed_by_{txt_base}.pdb"
         
-        # DALI applymatrix.pl 工具路径
+        # DALI applymatrix.pl tool path
         self.applymatrix_path = "/home/wenhao/6tx0/software/dali/DaliLite.v5/bin/applymatrix.pl"
         
-        print(f"🔧 Initialized DaliMatrixApplier:")
+        print(f"Initialized DaliMatrixApplier:")
         print(f"   Original PDB: {self.original_pdb}")
         print(f"   DALI TXT file: {self.dali_txt_file}")
         print(f"   Output PDB: {self.output_pdb}")
         print(f"   applymatrix.pl: {self.applymatrix_path}")
     
     def check_prerequisites(self):
-        """检查必需文件是否存在"""
-        print(f"🔍 Checking prerequisites...")
+        """Check if required files exist"""
+        print(f"Checking prerequisites...")
         
-        # 检查原始PDB文件
+        # Check original PDB file
         if not os.path.exists(self.original_pdb):
-            print(f"❌ Original PDB file not found: {self.original_pdb}")
+            print(f"ERROR: Original PDB file not found: {self.original_pdb}")
             return False
         
-        # 检查DALI TXT文件
+        # Check DALI TXT file
         if not os.path.exists(self.dali_txt_file):
-            print(f"❌ DALI TXT file not found: {self.dali_txt_file}")
+            print(f"ERROR: DALI TXT file not found: {self.dali_txt_file}")
             return False
         
-        # 检查applymatrix.pl工具
+        # Check applymatrix.pl tool
         if not os.path.exists(self.applymatrix_path):
-            print(f"❌ applymatrix.pl not found: {self.applymatrix_path}")
+            print(f"ERROR: applymatrix.pl not found: {self.applymatrix_path}")
             return False
         
-        print(f"✅ All prerequisites satisfied")
+        print(f"SUCCESS: All prerequisites satisfied")
         return True
     
     def analyze_dali_txt(self):
-        """分析DALI TXT文件内容"""
-        print(f"📊 Analyzing DALI TXT file...")
+        """Analyze DALI TXT file content"""
+        print(f"Analyzing DALI TXT file...")
         
         try:
             with open(self.dali_txt_file, 'r') as f:
                 content = f.read()
             
-            print(f"📄 DALI TXT file content preview:")
+            print(f"DALI TXT file content preview:")
             lines = content.strip().split('\n')
-            for i, line in enumerate(lines[:20]):  # 显示前20行
+            for i, line in enumerate(lines[:20]):  # Show first 20 lines
                 print(f"   {i+1:2d}: {line}")
             
             if len(lines) > 20:
                 print(f"   ... (total {len(lines)} lines)")
             
-            # 查找特定的模式
+            # Look for specific patterns
             if "No:  Chain   Z    rmsd lali nres  %id PDB" in content:
-                print(f"✅ Found alignment summary table")
+                print(f"SUCCESS: Found alignment summary table")
             
             if "1:" in content:
-                print(f"✅ Found alignment entry")
+                print(f"SUCCESS: Found alignment entry")
             
             return True
             
         except Exception as e:
-            print(f"❌ Failed to read DALI TXT file: {e}")
+            print(f"ERROR: Failed to read DALI TXT file: {e}")
             return False
     
     def apply_transformation(self):
-        """使用DALI的applymatrix.pl应用变换"""
-        print(f"🔄 Applying DALI transformation...")
+        """Apply transformation using DALI's applymatrix.pl"""
+        print(f"Applying DALI transformation...")
         
-        # 构建命令
+        # Build command
         cmd = [
             self.applymatrix_path,
             self.original_pdb
         ]
         
-        print(f"🖥️  Executing command:")
+        print(f"Executing command:")
         print(f"   {' '.join(cmd)} < {self.dali_txt_file} > {self.output_pdb}")
         
         try:
-            # 读取DALI TXT文件内容
+            # Read DALI TXT file content
             with open(self.dali_txt_file, 'r') as txt_file:
                 txt_content = txt_file.read()
             
-            # 执行applymatrix.pl命令
+            # Execute applymatrix.pl command
             process = subprocess.Popen(
                 cmd,
                 stdin=subprocess.PIPE,
@@ -114,28 +114,28 @@ class DaliMatrixApplier:
             stdout, stderr = process.communicate(input=txt_content)
             
             if process.returncode == 0:
-                # 写入输出文件
+                # Write output file
                 with open(self.output_pdb, 'w') as output_file:
                     output_file.write(stdout)
                 
-                print(f"✅ Transformation completed successfully")
-                print(f"📁 Output saved to: {self.output_pdb}")
+                print(f"SUCCESS: Transformation completed successfully")
+                print(f"Output saved to: {self.output_pdb}")
                 return True
             else:
-                print(f"❌ applymatrix.pl failed with return code {process.returncode}")
+                print(f"ERROR: applymatrix.pl failed with return code {process.returncode}")
                 print(f"STDERR: {stderr}")
                 return False
                 
         except Exception as e:
-            print(f"❌ Failed to execute applymatrix.pl: {e}")
+            print(f"ERROR: Failed to execute applymatrix.pl: {e}")
             return False
     
     def analyze_output(self):
-        """分析输出的PDB文件"""
-        print(f"📊 Analyzing output PDB file...")
+        """Analyze output PDB file"""
+        print(f"Analyzing output PDB file...")
         
         if not os.path.exists(self.output_pdb):
-            print(f"❌ Output PDB file not found: {self.output_pdb}")
+            print(f"ERROR: Output PDB file not found: {self.output_pdb}")
             return False
         
         try:
@@ -150,11 +150,11 @@ class DaliMatrixApplier:
                         if chain:
                             chains.add(chain)
             
-            print(f"📈 Output statistics:")
+            print(f"Output statistics:")
             print(f"   Total atoms: {atom_count}")
             print(f"   Chains: {sorted(chains) if chains else 'None'}")
             
-            # 比较原始文件
+            # Compare with original file
             original_atom_count = 0
             with open(self.original_pdb, 'r') as f:
                 for line in f:
@@ -164,19 +164,19 @@ class DaliMatrixApplier:
             print(f"   Original atoms: {original_atom_count}")
             
             if atom_count == original_atom_count:
-                print(f"✅ Atom count matches original file")
+                print(f"SUCCESS: Atom count matches original file")
             else:
-                print(f"⚠️  Atom count differs from original")
+                print(f"WARNING: Atom count differs from original")
             
             return True
             
         except Exception as e:
-            print(f"❌ Failed to analyze output: {e}")
+            print(f"ERROR: Failed to analyze output: {e}")
             return False
     
     def generate_summary(self):
-        """生成变换摘要报告"""
-        print(f"📋 Generating transformation summary...")
+        """Generate transformation summary report"""
+        print(f"Generating transformation summary...")
         
         summary_file = f"{os.path.splitext(self.output_pdb)[0]}_summary.txt"
         
@@ -189,7 +189,7 @@ class DaliMatrixApplier:
                 f.write(f"Transformed PDB file: {self.output_pdb}\n")
                 f.write(f"Transformation date: {os.popen('date').read().strip()}\n\n")
                 
-                # 添加DALI TXT文件的前几行
+                # Add first few lines of DALI TXT file
                 f.write(f"DALI TXT file content:\n")
                 f.write(f"-" * 20 + "\n")
                 with open(self.dali_txt_file, 'r') as txt_f:
@@ -203,40 +203,40 @@ class DaliMatrixApplier:
                 f.write(f"Command used:\n")
                 f.write(f"{self.applymatrix_path} {self.original_pdb} < {self.dali_txt_file} > {self.output_pdb}\n")
             
-            print(f"📄 Summary saved to: {summary_file}")
+            print(f"Summary saved to: {summary_file}")
             return summary_file
             
         except Exception as e:
-            print(f"❌ Failed to generate summary: {e}")
+            print(f"ERROR: Failed to generate summary: {e}")
             return None
     
     def run_transformation(self):
-        """运行完整的变换流程"""
-        print(f"🚀 Starting DALI matrix transformation...")
+        """Run complete transformation pipeline"""
+        print(f"Starting DALI matrix transformation...")
         print("=" * 60)
         
         try:
-            # 检查先决条件
+            # Check prerequisites
             if not self.check_prerequisites():
                 return False
             
-            # 分析DALI TXT文件
+            # Analyze DALI TXT file
             if not self.analyze_dali_txt():
                 return False
             
-            # 应用变换
+            # Apply transformation
             if not self.apply_transformation():
                 return False
             
-            # 分析输出
+            # Analyze output
             self.analyze_output()
             
-            # 生成摘要
+            # Generate summary
             summary_file = self.generate_summary()
             
             print("=" * 60)
-            print("🎉 Transformation completed successfully!")
-            print(f"📁 Files generated:")
+            print("SUCCESS: Transformation completed successfully!")
+            print(f"Files generated:")
             print(f"   - Transformed PDB: {self.output_pdb}")
             if summary_file:
                 print(f"   - Summary report: {summary_file}")
@@ -244,11 +244,11 @@ class DaliMatrixApplier:
             return True
             
         except Exception as e:
-            print(f"❌ Transformation failed: {str(e)}")
+            print(f"ERROR: Transformation failed: {str(e)}")
             return False
 
 def find_dali_txt_files(directory, pattern="*_vs_*.txt"):
-    """查找DALI结果TXT文件"""
+    """Find DALI result TXT files"""
     search_path = os.path.join(directory, pattern)
     txt_files = glob.glob(search_path)
     return sorted(txt_files)
@@ -259,16 +259,16 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  # 基本用法
+  # Basic usage
   python dali_txt_to_pdb.py original.pdb a0l1A_vs_7tgkD.txt
   
-  # 指定输出文件
+  # Specify output file
   python dali_txt_to_pdb.py original.pdb alignment_result.txt --output transformed.pdb
   
-  # 查找和处理多个TXT文件
+  # Find and process multiple TXT files
   python dali_txt_to_pdb.py original.pdb --search-dir ./dali_results --pattern "*_vs_7tgkD.txt"
   
-  # 批量处理目录中的所有TXT文件
+  # Batch process all TXT files in directory
   python dali_txt_to_pdb.py original.pdb --batch-dir ./dali_results
         """
     )
@@ -283,74 +283,74 @@ Examples:
     
     args = parser.parse_args()
     
-    # 检查原始PDB文件
+    # Check original PDB file
     if not os.path.exists(args.original_pdb):
-        print(f"❌ Original PDB file not found: {args.original_pdb}")
+        print(f"ERROR: Original PDB file not found: {args.original_pdb}")
         sys.exit(1)
     
-    # 处理不同的使用模式
+    # Handle different usage modes
     txt_files_to_process = []
     
     if args.batch_dir:
-        # 批量处理模式
-        print(f"🔍 Searching for TXT files in: {args.batch_dir}")
+        # Batch processing mode
+        print(f"Searching for TXT files in: {args.batch_dir}")
         txt_files = find_dali_txt_files(args.batch_dir, args.pattern)
         
         if args.target:
-            # 过滤特定目标
+            # Filter for specific target
             txt_files = [f for f in txt_files if args.target in os.path.basename(f)]
-            print(f"🎯 Filtering for target: {args.target}")
+            print(f"Filtering for target: {args.target}")
         
         txt_files_to_process = txt_files
         
     elif args.search_dir:
-        # 搜索模式
-        print(f"🔍 Searching for TXT files in: {args.search_dir}")
+        # Search mode
+        print(f"Searching for TXT files in: {args.search_dir}")
         txt_files = find_dali_txt_files(args.search_dir, args.pattern)
         
         if not txt_files:
-            print(f"❌ No TXT files found matching pattern: {args.pattern}")
+            print(f"ERROR: No TXT files found matching pattern: {args.pattern}")
             sys.exit(1)
         
-        print(f"📄 Found {len(txt_files)} TXT files:")
+        print(f"Found {len(txt_files)} TXT files:")
         for i, txt_file in enumerate(txt_files):
             print(f"   {i+1}. {os.path.basename(txt_file)}")
         
         if args.target:
-            # 查找特定目标
+            # Find specific target
             target_files = [f for f in txt_files if args.target in os.path.basename(f)]
             if target_files:
                 txt_files_to_process = target_files
-                print(f"🎯 Found target files: {[os.path.basename(f) for f in target_files]}")
+                print(f"Found target files: {[os.path.basename(f) for f in target_files]}")
             else:
-                print(f"❌ No files found containing: {args.target}")
+                print(f"ERROR: No files found containing: {args.target}")
                 sys.exit(1)
         else:
-            # 处理第一个文件
+            # Process first file
             txt_files_to_process = [txt_files[0]]
-            print(f"📝 Processing first file: {os.path.basename(txt_files[0])}")
+            print(f"Processing first file: {os.path.basename(txt_files[0])}")
             
     elif args.dali_txt_file:
-        # 单文件模式
+        # Single file mode
         if not os.path.exists(args.dali_txt_file):
-            print(f"❌ DALI TXT file not found: {args.dali_txt_file}")
+            print(f"ERROR: DALI TXT file not found: {args.dali_txt_file}")
             sys.exit(1)
         txt_files_to_process = [args.dali_txt_file]
         
     else:
-        print(f"❌ Must provide either dali_txt_file, --search-dir, or --batch-dir")
+        print(f"ERROR: Must provide either dali_txt_file, --search-dir, or --batch-dir")
         sys.exit(1)
     
-    # 处理文件
+    # Process files
     success_count = 0
     total_count = len(txt_files_to_process)
     
     for i, txt_file in enumerate(txt_files_to_process):
         print(f"\n{'='*60}")
-        print(f"📁 Processing {i+1}/{total_count}: {os.path.basename(txt_file)}")
+        print(f"Processing {i+1}/{total_count}: {os.path.basename(txt_file)}")
         print(f"{'='*60}")
         
-        # 为批量处理生成输出文件名
+        # Generate output filename for batch processing
         if total_count > 1:
             base_name = os.path.splitext(os.path.basename(args.original_pdb))[0]
             txt_base = os.path.splitext(os.path.basename(txt_file))[0]
@@ -358,18 +358,18 @@ Examples:
         else:
             output_pdb = args.output
         
-        # 创建变换器并运行
+        # Create transformer and run
         transformer = DaliMatrixApplier(args.original_pdb, txt_file, output_pdb)
         
         if transformer.run_transformation():
             success_count += 1
         else:
-            print(f"❌ Failed to process: {txt_file}")
+            print(f"ERROR: Failed to process: {txt_file}")
     
-    # 最终报告
+    # Final report
     print(f"\n{'='*60}")
-    print(f"🎊 Batch processing completed!")
-    print(f"📊 Successfully processed: {success_count}/{total_count} files")
+    print(f"Batch processing completed!")
+    print(f"Successfully processed: {success_count}/{total_count} files")
     
     if success_count == total_count:
         sys.exit(0)
