@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 """
-Standalone script to convert PDB to DAT and run DALI comparison
-This version preserves HTML intermediate files instead of looking for PDB outputs
-Usage: python pdb_to_dali.py <pdb_filename>
-Example: python pdb_to_dali.py sequence_1_sample_0.pdb
+Use DALI's applymatrix.pl to transform PDB coordinates using DALI alignment results
+Usage: python dali_txt_to_pdb.py <original_pdb> <dali_txt_file> [--output output.pdb]
 """
 
 import os
@@ -11,668 +9,372 @@ import sys
 import subprocess
 import argparse
 import glob
-import shutil
-import re
 from pathlib import Path
 
-class PDBToDaliProcessor:
-    def __init__(self, pdb_filename, max_refs=None):
-        self.pdb_filename = pdb_filename
-        self.pdb_basename = os.path.splitext(pdb_filename)[0]
-        self.max_refs = max_refs
-        self.base_dir = os.path.expanduser("~/student/students_webserver/zhijing")
-        self.predicted_structures_dir = os.path.join(self.base_dir, "predicted_structures")
-        self.results_dir = os.path.join(self.base_dir, "single_dali_results")
+class DaliMatrixApplier:
+    def __init__(self, original_pdb, dali_txt_file, output_pdb=None):
+        self.original_pdb = original_pdb
+        self.dali_txt_file = dali_txt_file
         
-        # Create results directory
-        os.makedirs(self.results_dir, exist_ok=True)
-        
-        # Ensure we're working in the correct directory
-        os.chdir(self.base_dir)
-        
-        print(f"🔧 Initialized PDBToDaliProcessor:")
-        print(f"   PDB file: {self.pdb_filename}")
-        print(f"   PDB basename: {self.pdb_basename}")
-        print(f"   Base directory: {self.base_dir}")
-        print(f"   Results directory: {self.results_dir}")
-        
-    def convert_pdb_to_dat(self):
-        """Convert PDB file to DAT file using existing script"""
-        print(f"🔄 Converting PDB file to DAT file...")
-        
-        # Check if PDB file exists in predicted_structures directory
-        pdb_path = os.path.join(self.predicted_structures_dir, self.pdb_filename)
-        if not os.path.exists(pdb_path):
-            print(f"❌ PDB file not found: {pdb_path}")
-            return False
-        
-        print(f"Found PDB file: {pdb_path}")
-        
-        # Backup other PDB files temporarily to ensure only our target file is processed
-        temp_dir = f"{self.base_dir}/temp_pdb_backup"
-        os.makedirs(temp_dir, exist_ok=True)
-        
-        # Backup other PDB files
-        other_pdb_files = []
-        for f in glob.glob(f"{self.predicted_structures_dir}/*.pdb"):
-            if f != pdb_path:
-                other_pdb_files.append(f)
-                backup_name = os.path.basename(f)
-                shutil.move(f, f"{temp_dir}/{backup_name}")
-                print(f"  Temporarily moved: {backup_name}")
-        
-        try:
-            # Run conversion script (only processes our target PDB file)
-            cmd = ["python", "import_pdbs_to_dat.py"]
-            print(f"Executing command: {' '.join(cmd)}")
-            result = subprocess.run(cmd, capture_output=True, text=True)
-            
-            if result.returncode != 0:
-                print(f"❌ PDB to DAT conversion failed:")
-                print(f"stdout: {result.stdout}")
-                print(f"stderr: {result.stderr}")
-                return False
-            
-            print(f"✅ PDB to DAT conversion completed")
-            print(result.stdout)
-            
-        finally:
-            # Restore other PDB files
-            for backup_file in glob.glob(f"{temp_dir}/*.pdb"):
-                original_name = os.path.basename(backup_file)
-                shutil.move(backup_file, f"{self.predicted_structures_dir}/{original_name}")
-                print(f"  Restored: {original_name}")
-            
-            # Remove temporary directory
-            if os.path.exists(temp_dir):
-                try:
-                    os.rmdir(temp_dir)
-                except:
-                    pass
-        
-        return True
-    
-    def get_query_structure_name(self):
-        """Get the actual query structure name from DAT files"""
-        dat_files_in_query = []
-        if os.path.exists("query_structures_DAT"):
-            dat_files_in_query = [f for f in os.listdir("query_structures_DAT") if f.endswith('.dat')]
-        
-        if dat_files_in_query:
-            # Use the most recently created DAT file
-            actual_query_name = os.path.splitext(dat_files_in_query[-1])[0]
-            print(f"Query structure name found: {actual_query_name}")
-            return actual_query_name
+        if output_pdb:
+            self.output_pdb = output_pdb
         else:
-            print(f"❌ No DAT files found in query_structures_DAT directory")
-            return None
-    
-    def run_dali_comparison(self):
-        """Run DALI structure comparison and save text results and HTML files"""
-        print(f"🔍 Starting DALI structure comparison...")
+            # 自动生成输出文件名
+            base_name = os.path.splitext(os.path.basename(original_pdb))[0]
+            txt_base = os.path.splitext(os.path.basename(dali_txt_file))[0]
+            self.output_pdb = f"{base_name}_transformed_by_{txt_base}.pdb"
         
-        # Get query structure name
-        query_name = self.get_query_structure_name()
-        if not query_name:
-            return False
+        # DALI applymatrix.pl 工具路径
+        self.applymatrix_path = "/home/wenhao/6tx0/software/dali/DaliLite.v5/bin/applymatrix.pl"
         
-        print(f"Using query structure name: {query_name}")
-        
-        # Check DAT directory
-        dat_dir = "DAT"
-        if not os.path.exists(dat_dir):
-            print(f"❌ DAT directory does not exist: {dat_dir}")
-            return False
-        
-        # Get all reference DAT files
-        ref_dat_files = [f for f in os.listdir(dat_dir) if f.endswith('.dat')]
-        if not ref_dat_files:
-            print(f"❌ No .dat files found in DAT directory")
-            return False
-        
-        print(f"Found {len(ref_dat_files)} reference structures")
-        
-        # Create sequence-specific dali results directory with proper path handling
-        sequence_dali_dir = os.path.join(self.results_dir, f"{self.pdb_basename}_dali_results")
-        sequence_html_dir = os.path.join(self.results_dir, f"{self.pdb_basename}_html_results")
-        os.makedirs(sequence_dali_dir, exist_ok=True)
-        os.makedirs(sequence_html_dir, exist_ok=True)
-        
-        print(f"📁 Output directories:")
-        print(f"   Text results: {sequence_dali_dir}")
-        print(f"   HTML results: {sequence_html_dir}")
-        
-        # Run DALI comparison for each DAT file
-        successful_comparisons = 0
-        html_files_generated = 0
-        
-        # Use all reference DAT files (or limit to max_refs if specified)
-        if self.max_refs and self.max_refs < len(ref_dat_files):
-            test_refs = ref_dat_files[:self.max_refs]
-            print(f"Limiting comparison to first {self.max_refs} references")
-        else:
-            test_refs = ref_dat_files  # Compare against all references
-            print(f"Comparing against all {len(test_refs)} reference structures")
-        
-        for i, dat_file in enumerate(test_refs):
-            ref_id = os.path.splitext(dat_file)[0]
-            print(f"\n🔗 [{i+1}/{len(test_refs)}] Comparing {query_name} vs {ref_id}")
-            
-            # First run: Generate summary (for Z-scores)
-            cmd_summary = [
-                "/home/wenhao/6tx0/software/dali/DaliLite.v5/bin/dali.pl",
-                "--cd1", query_name,
-                "--cd2", ref_id,
-                "--dat1", "query_structures_DAT",
-                "--dat2", "DAT",
-                "--outfmt", "summary",
-                "--clean"
-            ]
-            
-            print(f"   Running summary command...")
-            result_summary = subprocess.run(cmd_summary, capture_output=True, text=True)
-            
-            # Move summary result file
-            default_output = f"{query_name}.txt"
-            target_output = os.path.join(sequence_dali_dir, f"{query_name}_vs_{ref_id}.txt")
-            
-            if os.path.exists(default_output):
-                try:
-                    shutil.move(default_output, target_output)
-                    successful_comparisons += 1
-                    print(f"   ✓ Summary saved: {os.path.basename(target_output)}")
-                except Exception as e:
-                    print(f"   ⚠️ Failed to move summary file: {e}")
-            else:
-                print(f"   ⚠️ No summary file generated")
-            
-            # Second run: Generate HTML output (without --clean to preserve intermediate files)
-            print(f"   Running HTML generation command...")
-            cmd_html = [
-                "/home/wenhao/6tx0/software/dali/DaliLite.v5/bin/dali.pl",
-                "--cd1", query_name,
-                "--cd2", ref_id,
-                "--dat1", "query_structures_DAT",
-                "--dat2", "DAT"
-                # No --clean to preserve HTML and other intermediate files
-            ]
-            
-            result_html = subprocess.run(cmd_html, capture_output=True, text=True)
-            
-            print(f"   HTML command return code: {result_html.returncode}")
-            if result_html.stdout:
-                print(f"   HTML stdout: {result_html.stdout[:200]}...")
-            if result_html.stderr:
-                print(f"   HTML stderr: {result_html.stderr[:200]}...")
-            
-            # List all files in current directory to see what was generated
-            print(f"   Files in current directory after DALI:")
-            current_files = [f for f in os.listdir('.') if not os.path.isdir(f)]
-            for f in current_files:
-                if query_name.lower() in f.lower() or ref_id.lower() in f.lower():
-                    print(f"     - {f}")
-            
-            # Look for generated HTML files and other intermediate files
-            possible_output_files = []
-            
-            # Common DALI output file patterns
-            file_patterns = [
-                f"{query_name}.html",
-                f"{query_name}-{ref_id}.html", 
-                f"{query_name}_{ref_id}.html",
-                f"{ref_id}.html",
-                f"{ref_id}-{query_name}.html",
-                f"{ref_id}_{query_name}.html",
-                "alignment.html",
-                "align.html",
-                "output.html",
-                "result.html",
-                f"{query_name}.ps",  # PostScript files
-                f"{query_name}.log", # Log files
-                f"{query_name}.out", # Output files
-                f"{query_name}.ali", # Alignment files
-                f"{query_name}.pdb", # In case PDB files are generated
-            ]
-            
-            # Also check for any files that contain the query or ref names
-            all_files = os.listdir('.')
-            for file in all_files:
-                if (query_name.lower() in file.lower() or 
-                    ref_id.lower() in file.lower()):
-                    # Skip already processed text files
-                    if not (file.endswith('.txt') and file in [f"{query_name}.txt"]):
-                        if file not in possible_output_files:
-                            possible_output_files.append(file)
-            
-            # Add standard patterns
-            for pattern in file_patterns:
-                if pattern not in possible_output_files:
-                    possible_output_files.append(pattern)
-            
-            print(f"   Looking for output files: {possible_output_files}")
-            
-            # Save all found intermediate files
-            files_found = []
-            for output_file in possible_output_files:
-                if os.path.exists(output_file):
-                    print(f"   📋 Found intermediate file: {output_file}")
-                    
-                    # Determine target directory based on file type
-                    if output_file.endswith('.html'):
-                        target_dir = sequence_html_dir
-                        file_suffix = "_results.html"
-                    else:
-                        target_dir = sequence_html_dir  # Keep all intermediate files together
-                        file_suffix = f"_intermediate.{output_file.split('.')[-1]}"
-                    
-                    target_file = os.path.join(target_dir, f"{query_name}_vs_{ref_id}{file_suffix}")
-                    
-                    try:
-                        shutil.copy2(output_file, target_file)  # Use copy2 to preserve original
-                        files_found.append(output_file)
-                        if output_file.endswith('.html'):
-                            html_files_generated += 1
-                        print(f"   ✓ Intermediate file saved: {os.path.basename(target_file)}")
-                    except Exception as e:
-                        print(f"   ⚠️ Failed to copy intermediate file: {e}")
-            
-            if not files_found:
-                print(f"   ℹ️ No intermediate files found for {ref_id}")
-                
-                # Try alternative DALI command
-                print(f"   Trying alternative DALI command...")
-                cmd_alt = [
-                    "/home/wenhao/6tx0/software/dali/DaliLite.v5/bin/dali.pl",
-                    "--cd1", query_name,
-                    "--cd2", ref_id,
-                    "--dat1", "query_structures_DAT", 
-                    "--dat2", "DAT",
-                    "--outfmt", "html"  # Try explicit HTML format
-                ]
-                
-                result_alt = subprocess.run(cmd_alt, capture_output=True, text=True)
-                print(f"   Alternative command return code: {result_alt.returncode}")
-                
-                # Check again for output files
-                for output_file in possible_output_files:
-                    if os.path.exists(output_file) and output_file not in files_found:
-                        print(f"   📋 Found file (alternative): {output_file}")
-                        
-                        if output_file.endswith('.html'):
-                            target_dir = sequence_html_dir
-                            file_suffix = "_results.html"
-                        else:
-                            target_dir = sequence_html_dir
-                            file_suffix = f"_intermediate.{output_file.split('.')[-1]}"
-                        
-                        target_file = os.path.join(target_dir, f"{query_name}_vs_{ref_id}{file_suffix}")
-                        
-                        try:
-                            shutil.copy2(output_file, target_file)
-                            files_found.append(output_file)
-                            if output_file.endswith('.html'):
-                                html_files_generated += 1
-                            print(f"   ✓ File saved (alternative): {os.path.basename(target_file)}")
-                        except Exception as e:
-                            print(f"   ⚠️ Failed to copy file (alternative): {e}")
-            
-            print(f"   📊 Files collected for this comparison: {len(files_found)}")
-        
-        print(f"\n✅ DALI comparison completed:")
-        print(f"   - {successful_comparisons} text summaries generated")
-        print(f"   - {html_files_generated} HTML files generated")
-        print(f"   - Results saved in: {sequence_dali_dir}")
-        print(f"   - HTML files saved in: {sequence_html_dir}")
-        
-        return successful_comparisons > 0
-    
-    def extract_results(self):
-        """Extract Z-score results (same logic as batch script)"""
-        print(f"📊 Extracting Z-score results...")
-        
-        sequence_dali_dir = f"{self.results_dir}/{self.pdb_basename}_dali_results"
-        
-        if not os.path.exists(sequence_dali_dir):
-            print(f"❌ DALI results directory not found: {sequence_dali_dir}")
-            return False
-        
-        # Use the same Z-score extraction logic as batch script
-        zscores = {}
-        
-        def parse_z_score(file_path):
-            """Parse Z-score from DALI result file (same as batch script)"""
-            try:
-                with open(file_path) as f:
-                    for line in f:
-                        if line.strip().startswith("1:"):
-                            parts = line.strip().split()
-                            try:
-                                z = float(parts[2])  # Third field is Z-score
-                                return z
-                            except:
-                                return None
-                return None
-            except:
-                return None
-        
-        # Parse all result files
-        for fname in os.listdir(sequence_dali_dir):
-            if fname.endswith(".txt"):
-                fpath = os.path.join(sequence_dali_dir, fname)
-                z = parse_z_score(fpath)
-                if z is not None:
-                    zscores[fname] = z
-        
-        # Sort results by Z-score (descending)
-        sorted_results = sorted(zscores.items(), key=lambda x: -x[1])
-        
-        # Save to CSV file (same format as batch script)
-        csv_file = f"{self.results_dir}/{self.pdb_basename}_zscores.csv"
-        
-        if sorted_results:
-            print(f"🎯 Found {len(sorted_results)} Z-score results")
-            
-            best = sorted_results[0]
-            print(f"🏆 Best match: {best[0]} with Z = {best[1]:.2f}")
-            
-            # Save as CSV
-            with open(csv_file, "w") as f:
-                f.write("filename,Z-score\n")
-                for fname, z in sorted_results:
-                    f.write(f"{fname},{z:.2f}\n")
-            
-            print(f"✅ Z-scores saved to: {csv_file}")
-            
-            # Display top 10 results
-            print(f"\n🏆 Top 10 matches:")
-            print(f"{'Rank':<4} {'Reference':<20} {'Z-score':<8}")
-            print("-" * 35)
-            
-            for i, (fname, z) in enumerate(sorted_results[:10]):
-                # Extract reference ID from filename
-                ref_id = fname.replace(f"{self.get_query_structure_name()}_vs_", "").replace(".txt", "")
-                print(f"{i+1:2d}.  {ref_id:<20} {z:<8.2f}")
-            
-            return True
-        else:
-            print(f"❌ No valid Z-score results found")
-            # Create empty CSV file
-            with open(csv_file, "w") as f:
-                f.write("filename,Z-score\n")
-                f.write("No matches found,0.0\n")
-            return False
-    
-    def generate_summary_report(self):
-        """Generate a comprehensive summary report"""
-        print(f"📋 Generating summary report...")
-        
-        # Check what files were generated
-        csv_file = f"{self.results_dir}/{self.pdb_basename}_zscores.csv"
-        sequence_dali_dir = f"{self.results_dir}/{self.pdb_basename}_dali_results"
-        sequence_html_dir = f"{self.results_dir}/{self.pdb_basename}_html_results"
-        
-        # Count results
-        total_comparisons = 0
-        html_files = 0
-        intermediate_files = 0
-        
-        if os.path.exists(sequence_dali_dir):
-            total_comparisons = len([f for f in os.listdir(sequence_dali_dir) if f.endswith('.txt')])
-        if os.path.exists(sequence_html_dir):
-            all_files = os.listdir(sequence_html_dir)
-            html_files = len([f for f in all_files if f.endswith('.html')])
-            intermediate_files = len([f for f in all_files if not f.endswith('.html')])
-        
-        # Read CSV results
-        significant_matches = 0
-        high_scoring_matches = 0
-        best_zscore = 0.0
-        best_match = "None"
-        
-        if os.path.exists(csv_file):
-            try:
-                with open(csv_file, 'r') as f:
-                    lines = f.readlines()[1:]  # Skip header
-                    for line in lines:
-                        if line.strip() and "No matches found" not in line:
-                            parts = line.strip().split(',')
-                            if len(parts) >= 2:
-                                zscore = float(parts[1])
-                                if zscore > 2.0:
-                                    significant_matches += 1
-                                if zscore > 9.0:
-                                    high_scoring_matches += 1
-                                if zscore > best_zscore:
-                                    best_zscore = zscore
-                                    best_match = parts[0]
-            except:
-                pass
-        
-        # Generate summary
-        summary_file = f"{self.results_dir}/{self.pdb_basename}_summary.txt"
-        
-        with open(summary_file, 'w') as f:
-            f.write(f"DALI Structure Comparison Summary\n")
-            f.write(f"=" * 40 + "\n\n")
-            f.write(f"Query structure: {self.pdb_filename}\n")
-            f.write(f"Query DAT name: {self.get_query_structure_name() or 'Unknown'}\n")
-            f.write(f"Analysis date: {os.popen('date').read().strip()}\n\n")
-            
-            f.write(f"Results Statistics:\n")
-            f.write(f"- Total comparisons: {total_comparisons}\n")
-            f.write(f"- HTML files generated: {html_files}\n")
-            f.write(f"- Other intermediate files: {intermediate_files}\n")
-            f.write(f"- Significant matches (Z > 2.0): {significant_matches}\n")
-            f.write(f"- High-scoring matches (Z > 9.0): {high_scoring_matches}\n")
-            f.write(f"- Best match: {best_match} (Z = {best_zscore:.2f})\n\n")
-            
-            f.write(f"Output Files:\n")
-            f.write(f"- Detailed results: {sequence_dali_dir}/\n")
-            f.write(f"- HTML & intermediate files: {sequence_html_dir}/\n")
-            f.write(f"- Z-score CSV: {csv_file}\n")
-            f.write(f"- This summary: {summary_file}\n\n")
-            
-            f.write(f"File Locations:\n")
-            f.write(f"- Text summaries: {sequence_dali_dir}/*_vs_*.txt\n")
-            f.write(f"- HTML results: {sequence_html_dir}/*_vs_*_results.html\n")
-            f.write(f"- Intermediate files: {sequence_html_dir}/*_vs_*_intermediate.*\n")
-        
-        print(f"📄 Summary report saved to: {summary_file}")
-        print(f"📊 Generated {html_files} HTML files and {intermediate_files} intermediate files")
-        return summary_file
-    
-    def cleanup_temp_files(self):
-        """Clean up temporary files (but preserve HTML and intermediate files)"""
-        print(f"🗑️ Cleaning up temporary files...")
-        
-        # Remove query DAT files to clean up for next run
-        if os.path.exists("query_structures_DAT"):
-            for dat_file in glob.glob("query_structures_DAT/*.dat"):
-                try:
-                    os.remove(dat_file)
-                    print(f"  Removed: {dat_file}")
-                except:
-                    pass
-        
-        # Remove leftover DALI temporary files in working directory
-        # But be more careful - only remove files we're sure are temporary
-        query_name = self.get_query_structure_name()
-        if query_name:
-            temp_patterns = [
-                f"{query_name}.tmp",
-                f"{query_name}.log",
-                "*.tmp",
-                "dali*.log"
-            ]
-            
-            for pattern in temp_patterns:
-                for temp_file in glob.glob(pattern):
-                    try:
-                        os.remove(temp_file)
-                        print(f"  Removed temp file: {temp_file}")
-                    except:
-                        pass
+        print(f"🔧 Initialized DaliMatrixApplier:")
+        print(f"   Original PDB: {self.original_pdb}")
+        print(f"   DALI TXT file: {self.dali_txt_file}")
+        print(f"   Output PDB: {self.output_pdb}")
+        print(f"   applymatrix.pl: {self.applymatrix_path}")
     
     def check_prerequisites(self):
-        """Check if required files and directories exist"""
+        """检查必需文件是否存在"""
         print(f"🔍 Checking prerequisites...")
         
-        # Check if we're in the right directory
-        if not os.path.exists("import_pdbs_to_dat.py"):
-            print(f"❌ import_pdbs_to_dat.py not found. Are you in the correct directory?")
-            print(f"Current directory: {os.getcwd()}")
+        # 检查原始PDB文件
+        if not os.path.exists(self.original_pdb):
+            print(f"❌ Original PDB file not found: {self.original_pdb}")
             return False
         
-        # Check if PDB file exists
-        pdb_path = os.path.join(self.predicted_structures_dir, self.pdb_filename)
-        if not os.path.exists(pdb_path):
-            print(f"❌ PDB file not found: {pdb_path}")
+        # 检查DALI TXT文件
+        if not os.path.exists(self.dali_txt_file):
+            print(f"❌ DALI TXT file not found: {self.dali_txt_file}")
             return False
         
-        # Check for required directories
-        if not os.path.exists("DAT"):
-            print(f"❌ DAT directory not found")
+        # 检查applymatrix.pl工具
+        if not os.path.exists(self.applymatrix_path):
+            print(f"❌ applymatrix.pl not found: {self.applymatrix_path}")
             return False
         
-        # Check DALI executable
-        dali_executable = "/home/wenhao/6tx0/software/dali/DaliLite.v5/bin/dali.pl"
-        if not os.path.exists(dali_executable):
-            print(f"❌ DALI executable not found: {dali_executable}")
-            return False
-        
-        # Create required directories
-        os.makedirs("query_structures_DAT", exist_ok=True)
-        
-        print(f"✅ Prerequisites check passed")
+        print(f"✅ All prerequisites satisfied")
         return True
     
-    def run_full_pipeline(self):
-        """Run the complete pipeline from PDB to DALI results"""
-        print(f"🚀 Starting PDB to DALI pipeline...")
-        print(f"📋 PDB file: {self.pdb_filename}")
-        print(f"📂 Working directory: {self.base_dir}")
-        print(f"📁 Results directory: {self.results_dir}")
-        print("="*60)
+    def analyze_dali_txt(self):
+        """分析DALI TXT文件内容"""
+        print(f"📊 Analyzing DALI TXT file...")
         
         try:
-            # Step 1: Check prerequisites
+            with open(self.dali_txt_file, 'r') as f:
+                content = f.read()
+            
+            print(f"📄 DALI TXT file content preview:")
+            lines = content.strip().split('\n')
+            for i, line in enumerate(lines[:20]):  # 显示前20行
+                print(f"   {i+1:2d}: {line}")
+            
+            if len(lines) > 20:
+                print(f"   ... (total {len(lines)} lines)")
+            
+            # 查找特定的模式
+            if "No:  Chain   Z    rmsd lali nres  %id PDB" in content:
+                print(f"✅ Found alignment summary table")
+            
+            if "1:" in content:
+                print(f"✅ Found alignment entry")
+            
+            return True
+            
+        except Exception as e:
+            print(f"❌ Failed to read DALI TXT file: {e}")
+            return False
+    
+    def apply_transformation(self):
+        """使用DALI的applymatrix.pl应用变换"""
+        print(f"🔄 Applying DALI transformation...")
+        
+        # 构建命令
+        cmd = [
+            self.applymatrix_path,
+            self.original_pdb
+        ]
+        
+        print(f"🖥️  Executing command:")
+        print(f"   {' '.join(cmd)} < {self.dali_txt_file} > {self.output_pdb}")
+        
+        try:
+            # 读取DALI TXT文件内容
+            with open(self.dali_txt_file, 'r') as txt_file:
+                txt_content = txt_file.read()
+            
+            # 执行applymatrix.pl命令
+            process = subprocess.Popen(
+                cmd,
+                stdin=subprocess.PIPE,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True
+            )
+            
+            stdout, stderr = process.communicate(input=txt_content)
+            
+            if process.returncode == 0:
+                # 写入输出文件
+                with open(self.output_pdb, 'w') as output_file:
+                    output_file.write(stdout)
+                
+                print(f"✅ Transformation completed successfully")
+                print(f"📁 Output saved to: {self.output_pdb}")
+                return True
+            else:
+                print(f"❌ applymatrix.pl failed with return code {process.returncode}")
+                print(f"STDERR: {stderr}")
+                return False
+                
+        except Exception as e:
+            print(f"❌ Failed to execute applymatrix.pl: {e}")
+            return False
+    
+    def analyze_output(self):
+        """分析输出的PDB文件"""
+        print(f"📊 Analyzing output PDB file...")
+        
+        if not os.path.exists(self.output_pdb):
+            print(f"❌ Output PDB file not found: {self.output_pdb}")
+            return False
+        
+        try:
+            atom_count = 0
+            chains = set()
+            
+            with open(self.output_pdb, 'r') as f:
+                for line in f:
+                    if line.startswith('ATOM') or line.startswith('HETATM'):
+                        atom_count += 1
+                        chain = line[21].strip()
+                        if chain:
+                            chains.add(chain)
+            
+            print(f"📈 Output statistics:")
+            print(f"   Total atoms: {atom_count}")
+            print(f"   Chains: {sorted(chains) if chains else 'None'}")
+            
+            # 比较原始文件
+            original_atom_count = 0
+            with open(self.original_pdb, 'r') as f:
+                for line in f:
+                    if line.startswith('ATOM') or line.startswith('HETATM'):
+                        original_atom_count += 1
+            
+            print(f"   Original atoms: {original_atom_count}")
+            
+            if atom_count == original_atom_count:
+                print(f"✅ Atom count matches original file")
+            else:
+                print(f"⚠️  Atom count differs from original")
+            
+            return True
+            
+        except Exception as e:
+            print(f"❌ Failed to analyze output: {e}")
+            return False
+    
+    def generate_summary(self):
+        """生成变换摘要报告"""
+        print(f"📋 Generating transformation summary...")
+        
+        summary_file = f"{os.path.splitext(self.output_pdb)[0]}_summary.txt"
+        
+        try:
+            with open(summary_file, 'w') as f:
+                f.write(f"DALI Matrix Transformation Summary\n")
+                f.write(f"=" * 40 + "\n\n")
+                f.write(f"Original PDB file: {self.original_pdb}\n")
+                f.write(f"DALI TXT file: {self.dali_txt_file}\n")
+                f.write(f"Transformed PDB file: {self.output_pdb}\n")
+                f.write(f"Transformation date: {os.popen('date').read().strip()}\n\n")
+                
+                # 添加DALI TXT文件的前几行
+                f.write(f"DALI TXT file content:\n")
+                f.write(f"-" * 20 + "\n")
+                with open(self.dali_txt_file, 'r') as txt_f:
+                    lines = txt_f.readlines()[:20]
+                    for line in lines:
+                        f.write(line)
+                if len(lines) >= 20:
+                    f.write("...\n")
+                
+                f.write(f"\n" + "-" * 20 + "\n")
+                f.write(f"Command used:\n")
+                f.write(f"{self.applymatrix_path} {self.original_pdb} < {self.dali_txt_file} > {self.output_pdb}\n")
+            
+            print(f"📄 Summary saved to: {summary_file}")
+            return summary_file
+            
+        except Exception as e:
+            print(f"❌ Failed to generate summary: {e}")
+            return None
+    
+    def run_transformation(self):
+        """运行完整的变换流程"""
+        print(f"🚀 Starting DALI matrix transformation...")
+        print("=" * 60)
+        
+        try:
+            # 检查先决条件
             if not self.check_prerequisites():
                 return False
             
-            # Step 2: Convert PDB to DAT
-            if not self.convert_pdb_to_dat():
-                print(f"❌ PDB to DAT conversion failed")
+            # 分析DALI TXT文件
+            if not self.analyze_dali_txt():
                 return False
             
-            # Step 3: Run DALI comparison (preserving HTML and intermediate files)
-            if not self.run_dali_comparison():
-                print(f"❌ DALI comparison failed")
+            # 应用变换
+            if not self.apply_transformation():
                 return False
             
-            # Step 4: Extract Z-score results (same logic as batch script)
-            self.extract_results()
+            # 分析输出
+            self.analyze_output()
             
-            # Step 5: Generate summary report
-            summary_file = self.generate_summary_report()
+            # 生成摘要
+            summary_file = self.generate_summary()
             
-            # Step 6: Clean up temporary files (but keep HTML/intermediate files)
-            self.cleanup_temp_files()
-            
-            print("="*60)
-            print("🎉 Pipeline completed successfully!")
-            print(f"📁 Results saved in:")
-            print(f"   - {self.results_dir}/{self.pdb_basename}_zscores.csv (Z-scores)")
-            print(f"   - {self.results_dir}/{self.pdb_basename}_dali_results/ (text summaries)")
-            print(f"   - {self.results_dir}/{self.pdb_basename}_html_results/ (HTML & intermediate files)")
-            print(f"   - {summary_file} (summary report)")
-            
-            # Show file counts
-            html_dir = f"{self.results_dir}/{self.pdb_basename}_html_results"
-            if os.path.exists(html_dir):
-                all_files = os.listdir(html_dir)
-                html_count = len([f for f in all_files if f.endswith('.html')])
-                other_count = len([f for f in all_files if not f.endswith('.html')])
-                print(f"📊 Generated {html_count} HTML files and {other_count} other intermediate files")
-                
-                if len(all_files) > 0:
-                    print(f"\n🧬 HTML & intermediate files location:")
-                    print(f"   {html_dir}/")
-                    print(f"   HTML files: {self.get_query_structure_name() or 'query'}_vs_[reference]_results.html")
-                    print(f"   Intermediate files: {self.get_query_structure_name() or 'query'}_vs_[reference]_intermediate.*")
+            print("=" * 60)
+            print("🎉 Transformation completed successfully!")
+            print(f"📁 Files generated:")
+            print(f"   - Transformed PDB: {self.output_pdb}")
+            if summary_file:
+                print(f"   - Summary report: {summary_file}")
             
             return True
             
         except Exception as e:
-            print(f"❌ Pipeline execution failed: {str(e)}")
+            print(f"❌ Transformation failed: {str(e)}")
             return False
 
+def find_dali_txt_files(directory, pattern="*_vs_*.txt"):
+    """查找DALI结果TXT文件"""
+    search_path = os.path.join(directory, pattern)
+    txt_files = glob.glob(search_path)
+    return sorted(txt_files)
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Convert PDB to DAT and run DALI comparison (preserving HTML intermediate files)',
+        description='Apply DALI transformation matrix to PDB coordinates using applymatrix.pl',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python pdb_to_dali.py sequence_1_sample_0.pdb     # Run full pipeline
-  python pdb_to_dali.py --check sequence_1_sample_0.pdb  # Check prerequisites only
-  python pdb_to_dali.py --convert-only sequence_1_sample_0.pdb  # Convert PDB to DAT only
-  python pdb_to_dali.py --dali-only sequence_1_sample_0.pdb     # Run DALI only
+  # 基本用法
+  python dali_txt_to_pdb.py original.pdb a0l1A_vs_7tgkD.txt
+  
+  # 指定输出文件
+  python dali_txt_to_pdb.py original.pdb alignment_result.txt --output transformed.pdb
+  
+  # 查找和处理多个TXT文件
+  python dali_txt_to_pdb.py original.pdb --search-dir ./dali_results --pattern "*_vs_7tgkD.txt"
+  
+  # 批量处理目录中的所有TXT文件
+  python dali_txt_to_pdb.py original.pdb --batch-dir ./dali_results
         """
     )
     
-    parser.add_argument('pdb_filename', help='PDB filename (should be in predicted_structures directory)')
-    parser.add_argument('--check', '-c', action='store_true', help='Only check prerequisites')
-    parser.add_argument('--convert-only', action='store_true', help='Only convert PDB to DAT')
-    parser.add_argument('--dali-only', action='store_true', help='Only run DALI (assumes DAT file exists)')
-    parser.add_argument('--no-cleanup', action='store_true', help='Skip cleanup of temporary files')
-    parser.add_argument('--max-refs', type=int, default=None, help='Maximum number of reference structures to compare (default: all)')
+    parser.add_argument('original_pdb', help='Original PDB file to transform')
+    parser.add_argument('dali_txt_file', nargs='?', help='DALI alignment result TXT file')
+    parser.add_argument('--output', '-o', help='Output PDB file name')
+    parser.add_argument('--search-dir', help='Directory to search for DALI TXT files')
+    parser.add_argument('--pattern', default='*_vs_*.txt', help='Pattern to match TXT files (default: *_vs_*.txt)')
+    parser.add_argument('--batch-dir', help='Process all TXT files in directory')
+    parser.add_argument('--target', help='Specific target to look for (e.g., 7tgkD)')
     
     args = parser.parse_args()
     
-    processor = PDBToDaliProcessor(args.pdb_filename, args.max_refs)
+    # 检查原始PDB文件
+    if not os.path.exists(args.original_pdb):
+        print(f"❌ Original PDB file not found: {args.original_pdb}")
+        sys.exit(1)
     
-    if args.check:
-        print("🔍 Check mode")
-        success = processor.check_prerequisites()
-        if success:
-            print("✅ All prerequisites satisfied")
-        else:
-            print("❌ Prerequisites check failed")
-        return
+    # 处理不同的使用模式
+    txt_files_to_process = []
     
-    if args.convert_only:
-        print("🔄 Convert only mode")
-        if processor.check_prerequisites() and processor.convert_pdb_to_dat():
-            print("✅ PDB to DAT conversion completed")
-        else:
-            print("❌ PDB to DAT conversion failed")
-        return
-    
-    if args.dali_only:
-        print("🔍 DALI only mode")
-        try:
-            if processor.run_dali_comparison():
-                processor.extract_results()
-                processor.generate_summary_report()
-                if not args.no_cleanup:
-                    processor.cleanup_temp_files()
-                print("✅ DALI comparison completed")
+    if args.batch_dir:
+        # 批量处理模式
+        print(f"🔍 Searching for TXT files in: {args.batch_dir}")
+        txt_files = find_dali_txt_files(args.batch_dir, args.pattern)
+        
+        if args.target:
+            # 过滤特定目标
+            txt_files = [f for f in txt_files if args.target in os.path.basename(f)]
+            print(f"🎯 Filtering for target: {args.target}")
+        
+        txt_files_to_process = txt_files
+        
+    elif args.search_dir:
+        # 搜索模式
+        print(f"🔍 Searching for TXT files in: {args.search_dir}")
+        txt_files = find_dali_txt_files(args.search_dir, args.pattern)
+        
+        if not txt_files:
+            print(f"❌ No TXT files found matching pattern: {args.pattern}")
+            sys.exit(1)
+        
+        print(f"📄 Found {len(txt_files)} TXT files:")
+        for i, txt_file in enumerate(txt_files):
+            print(f"   {i+1}. {os.path.basename(txt_file)}")
+        
+        if args.target:
+            # 查找特定目标
+            target_files = [f for f in txt_files if args.target in os.path.basename(f)]
+            if target_files:
+                txt_files_to_process = target_files
+                print(f"🎯 Found target files: {[os.path.basename(f) for f in target_files]}")
             else:
-                print("❌ DALI comparison failed")
-        except Exception as e:
-            print(f"❌ DALI comparison failed: {str(e)}")
-        return
+                print(f"❌ No files found containing: {args.target}")
+                sys.exit(1)
+        else:
+            # 处理第一个文件
+            txt_files_to_process = [txt_files[0]]
+            print(f"📝 Processing first file: {os.path.basename(txt_files[0])}")
+            
+    elif args.dali_txt_file:
+        # 单文件模式
+        if not os.path.exists(args.dali_txt_file):
+            print(f"❌ DALI TXT file not found: {args.dali_txt_file}")
+            sys.exit(1)
+        txt_files_to_process = [args.dali_txt_file]
+        
+    else:
+        print(f"❌ Must provide either dali_txt_file, --search-dir, or --batch-dir")
+        sys.exit(1)
     
-    # Run full pipeline
-    success = processor.run_full_pipeline()
+    # 处理文件
+    success_count = 0
+    total_count = len(txt_files_to_process)
     
-    if success:
-        print("\n🎊 All operations completed successfully!")
+    for i, txt_file in enumerate(txt_files_to_process):
+        print(f"\n{'='*60}")
+        print(f"📁 Processing {i+1}/{total_count}: {os.path.basename(txt_file)}")
+        print(f"{'='*60}")
+        
+        # 为批量处理生成输出文件名
+        if total_count > 1:
+            base_name = os.path.splitext(os.path.basename(args.original_pdb))[0]
+            txt_base = os.path.splitext(os.path.basename(txt_file))[0]
+            output_pdb = f"{base_name}_transformed_by_{txt_base}.pdb"
+        else:
+            output_pdb = args.output
+        
+        # 创建变换器并运行
+        transformer = DaliMatrixApplier(args.original_pdb, txt_file, output_pdb)
+        
+        if transformer.run_transformation():
+            success_count += 1
+        else:
+            print(f"❌ Failed to process: {txt_file}")
+    
+    # 最终报告
+    print(f"\n{'='*60}")
+    print(f"🎊 Batch processing completed!")
+    print(f"📊 Successfully processed: {success_count}/{total_count} files")
+    
+    if success_count == total_count:
         sys.exit(0)
     else:
-        print("\n💥 Pipeline execution failed!")
         sys.exit(1)
-
 
 if __name__ == "__main__":
     main()
