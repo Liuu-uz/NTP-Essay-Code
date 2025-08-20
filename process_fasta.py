@@ -77,7 +77,7 @@ class FASTASplitter:
                         sequences.append((current_header, sequence_str))
         
         except Exception as e:
-            print(f"❌ Error reading {file_path}: {e}")
+            print(f" Error reading {file_path}: {e}")
             return []
         
         return sequences
@@ -92,11 +92,11 @@ class FASTASplitter:
         try:
             os.makedirs(output_dir, exist_ok=True)
             if not os.path.exists(output_dir):
-                print(f"❌ Failed to create directory: {output_dir}")
+                print(f" Failed to create directory: {output_dir}")
                 return None
             return output_dir
         except Exception as e:
-            print(f"❌ Error creating directory {output_dir}: {e}")
+            print(f" Error creating directory {output_dir}: {e}")
             return None
     
     def write_individual_fasta(self, output_dir, filename, header, sequence):
@@ -117,23 +117,23 @@ class FASTASplitter:
             
             return output_path
         except Exception as e:
-            print(f"❌ Error writing {output_path}: {e}")
+            print(f" Error writing {output_path}: {e}")
             return None
     
     def process_single_file(self, file_path):
         """Process a single FASTA file"""
         filename = os.path.basename(file_path)
-        print(f"\n🔍 Processing: {filename}")
+        print(f"\n Processing: {filename}")
         
         # Parse FASTA file
         sequences = self.parse_fasta_file(file_path)
         
         if not sequences:
-            print(f"   ⚠️  Empty file or no valid sequences found")
+            print(f"   Empty file or no valid sequences found")
             self.stats["empty_files"] += 1
             return False
         
-        print(f"   📊 Found {len(sequences)} sequences")
+        print(f"   Found {len(sequences)} sequences")
         
         # Create output directory
         output_dir = self.create_output_directory(filename)
@@ -141,7 +141,7 @@ class FASTASplitter:
             return False
         
         self.stats["directories_created"] += 1
-        print(f"   📁 Output directory: {output_dir}")
+        print(f"   Output directory: {output_dir}")
         
         # Process each sequence
         created_files = []
@@ -166,20 +166,20 @@ class FASTASplitter:
             if output_path:
                 created_files.append(output_path)
                 file_size = os.path.getsize(output_path)
-                print(f"   ✅ Created: {os.path.basename(output_path)} ({file_size} bytes)")
+                print(f"   Created: {os.path.basename(output_path)} ({file_size} bytes)")
             else:
-                print(f"   ❌ Failed to create file for sequence {i}")
+                print(f"   Failed to create file for sequence {i}")
         
         self.stats["total_sequences"] += len(sequences)
         self.stats["files_created"] += len(created_files)
         
-        print(f"   🎉 Successfully created {len(created_files)} files")
+        print(f"   Successfully created {len(created_files)} files")
         return True
     
     def process_directory(self):
         """Process all FASTA files in source directory"""
         if not os.path.exists(self.source_dir):
-            print(f"❌ Source directory does not exist: {self.source_dir}")
+            print(f" Source directory does not exist: {self.source_dir}")
             return False
         
         # Find all .fa files
@@ -190,21 +190,21 @@ class FASTASplitter:
                 fa_files.append(file_path)
         
         if not fa_files:
-            print(f"❌ No .fa files found in {self.source_dir}")
+            print(f" No .fa files found in {self.source_dir}")
             return False
         
-        print(f"🧬 FASTA File Splitter")
+        print(f" FASTA File Splitter")
         print("="*60)
-        print(f"📂 Source directory: {self.source_dir}")
-        print(f"📁 Target directory: {self.target_base_dir}")
-        print(f"📋 Found {len(fa_files)} FASTA files to process")
+        print(f" Source directory: {self.source_dir}")
+        print(f" Target directory: {self.target_base_dir}")
+        print(f" Found {len(fa_files)} FASTA files to process")
         print("="*60)
         
         # Create base target directory
         try:
             os.makedirs(self.target_base_dir, exist_ok=True)
         except Exception as e:
-            print(f"❌ Failed to create target directory {self.target_base_dir}: {e}")
+            print(f" Failed to create target directory {self.target_base_dir}: {e}")
             return False
         
         # Process each file
@@ -221,20 +221,20 @@ class FASTASplitter:
     def process_single_file_direct(self, file_path):
         """Process a single file directly (for command line usage)"""
         if not os.path.exists(file_path):
-            print(f"❌ File does not exist: {file_path}")
+            print(f" File does not exist: {file_path}")
             return False
         
-        print(f"🧬 FASTA File Splitter (Single File)")
+        print(f" FASTA File Splitter (Single File)")
         print("="*60)
-        print(f"📄 Input file: {file_path}")
-        print(f"📁 Target directory: {self.target_base_dir}")
+        print(f" Input file: {file_path}")
+        print(f" Target directory: {self.target_base_dir}")
         print("="*60)
         
         # Create base target directory
         try:
             os.makedirs(self.target_base_dir, exist_ok=True)
         except Exception as e:
-            print(f"❌ Failed to create target directory {self.target_base_dir}: {e}")
+            print(f" Failed to create target directory {self.target_base_dir}: {e}")
             return False
         
         success = self.process_single_file(file_path)
@@ -247,7 +247,7 @@ class FASTASplitter:
     def print_summary(self):
         """Print processing summary"""
         print(f"\n{'='*60}")
-        print("📊 Processing Summary")
+        print(" Processing Summary")
         print(f"{'='*60}")
         print(f"Files processed:     {self.stats['files_processed']}")
         print(f"Empty files skipped: {self.stats['empty_files']}")
@@ -257,9 +257,9 @@ class FASTASplitter:
         print(f"Output location:     {self.target_base_dir}")
         
         if self.stats['files_created'] > 0:
-            print(f"\n🎉 Successfully split {self.stats['total_sequences']} sequences into {self.stats['files_created']} individual files!")
+            print(f"\n Successfully split {self.stats['total_sequences']} sequences into {self.stats['files_created']} individual files!")
         else:
-            print(f"\n⚠️  No files were created. Check if input files contain valid FASTA sequences.")
+            print(f"\n No files were created. Check if input files contain valid FASTA sequences.")
         
         print("="*60)
 
@@ -303,7 +303,7 @@ def main():
             splitter.process_directory()
             
         else:
-            print(f"❌ File or directory does not exist: {arg}")
+            print(f" File or directory does not exist: {arg}")
     
     else:
         print("Usage: python fasta_splitter.py [file.fa|directory]")
